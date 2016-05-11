@@ -23,6 +23,7 @@
 本书适合以下人群
 
 - 熟悉 JavaScript，至少阅读过一遍[《JavaScript 高级程序设计》](https://book.douban.com/subject/10546125/)
+- 了解 ECMAScript 2015，推荐阅读：[《ECMAScript 6 入门》](http://es6.ruanyifeng.com/)
 - 了解 Node.js，会用 npm 安装及使用一些工具
 - 想学习 [TypeScript] 或者想对 [TypeScript] 有更深的理解
 
