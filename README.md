@@ -1,4 +1,6 @@
-# Learn TypeScript
+# From JavaScript to TypeScript
+
+> 一本由 JavaScript 程序员撰写的 TypeScript 学习笔记
 
 TypeScript 是 JavaScript 的一个超集，由 Microsoft 开发，代码开源于 GitHub 上。
 
