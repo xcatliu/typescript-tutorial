@@ -3,15 +3,17 @@
   "description": "一本由 JavaScript 程序员撰写的 TypeScript 学习笔记",
   "author": "xcatliu <xcatliu@gmail.com>",
   "language": "zh",
-  "links": {
-    "sidebar": {
-      "在 GitHub 上查看": "https://github.com/xcatliu/from-javascript-to-typescript"
-    }
-  },
-  "plugins": ["disqus"],
+  "plugins": ["disqus", "edit-link", "github"],
   "pluginsConfig": {
     "disqus": {
       "shortName": "from-javascript-to-typescript"
+    },
+    "edit-link": {
+      "base": "https://github.com/xcatliu/from-javascript-to-typescript/tree/master",
+      "label": "编辑此页"
+    },
+    "github": {
+      "url": "https://github.com/xcatliu/from-javascript-to-typescript"
     }
   }
 }
