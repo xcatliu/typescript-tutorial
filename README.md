@@ -23,7 +23,7 @@
 本书适合以下人群
 
 - 熟悉 JavaScript，至少阅读过一遍[《JavaScript 高级程序设计》](https://book.douban.com/subject/10546125/)
-- 了解 ECMAScript 2015，推荐阅读：[《ECMAScript 6 入门》](http://es6.ruanyifeng.com/)
+- 了解 ES6，推荐阅读：[《ECMAScript 6 入门》](http://es6.ruanyifeng.com/)
 - 了解 Node.js，会用 npm 安装及使用一些工具
 - 想学习 [TypeScript] 或者想对 [TypeScript] 有更深的理解
 
@@ -31,9 +31,14 @@
 
 - 没有系统学习过 JavaScript
 
-## 其他学习资料
+## 相关资料
 
 - [官方教程][Official Documentation]
+- [中文翻译](https://zhongsp.gitbooks.io/typescript-handbook/content/)
+- [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/content/)
+- [JavaScript powered by TypeScript](http://www.jianshu.com/p/7d3e333683fd)
+- [现在 TypeScript 生态系统如何？](http://www.zhihu.com/question/37222407)
+- [Typings](https://github.com/typings/typings)
 
 [TypeScript]: http://www.typescriptlang.org/
 [Official Documentation]: http://www.typescriptlang.org/docs/tutorial.html
