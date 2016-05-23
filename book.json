@@ -5,7 +5,7 @@
   "language": "zh",
   "links": {
     "sidebar": {
-      "Xcat Liu's Blog": "http://blog.xcatliu.com"
+      "在 GitHub 上查看": "https://github.com/xcatliu/from-javascript-to-typescript"
     }
   },
   "plugins": ["disqus"],
