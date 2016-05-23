@@ -31,11 +31,20 @@
 
 - 没有系统学习过 JavaScript
 
+## 版权许可
+
+本书采用「保持署名—非商用」创意共享 4.0 许可证。
+
+只要保持原作者署名和非商用，您可以自由地阅读、分享、修改本书。
+
+详细的法律条文请参见[创意共享](http://creativecommons.org/licenses/by-nc/4.0/)网站。
+
 ## 相关资料
 
 - [官方教程][Official Documentation]
 - [中文翻译](https://zhongsp.gitbooks.io/typescript-handbook/content/)
 - [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/content/)
+- [ECMAScript 6入门](http://es6.ruanyifeng.com/)
 - [JavaScript powered by TypeScript](http://www.jianshu.com/p/7d3e333683fd)
 - [现在 TypeScript 生态系统如何？](http://www.zhihu.com/question/37222407)
 - [Typings](https://github.com/typings/typings)

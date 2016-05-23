@@ -2,13 +2,15 @@
 
 > TypeScript 提供了一系列数据结构，这是 TypeScript 的核心内容。
 
+JavaScript 一共有六种基本类型：布尔值、数值、字符串、`null`、`undefined`、对象，其中对象的类型定义较复杂，后面再详细介绍。
+
 ## 布尔值（Boolean）
 
 ```ts
 let isDone: boolean = false;
 ```
 
-使用构造函数 `Boolean` 创造的对象不是布尔值：
+注意，使用构造函数 `Boolean` 创造的对象不是布尔值：
 
 ```ts
 let createdByNewBoolean1: boolean = new Boolean(1);
@@ -32,7 +34,7 @@ let createdByNewBoolean2: Boolean = new Boolean(1);
 let createdByBoolean: boolean = Boolean(1);
 ```
 
-在 TypeScript 中，`boolean` 是 JavaScript 中的基本类型，而 `Boolean 是 JavaScript 中的构造函数`。其他基本类型一样，不再赘述。
+在 TypeScript 中，`boolean` 是 JavaScript 中的基本类型，而 `Boolean` 是 JavaScript 中的构造函数。其他基本类型一样，不再赘述。
 
 ## 数值（Number）
 
@@ -72,8 +74,6 @@ I'll be ${myAge + 1} years old next month.`;
 > Tip: 字符串支持 [ES6 中的模板字符串](http://es6.ruanyifeng.com/#docs/string#模板字符串)
 
 ## 空值（Void）
-
-JavaScript 的基本类型有六种：布尔值、数值、字符串、`null`、`undefined`、对象（对象的类型定义较复杂，后面再详细介绍）。
 
 在 TypeScript 中，`null` 和 `undefined` 没有做区分，统一为空值，常用于函数返回值：
 
