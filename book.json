@@ -1,0 +1,8 @@
+{
+  "plugins": ["disqus"],
+  "pluginsConfig": {
+    "disqus": {
+      "shortName": "from-javascript-to-typescript"
+    }
+  }
+}

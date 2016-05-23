@@ -55,7 +55,7 @@ TypeScript 中，使用 `:` 指定变量的类型，`:` 的前后有没有空格
 
 **TypeScript 只会进行静态检查，如果发现有错误，编译的时候就会报错。**
 
-> Tip: `let` 是 ES6 中的关键字，和 `var` 类似，用于定义一个局部变量，可以参考 [let 和 const 命令](http://es6.ruanyifeng.com/#docs/let)。
+> Tip: `let` 是 ES6 中的关键字，和 `var` 类似，用于定义一个局部变量，可以参阅 [let 和 const 命令](http://es6.ruanyifeng.com/#docs/let)。
 
 下面尝试把这段代码编译一下：
 
