@@ -8,7 +8,10 @@
   - Examples（未完成）
 - 基础（未完成）
   - [基本类型](basics/basic-types.md)
-  - [接口——对象类型的定义](basics/interfaces-definition-of-object-type.md)
+  - [对象的类型——接口](basics/type-of-object-interfaces.md)
+  - [函数的类型（未完成）](basics/type-of-function.md)
+  - [数组的类型（未完成）](basics/type-of-array.md)
+  - [任意值（未完成）](basics/any.md)
 - 进阶（未完成）
 - 实践（未完成）
 - 学习资料（未完成）
