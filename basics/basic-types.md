@@ -2,36 +2,38 @@
 
 > TypeScript 提供了一系列数据结构，这是 TypeScript 的核心内容。
 
-JavaScript 一共有六种基本类型：布尔值、数值、字符串、`null`、`undefined`、对象，其中对象的类型定义较复杂，后面再详细介绍。
+JavaScript 一共有六种基本类型：布尔值、数值、字符串、`null`、`undefined`、对象，其中对象类型的定义较复杂，后面再详细介绍。
 
 ## 布尔值（Boolean）
 
 ```ts
 let isDone: boolean = false;
+
+// 编译通过
 ```
 
 注意，使用构造函数 `Boolean` 创造的对象不是布尔值：
 
 ```ts
 let createdByNewBoolean1: boolean = new Boolean(1);
+
+// index.ts(1,5): error TS2322: Type 'Boolean' is not assignable to type 'boolean'.
 ```
 
-编译时报错：
-
-```shell
-boolean-constructor.ts(1,5): error TS2322: Type 'Boolean' is not assignable to type 'boolean'.
-```
-
-事实上 `new Boolean()` 返回的是一个 `Boolean 对象`，所以下面代码可以通过编译：
+事实上 `new Boolean()` 返回的是一个 `Boolean 对象`：
 
 ```ts
 let createdByNewBoolean2: Boolean = new Boolean(1);
+
+// 编译通过
 ```
 
 直接使用 `Boolean` 也可以返回一个 `boolean` 类型：
 
 ```ts
 let createdByBoolean: boolean = Boolean(1);
+
+// 编译通过
 ```
 
 在 TypeScript 中，`boolean` 是 JavaScript 中的基本类型，而 `Boolean` 是 JavaScript 中的构造函数。其他基本类型一样，不再赘述。
@@ -90,3 +92,8 @@ let unusable: void = undefined;
 ```
 
 事实上，TypeScript 认为使用 `null` 容易出问题，所以 TypeScript 自身的开发规范里面就[规定了不允许使用 `null`](https://basarat.gitbooks.io/typescript/content/docs/tips/null.html)。
+
+## Links
+
+- [英文文档](http://www.typescriptlang.org/docs/handbook/basic-types.html)
+- [中文文档](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)
