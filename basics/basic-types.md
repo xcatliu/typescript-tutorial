@@ -10,6 +10,7 @@ JavaScript 一共有六种基本类型：布尔值、数值、字符串、`null`
 let isDone: boolean = false;
 
 // 编译通过
+// 后面约定，未强调编译错误的代码片段，默认为编译通过
 ```
 
 注意，使用构造函数 `Boolean` 创造的对象不是布尔值：
@@ -18,22 +19,19 @@ let isDone: boolean = false;
 let createdByNewBoolean1: boolean = new Boolean(1);
 
 // index.ts(1,5): error TS2322: Type 'Boolean' is not assignable to type 'boolean'.
+// 后面约定，未强调编译错误的代码片段，默认为编译通过
 ```
 
 事实上 `new Boolean()` 返回的是一个 `Boolean 对象`：
 
 ```ts
 let createdByNewBoolean2: Boolean = new Boolean(1);
-
-// 编译通过
 ```
 
 直接使用 `Boolean` 也可以返回一个 `boolean` 类型：
 
 ```ts
 let createdByBoolean: boolean = Boolean(1);
-
-// 编译通过
 ```
 
 在 TypeScript 中，`boolean` 是 JavaScript 中的基本类型，而 `Boolean` 是 JavaScript 中的构造函数。其他基本类型一样，不再赘述。

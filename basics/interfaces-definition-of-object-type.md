@@ -20,8 +20,6 @@ let xcatliu: Person = {
   name: 'Xcat Liu',
   age: 25,
 };
-
-// 编译通过
 ```
 
 上面的例子中，我们定义了一个接口 `Person`，接着定义了一个变量 `xcatliu`，它的类型是 `Person`。这样，我们就约束了 `xcatliu` 的形状必须和接口 `Person` 一致。
@@ -104,8 +102,6 @@ interface Person {
 let xcatliu: Person = {
   name: 'Xcat Liu',
 };
-
-// 编译通过
 ```
 
 ```ts
@@ -118,8 +114,6 @@ let xcatliu: Person = {
   name: 'Xcat Liu',
   age: 25,
 };
-
-// 编译通过
 ```
 
 可选属性的含义是该属性可以不存在。
@@ -174,8 +168,6 @@ let xcatliu: Person = {
   name: 'Xcat Liu',
   github: 'https://github.com/xcatliu',
 };
-
-// 编译通过
 ```
 
 ```ts
@@ -190,8 +182,6 @@ let xcatliu: Person = {
   age: 25,
   github: 'https://github.com/xcatliu',
 };
-
-// 编译通过
 ```
 
 使用 `[propName: string]` 可以定义任意属性是 `string` 值的类型。
