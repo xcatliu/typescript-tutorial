@@ -29,5 +29,5 @@ myFavoriteNumber = 7;
 
 ## Links
 
-- [Handbook - Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html#any)
-- [中文文档 - 基础类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#任意值)
+- [Handbook - Basic Types # Any](http://www.typescriptlang.org/docs/handbook/basic-types.html#any)
+- [中文文档 - 基础类型 # 任意值](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#任意值)

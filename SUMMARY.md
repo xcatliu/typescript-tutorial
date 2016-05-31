@@ -11,7 +11,7 @@
   - [任意值](basics/any.md)
   - [对象的类型——接口](basics/type-of-object-interfaces.md)
   - [数组的类型](basics/type-of-array.md)
-  - [函数的类型（未完成）](basics/type-of-function.md)
+  - [函数的类型](basics/type-of-function.md)
 - 进阶（未完成）
 - 实践（未完成）
 - 学习资料（未完成）

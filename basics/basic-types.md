@@ -58,7 +58,7 @@ var notANumber = NaN;
 var infinityNumber = Infinity;
 ```
 
-> Tip: 数值支持 [ES6 中的二进制和八进制表示法](http://es6.ruanyifeng.com/#docs/number#二进制和八进制表示法)，会被编译为十进制数字。
+> Tip: 数值支持 [ES6 中的二进制和八进制表示法]，会被编译为十进制数字。
 
 ## 字符串（String）
 
@@ -71,7 +71,7 @@ let sentence: string = `Hello, my name is ${myName}.
 I'll be ${myAge + 1} years old next month.`;
 ```
 
-> Tip: 字符串支持 [ES6 中的模板字符串](http://es6.ruanyifeng.com/#docs/string#模板字符串)
+> Tip: 字符串支持 [ES6 中的模板字符串]。
 
 ## 空值（Void）
 
@@ -95,3 +95,8 @@ let unusable: void = undefined;
 
 - [Handbook - Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html)
 - [中文文档 - 基础类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)
+- [ES6 中的二进制和八进制表示法]
+- [ES6 中的模板字符串]
+
+[ES6 中的二进制和八进制表示法]: http://es6.ruanyifeng.com/#docs/number#二进制和八进制表示法
+[ES6 中的模板字符串]: http://es6.ruanyifeng.com/#docs/string#模板字符串

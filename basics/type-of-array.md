@@ -79,11 +79,16 @@ function sum() {
 }
 ```
 
-> Tip: 一般我们使用 `Array.prototype.slice.call(argumants)` 或 `[].slice.call(argumants)` 来将一个类数组转化为数组。ES6 提供了 `Array.from` 方法，也可以将类数组转化为数组。在 TypsScript 中使用 `Array.from` 是没有问题的。关于 `Array.from`，可以参考[ES6 中的 Array.from](http://es6.ruanyifeng.com/#docs/array#Array-from)。
+> Tip: 一般我们使用 `Array.prototype.slice.call(argumants)` 或 `[].slice.call(argumants)` 来将一个类数组转化为数组。ES6 中可以使用[Array.from][ES6 中的 Array.from] 或者 [rest 参数][ES6 中的 rest 参数]实现类似功能。
 
 ## Links
 
-- [Handbook - Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html#array)
-- [Handbook - Interfaces](http://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types)
-- [中文文档 - 基础类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#数组)
-- [中文文档 - 接口](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#数组类型)
+- [Handbook - Basic Types # Array](http://www.typescriptlang.org/docs/handbook/basic-types.html#array)
+- [Handbook - Interfaces # Indexable Types](http://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types)
+- [中文文档 - 基础类型 # 数组](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#数组)
+- [中文文档 - 接口 # 数组类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#数组类型)
+- [ES6 中的 Array.from]
+- [ES6 中的 rest 参数]
+
+[ES6 中的 Array.from]: http://es6.ruanyifeng.com/#docs/array#Array-from
+[ES6 中的 rest 参数]: http://es6.ruanyifeng.com/#docs/function#rest参数

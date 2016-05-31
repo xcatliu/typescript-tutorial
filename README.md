@@ -42,7 +42,7 @@
 ## 相关资料
 
 - [官方教程][Official Documentation]
-- [中文翻译](https://zhongsp.gitbooks.io/typescript-handbook/content/)
+- [中文文档](https://zhongsp.gitbooks.io/typescript-handbook/content/)
 - [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/content/)
 - [ECMAScript 6入门](http://es6.ruanyifeng.com/)
 - [JavaScript powered by TypeScript](http://www.jianshu.com/p/7d3e333683fd)
