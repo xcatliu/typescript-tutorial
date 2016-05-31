@@ -63,10 +63,10 @@ var infinityNumber = Infinity;
 ## 字符串（String）
 
 ```ts
-let myName: string = 'bob';
-let myAge: number = 13;
+let myName: string = 'xcatliu';
+let myAge: number = 25;
 
-// Template string
+// 模板字符串
 let sentence: string = `Hello, my name is ${myName}.
 I'll be ${myAge + 1} years old next month.`;
 ```
@@ -78,8 +78,8 @@ I'll be ${myAge + 1} years old next month.`;
 在 TypeScript 中，`null` 和 `undefined` 没有做区分，统一为空值，常用于函数返回值：
 
 ```ts
-function warnUser(): void {
-    alert('This is my warning message');
+function alertName(): void {
+  alert('My name is xcatliu');
 }
 ```
 
@@ -93,5 +93,5 @@ let unusable: void = undefined;
 
 ## Links
 
-- [英文文档](http://www.typescriptlang.org/docs/handbook/basic-types.html)
-- [中文文档](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)
+- [Handbook - Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html)
+- [中文文档 - 基础类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)

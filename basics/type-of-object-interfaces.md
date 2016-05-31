@@ -26,6 +26,8 @@ let xcatliu: Person = {
 
 上面的例子中，我们定义了一个接口 `Person`，接着定义了一个变量 `xcatliu`，它的类型是 `Person`。这样，我们就约束了 `xcatliu` 的形状必须和接口 `Person` 一致。
 
+> Tip: 接口的定义一般首字母大写。
+
 如果定义的变量比接口少了一些属性会怎么样呢？
 
 ```ts
@@ -232,8 +234,8 @@ let xcatliu: Person = {
 
 ## Links
 
-- [英文文档](http://www.typescriptlang.org/docs/handbook/interfaces.html)
-- [中文文档](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html)
+- [Handbook - Interfaces](http://www.typescriptlang.org/docs/handbook/interfaces.html)
+- [中文文档 - 接口](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html)
 - [java提高篇(五)——抽象类与接口]
 
 [java提高篇(五)——抽象类与接口]: http://www.cnblogs.com/chenssy/p/3376708.html
