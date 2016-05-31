@@ -1,12 +1,11 @@
 # Summary
 
 - [前言](README.md)
-- 简介（未完成）
-  - TypeScript 是什么（未完成）
+- [简介](introduction/README.md)
+  - [什么是 TypeScript](introduction/what-is-typescript.md)
   - 安装 TypeScript（未完成）
   - Helo World（未完成）
-  - Examples（未完成）
-- 基础（未完成）
+- [基础](basics/README.md)
   - [基本类型](basics/basic-types.md)
   - [一些基本概念](basics/basic-concepts.md)
   - [对象的类型——接口](basics/type-of-object-interfaces.md)

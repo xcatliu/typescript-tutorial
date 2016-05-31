@@ -62,22 +62,6 @@ let xcatliu: Person = {
 //   Object literal may only specify known properties, and 'github' does not exist in type 'Person'.
 ```
 
-```ts
-interface Person {
-  name: string;
-  age: number;
-}
-
-let xcatliu: Person = {
-  name: 'Xcat Liu',
-  age: 25,
-};
-
-xcatliu.github = 'https://github.com/xcatliu';
-
-// index.ts(11,9): error TS2339: Property 'github' does not exist on type 'Person'.
-```
-
 赋值的时候，变量的形状必须和接口的形状保持一致。
 
 ## 可选属性
