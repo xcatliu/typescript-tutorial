@@ -22,7 +22,7 @@ let createdByNewBoolean1: boolean = new Boolean(1);
 // 后面约定，未强调编译错误的代码片段，默认为编译通过
 ```
 
-事实上 `new Boolean()` 返回的是一个 `Boolean 对象`：
+事实上 `new Boolean()` 返回的是一个 `Boolean` 对象：
 
 ```ts
 let createdByNewBoolean2: Boolean = new Boolean(1);

@@ -174,7 +174,7 @@ let a = [];
 push(a, 1, 2, 3);
 ```
 
-事实上，`rest` 是一个数组。所以我们用数组的类型来定义它：
+事实上，`items` 是一个数组。所以我们用数组的类型来定义它：
 
 ```ts
 function push(array: any[], ...items: any[]) {

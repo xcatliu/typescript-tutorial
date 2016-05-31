@@ -9,6 +9,7 @@
 - 基础（未完成）
   - [基本类型](basics/basic-types.md)
   - [任意值](basics/any.md)
+  - [类型推论（未完成）](basics/type-inference.md)
   - [对象的类型——接口](basics/type-of-object-interfaces.md)
   - [数组的类型](basics/type-of-array.md)
   - [函数的类型](basics/type-of-function.md)

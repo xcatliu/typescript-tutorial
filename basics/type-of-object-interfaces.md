@@ -80,22 +80,9 @@ xcatliu.github = 'https://github.com/xcatliu';
 
 赋值的时候，变量的形状必须和接口的形状保持一致。
 
-## 可选的属性
+## 可选属性
 
 有时我们希望不要完全匹配一个形状，那么可以用可选属性：
-
-```ts
-interface Person {
-  name: string;
-  age?: number;
-}
-
-let xcatliu: Person = {
-};
-
-// index.ts(6,5): error TS2322: Type '{}' is not assignable to type 'Person'.
-//   Property 'name' is missing in type '{}'.
-```
 
 ```ts
 interface Person {
@@ -140,24 +127,9 @@ let xcatliu: Person = {
 //   Object literal may only specify known properties, and 'github' does not exist in type 'Person'
 ```
 
-```ts
-interface Person {
-  name: string;
-  age?: number;
-}
+由此可见，即使有可选属性，也不可以添加未定义的属性。
 
-let xcatliu: Person = {
-  name: 'Xcat Liu',
-  github: 'https://github.com/xcatliu',
-};
-
-// index.ts(8,3): error TS2322: Type '{ name: string; github: string; }' is not assignable to type 'Person'.
-//   Object literal may only specify known properties, and 'github' does not exist in type 'Person'.
-```
-
-即使有可选属性，也不可以添加未定义的属性。
-
-## 任意属性的接口
+## 任意属性
 
 有时候我们希望一个接口允许有任意的属性，可以使用如下方式：
 
@@ -170,20 +142,6 @@ interface Person {
 
 let xcatliu: Person = {
   name: 'Xcat Liu',
-  github: 'https://github.com/xcatliu',
-};
-```
-
-```ts
-interface Person {
-  name: string;
-  age?: number;
-  [propName: string]: any;
-}
-
-let xcatliu: Person = {
-  name: 'Xcat Liu',
-  age: 25,
   github: 'https://github.com/xcatliu',
 };
 ```

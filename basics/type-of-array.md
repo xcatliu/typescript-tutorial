@@ -52,7 +52,7 @@ let fibonacci: NumberArray = [1, 1, 2, 3, 5];
 
 ## any 在数组中的应用
 
-另一个比较常见的做法是，用 any 表示数组中允许出现任意类型：
+另一个比较常见的做法是，用 `any` 表示数组中允许出现任意类型：
 
 ```ts
 let list: any[] = ['xcatliu', 25, { github: 'https://github.com/xcatliu' }];
@@ -79,7 +79,7 @@ function sum() {
 }
 ```
 
-> Tip: 一般我们使用 `Array.prototype.slice.call(argumants)` 或 `[].slice.call(argumants)` 来将一个类数组转化为数组。ES6 中可以使用[Array.from][ES6 中的 Array.from] 或者 [rest 参数][ES6 中的 rest 参数]实现类似功能。
+> Tip: 一般我们使用 `Array.prototype.slice.call(argumants)` 或 `[].slice.call(argumants)` 来将一个类数组转化为数组。ES6 中可以使用 [Array.from][ES6 中的 Array.from] 或者 [rest 参数][ES6 中的 rest 参数]实现类似功能。
 
 ## Links
 
