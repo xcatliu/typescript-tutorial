@@ -25,7 +25,7 @@ myFavoriteNumber = 7;
 `any` 常用于以下场景，将在后面的章节中详细介绍：
 
 - [对象中的可选属性](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/basics/type-of-object-interfaces.html#可选的属性)
-- [any 在数组中的应用]
+- [any 在数组中的应用](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/basics/type-of-array.html#any-在数组中的应用)
 
 ## Links
 
