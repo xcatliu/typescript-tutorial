@@ -52,7 +52,7 @@ let fibonacci: NumberArray = [1, 1, 2, 3, 5];
 
 ## any 在数组中的应用
 
-另一个比较常见的做法是，用 `any` 表示数组中允许出现任意类型：
+一个比较常见的做法是，用 `any` 表示数组中允许出现任意类型：
 
 ```ts
 let list: any[] = ['xcatliu', 25, { github: 'https://github.com/xcatliu' }];
