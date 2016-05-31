@@ -1,3 +1,2 @@
-function sum() {
-    var args = arguments;
-}
+var a = 4;
+a.toFixed();

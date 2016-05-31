@@ -1,3 +1,2 @@
-function sum() {
-  let args: IArguments = arguments;
-}
+let a: number = 4;
+a.toFixed();
