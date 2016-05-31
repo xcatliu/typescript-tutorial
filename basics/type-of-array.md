@@ -85,8 +85,8 @@ function sum() {
 
 - [Handbook - Basic Types # Array](http://www.typescriptlang.org/docs/handbook/basic-types.html#array)
 - [Handbook - Interfaces # Indexable Types](http://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types)
-- [中文文档 - 基础类型 # 数组](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#数组)
-- [中文文档 - 接口 # 数组类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#数组类型)
+- [中文手册 - 基础类型 # 数组](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#数组)
+- [中文手册 - 接口 # 数组类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#数组类型)
 - [ES6 中的 Array.from]
 - [ES6 中的 rest 参数]
 

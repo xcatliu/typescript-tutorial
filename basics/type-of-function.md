@@ -175,8 +175,8 @@ push(a, 1, 2, 3);
 
 - [Handbook - Functions](http://www.typescriptlang.org/docs/handbook/functions.html)
 - [Handbook - Functions # Function Types](http://www.typescriptlang.org/docs/handbook/interfaces.html#function-types)
-- [中文文档 - 函数](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Functions.html)
-- [中文文档 - 接口 # 函数类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#函数类型)
+- [中文手册 - 函数](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Functions.html)
+- [中文手册 - 接口 # 函数类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#函数类型)
 - [JS 函数式编程指南](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
 - [ES6 中的箭头函数]
 - [ES6 中函数参数的默认值]

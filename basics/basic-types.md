@@ -94,7 +94,7 @@ let unusable: void = undefined;
 ## Links
 
 - [Handbook - Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html)
-- [中文文档 - 基础类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)
+- [中文手册 - 基础类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)
 - [ES6 中的二进制和八进制表示法]
 - [ES6 中的模板字符串]
 

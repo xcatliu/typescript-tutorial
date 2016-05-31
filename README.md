@@ -55,5 +55,5 @@ TypeScript 虽然有[官方手册]及其[中文版][中文手册]，但是它每
 - [Typings](https://github.com/typings/typings)
 
 [TypeScript]: http://www.typescriptlang.org/
-[官方教程]: http://www.typescriptlang.org/docs/tutorial.html
+[官方手册]: http://www.typescriptlang.org/docs/tutorial.html
 [中文手册]: https://zhongsp.gitbooks.io/typescript-handbook/content/

@@ -177,7 +177,7 @@ let xcatliu: Person = {
 ## Links
 
 - [Handbook - Interfaces](http://www.typescriptlang.org/docs/handbook/interfaces.html)
-- [中文文档 - 接口](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html)
+- [中文手册 - 接口](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html)
 - [java提高篇(五)——抽象类与接口]
 
 [java提高篇(五)——抽象类与接口]: http://www.cnblogs.com/chenssy/p/3376708.html

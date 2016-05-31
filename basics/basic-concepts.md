@@ -67,5 +67,5 @@ myName = 7;
 
 - [Handbook - Basic Types # Any](http://www.typescriptlang.org/docs/handbook/basic-types.html#any)
 - [Handbook - Type Inference](http://www.typescriptlang.org/docs/handbook/type-inference.html)
-- [中文文档 - 基础类型 # 任意值](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#任意值)
-- [中文文档 - 类型推论](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Type%20Inference.html)
+- [中文手册 - 基础类型 # 任意值](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#任意值)
+- [中文手册 - 类型推论](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Type%20Inference.html)
