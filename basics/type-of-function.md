@@ -56,25 +56,7 @@ let mySum = function (x: number, y: number): number {
 };
 ```
 
-这是可以通过编译的，不过事实上，上面的代码等价于：
-
-```ts
-let mySum;
-mySum = function (x: number, y: number): number {
-  return x + y;
-};
-```
-
-其中 `mySum` 的类型是通过赋值操作推断出来的。如果需要我们手动给 `mySum` 添加类型，则应该是这样：
-
-```ts
-let mySum: (x: number, y: number) => number;
-mySum = function (x: number, y: number): number {
-  return x + y;
-};
-```
-
-也等价于：
+这是可以通过编译的，不过事实上，上面的代码只对等号右侧的匿名函数进行了类型定义，而等号左边的 `mySum`，是通过赋值操作进行类型推论而推断出来的。如果需要我们手动给 `mySum` 添加类型，则应该是这样：
 
 ```ts
 let mySum: (x: number, y: number) => number = function (x: number, y: number): number {
