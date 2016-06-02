@@ -10,13 +10,6 @@
 let xcatliu: [string, number] = ['Xcat Liu', 25];
 ```
 
-当然也可以先定义类型，后赋值：
-
-```ts
-let xcatliu: [string, number];
-xcatliu = ['Xcat Liu', 25];
-```
-
 当赋值或访问一个已知索引的元素时，会得到正确的类型：
 
 ```ts
@@ -28,7 +21,7 @@ xcatliu[0].slice(1);
 xcatliu[1].toFixed(2);
 ```
 
-即使只赋值其中一项也可以：
+只赋值其中一项也可以：
 
 ```ts
 let xcatliu: [string, number];
@@ -36,6 +29,11 @@ xcatliu[0] = 'Xcat Liu';
 ```
 
 但是当直接对元组类型的变量进行初始化或者赋值的时候，需要提供所有元组类型中指定的项。
+
+```ts
+let xcatliu: [string, number];
+xcatliu = ['Xcat Liu', 25];
+```
 
 ```ts
 let xcatliu: [string, number] = ['Xcat Liu'];
@@ -48,6 +46,7 @@ xcatliu[1] = 25;
 ```ts
 let xcatliu: [string, number];
 xcatliu = ['Xcat Liu'];
+xcatliu[1] = 25;
 
 // index.ts(2,1): error TS2322: Type '[string]' is not assignable to type '[string, number]'.
 //   Property '1' is missing in type '[string]'.
@@ -55,7 +54,7 @@ xcatliu = ['Xcat Liu'];
 
 ## 越界的元素
 
-越界的元素的类型会被限制为元组中每个类型的联合类型：
+当赋值给越界的元素时，它类型会被限制为元组中每个类型的联合类型：
 
 ```ts
 let xcatliu: [string, number];
@@ -72,7 +71,7 @@ xcatliu.push(true);
 //   Type 'boolean' is not assignable to type 'number'.
 ```
 
-当访问一个越界的元素，会识别为元组中每个类型的联合类型：
+当访问一个越界的元素，也会识别为元组中每个类型的联合类型：
 
 ```ts
 let xcatliu: [string, number];
