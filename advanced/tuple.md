@@ -45,9 +45,9 @@ xcatliu.push(true);
 let xcatliu: [string, number];
 xcatliu = ['Xcat Liu', 25, 'http://xcatliu.com/'];
 
-console.log(xcatliu[3].split(':'));
+console.log(xcatliu[3].slice(1));
 
-// index.ts(4,24): error TS2339: Property 'split' does not exist on type 'string | number'.
+// index.ts(4,24): error TS2339: Property 'slice' does not exist on type 'string | number'.
 ```
 
 > Tip: 前面提到过，[如果一个值是联合类型，我们只能访问此联合类型的所有类型里共有的成员。](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/basics/basic-types.html#联合类型（Union+Types）)
