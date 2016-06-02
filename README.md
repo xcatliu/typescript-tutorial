@@ -8,13 +8,17 @@
 - [GitHub 地址][GitHub]
 - 作者：https://github.com/xcatliu/
 
-本书是作者在学习 [TypeScript] 的时候写的学习笔记，随着对 TypeScript 理解的加深和 TypeScript 社区的发展，本书也会做出相应的更新，欢迎大家 [Star 收藏][GitHub]。
+本书是作者在学习 [TypeScript] 的时候写的学习笔记。
+
+随着对 TypeScript 理解的加深和 TypeScript 社区的发展，本书也会做出相应的更新，欢迎大家 [Star 收藏][GitHub]。
+
+若在阅读过程中发现疏漏，或者有任何建议，可以[提交 issue](https://github.com/xcatliu/from-javascript-to-typescript/issues/new) 向作者反馈，也欢迎直接提交 pull-request 参与贡献！
+
+## 为什么要写本书
 
 TypeScript 虽然有[官方手册]及其[中文版][中文手册]，但是它每一章都希望能详尽的描述一个概念，导致前面的章节就会包含很多后面才会学习到的内容。如果是初学者，可能需要阅读多次才能理解。所以它更适合用来查阅，而不是学习。
 
 与[官方手册]不同，本书着重于从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript，希望能给大家一些帮助和启示。
-
-若在阅读过程中发现疏漏，或者有任何建议，可以[提交 issue](https://github.com/xcatliu/from-javascript-to-typescript/issues/new) 向作者反馈，也欢迎直接提交 pull-request 一起贡献！
 
 ## 关于 TypeScript
 
