@@ -20,6 +20,8 @@ let fibonacci: number[] = [1, '1', 2, 3, 5];
 //     Type 'string' is not assignable to type 'number'.
 ```
 
+此时 `[1, '1', 2, 3, 5]` 的类型被推断为 `(number | string)[]`，这是联合类型和数组的结合。
+
 ```ts
 let fibonacci: number[] = [1, 1, 2, 3, 5];
 fibonacci.push('8');
@@ -55,7 +57,7 @@ let fibonacci: NumberArray = [1, 1, 2, 3, 5];
 一个比较常见的做法是，用 `any` 表示数组中允许出现任意类型：
 
 ```ts
-let list: any[] = ['xcatliu', 25, { github: 'https://github.com/xcatliu' }];
+let list: any[] = ['Xcat Liu', 25, { website: 'http://xcatliu.com' }];
 ```
 
 ## 类数组

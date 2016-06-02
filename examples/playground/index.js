@@ -1,3 +1,3 @@
-var x;
-x = ['xcatliu', 25];
-x[0] = 'a';
+var xcatliu;
+xcatliu = ['Xcat Liu', 25, 'http://xcatliu.com/'];
+console.log(xcatliu[3].split(':'));

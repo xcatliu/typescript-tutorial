@@ -1,3 +1,4 @@
-let x: [string, number];
-x = ['xcatliu', 25];
-x[0] = 'a';
+let xcatliu: [string, number];
+xcatliu = ['Xcat Liu', 25, 'http://xcatliu.com/'];
+
+console.log(xcatliu[3].split(':'));

@@ -63,7 +63,7 @@ var infinityNumber = Infinity;
 ## 字符串（String）
 
 ```ts
-let myName: string = 'xcatliu';
+let myName: string = 'Xcat Liu';
 let myAge: number = 25;
 
 // 模板字符串

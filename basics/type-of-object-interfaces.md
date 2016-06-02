@@ -55,7 +55,7 @@ interface Person {
 let xcatliu: Person = {
   name: 'Xcat Liu',
   age: 25,
-  github: 'https://github.com/xcatliu',
+  website: 'http://xcatliu.com',
 };
 
 // index.ts(9,3): error TS2322: Type '{ name: string; age: number; github: string; }' is not assignable to type 'Person'.
@@ -104,7 +104,7 @@ interface Person {
 let xcatliu: Person = {
   name: 'Xcat Liu',
   age: 25,
-  github: 'https://github.com/xcatliu',
+  website: 'http://xcatliu.com',
 };
 
 // index.ts(9,3): error TS2322: Type '{ name: string; age: number; github: string; }' is not assignable to type 'Person'.
@@ -126,7 +126,7 @@ interface Person {
 
 let xcatliu: Person = {
   name: 'Xcat Liu',
-  github: 'https://github.com/xcatliu',
+  website: 'http://xcatliu.com',
 };
 ```
 
@@ -144,7 +144,7 @@ interface Person {
 let xcatliu: Person = {
   name: 'Xcat Liu',
   age: 25,
-  github: 'https://github.com/xcatliu',
+  website: 'http://xcatliu.com',
 };
 
 // index.ts(3,3): error TS2411: Property 'age' of type 'number' is not assignable to string index type 'string'.
@@ -164,7 +164,7 @@ interface Person {
 let xcatliu: Person = {
   name: 'Xcat Liu',
   age: 25,
-  github: 'https://github.com/xcatliu',
+  website: 'http://xcatliu.com',
 };
 
 // index.ts(2,3): error TS2411: Property 'name' of type 'string' is not assignable to string index type 'number'.
@@ -173,6 +173,8 @@ let xcatliu: Person = {
 //     Type 'string | number' is not assignable to type 'number'.
 //       Type 'string' is not assignable to type 'number'.
 ```
+
+此时 `{ name: 'Xcat Liu', age: 25, website: 'http://xcatliu.com' }` 的类型被推断成了 `{ [x: string]: string | number; name: string; age: number; github: string; }`，这是联合类型和接口的结合。
 
 ## Links
 
