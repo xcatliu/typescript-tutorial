@@ -5,10 +5,10 @@
 ## 关于本书
 
 - [GitBook 在线阅读](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/)
-- [GitHub 地址](https://github.com/xcatliu/from-javascript-to-typescript)
+- [GitHub 地址][GitHub]
 - 作者：https://github.com/xcatliu/
 
-本书是作者在学习 [TypeScript] 的时候做的学习笔记。
+本书是作者在学习 [TypeScript] 的时候做的学习笔记，随着理解的加深和 TypeScript 的发展，本书也会做出相应的更新，欢迎大家 [Star 收藏][GitHub]。
 
 TypeScript 虽然有[官方手册]及其[中文版][中文手册]，但是它每一章都希望能详尽的描述一个概念，导致前面的章节就会包含很多后面才会学习到的内容。如果是初学者，可能需要阅读多次才能理解。所以它更适合用来查阅，而不是学习。
 
@@ -54,6 +54,7 @@ TypeScript 虽然有[官方手册]及其[中文版][中文手册]，但是它每
 - [现在 TypeScript 生态系统如何？](http://www.zhihu.com/question/37222407)
 - [Typings](https://github.com/typings/typings)
 
+[GitHub]: https://github.com/xcatliu/from-javascript-to-typescript
 [TypeScript]: http://www.typescriptlang.org/
 [官方手册]: http://www.typescriptlang.org/docs/handbook/basic-types.html
 [中文手册]: https://zhongsp.gitbooks.io/typescript-handbook/content/
