@@ -1,3 +1,3 @@
-let myName;
-myName = 'xcatliu';
-myName = 7;
+let x: [string, number];
+x = ['xcatliu', 25];
+x[0] = 'a';

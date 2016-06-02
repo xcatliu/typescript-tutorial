@@ -12,5 +12,7 @@
   - [数组的类型](basics/type-of-array.md)
   - [函数的类型](basics/type-of-function.md)
 - 进阶（未完成）
+  - [元组（Tuple）](advanced/tuple.md)
+  - [枚举（Enum）](advanced/enum.md)
 - 实践（未完成）
 - 学习资料（未完成）

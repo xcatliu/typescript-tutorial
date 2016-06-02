@@ -1,3 +1,3 @@
-var myName;
-myName = 'xcatliu';
-myName = 7;
+var x;
+x = ['xcatliu', 25];
+x[0] = 'a';
