@@ -17,6 +17,7 @@ xcatliu = ['Xcat Liu', 25];
 let xcatliu: [string, number];
 xcatliu = ['Xcat Liu', 25, 'http://xcatliu.com/'];
 
+xcatliu[1] = 26;
 console.log(xcatliu[0].split(' '));
 console.log(xcatliu[1].toFixed(2));
 ```
@@ -45,7 +46,7 @@ xcatliu.push(true);
 let xcatliu: [string, number];
 xcatliu = ['Xcat Liu', 25, 'http://xcatliu.com/'];
 
-console.log(xcatliu[3].slice(1));
+console.log(xcatliu[2].slice(1));
 
 // index.ts(4,24): error TS2339: Property 'slice' does not exist on type 'string | number'.
 ```
