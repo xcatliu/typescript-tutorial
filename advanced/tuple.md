@@ -21,7 +21,7 @@ xcatliu[0].slice(1);
 xcatliu[1].toFixed(2);
 ```
 
-只赋值其中一项也可以：
+即使只赋值其中一项也可以：
 
 ```ts
 let xcatliu: [string, number];
@@ -37,7 +37,6 @@ xcatliu = ['Xcat Liu', 25];
 
 ```ts
 let xcatliu: [string, number] = ['Xcat Liu'];
-xcatliu[1] = 25;
 
 // index.ts(1,5): error TS2322: Type '[string]' is not assignable to type '[string, number]'.
 //   Property '1' is missing in type '[string]'.
