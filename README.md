@@ -8,7 +8,7 @@
 - [GitHub 地址][GitHub]
 - 作者：https://github.com/xcatliu/
 
-本书是作者在学习 [TypeScript] 的时候写的学习笔记，随着理解的加深和 TypeScript 的发展，本书也会做出相应的更新，欢迎大家 [Star 收藏][GitHub]。
+本书是作者在学习 [TypeScript] 的时候写的学习笔记，随着对 TypeScript 理解的加深和 TypeScript 社区的发展，本书也会做出相应的更新，欢迎大家 [Star 收藏][GitHub]。
 
 TypeScript 虽然有[官方手册]及其[中文版][中文手册]，但是它每一章都希望能详尽的描述一个概念，导致前面的章节就会包含很多后面才会学习到的内容。如果是初学者，可能需要阅读多次才能理解。所以它更适合用来查阅，而不是学习。
 
