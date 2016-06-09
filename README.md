@@ -54,7 +54,6 @@ TypeScript 虽然有[官方手册]及其[中文版][中文手册]，但是它每
 - [中文手册]
 - [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/content/)
 - [ECMAScript 6入门](http://es6.ruanyifeng.com/)
-- [JavaScript powered by TypeScript](http://www.jianshu.com/p/7d3e333683fd)
 - [现在 TypeScript 生态系统如何？](http://www.zhihu.com/question/37222407)
 - [Typings](https://github.com/typings/typings)
 
