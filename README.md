@@ -16,9 +16,9 @@
 
 ## 为什么要写本书
 
-TypeScript 虽然有[官方手册]及其[中文版][中文手册]，但是它每一章都希望能详尽的描述一个概念，导致前面的章节就会包含很多后面才会学习到的内容。如果是初学者，可能需要阅读多次才能理解。所以它更适合用来查阅，而不是学习。
+TypeScript 虽然有[官方手册][Handbook]及其[中文版][中文手册]，但是它每一章都希望能详尽的描述一个概念，导致前面的章节就会包含很多后面才会学习到的内容。如果是初学者，可能需要阅读多次才能理解。所以它更适合用来查阅，而不是学习。
 
-与[官方手册]不同，本书着重于从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript，希望能给大家一些帮助和启示。
+与官方手册不同，本书着重于从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript，希望能给大家一些帮助和启示。
 
 ## 关于 TypeScript
 
@@ -50,7 +50,7 @@ TypeScript 虽然有[官方手册]及其[中文版][中文手册]，但是它每
 ## 相关资料
 
 - [TypeScript 官网][TypeScript]
-- [官方手册]
+- [Handbook]
 - [中文手册]
 - [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/content/)
 - [ECMAScript 6入门](http://es6.ruanyifeng.com/)
@@ -59,5 +59,5 @@ TypeScript 虽然有[官方手册]及其[中文版][中文手册]，但是它每
 
 [GitHub]: https://github.com/xcatliu/from-javascript-to-typescript
 [TypeScript]: http://www.typescriptlang.org/
-[官方手册]: http://www.typescriptlang.org/docs/handbook/basic-types.html
+[Handbook]: http://www.typescriptlang.org/docs/handbook/basic-types.html
 [中文手册]: https://zhongsp.gitbooks.io/typescript-handbook/content/

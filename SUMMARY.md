@@ -6,7 +6,7 @@
   - 安装 TypeScript（未完成）
   - Helo World（未完成）
 - [基础](basics/README.md)
-  - [基本类型](basics/basic-types.md)
+  - [基本类型](basics/primitive-types.md)
   - [一些基本概念](basics/basic-concepts.md)
   - [对象的类型——接口](basics/type-of-object-interfaces.md)
   - [数组的类型](basics/type-of-array.md)

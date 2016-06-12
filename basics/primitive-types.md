@@ -1,8 +1,10 @@
 # 基本类型
 
-> TypeScript 提供了一系列数据结构，这是 TypeScript 的核心内容。
+> TypeScript 提供了一系列数据结构，这是它的核心内容。
 
-JavaScript 一共有六种基本类型：布尔值、数值、字符串、`null`、`undefined`、对象，其中对象类型的定义较复杂，后面再详细介绍。
+JavaScript 的类型分为两种：基本类型（Primitive Types）和对象类型（Object Types）。
+
+基本类型包括：布尔值、数值、字符串、`null`、`undefined`。对象类型的较复杂，后面再详细介绍。
 
 ## 布尔值（Boolean）
 
