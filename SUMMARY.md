@@ -7,10 +7,14 @@
   - Helo World（未完成）
 - [基础](basics/README.md)
   - [基本类型](basics/primitive-types.md)
-  - [一些基本概念](basics/basic-concepts.md)
+  - [任意值（Any）](basics/any.md)
+  - [类型推论](basics/type-inference.md)
+  - [联合类型（Union Types）](basics/union-types.md)
   - [对象的类型——接口](basics/type-of-object-interfaces.md)
   - [数组的类型](basics/type-of-array.md)
   - [函数的类型](basics/type-of-function.md)
+  - [声明文件（.d.ts）](basics/declaration-files.md)
+  - [内置对象](basics/built-in-objects.md)
 - 进阶（未完成）
   - [元组（Tuple）](advanced/tuple.md)
   - [枚举（Enum）](advanced/enum.md)

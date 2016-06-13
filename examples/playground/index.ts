@@ -1,3 +1,4 @@
-let xcatliu: [string, number];
-xcatliu = ['Xcat Liu'];
-xcatliu[1] = 25;
+let anyThing: any = 'Xcat Liu';
+anyThing.setName('Jerry Lee');
+anyThing.setName('Jerry Lee').sayHello();
+anyThing.myName.setFirstName('Cat');
