@@ -1,4 +1,3 @@
-let anyThing: any = 'Xcat Liu';
-anyThing.setName('Jerry Lee');
-anyThing.setName('Jerry Lee').sayHello();
-anyThing.myName.setFirstName('Cat');
+/// <reference path="./jQuery.d.ts" />
+
+jQuery('#foo');
