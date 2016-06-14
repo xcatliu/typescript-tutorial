@@ -47,3 +47,18 @@ jQuery('#foo');
 ```
 
 这就是声明文件的用法。
+
+## 第三方声明文件
+
+当然，jQuery 的声明文件不需要我们定义了，已经有人帮我们定义好了：[jquery.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/jquery/jquery.d.ts)。
+
+我们可以下载下来使用，也可以使用 `typing` 方便的获取任何第三方库的声明文件。
+
+关于 `typing` 的使用方法，可以参考《typing》一章。
+
+## Links
+
+- [Handbook - Writing Declaration Files](http://www.typescriptlang.org/docs/handbook/writing-declaration-files.html)
+- [中文手册 - 书写 d.ts 文件](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Writing%20Definition%20Files.html)
+- [Handbook - Triple-Slash Directives](http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html)
+- [中文手册 - 三斜线指令](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Triple-Slash%20Directives.html)
