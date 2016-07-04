@@ -62,7 +62,7 @@ let xcatliu: Person = {
 //   Object literal may only specify known properties, and 'github' does not exist in type 'Person'.
 ```
 
-赋值的时候，变量的形状必须和接口的形状保持一致。
+可见，赋值的时候，变量的形状必须和接口的形状保持一致。
 
 ## 可选属性
 
@@ -154,27 +154,9 @@ let xcatliu: Person = {
 //       Type 'number' is not assignable to type 'string'.
 ```
 
-```ts
-interface Person {
-  name: string;
-  age?: number;
-  [propName: string]: number;
-}
+上面的例子中，任意属性的值允许是 `string`，但是可选属性 `age` 的值却是 `number`，`number` 不是 `string` 的子属性，所以报错了。
 
-let xcatliu: Person = {
-  name: 'Xcat Liu',
-  age: 25,
-  website: 'http://xcatliu.com',
-};
-
-// index.ts(2,3): error TS2411: Property 'name' of type 'string' is not assignable to string index type 'number'.
-// index.ts(7,5): error TS2322: Type '{ [x: string]: string | number; name: string; age: number; github: string; }' is not assignable to type 'Person'.
-//   Index signatures are incompatible.
-//     Type 'string | number' is not assignable to type 'number'.
-//       Type 'string' is not assignable to type 'number'.
-```
-
-此时 `{ name: 'Xcat Liu', age: 25, website: 'http://xcatliu.com' }` 的类型被推断成了 `{ [x: string]: string | number; name: string; age: number; github: string; }`，这是联合类型和接口的结合。
+另外，在报错信息中可以看出，此时 `{ name: 'Xcat Liu', age: 25, website: 'http://xcatliu.com' }` 的类型被推断成了 `{ [x: string]: string | number; name: string; age: number; github: string; }`，这是联合类型和接口的结合。
 
 ## Links
 

@@ -13,7 +13,7 @@ myFavoriteNumber = 7;
 // index.ts(2,1): error TS2322: Type 'number' is not assignable to type 'string'.
 ```
 
-但是如果是 `any` 类型，则允许被赋值为任意类型。
+但如果是 `any` 类型，则允许被赋值为任意类型。
 
 ```ts
 let myFavoriteNumber: any = 'seven';

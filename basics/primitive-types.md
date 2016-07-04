@@ -18,7 +18,7 @@ let isDone: boolean = false;
 注意，使用构造函数 `Boolean` 创造的对象不是布尔值：
 
 ```ts
-let createdByNewBoolean1: boolean = new Boolean(1);
+let createdByNewBoolean: boolean = new Boolean(1);
 
 // index.ts(1,5): error TS2322: Type 'Boolean' is not assignable to type 'boolean'.
 // 后面约定，未强调编译错误的代码片段，默认为编译通过
@@ -27,7 +27,7 @@ let createdByNewBoolean1: boolean = new Boolean(1);
 事实上 `new Boolean()` 返回的是一个 `Boolean` 对象：
 
 ```ts
-let createdByNewBoolean2: Boolean = new Boolean(1);
+let createdByNewBoolean: Boolean = new Boolean(1);
 ```
 
 直接使用 `Boolean` 也可以返回一个 `boolean` 类型：
@@ -85,7 +85,7 @@ function alertName(): void {
 }
 ```
 
-声明一个 `void` 类型的变量没有什么大用，因为你只能为它赋予 `undefined` 和 `null`：
+声明一个 `void` 类型的变量没有什么大用，因为你只能将它赋值为 `undefined` 和 `null`：
 
 ```ts
 let unusable: void = undefined;
