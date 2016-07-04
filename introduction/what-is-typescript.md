@@ -25,7 +25,7 @@
 ### TypeScript 非常包容
 
 - TypeScript 是 JavaScript 的超集，`.js` 文件可以直接重命名为 `.ts` 即可
-- 即使不显示的定义类型，也能够自动做出[类型推论](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/basics/type-inference.html)
+- 即使不显式的定义类型，也能够自动做出[类型推论](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/basics/type-inference.html)
 - 可以定义从简单到复杂的一切类型
 - 即使 TypeScript 编译报错，也可以生成 JavaScript 文件
 - 兼容第三方库，即使第三方库不是用 TypeScript 写的，也可以编写单独的类型文件供 TypeScript 读取
