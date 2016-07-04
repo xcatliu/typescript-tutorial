@@ -12,7 +12,7 @@
 enum Days {Sun, Mon, Tue, Wed, Thu, Fri, Sat};
 ```
 
-枚举成员会被赋值为从 0 开始递增的数字，同时也会对枚举值到枚举名进行反向映射：
+枚举成员会被赋值为从 `0` 开始递增的数字，同时也会对枚举值到枚举名进行反向映射：
 
 ```ts
 enum Days {Sun, Mon, Tue, Wed, Thu, Fri, Sat};
@@ -94,7 +94,7 @@ enum Days {Sun = 7, Mon, Tue, Wed, Thu, Fri, Sat = "S"};
 // index.ts(1,52): error TS2322: Type 'string' is not assignable to type 'Days'.
 ```
 
-当然，手动赋值的枚举项也可以为小数或负数，此时后续未手动赋值的项的递增步长任然为一：
+当然，手动赋值的枚举项也可以为小数或负数，此时后续未手动赋值的项的递增步长任为 `1`：
 
 ```ts
 enum Days {Sun = 7, Mon = 1.5, Tue, Wed, Thu, Fri, Sat};
@@ -151,5 +151,7 @@ TBD
 ## Links
 
 - [Handbook - Enums](http://www.typescriptlang.org/docs/handbook/enums.html)
-- [中文手册 - 枚举](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Enums.html)
+- [中文手册 - 枚举]
 - [C# enum](https://msdn.microsoft.com/zh-cn/library/sbbt4032.aspx)
+
+[中文手册 - 枚举]: https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Enums.html
