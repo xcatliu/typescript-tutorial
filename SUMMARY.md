@@ -13,6 +13,7 @@
   - [对象的类型——接口](basics/type-of-object-interfaces.md)
   - [数组的类型](basics/type-of-array.md)
   - [函数的类型](basics/type-of-function.md)
+  - [类的类型](basics/type-of-class.md)
   - [声明文件（.d.ts）](basics/declaration-files.md)
   - [内置对象](basics/built-in-objects.md)
 - 进阶（未完成）

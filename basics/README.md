@@ -9,5 +9,6 @@
 - [对象的类型——接口](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/basics/type-of-object-interfaces.html)
 - [数组的类型](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/basics/type-of-array.html)
 - [函数的类型](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/basics/type-of-function.html)
+- [类的类型](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/basics/type-of-class.html)
 - [声明文件（.d.ts）](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/basics/declaration-files.html)
 - [内置对象](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/basics/built-in-objects.md)

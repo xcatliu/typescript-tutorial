@@ -140,6 +140,14 @@ enum Color {Red = "red".length, Green, Blue};
 
 所有其它情况的枚举成员被当作是需要计算得出的值。
 
+## 常数枚举
+
+TBD
+
+## 外部枚举
+
+TBD
+
 ## Links
 
 - [Handbook - Enums](http://www.typescriptlang.org/docs/handbook/enums.html)
