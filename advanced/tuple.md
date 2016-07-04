@@ -83,11 +83,12 @@ console.log(xcatliu[2].slice(1));
 
 之前提到过，[如果一个值是联合类型，我们只能访问此联合类型的所有类型里共有的属性或方法。](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/basics/union-types.html#访问联合类型的属性或方法)
 
-> Tip: 元组的概念来源于 [C#] 和 [Python](http://www.tutorialspoint.com/python/python_tuples.htm)。区别是，C# 和 Python 中的元组都是只读的。
+> Tip: 元组的概念来源于 [C#][C# Tuple]。区别是，C# 中的元组是只读的。
 
 ## Links
 
 - [Handbook - Basic Types # Tuple](http://www.typescriptlang.org/docs/handbook/basic-types.html#tuple)
 - [中文手册 - 基础类型 # 元组 Tuple](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#元组-tuple)
+- [C# Tuple]
 
-[C#]: https://msdn.microsoft.com/en-us/library/system.tuple(v=vs.110).aspx
+[C# Tuple]: https://msdn.microsoft.com/en-us/library/system.tuple(v=vs.110).aspx
