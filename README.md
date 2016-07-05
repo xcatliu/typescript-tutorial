@@ -1,6 +1,6 @@
 # From JavaScript to TypeScript
 
-> 一本由 JavaScript 程序员撰写的 TypeScript 学习教程
+> 一本面向 JavaScript 程序员的 TypeScript 学习教程
 
 ## 关于本书
 
