@@ -1,6 +1,6 @@
 # 对象的类型——接口
 
-> 使用接口（Interfaces）来定义对象的类型。
+使用接口（Interfaces）来定义对象的类型。
 
 ## 什么是接口（Interfaces）
 

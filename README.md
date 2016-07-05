@@ -1,6 +1,6 @@
 # From JavaScript to TypeScript
 
-> 一本由 JavaScript 程序员撰写的 TypeScript 学习笔记
+> 一本由 JavaScript 程序员撰写的 TypeScript 学习教程
 
 ## 关于本书
 
@@ -8,7 +8,7 @@
 - [GitHub 地址][GitHub]
 - 作者：https://github.com/xcatliu/
 
-本书是作者在学习 [TypeScript] 的时候写的学习笔记。
+本书是作者在学习 [TypeScript] 后总结的学习教程。
 
 随着对 TypeScript 理解的加深和 TypeScript 社区的发展，本书也会做出相应的更新，欢迎大家 [Star 收藏][GitHub]。
 
@@ -16,7 +16,7 @@
 
 ## 为什么要写本书
 
-TypeScript 虽然有[官方手册][Handbook]及其[中文版][中文手册]，但是它每一章都希望能详尽的描述一个概念，导致前面的章节就会包含很多后面才会学习到的内容。如果是初学者，可能需要阅读多次才能理解。所以它更适合用来查阅，而不是学习。
+TypeScript 虽然有[官方手册][Handbook]及其[非官方中文版][中文手册]，但是它每一章都希望能详尽的描述一个概念，导致前面的章节就会包含很多后面才会学习到的内容，而有些本该一开始就了解的基础知识却在后面才会涉及。如果是初学者，可能需要阅读多次才能理解。所以它更适合用来查阅，而不是学习。
 
 与官方手册不同，本书着重于从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript，希望能给大家一些帮助和启示。
 
@@ -31,7 +31,7 @@ TypeScript 虽然有[官方手册][Handbook]及其[中文版][中文手册]，�
 本书适合以下人群
 
 - 熟悉 JavaScript，至少阅读过一遍[《JavaScript 高级程序设计》](https://book.douban.com/subject/10546125/)
-- 了解 ES6，推荐阅读[《ECMAScript 6 入门》](http://es6.ruanyifeng.com/)
+- 了解 ES6，推荐阅读[《ECMAScript 6 入门》]
 - 了解 Node.js，会用 npm 安装及使用一些工具
 - 想学习 TypeScript 或者想对 TypeScript 有更深的理解
 
@@ -53,7 +53,7 @@ TypeScript 虽然有[官方手册][Handbook]及其[中文版][中文手册]，�
 - [Handbook]
 - [中文手册]
 - [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/content/)
-- [ECMAScript 6入门](http://es6.ruanyifeng.com/)
+- [ECMAScript 6 入门]
 - [现在 TypeScript 生态系统如何？](http://www.zhihu.com/question/37222407)
 - [Typings](https://github.com/typings/typings)
 
@@ -61,3 +61,4 @@ TypeScript 虽然有[官方手册][Handbook]及其[中文版][中文手册]，�
 [TypeScript]: http://www.typescriptlang.org/
 [Handbook]: http://www.typescriptlang.org/docs/handbook/basic-types.html
 [中文手册]: https://zhongsp.gitbooks.io/typescript-handbook/content/
+[ECMAScript 6 入门]: http://es6.ruanyifeng.com/

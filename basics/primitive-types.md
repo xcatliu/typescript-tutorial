@@ -1,6 +1,6 @@
 # 基本类型
 
-> TypeScript 提供了一系列数据结构，这是它的核心内容。
+TypeScript 提供了一系列数据结构，这是它的核心内容。
 
 JavaScript 的类型分为两种：基本类型（Primitive Types）和对象类型（Object Types）。
 
