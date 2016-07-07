@@ -1,14 +1,13 @@
 language: node_js
 node_js:
 - 4
-
 sudo: false
-
 branches:
   only:
   - master
-
 before_install:
+- openssl aes-256-cbc -K $encrypted_a393b45713d8_key -iv $encrypted_a393b45713d8_iv
+  -in id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
@@ -16,10 +15,8 @@ before_install:
 - git config --global user.name 'xcatliu'
 - git config --global user.email 'xcatliu@gmail.com'
 - npm install --global gitbook-cli
-
 install:
 - gitbook install
-
 script:
 - gitbook build
-- ./bin/deploy-coding.sh
+- "./bin/deploy-coding.sh"
