@@ -18,5 +18,7 @@ before_install:
 install:
 - gitbook install
 script:
+- git remote add coding git@git.coding.net:xcatliu/from-javascript-to-typescript.git
+- git push coding master
 - gitbook build
 - bash ./bin/deploy-coding.sh

@@ -1,10 +1,13 @@
 # From JavaScript to TypeScript
 
+[![Build Status](https://travis-ci.org/xcatliu/from-javascript-to-typescript.svg?branch=master)](https://travis-ci.org/xcatliu/from-javascript-to-typescript)
+
 > 一本面向 JavaScript 程序员的 TypeScript 学习教程
 
 ## 关于本书
 
-- [GitBook 在线阅读](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/)
+- [在线阅读（国内）](http://xcatliu.coding.me/from-javascript-to-typescript/)
+- [在线阅读](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/)
 - [GitHub 地址][GitHub]
 - 作者：https://github.com/xcatliu/
 
@@ -62,4 +65,3 @@ TypeScript 虽然有[官方手册][Handbook]及其[非官方中文版][中文手
 [Handbook]: http://www.typescriptlang.org/docs/handbook/basic-types.html
 [中文手册]: https://zhongsp.gitbooks.io/typescript-handbook/content/
 [ECMAScript 6 入门]: http://es6.ruanyifeng.com/
-
