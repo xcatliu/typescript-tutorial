@@ -7,7 +7,7 @@ branches:
   - master
 before_install:
 - openssl aes-256-cbc -K $encrypted_a393b45713d8_key -iv $encrypted_a393b45713d8_iv
-  -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
