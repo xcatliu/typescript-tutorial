@@ -19,4 +19,4 @@ install:
 - gitbook install
 script:
 - gitbook build
-- "./bin/deploy-coding.sh"
+- ./bin/deploy-coding.sh
