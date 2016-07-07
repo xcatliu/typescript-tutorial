@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+- 4
+
+sudo: false
+
+branches:
+  only:
+  - master
+
+before_install:
+- chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
+- cp .travis/ssh_config ~/.ssh/config
+- git config --global user.name 'xcatliu'
+- git config --global user.email 'xcatliu@gmail.com'
+- npm install --global gitbook-cli
+
+install:
+- gitbook install
+
+script:
+- gitbook build
+- ./bin/deploy-coding.sh

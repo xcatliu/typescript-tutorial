@@ -7,7 +7,7 @@ cd coding-repo
 
 git checkout coding-pages
 
-rsync -a ../_book ./
+rsync -a ../_book/ ./
 
 git add -A
 git commit -m 'Update coding-pages'
