@@ -6,8 +6,6 @@
 
 在面向对象语言中，接口（Interfaces）是一个很重要的概念，它是对行为的抽象，而具体如何行动需要由类（classes）去实现（implements）。
 
-理解面向对象中的接口，需要对类、继承、抽象类等有相关的概念，感兴趣的朋友可以看看这篇博客：[java提高篇(五)——抽象类与接口]。
-
 TypeScript 中的接口是一个非常灵活的概念，除了可用于[对类的一部分行为进行抽象](../advanced/use-of-class.md#实现接口)以外，也常用于对「对象的形状（Shape）」进行描述，想了解接口的所有用法，可以参考？？？。
 
 ## 简单的例子
@@ -162,6 +160,3 @@ let xcatliu: Person = {
 
 - [Handbook - Interfaces](http://www.typescriptlang.org/docs/handbook/interfaces.html)
 - [中文手册 - 接口](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html)
-- [java提高篇(五)——抽象类与接口]
-
-[java提高篇(五)——抽象类与接口]: http://www.cnblogs.com/chenssy/p/3376708.html
