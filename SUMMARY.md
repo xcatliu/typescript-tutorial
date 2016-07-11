@@ -16,7 +16,7 @@
   - [声明文件（.d.ts）](basics/declaration-files.md)
   - [内置对象](basics/built-in-objects.md)
 - 进阶（未完成）
-  - [类的使用](advanced/use-of-class.md)
+  - [类的用法](advanced/use-of-class.md)
   - [类的类型](advanced/type-of-class.md)
   - [元组（Tuple）](advanced/tuple.md)
   - [枚举（Enum）](advanced/enum.md)

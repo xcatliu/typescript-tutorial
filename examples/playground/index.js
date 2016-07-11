@@ -1,7 +1,20 @@
-var Color;
-(function (Color) {
-    Color[Color["Red"] = "red".length] = "Red";
-    Color[Color["Green"] = undefined] = "Green";
-    Color[Color["Blue"] = undefined] = "Blue";
-})(Color || (Color = {}));
-;
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Door = (function () {
+    function Door() {
+    }
+    return Door;
+}());
+var SecurityDoor = (function (_super) {
+    __extends(SecurityDoor, _super);
+    function SecurityDoor() {
+        _super.apply(this, arguments);
+    }
+    SecurityDoor.prototype.alert = function () {
+        console.log('SecurityDoor alart');
+    };
+    return SecurityDoor;
+}(Door));
