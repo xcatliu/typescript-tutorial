@@ -81,7 +81,7 @@ console.log(xcatliu[2].slice(1));
 // index.ts(4,24): error TS2339: Property 'slice' does not exist on type 'string | number'.
 ```
 
-之前提到过，[如果一个值是联合类型，我们只能访问此联合类型的所有类型里共有的属性或方法。](/from-javascript-to-typescript/content/basics/union-types.html#访问联合类型的属性或方法)
+之前提到过，[如果一个值是联合类型，我们只能访问此联合类型的所有类型里共有的属性或方法。](../basics/union-types.md#访问联合类型的属性或方法)
 
 > Tip: 元组的概念来源于 [C#][C# Tuple]。区别是，C# 中的元组是只读的。
 
