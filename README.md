@@ -6,8 +6,7 @@
 
 ## 关于本书
 
-- [在线阅读（国内）](http://xcatliu.coding.me/from-javascript-to-typescript/)
-- [在线阅读](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/)
+- [在线阅读](http://ts.xcatliu.com/)
 - [GitHub 地址][GitHub]
 - 作者：https://github.com/xcatliu/
 
