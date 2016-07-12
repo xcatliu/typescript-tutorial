@@ -32,19 +32,17 @@ TypeScript 除了实现了所有 ES6 中的类的功能以外，还添加了一�
 通过 `new` 生成新实例的时候，会自动调用构造函数。
 
 ```js
-class Point {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
+class Animal {
+  constructor(name) {
+    this.name = name;
   }
-
-  toString() {
-    return '(' + this.x + ', ' + this.y + ')';
+  sayHi() {
+    return `My name is ${name}`;
   }
 }
 
-let a = new Point(1, 2);
-console.log(a.toString()); // (1, 2)
+let a = new Animal('Jack');
+console.log(a.sayHi()); // My name is Jack
 ```
 
 ### 类的继承
@@ -52,19 +50,18 @@ console.log(a.toString()); // (1, 2)
 使用 `extends` 关键字实现继承，子类中使用 `super` 表示父类的构造函数。
 
 ```js
-class ColorPoint extends Point {
-  constructor(x, y, color) {
-    super(x, y); // 调用父类的constructor(x, y)
-    this.color = color;
+class Cat extends Animal {
+  constructor(name) {
+    super(name); // 调用父类的 constructor(name)
+    console.log(this.name);
   }
-
-  toString() {
-    return this.color + ' ' + super.toString(); // 调用父类的toString()
+  sayHi() {
+    return 'Meow, ' + super.sayHi(); // 调用父类的 sayHi()
   }
 }
 
-let b = new ColorPoint(1, 2, 'red');
-console.log(b.toString()); // red (1, 2)
+let c = new Cat('Tom'); // Tom
+console.log(c.sayHi()); // Meow, My name is Tom
 ```
 
 ### 存取器
@@ -72,22 +69,21 @@ console.log(b.toString()); // red (1, 2)
 使用 getter 和 setter 可以改变属性的赋值和读取行为：
 
 ```js
-class Point {
-  constructor() {
-    // ...
+class Animal {
+  constructor(name) {
+    this.name = name;
   }
-  get x() {
-    return 1;
+  get name() {
+    return 'Jack';
   }
-  set x(value) {
+  set name(value) {
     console.log('setter: ' + value);
   }
 }
 
-let a = new Point();
-
-a.x = 2; // setter: 2
-console.log(a.x); // 1
+let a = new Animal('Kitty'); // setter: Kitty
+a.name = 'Tom'; // setter: Tom
+console.log(a.name); // Jack
 ```
 
 ### 静态方法
@@ -95,16 +91,15 @@ console.log(a.x); // 1
 使用 `static` 修饰符修饰的方法称为静态方法，它们不需要实例化，而是直接通过类来调用：
 
 ```js
-class Foo {
-  static classMethod() {
-    return 'hello';
+class Animal {
+  static isAnimal(a) {
+    return a instanceof Animal;
   }
 }
 
-Foo.classMethod(); // 'hello'
-
-var foo = new Foo();
-foo.classMethod(); // TypeError: undefined is not a function
+let a = new Animal('Jack');
+Animal.isAnimal(a); // true
+a.isAnimal(a); // TypeError: a.isAnimal is not a function
 ```
 
 ## ES7 中类的用法
@@ -116,16 +111,16 @@ ES7 中有一些类的提案，TypeScript 也实现了它们，这里做一个�
 ES6 中实例的属性只能通过构造函数中的 `this.xxx` 来定义，ES7 提案中可以直接在类里面定义：
 
 ```js
-class MyClass {
-  myProp = 42;
+class Animal {
+  name = 'Jack';
 
   constructor() {
     // ...
   }
 }
 
-let a = new MyClass();
-console.log(a.myProp); // 42
+let a = new Animal();
+console.log(a.name); // Jack
 ```
 
 ### 静态属性
@@ -133,15 +128,15 @@ console.log(a.myProp); // 42
 ES7 提案中，可以使用 `static` 定义一个静态属性：
 
 ```js
-class MyClass {
-  static myStaticProp = 42;
+class Animal {
+  static num = 42;
 
   constructor() {
     // ...
   }
 }
 
-console.log(MyClass.myProp); // 42
+console.log(Animal.num); // 42
 ```
 
 ## TypeScript 中类的用法
@@ -159,13 +154,15 @@ TypeScript 可以使用三种访问修饰符（Access Modifiers），分别是 `
 ```ts
 class Animal {
   public name;
-  public constructor(theName) { this.name = theName; }
+  public constructor(name) {
+    this.name = name;
+  }
 }
 
-let cat = new Animal('Tom');
-console.log(cat.name); // Tom
-cat.name = 'Jack';
-console.log(cat.name); // Jack
+let a = new Animal('Jack');
+console.log(a.name); // Jack
+a.name = 'Tom';
+console.log(a.name); // Tom
 ```
 
 上面的例子中，`name` 被设置为了 `public`，所以直接访问实例的 `name` 属性是允许的。
@@ -175,15 +172,17 @@ console.log(cat.name); // Jack
 ```ts
 class Animal {
   private name;
-  public constructor(theName) { this.name = theName; }
+  public constructor(name) {
+    this.name = name;
+  }
 }
 
-let cat = new Animal('Tom');
-console.log(cat.name); // Tom
-cat.name = 'Jack';
+let a = new Animal('Jack');
+console.log(a.name); // Jack
+a.name = 'Tom';
 
-// index.ts(7,13): error TS2341: Property 'name' is private and only accessible within class 'Animal'.
-// index.ts(8,1): error TS2341: Property 'name' is private and only accessible within class 'Animal'.
+// index.ts(9,13): error TS2341: Property 'name' is private and only accessible within class 'Animal'.
+// index.ts(10,1): error TS2341: Property 'name' is private and only accessible within class 'Animal'.
 ```
 
 需要注意的是，TypeScript 编译之后的代码中，并没有限制 `private` 属性在外部的可访问性。
@@ -192,14 +191,14 @@ cat.name = 'Jack';
 
 ```js
 var Animal = (function () {
-    function Animal(theName) {
-        this.name = theName;
+    function Animal(name) {
+        this.name = name;
     }
     return Animal;
 }());
-var cat = new Animal('Tom');
-console.log(cat.name);
-cat.name = 'Jack';
+var a = new Animal('Jack');
+console.log(a.name);
+a.name = 'Tom';
 ```
 
 使用 `private` 修饰的属性或方法，在子类中也是不允许访问的：
@@ -207,7 +206,9 @@ cat.name = 'Jack';
 ```ts
 class Animal {
   private name;
-  public constructor(theName) { this.name = theName; }
+  public constructor(name) {
+    this.name = name;
+  }
 }
 
 class Cat extends Animal {
@@ -217,7 +218,7 @@ class Cat extends Animal {
   }
 }
 
-// index.ts(9,17): error TS2341: Property 'name' is private and only accessible within class 'Animal'.
+// index.ts(11,17): error TS2341: Property 'name' is private and only accessible within class 'Animal'.
 ```
 
 而如果是用 `protected` 修饰，则允许在子类中访问：
@@ -225,7 +226,9 @@ class Cat extends Animal {
 ```ts
 class Animal {
   protected name;
-  public constructor(theName) { this.name = theName; }
+  public constructor(name) {
+    this.name = name;
+  }
 }
 
 class Cat extends Animal {
@@ -243,13 +246,15 @@ class Cat extends Animal {
 ```ts
 abstract class Animal {
   public name;
-  public constructor(theName) { this.name = theName; }
-  public abstract move();
+  public constructor(name) {
+    this.name = name;
+  }
+  public abstract sayHi();
 }
 
-let cat = new Animal('Tom');
+let a = new Animal('Jack');
 
-// index.ts(7,11): error TS2511: Cannot create an instance of the abstract class 'Animal'.
+// index.ts(9,11): error TS2511: Cannot create an instance of the abstract class 'Animal'.
 ```
 
 上面的例子中，我们定义了一个抽象类 `Animal`，并且定义了一个抽象方法 `move`。在实例化抽象类的时候报错了。
@@ -259,8 +264,10 @@ let cat = new Animal('Tom');
 ```ts
 abstract class Animal {
   public name;
-  public constructor(theName) { this.name = theName; }
-  public abstract move();
+  public constructor(name) {
+    this.name = name;
+  }
+  public abstract sayHi();
 }
 
 class Cat extends Animal {
@@ -271,7 +278,7 @@ class Cat extends Animal {
 
 let cat = new Cat('Tom');
 
-// index.ts(7,7): error TS2515: Non-abstract class 'Cat' does not implement inherited abstract member 'move' from class 'Animal'.
+// index.ts(9,7): error TS2515: Non-abstract class 'Cat' does not implement inherited abstract member 'sayHi' from class 'Animal'.
 ```
 
 上面的例子中，我们定义了一个抽象类 `Cat` 继承了 `Animal`，但是没有实现抽象方法 `move`，所以编译报错了。
@@ -281,20 +288,22 @@ let cat = new Cat('Tom');
 ```ts
 abstract class Animal {
   public name;
-  public constructor(theName) { this.name = theName; }
-  public abstract move();
+  public constructor(name) {
+    this.name = name;
+  }
+  public abstract sayHi();
 }
 
 class Cat extends Animal {
-  public move() {
-    console.log(`${this.name} is moving.`);
+  public sayHi() {
+    console.log(`Meow, My name is ${this.name}`);
   }
 }
 
 let cat = new Cat('Tom');
 ```
 
-上面的例子中，我们实现了抽象方法 `move`，编译通过了。
+上面的例子中，我们实现了抽象方法 `sayHi`，编译通过了。
 
 需要注意的是，即使是抽象方法，TypeScript 的编译结果中，仍然会存在这个类，上面的代码的编译结果是：
 
@@ -305,8 +314,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Animal = (function () {
-    function Animal(theName) {
-        this.name = theName;
+    function Animal(name) {
+        this.name = name;
     }
     return Animal;
 }());
@@ -315,8 +324,8 @@ var Cat = (function (_super) {
     function Cat() {
         _super.apply(this, arguments);
     }
-    Cat.prototype.move = function () {
-        console.log(this.name + " is moving.");
+    Cat.prototype.sayHi = function () {
+        console.log("Meow, My name is " + this.name);
     };
     return Cat;
 }(Animal));

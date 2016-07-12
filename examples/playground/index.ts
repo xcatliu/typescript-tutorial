@@ -1,12 +1,15 @@
-interface Alarm {
-  alert()
+abstract class Animal {
+  public name;
+  public constructor(name) {
+    this.name = name;
+  }
+  public abstract sayHi();
 }
 
-class Door {
-}
-
-class SecurityDoor extends Door implements Alarm {
-  alert() {
-    console.log('SecurityDoor alart');
+class Cat extends Animal {
+  public sayHi() {
+    console.log(`Meow, My name is ${this.name}`);
   }
 }
+
+let cat = new Cat('Tom');

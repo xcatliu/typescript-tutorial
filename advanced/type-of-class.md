@@ -1,5 +1,13 @@
 # 类的类型
 
+定义一个类的时候，我们可以同时定义它的属性和方法的类型，这点与接口很类似。
+
+## 简单的例子
+
+```ts
+
+```
+
 ## Links
 
 - [Handbook - Classes](http://www.typescriptlang.org/docs/handbook/classes.html)

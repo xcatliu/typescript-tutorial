@@ -3,18 +3,20 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Door = (function () {
-    function Door() {
+var Animal = (function () {
+    function Animal(name) {
+        this.name = name;
     }
-    return Door;
+    return Animal;
 }());
-var SecurityDoor = (function (_super) {
-    __extends(SecurityDoor, _super);
-    function SecurityDoor() {
+var Cat = (function (_super) {
+    __extends(Cat, _super);
+    function Cat() {
         _super.apply(this, arguments);
     }
-    SecurityDoor.prototype.alert = function () {
-        console.log('SecurityDoor alart');
+    Cat.prototype.sayHi = function () {
+        console.log("Meow, My name is " + this.name);
     };
-    return SecurityDoor;
-}(Door));
+    return Cat;
+}(Animal));
+var cat = new Cat('Tom');

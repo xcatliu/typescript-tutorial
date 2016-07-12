@@ -1,20 +1,22 @@
 # From JavaScript to TypeScript
 
-[![Build Status](https://travis-ci.org/xcatliu/from-javascript-to-typescript.svg?branch=master)](https://travis-ci.org/xcatliu/from-javascript-to-typescript)
-
 > 一本面向 JavaScript 程序员的 TypeScript 学习教程
 
 ## 关于本书
 
 - [在线阅读](http://ts.xcatliu.com/)
 - [GitHub 地址][GitHub]
-- 作者：https://github.com/xcatliu/
+- 作者：[xcatliu](https://github.com/xcatliu/)
 
 本书是作者在学习 [TypeScript] 后总结的学习教程。
 
 随着对 TypeScript 理解的加深和 TypeScript 社区的发展，本书也会做出相应的更新，欢迎大家 [Star 收藏][GitHub]。
 
-若在阅读过程中发现疏漏，或者有任何建议，可以[提交 issue](https://github.com/xcatliu/from-javascript-to-typescript/issues/new) 向作者反馈，也欢迎直接提交 pull-request 参与贡献！
+- 在线版托管在 [Coding Pages](https://coding.net/help/doc/pages/index.html) 上，通过 [Travis CI](https://travis-ci.org/xcatliu/from-javascript-to-typescript) 自动部署
+- [GitBook 上的原站](https://xcatliu.gitbooks.io/from-javascript-to-typescript/content/)（国内访问不稳定）
+- 发现文章内容有问题，可以直接在页面下方评论
+- 对项目的建议，可以[提交 issue](https://github.com/xcatliu/from-javascript-to-typescript/issues/new) 向作者反馈
+- 欢迎直接提交 pull-request 参与贡献
 
 ## 为什么要写本书
 
