@@ -257,7 +257,7 @@ let a = new Animal('Jack');
 // index.ts(9,11): error TS2511: Cannot create an instance of the abstract class 'Animal'.
 ```
 
-上面的例子中，我们定义了一个抽象类 `Animal`，并且定义了一个抽象方法 `move`。在实例化抽象类的时候报错了。
+上面的例子中，我们定义了一个抽象类 `Animal`，并且定义了一个抽象方法 `sayHi`。在实例化抽象类的时候报错了。
 
 抽象类是不允许被实例化的。
 
@@ -281,7 +281,7 @@ let cat = new Cat('Tom');
 // index.ts(9,7): error TS2515: Non-abstract class 'Cat' does not implement inherited abstract member 'sayHi' from class 'Animal'.
 ```
 
-上面的例子中，我们定义了一个抽象类 `Cat` 继承了 `Animal`，但是没有实现抽象方法 `move`，所以编译报错了。
+上面的例子中，我们定义了一个抽象类 `Cat` 继承了 `Animal`，但是没有实现抽象方法 `sayHi`，所以编译报错了。
 
 抽象方法必须被实现。
 
