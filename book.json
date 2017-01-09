@@ -1,19 +1,19 @@
 {
-  "title": "From JavaScript to TypeScript",
-  "description": "一本面向 JavaScript 程序员的 TypeScript 学习教程",
+  "title": "TypeScript 入门教程",
+  "description": "",
   "author": "xcatliu <xcatliu@gmail.com>",
   "language": "zh",
   "plugins": ["disqus", "edit-link", "github"],
   "pluginsConfig": {
     "disqus": {
-      "shortName": "from-javascript-to-typescript"
+      "shortName": "typescript-tutorial"
     },
     "edit-link": {
-      "base": "https://github.com/xcatliu/from-javascript-to-typescript/tree/master",
+      "base": "https://github.com/xcatliu/typescript-tutorial/tree/master",
       "label": "编辑此页"
     },
     "github": {
-      "url": "https://github.com/xcatliu/from-javascript-to-typescript"
+      "url": "https://github.com/xcatliu/typescript-tutorial"
     }
   }
 }
