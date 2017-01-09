@@ -83,6 +83,15 @@ let sentence: string = `Hello, my name is ${myName}.
 I'll be ${myAge + 1} years old next month.`;
 ```
 
+编译结果：
+
+```js
+var myName = 'Xcat Liu';
+var myAge = 25;
+// 模板字符串
+var sentence = "Hello, my name is " + myName + ".\nI'll be " + (myAge + 1) + " years old next month.";
+```
+
 其中 <code>&#96;</code> 用来定义 [ES2015 中的模板字符串][]，`${expr}` 用来在模板字符串中嵌入表达式。
 
 ## 空值（Void）
