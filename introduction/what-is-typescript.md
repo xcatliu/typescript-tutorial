@@ -37,6 +37,8 @@
 - ES6 的一部分特性是借鉴的 TypeScript 的（这条需要来源）
 - TypeScript 拥抱了 ES6 规范，也支持部分 ES7 草案的规范
 
+### TypeScript 的缺点
+
 任何事物都是有两面性的，我认为 TypeScript 的弊端在于：
 
 - 有一定的学习成本，需要理解接口（Interfaces）、泛型（Generics）、类（Classes）、枚举类型（Enums）等前端工程师可能不是很熟悉的东西。而且它的中文资料也不多

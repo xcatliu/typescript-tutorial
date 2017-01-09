@@ -1,16 +1,12 @@
 {
   "title": "TypeScript 入门教程",
-  "description": "",
+  "description": "从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript。",
   "author": "xcatliu <xcatliu@gmail.com>",
   "language": "zh",
-  "plugins": ["disqus", "edit-link", "github"],
+  "plugins": ["disqus", "github"],
   "pluginsConfig": {
     "disqus": {
       "shortName": "typescript-tutorial"
-    },
-    "edit-link": {
-      "base": "https://github.com/xcatliu/typescript-tutorial/tree/master",
-      "label": "编辑此页"
     },
     "github": {
       "url": "https://github.com/xcatliu/typescript-tutorial"

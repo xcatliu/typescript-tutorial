@@ -1,14 +1,16 @@
 # TypeScript 入门教程
 
+从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript。
+
 > 原名《From JavaScript to TypeScript》
 
 ## 关于本书
 
-- [在线阅读](http://ts.xcatliu.com/)
+- [在线阅读](https://ts.xcatliu.com/)
 - [GitHub 地址][GitHub]
 - 作者：[xcatliu](https://github.com/xcatliu/)
 
-本书是作者在学习 [TypeScript] 后总结的学习教程。
+本书是作者在学习 [TypeScript] 后总结的入门教程。
 
 随着对 TypeScript 理解的加深和 TypeScript 社区的发展，本书也会做出相应的更新，欢迎大家 [Star 收藏][GitHub]。
 
@@ -53,12 +55,8 @@ TypeScript 虽然有[官方手册][Handbook]及其[非官方中文版][中文手
 ## 相关资料
 
 - [TypeScript 官网][TypeScript]
-- [Handbook]
-- [中文手册]
-- [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/content/)
+- [Handbook] | [中文手册]
 - [ECMAScript 6 入门]
-- [现在 TypeScript 生态系统如何？](http://www.zhihu.com/question/37222407)
-- [Typings](https://github.com/typings/typings)
 
 [GitHub]: https://github.com/xcatliu/typescript-tutorial
 [TypeScript]: http://www.typescriptlang.org/
