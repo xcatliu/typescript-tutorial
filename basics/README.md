@@ -2,7 +2,7 @@
 
 本部分介绍了 TypeScript 中的常用类型和一些基本概念，旨在让大家对 TypeScript 有个初步的理解。具体内容包括：
 
-- [基本类型](primitive-types.md)
+- [原始数据类型](primitive-data-types.md)
 - [任意值（Any）](any.md)
 - [类型推论](type-inference.md)
 - [联合类型（Union Types）](union-types.md)
