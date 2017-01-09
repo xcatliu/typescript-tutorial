@@ -6,7 +6,7 @@
   - 安装 TypeScript（未完成）
   - Helo World（未完成）
 - [基础](basics/README.md)
-  - [原始数据类型](primitive-data-types.md)
+  - [原始数据类型](basics/primitive-data-types.md)
   - [任意值（Any）](basics/any.md)
   - [类型推论](basics/type-inference.md)
   - [联合类型（Union Types）](basics/union-types.md)
