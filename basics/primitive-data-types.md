@@ -143,7 +143,7 @@ let num: number = u;
 // index.ts(2,5): error TS2322: Type 'void' is not assignable to type 'number'.
 ```
 
-## Links
+## 参考
 
 - [Handbook - Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html)
 - [中文手册 - 基础类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)
