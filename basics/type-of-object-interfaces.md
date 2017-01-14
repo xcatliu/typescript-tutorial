@@ -1,12 +1,12 @@
 # 对象的类型——接口
 
-使用接口（Interfaces）来定义对象的类型。
+在 TypeScript 中，我们使用接口（Interfaces）来定义对象的类型。
 
 ## 什么是接口（Interfaces）
 
 在面向对象语言中，接口（Interfaces）是一个很重要的概念，它是对行为的抽象，而具体如何行动需要由类（classes）去实现（implements）。
 
-TypeScript 中的接口是一个非常灵活的概念，除了可用于[对类的一部分行为进行抽象](../advanced/use-of-class.md#实现接口)以外，也常用于对「对象的形状（Shape）」进行描述，想了解接口的所有用法，可以参考？？？。
+TypeScript 中的接口是一个非常灵活的概念，除了可用于[对类的一部分行为进行抽象](../advanced/use-of-class.md#实现接口)以外，也常用于对「对象的形状（Shape）」进行描述。
 
 ## 简单的例子
 
@@ -24,7 +24,7 @@ let xcatliu: Person = {
 
 上面的例子中，我们定义了一个接口 `Person`，接着定义了一个变量 `xcatliu`，它的类型是 `Person`。这样，我们就约束了 `xcatliu` 的形状必须和接口 `Person` 一致。
 
-> Tip: 接口的定义一般首字母大写。
+接口一般首字母大写。
 
 如果定义的变量比接口少了一些属性会怎么样呢？
 
@@ -105,8 +105,8 @@ let xcatliu: Person = {
   website: 'http://xcatliu.com',
 };
 
-// index.ts(9,3): error TS2322: Type '{ name: string; age: number; github: string; }' is not assignable to type 'Person'.
-//   Object literal may only specify known properties, and 'github' does not exist in type 'Person'
+// examples/playground/index.ts(9,3): error TS2322: Type '{ name: string; age: number; website: string; }' is not assignable to type 'Person'.
+//   Object literal may only specify known properties, and 'website' does not exist in type 'Person'.
 ```
 
 由此可见，即使有可选属性，也不可以添加未定义的属性。
@@ -156,7 +156,6 @@ let xcatliu: Person = {
 
 另外，在报错信息中可以看出，此时 `{ name: 'Xcat Liu', age: 25, website: 'http://xcatliu.com' }` 的类型被推断成了 `{ [x: string]: string | number; name: string; age: number; github: string; }`，这是联合类型和接口的结合。
 
-## Links
+## 参考 
 
-- [Handbook - Interfaces](http://www.typescriptlang.org/docs/handbook/interfaces.html)
-- [中文手册 - 接口](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html)
+- [Handbook - Interfaces](http://www.typescriptlang.org/docs/handbook/interfaces.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html)

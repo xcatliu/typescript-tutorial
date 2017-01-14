@@ -1,10 +1,10 @@
 # 数组的类型
 
-数组类型有多种定义方式，比较灵活。
+在 TypeScript 中，数组类型有多种定义方式，比较灵活。
 
-## 「类型+方括号」表示法
+## 「类型 + 方括号」表示法
 
-最简单的方法是使用「类型+方括号」来表示数组：
+最简单的方法是使用「类型 + 方括号」来表示数组：
 
 ```ts
 let fibonacci: number[] = [1, 1, 2, 3, 5];
@@ -81,16 +81,9 @@ function sum() {
 }
 ```
 
-> Tip: 一般我们使用 `Array.prototype.slice.call(argumants)` 或 `[].slice.call(argumants)` 来将一个类数组转化为数组。ES6 中可以使用 [Array.from][ES6 中的 Array.from] 或者 [rest 参数][ES6 中的 rest 参数]实现类似功能。
+关于内建类型，可以参考[内置对象](./built-in-objects.md)一章。
 
 ## Links
 
-- [Handbook - Basic Types # Array](http://www.typescriptlang.org/docs/handbook/basic-types.html#array)
-- [Handbook - Interfaces # Indexable Types](http://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types)
-- [中文手册 - 基础类型 # 数组](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#数组)
-- [中文手册 - 接口 # 数组类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#数组类型)
-- [ES6 中的 Array.from]
-- [ES6 中的 rest 参数]
-
-[ES6 中的 Array.from]: http://es6.ruanyifeng.com/#docs/array#Array-from
-[ES6 中的 rest 参数]: http://es6.ruanyifeng.com/#docs/function#rest参数
+- [Handbook - Basic Types # Array](http://www.typescriptlang.org/docs/handbook/basic-types.html#array) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#数组)
+- [Handbook - Interfaces # Indexable Types](http://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#数组类型)

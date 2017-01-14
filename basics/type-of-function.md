@@ -1,6 +1,6 @@
 # 函数的类型
 
-> [函数是 JavaScript 中的一等公民。](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/ch2.html)
+> [函数是 JavaScript 中的一等公民](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/ch2.html)
 
 ## 函数声明（Function Declaration）
 
@@ -66,11 +66,11 @@ let mySum: (x: number, y: number) => number = function (x: number, y: number): n
 
 在 TypeScript 的类型定义中，`=>` 用来表示函数的定义，左边是输入类型，需要用括号括起来，右边是输出类型。
 
-> Tip: `=>` 在 ES6 中叫箭头函数，应用十分广泛，可以参考 [ES6 中的箭头函数]。
+其中，`=>` 在 ES6 中叫箭头函数，应用十分广泛，可以参考 [ES6 中的箭头函数]。
 
 ## 接口中函数的定义
 
-在接口中，需要这样定义一个函数：
+我们也可以使用接口的方式来定义一个函数需要符合的形状：
 
 ```ts
 interface SearchFunc {
@@ -92,7 +92,7 @@ mySearch = function(source: string, subString: string) {
 ```ts
 function buildName(firstName: string, lastName?: string) {
   if (lastName) {
-    return firstName + " " + lastName;
+    return firstName + ' ' + lastName;
   } else {
     return firstName;
   }
@@ -106,7 +106,7 @@ let xcat = buildName('Xcat');
 ```ts
 function buildName(firstName?: string, lastName: string) {
   if (firstName) {
-    return firstName + " " + lastName;
+    return firstName + ' ' + lastName;
   } else {
     return lastName;
   }
@@ -123,7 +123,7 @@ let xcat = buildName(undefined, 'Xcat');
 
 ```ts
 function buildName(firstName: string, lastName: string = 'Liu') {
-  return firstName + " " + lastName;
+  return firstName + ' ' + lastName;
 }
 let xcatliu = buildName('Xcat', 'Liu');
 let xcat = buildName('Xcat');
@@ -133,7 +133,7 @@ let xcat = buildName('Xcat');
 
 ```ts
 function buildName(firstName: string = 'Xcat', lastName: string) {
-  return firstName + " " + lastName;
+  return firstName + ' ' + lastName;
 }
 let xcatliu = buildName('Xcat', 'Liu');
 let xcat = buildName(undefined, 'Xcat');
@@ -169,14 +169,12 @@ let a = [];
 push(a, 1, 2, 3);
 ```
 
-> Tip: 注意 rest 参数只能是最后一个参数，关于 rest 参数，可以参考 [ES6 中的 rest 参数]。
+注意，rest 参数只能是最后一个参数，关于 rest 参数，可以参考 [ES6 中的 rest 参数]。
 
-## Links
+## 参考
 
-- [Handbook - Functions](http://www.typescriptlang.org/docs/handbook/functions.html)
-- [Handbook - Functions # Function Types](http://www.typescriptlang.org/docs/handbook/interfaces.html#function-types)
-- [中文手册 - 函数](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Functions.html)
-- [中文手册 - 接口 # 函数类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#函数类型)
+- [Handbook - Functions](http://www.typescriptlang.org/docs/handbook/functions.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Functions.html)
+- [Handbook - Functions # Function Types](http://www.typescriptlang.org/docs/handbook/interfaces.html#function-types) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#函数类型)
 - [JS 函数式编程指南](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
 - [ES6 中的箭头函数]
 - [ES6 中函数参数的默认值]

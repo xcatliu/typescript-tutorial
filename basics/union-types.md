@@ -1,12 +1,13 @@
-# 联合类型（Union Types）
+# 联合类型
 
-联合类型表示支持多种类型。
+联合类型（Union Types）表示取值可以为多种类型。
 
 ## 简单的例子
 
 ```ts
-let myFavoriteNumber: string | number = 'seven';
-myFavoriteNumber = 25;
+let myFavoriteNumber: string | number;
+myFavoriteNumber = 'seven';
+myFavoriteNumber = 7;
 ```
 
 ```ts
@@ -21,7 +22,7 @@ myFavoriteNumber = true;
 
 ## 访问联合类型的属性或方法
 
-如果一个值是联合类型，我们只能访问此联合类型的所有类型里共有的属性或方法：
+如果一个值是联合类型，我们**只能访问此联合类型的所有类型里共有的属性或方法**：
 
 ```ts
 let myFavoriteNumber: string | number = 'seven';
@@ -39,5 +40,4 @@ myFavoriteNumber.toString();
 
 ## Links
 
-- [Handbook - Advanced Types # Union Types](http://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types)
-- [中文手册 - 高级类型 # 联合类型](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Advanced%20Types.html#联合类型)
+- [Handbook - Advanced Types # Union Types](http://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Advanced%20Types.html#联合类型)

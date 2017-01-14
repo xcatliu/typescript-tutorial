@@ -1,6 +1,6 @@
 # 类型推论
 
-如果没有明确的指定类型，那么 TypeScript 会依照类型推论的规则推断出一个类型。
+如果没有明确的指定类型，那么 TypeScript 会依照类型推论（Type Inference）的规则推断出一个类型。
 
 ## 什么是类型推论
 
@@ -32,7 +32,6 @@ myFavoriteNumber = 'seven';
 myFavoriteNumber = 7;
 ```
 
-## Links
+## 参考
 
-- [Handbook - Type Inference](http://www.typescriptlang.org/docs/handbook/type-inference.html)
-- [中文手册 - 类型推论](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Type%20Inference.html)
+- [Handbook - Type Inference](http://www.typescriptlang.org/docs/handbook/type-inference.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Type%20Inference.html)

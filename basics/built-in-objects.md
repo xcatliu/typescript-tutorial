@@ -88,7 +88,15 @@ interface Document extends Node, GlobalEventHandlers, NodeSelector, DocumentEven
 
 查看 TypeScript 核心库的定义：[TypeScript 核心库的定义文件]。
 
-需要注意的是，TypeScript 核心库的定义中不包含 Node.js 部分。如果要在 Node.js 中使用 TypeScript，可以参考？？？一章。
+需要注意的是，TypeScript 核心库的定义中不包含 Node.js 部分。
+
+## 用 TypeScript 写 Node.js
+
+Node.js 不是内置对象的一部分，如果想用 TypeScript 写 Node.js，则需要引入第三方声明文件：
+
+```shell
+npm install @types/node --save-dev
+```
 
 ## Links
 

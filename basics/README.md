@@ -5,7 +5,7 @@
 - [原始数据类型](primitive-data-types.md)
 - [任意值（Any）](any.md)
 - [类型推论](type-inference.md)
-- [联合类型（Union Types）](union-types.md)
+- [联合类型](union-types.md)
 - [对象的类型——接口](type-of-object-interfaces.md)
 - [数组的类型](type-of-array.md)
 - [函数的类型](type-of-function.md)

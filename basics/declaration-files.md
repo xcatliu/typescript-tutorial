@@ -36,9 +36,9 @@ jQuery('#foo');
 declare var jQuery: (string) => any;
 ```
 
-> Tip: 我们约定声明文件以 `.d.ts` 为后缀。
+> 我们约定声明文件以 `.d.ts` 为后缀。
 
-然后在使用到的文件的开头，用「三斜线指令」表示引用的声明文件：
+然后在使用到的文件的开头，用「三斜线指令」表示引用了声明文件：
 
 ```ts
 /// <reference path="./jQuery.d.ts" />
@@ -50,15 +50,23 @@ jQuery('#foo');
 
 ## 第三方声明文件
 
-当然，jQuery 的声明文件不需要我们定义了，已经有人帮我们定义好了：[jquery.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/jquery/jquery.d.ts)。
+当然，jQuery 的声明文件不需要我们定义了，已经有人帮我们定义好了：[jQuery in DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/jquery)。
 
-我们可以下载下来使用，也可以使用 `typing` 方便的获取任何第三方库的声明文件。
+我们可以直接下载下来使用，但是更推荐的是使用工具统一管理第三方库的声明文件。
 
-关于 `typing` 的使用方法，可以参考？？？一章。
+社区已经有多种方式引入声明文件，不过 [TypeScript 2.0 推荐使用 @types 来管理](https://blogs.msdn.microsoft.com/typescript/2016/06/15/the-future-of-declaration-files/)。
+
+@types 的使用方式很简单，直接用 npm 安装对应的声明模块即可，以 jQuery 举例：
+
+```shell
+npm install @types/jquery --save-dev
+```
+
+可以在[这个页面](http://microsoft.github.io/TypeSearch/)搜索你需要的声明文件。
+
+更多关于 @types 的使用方法，可以参考？？？一章。
 
 ## Links
 
-- [Handbook - Writing Declaration Files](http://www.typescriptlang.org/docs/handbook/writing-declaration-files.html)
-- [中文手册 - 书写 d.ts 文件](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Writing%20Definition%20Files.html)
-- [Handbook - Triple-Slash Directives](http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html)
-- [中文手册 - 三斜线指令](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Triple-Slash%20Directives.html)
+- [Handbook - Writing Declaration Files](http://www.typescriptlang.org/docs/handbook/writing-declaration-files.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Writing%20Definition%20Files.html)
+- [Handbook - Triple-Slash Directives](http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Triple-Slash%20Directives.html)
