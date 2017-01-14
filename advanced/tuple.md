@@ -1,6 +1,6 @@
 # 元组（Tuple）
 
-> 在 TypeScript 中，元组类型表示一些特定类型组合成的数组类型。
+元组表示一些特定类型组合成的**数组**类型。
 
 ## 简单的例子
 
@@ -21,7 +21,7 @@ xcatliu[0].slice(1);
 xcatliu[1].toFixed(2);
 ```
 
-即使只赋值其中一项也可以：
+也可以只赋值其中一项：
 
 ```ts
 let xcatliu: [string, number];
@@ -60,6 +60,8 @@ let xcatliu: [string, number];
 xcatliu = ['Xcat Liu', 25, 'http://xcatliu.com/'];
 ```
 
+上面的例子中，数组的第三项满足联合类型 `string | number`。
+
 ```ts
 let xcatliu: [string, number];
 xcatliu = ['Xcat Liu', 25];
@@ -83,12 +85,11 @@ console.log(xcatliu[2].slice(1));
 
 之前提到过，[如果一个值是联合类型，我们只能访问此联合类型的所有类型里共有的属性或方法。](../basics/union-types.md#访问联合类型的属性或方法)
 
-> Tip: 元组的概念来源于 [C#][C# Tuple]。区别是，C# 中的元组是只读的。
+> 元组的概念[来源于 C#][C# Tuple]。区别是，C# 中的元组是只读的。
 
-## Links
+## 参考
 
-- [Handbook - Basic Types # Tuple](http://www.typescriptlang.org/docs/handbook/basic-types.html#tuple)
-- [中文手册 - 基础类型 # 元组 Tuple](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#元组-tuple)
+- [Handbook - Basic Types # Tuple](http://www.typescriptlang.org/docs/handbook/basic-types.html#tuple) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#元组-tuple)
 - [C# Tuple]
 
 [C# Tuple]: https://msdn.microsoft.com/en-us/library/system.tuple(v=vs.110).aspx

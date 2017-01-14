@@ -1,5 +1,1 @@
-var xcatliu = {
-    name: 'Xcat Liu',
-    age: 25,
-    website: 'http://xcatliu.com'
-};
+var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */];

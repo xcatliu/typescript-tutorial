@@ -1,8 +1,6 @@
 # 枚举（Enum）
 
-> 枚举（Enum）类型是 TypeScript 新增的基本类型，使用 `enum` 定义一个枚举类型。
-
-枚举（Enum）类型可能前端工程师没有接触过，它常用于取值被限定在一定范围内的场景，比如一周只能有七天，颜色限定为红绿蓝。
+枚举（Enum）类型用于取值被限定在一定范围内的场景，比如一周只能有七天，颜色限定为红绿蓝等。
 
 ## 简单的例子
 
@@ -33,13 +31,13 @@ console.log(Days[6] === "Sat"); // true
 ```js
 var Days;
 (function (Days) {
-    Days[Days["Sun"] = 0] = "Sun";
-    Days[Days["Mon"] = 1] = "Mon";
-    Days[Days["Tue"] = 2] = "Tue";
-    Days[Days["Wed"] = 3] = "Wed";
-    Days[Days["Thu"] = 4] = "Thu";
-    Days[Days["Fri"] = 5] = "Fri";
-    Days[Days["Sat"] = 6] = "Sat";
+  Days[Days["Sun"] = 0] = "Sun";
+  Days[Days["Mon"] = 1] = "Mon";
+  Days[Days["Tue"] = 2] = "Tue";
+  Days[Days["Wed"] = 3] = "Wed";
+  Days[Days["Thu"] = 4] = "Thu";
+  Days[Days["Fri"] = 5] = "Fri";
+  Days[Days["Sat"] = 6] = "Sat";
 })(Days || (Days = {}));
 ```
 
@@ -74,13 +72,13 @@ console.log(Days[3] === "Wed"); // true
 ```js
 var Days;
 (function (Days) {
-    Days[Days["Sun"] = 3] = "Sun";
-    Days[Days["Mon"] = 1] = "Mon";
-    Days[Days["Tue"] = 2] = "Tue";
-    Days[Days["Wed"] = 3] = "Wed";
-    Days[Days["Thu"] = 4] = "Thu";
-    Days[Days["Fri"] = 5] = "Fri";
-    Days[Days["Sat"] = 6] = "Sat";
+  Days[Days["Sun"] = 3] = "Sun";
+  Days[Days["Mon"] = 1] = "Mon";
+  Days[Days["Tue"] = 2] = "Tue";
+  Days[Days["Wed"] = 3] = "Wed";
+  Days[Days["Thu"] = 4] = "Thu";
+  Days[Days["Fri"] = 5] = "Fri";
+  Days[Days["Sat"] = 6] = "Sat";
 })(Days || (Days = {}));
 ```
 
@@ -142,16 +140,85 @@ enum Color {Red = "red".length, Green, Blue};
 
 ## 常数枚举
 
-TBD
+常数枚举是使用 `const enum` 定义的枚举类型：
+
+```ts
+const enum Directions {
+  Up,
+  Down,
+  Left,
+  Right
+}
+
+let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+```
+
+常数枚举与普通枚举的区别是，它会在编译阶段被删除，并且不能包含计算成员。
+
+上例的编译结果是：
+
+```js
+var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */];
+```
+
+假如包含了计算成员，则会在编译阶段报错：
+
+```ts
+const enum Color {Red, Green, Blue = "blue".length};
+
+// index.ts(1,38): error TS2474: In 'const' enum declarations member initializer must be constant expression.
+```
 
 ## 外部枚举
 
-TBD
+外部枚举（Ambient Enums）是使用 `declare enum` 定义的枚举类型：
 
-## Links
+```ts
+declare enum Directions {
+  Up,
+  Down,
+  Left,
+  Right
+}
 
-- [Handbook - Enums](http://www.typescriptlang.org/docs/handbook/enums.html)
-- [中文手册 - 枚举]
-- [C# enum](https://msdn.microsoft.com/zh-cn/library/sbbt4032.aspx)
+let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+```
+
+之前提到过，`declare` 定义的类型只会用于编译时的检查，编译结果中会被删除。
+
+上例的编译结果是：
+
+```js
+var directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+```
+
+外部枚举与声明语句一样，常出现在声明文件中。
+
+同时使用 `declare` 和 `const` 也是可以的：
+
+```ts
+declare const enum Directions {
+  Up,
+  Down,
+  Left,
+  Right
+}
+
+let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+```
+
+编译结果：
+
+```js
+var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */];
+```
+
+> 枚举类型的概念[来源于 C#][C# Enum]。
+
+## 参考
+
+- [Handbook - Enums](http://www.typescriptlang.org/docs/handbook/enums.html) | [中文版][中文手册 - 枚举]
+- [C# Enum][]
 
 [中文手册 - 枚举]: https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Enums.html
+[C# Enum]: https://msdn.microsoft.com/zh-cn/library/sbbt4032.aspx

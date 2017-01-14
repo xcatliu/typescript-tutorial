@@ -23,7 +23,7 @@ TypeScript 除了实现了所有 ES6 中的类的功能以外，还添加了一�
 
 ## ES6 中类的用法
 
-我们先回顾一下 ES6 中类的用法，更详细的介绍可以参考 [ECMAScript 6 入门 - Class]。
+下面我们先回顾一下 ES6 中类的用法，更详细的介绍可以参考 [ECMAScript 6 入门 - Class]。
 
 ### 属性和方法
 
@@ -102,13 +102,13 @@ Animal.isAnimal(a); // true
 a.isAnimal(a); // TypeError: a.isAnimal is not a function
 ```
 
-## ES7 中类的用法
+## ES.Next 中类的用法
 
-ES7 中有一些类的提案，TypeScript 也实现了它们，这里做一个简单的介绍。
+ES.Next 中有一些关于类的提案，TypeScript 也实现了它们，这里做一个简单的介绍。
 
 ### 实例属性
 
-ES6 中实例的属性只能通过构造函数中的 `this.xxx` 来定义，ES7 提案中可以直接在类里面定义：
+ES6 中实例的属性只能通过构造函数中的 `this.xxx` 来定义，ES.Next 提案中可以直接在类里面定义：
 
 ```js
 class Animal {
@@ -125,7 +125,7 @@ console.log(a.name); // Jack
 
 ### 静态属性
 
-ES7 提案中，可以使用 `static` 定义一个静态属性：
+ES.Next 提案中，可以使用 `static` 定义一个静态属性：
 
 ```js
 class Animal {
@@ -243,6 +243,10 @@ class Cat extends Animal {
 
 `abstract` 用于定义抽象类和其中的抽象方法。
 
+什么是抽象类？
+
+首先，抽象类是不允许被实例化的：
+
 ```ts
 abstract class Animal {
   public name;
@@ -259,7 +263,7 @@ let a = new Animal('Jack');
 
 上面的例子中，我们定义了一个抽象类 `Animal`，并且定义了一个抽象方法 `sayHi`。在实例化抽象类的时候报错了。
 
-抽象类是不允许被实例化的。
+其次，抽象类中的抽象方法必须被之类实现：
 
 ```ts
 abstract class Animal {
@@ -283,7 +287,7 @@ let cat = new Cat('Tom');
 
 上面的例子中，我们定义了一个抽象类 `Cat` 继承了 `Animal`，但是没有实现抽象方法 `sayHi`，所以编译报错了。
 
-抽象方法必须被实现。
+下面是一个正确使用抽象类的例子：
 
 ```ts
 abstract class Animal {
@@ -325,14 +329,14 @@ var Cat = (function (_super) {
         _super.apply(this, arguments);
     }
     Cat.prototype.sayHi = function () {
-        console.log("Meow, My name is " + this.name);
+        console.log('Meow, My name is ' + this.name);
     };
     return Cat;
 }(Animal));
 var cat = new Cat('Tom');
 ```
 
-### 实现接口
+### 类实现接口
 
 接口在 TypeScript 中是一个非常灵活的概念，实际上，我们在[对象的类型——接口](../basics/type-of-object-interfaces.html)一章中，已经接触了接口的一种用法了。这里是接口的第二种用法。想了解接口的所有用法，可以参考？？？。
 
@@ -361,10 +365,9 @@ class Car implements Alarm {
 }
 ```
 
-## Links
+## 参考
 
-- [Handbook - Classes](http://www.typescriptlang.org/docs/handbook/classes.html)
-- [中文手册 - 类](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Classes.html)
+- [Handbook - Classes](http://www.typescriptlang.org/docs/handbook/classes.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Classes.html)
 - [ECMAScript 6 入门 - Class]
 
 [ECMAScript 6 入门 - Class]: http://es6.ruanyifeng.com/#docs/class

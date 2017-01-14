@@ -80,7 +80,7 @@ document.addEventListener('click', function(e) {
 
 ```ts
 interface Document extends Node, GlobalEventHandlers, NodeSelector, DocumentEvent {
-  addEventListener(type: "click", listener: (ev: MouseEvent) => any, useCapture?: boolean): void;
+  addEventListener(type: 'click', listener: (ev: MouseEvent) => any, useCapture?: boolean): void;
 }
 ```
 

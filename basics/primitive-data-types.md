@@ -2,7 +2,7 @@
 
 JavaScript 的类型分为两种：原始数据类型（[Primitive data types][]）和对象类型（Object types）。
 
-原始数据类型包括：布尔值、数值、字符串、`null`、`undefined` 以及 [ES2015 中的新类型 `Symbol`][]。
+原始数据类型包括：布尔值、数值、字符串、`null`、`undefined` 以及 [ES6 中的新类型 `Symbol`][]。
 
 本节主要介绍**前五种**原始数据类型在 TypeScript 中的应用。
 
@@ -47,9 +47,9 @@ let createdByBoolean: boolean = Boolean(1);
 ```ts
 let decLiteral: number = 6;
 let hexLiteral: number = 0xf00d;
-// ES2015 中的二进制表示法
+// ES6 中的二进制表示法
 let binaryLiteral: number = 0b1010;
-// ES2015 中的八进制表示法
+// ES6 中的八进制表示法
 let octalLiteral: number = 0o744;
 let notANumber: number = NaN;
 let infinityNumber: number = Infinity;
@@ -60,15 +60,15 @@ let infinityNumber: number = Infinity;
 ```js
 var decLiteral = 6;
 var hexLiteral = 0xf00d;
-// ES2015 中的二进制表示法
+// ES6 中的二进制表示法
 var binaryLiteral = 10;
-// ES2015 中的八进制表示法
+// ES6 中的八进制表示法
 var octalLiteral = 484;
 var notANumber = NaN;
 var infinityNumber = Infinity;
 ```
 
-其中 `0b1010` 和 `0o744` 是 [ES2015 中的二进制和八进制表示法][]，它们会被编译为十进制数字。
+其中 `0b1010` 和 `0o744` 是 [ES6 中的二进制和八进制表示法][]，它们会被编译为十进制数字。
 
 ## 字符串（String）
 
@@ -92,7 +92,7 @@ var myAge = 25;
 var sentence = "Hello, my name is " + myName + ".\nI'll be " + (myAge + 1) + " years old next month.";
 ```
 
-其中 <code>&#96;</code> 用来定义 [ES2015 中的模板字符串][]，`${expr}` 用来在模板字符串中嵌入表达式。
+其中 <code>&#96;</code> 用来定义 [ES6 中的模板字符串][]，`${expr}` 用来在模板字符串中嵌入表达式。
 
 ## 空值（Void）
 
@@ -147,11 +147,11 @@ let num: number = u;
 
 - [Handbook - Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)
 - [Primitive data types][]
-- [ES2015 中的新类型 `Symbol`][]
-- [ES2015 中的二进制和八进制表示法][]
-- [ES2015 中的模板字符串][]
+- [ES6 中的新类型 `Symbol`][]
+- [ES6 中的二进制和八进制表示法][]
+- [ES6 中的模板字符串][]
 
 [Primitive data types]: https://developer.mozilla.org/en-US/docs/Glossary/Primitive
-[ES2015 中的新类型 `Symbol`]: http://es6.ruanyifeng.com/#docs/symbol
-[ES2015 中的二进制和八进制表示法]: http://es6.ruanyifeng.com/#docs/number#二进制和八进制表示法
-[ES2015 中的模板字符串]: http://es6.ruanyifeng.com/#docs/string#模板字符串
+[ES6 中的新类型 `Symbol`]: http://es6.ruanyifeng.com/#docs/symbol
+[ES6 中的二进制和八进制表示法]: http://es6.ruanyifeng.com/#docs/number#二进制和八进制表示法
+[ES6 中的模板字符串]: http://es6.ruanyifeng.com/#docs/string#模板字符串
