@@ -1,5 +1,5 @@
-function sayHello(person) {
-    return 'Hello, ' + person;
+function loggingIdentity(arg) {
+    console.log(arg.length);
+    return arg;
 }
-var user = [0, 1, 2];
-document.body.innerHTML = sayHello(user);
+loggingIdentity(7);

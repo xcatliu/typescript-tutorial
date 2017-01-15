@@ -1,6 +1,10 @@
-function sayHello(person: string) {
-    return 'Hello, ' + person;
+interface Lengthwise {
+  length: number;
 }
 
-let user = [0, 1, 2];
-document.body.innerHTML = sayHello(user);
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+  console.log(arg.length);
+  return arg;
+}
+
+loggingIdentity(7);

@@ -7,18 +7,18 @@
   - [Hello TypeScript](introduction/hello-typescript.md)
 - [基础](basics/README.md)
   - [原始数据类型](basics/primitive-data-types.md)
-  - [任意值（Any）](basics/any.md)
+  - [任意值](basics/any.md)
   - [类型推论](basics/type-inference.md)
   - [联合类型](basics/union-types.md)
   - [对象的类型——接口](basics/type-of-object-interfaces.md)
   - [数组的类型](basics/type-of-array.md)
   - [函数的类型](basics/type-of-function.md)
-  - [声明文件（.d.ts）](basics/declaration-files.md)
+  - [声明文件](basics/declaration-files.md)
   - [内置对象](basics/built-in-objects.md)
 - 进阶（未完成）
   - [类的用法](advanced/use-of-class.md)
   - [类的类型](advanced/type-of-class.md)
-  - [元组（Tuple）](advanced/tuple.md)
-  - [枚举（Enum）](advanced/enum.md)
+  - [元组](advanced/tuple.md)
+  - [枚举](advanced/enum.md)
 - 实践（未完成）
 - 学习资料（未完成）

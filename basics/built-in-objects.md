@@ -108,5 +108,5 @@ npm install @types/node --save-dev
 
 ---
 
-- [上一章：声明文件（.d.ts）](declaration-files.md)
+- [上一章：声明文件](declaration-files.md)
 - [下一章：进阶](../advanced/README.md)

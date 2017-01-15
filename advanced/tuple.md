@@ -1,6 +1,6 @@
-# 元组（Tuple）
+# 元组
 
-元组表示一些特定类型组合成的**数组**类型。
+元组（Tuple）表示一些特定类型组合成的**数组**类型。
 
 ## 简单的例子
 
@@ -91,5 +91,7 @@ console.log(xcatliu[2].slice(1));
 
 - [Handbook - Basic Types # Tuple](http://www.typescriptlang.org/docs/handbook/basic-types.html#tuple) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#元组-tuple)
 - [C# Tuple]
+
+---
 
 [C# Tuple]: https://msdn.microsoft.com/en-us/library/system.tuple(v=vs.110).aspx

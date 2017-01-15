@@ -29,15 +29,15 @@ fibonacci.push('8');
 // index.ts(2,16): error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
 ```
 
-## 数组泛型（Generic）
+## 数组泛型
 
-也可以使用数组泛型 `Array<elemType>` 来表示数组：
+也可以使用数组泛型（Generic） `Array<elemType>` 来表示数组：
 
 ```ts
 let fibonacci: Array<number> = [1, 1, 2, 3, 5];
 ```
 
-关于泛型，可以参考？？？一章。
+关于泛型，可以参考[《泛型》](../advanced/generics.md)一章。
 
 ## 用接口表示数组
 

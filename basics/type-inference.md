@@ -38,5 +38,5 @@ myFavoriteNumber = 7;
 
 ---
 
-- [上一章：任意值（Any）](any.md)
+- [上一章：任意值](any.md)
 - [下一章：联合类型](union-types.md)

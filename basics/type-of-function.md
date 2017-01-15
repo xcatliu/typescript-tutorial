@@ -187,4 +187,4 @@ push(a, 1, 2, 3);
 ---
 
 - [上一章：数组的类型](type-of-array.md)
-- [下一章：声明文件（.d.ts）](declaration-files.md)
+- [下一章：声明文件](declaration-files.md)

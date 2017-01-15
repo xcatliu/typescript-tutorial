@@ -1,4 +1,4 @@
-# 枚举（Enum）
+# 枚举
 
 枚举（Enum）类型用于取值被限定在一定范围内的场景，比如一周只能有七天，颜色限定为红绿蓝等。
 
@@ -222,3 +222,5 @@ var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */];
 
 [中文手册 - 枚举]: https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Enums.html
 [C# Enum]: https://msdn.microsoft.com/zh-cn/library/sbbt4032.aspx
+
+---
