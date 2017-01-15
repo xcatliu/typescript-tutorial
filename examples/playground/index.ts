@@ -1,8 +1,6 @@
-declare const enum Directions {
-  Up,
-  Down,
-  Left,
-  Right
+function sayHello(person: string) {
+    return 'Hello, ' + person;
 }
 
-let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+let user = [0, 1, 2];
+document.body.innerHTML = sayHello(user);

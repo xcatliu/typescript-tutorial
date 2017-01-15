@@ -49,3 +49,8 @@
 大家可以根据自己团队和项目的情况判断是否需要使用 TypeScript。
 
 [TypeScript]: http://www.typescriptlang.org/
+
+---
+
+- [上一章：简介](README.md)
+- [下一章：安装 TypeScript](get-typescript.md)

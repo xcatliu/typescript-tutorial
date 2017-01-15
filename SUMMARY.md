@@ -3,8 +3,8 @@
 - [前言](README.md)
 - [简介](introduction/README.md)
   - [什么是 TypeScript](introduction/what-is-typescript.md)
-  - 安装 TypeScript（未完成）
-  - Helo World（未完成）
+  - [安装 TypeScript](introduction/get-typescript.md)
+  - [Hello TypeScript](introduction/hello-typescript.md)
 - [基础](basics/README.md)
   - [原始数据类型](basics/primitive-data-types.md)
   - [任意值（Any）](basics/any.md)

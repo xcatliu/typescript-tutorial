@@ -1,1 +1,5 @@
-var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */];
+function sayHello(person) {
+    return 'Hello, ' + person;
+}
+var user = [0, 1, 2];
+document.body.innerHTML = sayHello(user);

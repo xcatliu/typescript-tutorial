@@ -6,8 +6,8 @@
 
 ## 关于本书
 
-- [在线阅读](https://ts.xcatliu.com/)（部署在 GitBook 上，需要翻墙）
-- [在线阅读（GitHub 版）](basics/README.md)
+- [在线阅读](https://ts.xcatliu.com/)（部署在 [GitBook](https://www.gitbook.com/book/xcatliu/typescript-tutorial/details) 上，需要翻墙）
+- [在线阅读（GitHub 版）](introduction/README.md)
 - [GitHub 地址][GitHub]
 - 作者：[xcatliu](https://github.com/xcatliu/)
 
@@ -15,7 +15,6 @@
 
 随着对 TypeScript 理解的加深和 TypeScript 社区的发展，本书也会做出相应的更新，欢迎大家 [Star 收藏][GitHub]。
 
-- 在线版托管在 [GitBook](https://www.gitbook.com/book/xcatliu/typescript-tutorial/details)
 - 发现文章内容有问题，可以直接在页面下方评论
 - 对项目的建议，可以[提交 issue](https://github.com/xcatliu/typescript-tutorial/issues/new) 向作者反馈
 - 欢迎直接提交 pull-request 参与贡献
@@ -25,6 +24,8 @@
 TypeScript 虽然有[官方手册][Handbook]及其[非官方中文版][中文手册]，但是它每一章都希望能详尽的描述一个概念，导致前面的章节就会包含很多后面才会学习到的内容，而有些本该一开始就了解的基础知识却在后面才会涉及。如果是初学者，可能需要阅读多次才能理解。所以它更适合用来查阅，而不是学习。
 
 与官方手册不同，本书着重于从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript，希望能给大家一些帮助和启示。
+
+由于一些知识点与官方手册重合度很高，本书会在相应章节推荐直接阅读中文手册。
 
 ## 关于 TypeScript
 
@@ -39,11 +40,12 @@ TypeScript 虽然有[官方手册][Handbook]及其[非官方中文版][中文手
 - 熟悉 JavaScript，至少阅读过一遍[《JavaScript 高级程序设计》](https://book.douban.com/subject/10546125/)
 - 了解 ES6，推荐阅读 [ECMAScript 6 入门]
 - 了解 Node.js，会用 npm 安装及使用一些工具
-- 想学习 TypeScript 或者想对 TypeScript 有更深的理解
+- 想了解 TypeScript 或者想对 TypeScript 有更深的理解
 
 本书**不适合**以下人群
 
 - 没有系统学习过 JavaScript
+- 已经能够很熟练的运用 TypeScript
 
 ## 版权许可
 
@@ -58,6 +60,10 @@ TypeScript 虽然有[官方手册][Handbook]及其[非官方中文版][中文手
 - [TypeScript 官网][TypeScript] | [中文版](https://tslang.cn/)
 - [Handbook] | [中文版][中文手册]
 - [ECMAScript 6 入门]
+
+---
+
+- [下一章：简介](introduction/README.md)
 
 [GitHub]: https://github.com/xcatliu/typescript-tutorial
 [TypeScript]: http://www.typescriptlang.org/
