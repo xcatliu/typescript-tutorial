@@ -87,3 +87,8 @@ function sum() {
 
 - [Handbook - Basic Types # Array](http://www.typescriptlang.org/docs/handbook/basic-types.html#array) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#数组)
 - [Handbook - Interfaces # Indexable Types](http://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#数组类型)
+
+---
+
+- [上一章：对象的类型——接口](type-of-object-interfaces.md)
+- [下一章：函数的类型](type-of-function.md)

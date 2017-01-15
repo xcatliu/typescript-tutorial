@@ -78,3 +78,8 @@ npm install @types/jquery --save-dev
 
 - [Handbook - Writing Declaration Files](http://www.typescriptlang.org/docs/handbook/writing-declaration-files.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Writing%20Definition%20Files.html)
 - [Handbook - Triple-Slash Directives](http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Triple-Slash%20Directives.html)
+
+---
+
+- [上一章：函数的类型](type-of-function.md)
+- [下一章：内置对象](built-in-objects.md)

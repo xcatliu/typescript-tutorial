@@ -35,3 +35,8 @@ myFavoriteNumber = 7;
 ## 参考
 
 - [Handbook - Type Inference](http://www.typescriptlang.org/docs/handbook/type-inference.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Type%20Inference.html)
+
+---
+
+- [上一章：任意值（Any）](any.md)
+- [下一章：联合类型](union-types.md)

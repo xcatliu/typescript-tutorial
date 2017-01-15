@@ -11,3 +11,8 @@
 - [函数的类型](type-of-function.md)
 - [声明文件（.d.ts）](declaration-files.md)
 - [内置对象](built-in-objects.md)
+
+---
+
+- [上一章：Hello TypeScript](../introduction/hello-typescript.md)
+- [下一章：原始数据类型](primitive-data-types.md)

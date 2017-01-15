@@ -159,3 +159,8 @@ let xcatliu: Person = {
 ## 参考 
 
 - [Handbook - Interfaces](http://www.typescriptlang.org/docs/handbook/interfaces.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html)
+
+---
+
+- [上一章：联合类型](union-types.md)
+- [下一章：数组的类型](type-of-array.md)

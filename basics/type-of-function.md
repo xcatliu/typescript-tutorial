@@ -183,3 +183,8 @@ push(a, 1, 2, 3);
 [ES6 中的箭头函数]: http://es6.ruanyifeng.com/#docs/function#箭头函数
 [ES6 中函数参数的默认值]: http://es6.ruanyifeng.com/#docs/function#函数参数的默认值
 [ES6 中的 rest 参数]: http://es6.ruanyifeng.com/#docs/function#rest参数
+
+---
+
+- [上一章：数组的类型](type-of-array.md)
+- [下一章：声明文件（.d.ts）](declaration-files.md)
