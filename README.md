@@ -6,7 +6,8 @@
 
 ## 关于本书
 
-- [在线阅读](https://ts.xcatliu.com/)
+- [在线阅读](https://ts.xcatliu.com/)（部署在 GitBook 上，需要翻墙）
+- [在线阅读（GitHub 版）](basics/README.md)
 - [GitHub 地址][GitHub]
 - 作者：[xcatliu](https://github.com/xcatliu/)
 
@@ -54,8 +55,8 @@ TypeScript 虽然有[官方手册][Handbook]及其[非官方中文版][中文手
 
 ## 相关资料
 
-- [TypeScript 官网][TypeScript] | [TypeScript 中文网](https://tslang.cn/)
-- [Handbook] | [中文手册]
+- [TypeScript 官网][TypeScript] | [中文版](https://tslang.cn/)
+- [Handbook] | [中文版][中文手册]
 - [ECMAScript 6 入门]
 
 [GitHub]: https://github.com/xcatliu/typescript-tutorial
