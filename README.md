@@ -57,7 +57,7 @@ TypeScript 虽然有[官方手册][Handbook]及其[非官方中文版][中文手
 
 ## 相关资料
 
-- [TypeScript 官网][TypeScript] | [中文版](https://tslang.cn/)
+- [TypeScript 官网][TypeScript]
 - [Handbook] | [中文版][中文手册]
 - [ECMAScript 6 入门]
 
