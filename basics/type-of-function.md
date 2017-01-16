@@ -171,6 +171,10 @@ push(a, 1, 2, 3);
 
 注意，rest 参数只能是最后一个参数，关于 rest 参数，可以参考 [ES6 中的 rest 参数]。
 
+## 重载
+
+TBD
+
 ## 参考
 
 - [Handbook - Functions](http://www.typescriptlang.org/docs/handbook/functions.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Functions.html)
@@ -187,4 +191,4 @@ push(a, 1, 2, 3);
 ---
 
 - [上一章：数组的类型](type-of-array.md)
-- [下一章：声明文件](declaration-files.md)
+- [下一章：类型断言](type-assertion.md)

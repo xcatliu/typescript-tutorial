@@ -81,5 +81,5 @@ npm install @types/jquery --save-dev
 
 ---
 
-- [上一章：函数的类型](type-of-function.md)
+- [上一章：类型断言](type-assertion.md)
 - [下一章：内置对象](built-in-objects.md)

@@ -134,3 +134,6 @@ TBD
 - [Handbook - Generics](http://www.typescriptlang.org/docs/handbook/generics.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/generics.html)
 
 ---
+
+- [上一章：类与接口](class-and-interfaces.md)
+- [下一章：声明合并](declaration-merging.md)

@@ -9,6 +9,7 @@
 - [对象的类型——接口](type-of-object-interfaces.md)
 - [数组的类型](type-of-array.md)
 - [函数的类型](type-of-function.md)
+- [类型断言](type-assertion.md)
 - [声明文件](declaration-files.md)
 - [内置对象](built-in-objects.md)
 

@@ -94,4 +94,7 @@ console.log(xcatliu[2].slice(1));
 
 ---
 
+- [上一章：字符串字面量类型](string-literal-types.md)
+- [下一章：枚举](enum.md)
+
 [C# Tuple]: https://msdn.microsoft.com/en-us/library/system.tuple(v=vs.110).aspx
