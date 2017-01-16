@@ -35,7 +35,7 @@
 - 大部分第三方库都有提供给 TypeScript 的类型定义文件
 - Google 开发的 Angular2 就是使用 TypeScript 编写的
 - ES6 的一部分特性是借鉴的 TypeScript 的（这条需要来源）
-- TypeScript 拥抱了 ES6 规范，也支持部分 ES.Next 草案的规范
+- TypeScript 拥抱了 ES6 规范，也支持部分 ES7 草案的规范
 
 ### TypeScript 的缺点
 

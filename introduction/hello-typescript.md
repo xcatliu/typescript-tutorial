@@ -35,7 +35,7 @@ TypeScript 中，使用 `:` 指定变量的类型，`:` 的前后有没有空格
 
 **TypeScript 只会进行静态检查，如果发现有错误，编译的时候就会报错。**
 
-> Tip: `let` 是 ES6 中的关键字，和 `var` 类似，用于定义一个局部变量，可以参阅 [let 和 const 命令](http://es6.ruanyifeng.com/#docs/let)。
+> `let` 是 ES6 中的关键字，和 `var` 类似，用于定义一个局部变量，可以参阅 [let 和 const 命令](http://es6.ruanyifeng.com/#docs/let)。
 
 下面尝试把这段代码编译一下：
 
@@ -64,9 +64,9 @@ var user = [0, 1, 2];
 document.body.innerHTML = sayHello(user);
 ```
 
-TypeScript 编译的时候即使报错了，还是会生成编译结果，我们仍然可以使用这个编译之后的文件。
+**TypeScript 编译的时候即使报错了，还是会生成编译结果**，我们仍然可以使用这个编译之后的文件。
 
-如果要在报错的时候终止 js 文件的生成，可以在 `tsconfig.json` 中配置 ？？？ 即可。关于 `tsconfig.json`，请参阅《？？？》一章。
+如果要在报错的时候终止 js 文件的生成，可以在 `tsconfig.json` 中配置 `noEmitOnError` 即可。关于 `tsconfig.json`，请参阅[编译选项](../practice)一章。
 
 ---
 
