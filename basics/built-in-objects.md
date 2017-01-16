@@ -1,6 +1,6 @@
 # 内置对象
 
-JavaScript 中有很多[内置对象]，它们可以直接在 TypeScript 中当做定义好了的类型。
+JavaScript 中有很多[内置对象][]，它们可以直接在 TypeScript 中当做定义好了的类型。
 
 内置对象是指根据标准在全局作用域（Global）上存在的对象。这里的标准是指 ECMAScript 和其他环境（比如 DOM）的标准。
 
@@ -21,7 +21,7 @@ let r: RegExp = /[a-z]/;
 
 更多的内置对象，可以查看 [MDN 的文档][内置对象]。
 
-而他们的定义文件，则在 [TypeScript 核心库的定义文件]中。
+而他们的定义文件，则在 [TypeScript 核心库的定义文件][]中。
 
 ## DOM 和 BOM 的内置对象
 
@@ -39,11 +39,11 @@ document.addEventListener('click', function(e: MouseEvent) {
 });
 ```
 
-它们的定义文件同样在 [TypeScript 核心库的定义文件]中。
+它们的定义文件同样在 [TypeScript 核心库的定义文件][]中。
 
 ## TypeScript 核心库的定义文件
 
-[TypeScript 核心库的定义文件]中定义了所有浏览器环境需要用到的类型，并且是预置在 TypeScript 中的。
+[TypeScript 核心库的定义文件][]中定义了所有浏览器环境需要用到的类型，并且是预置在 TypeScript 中的。
 
 当你在使用一些常用的方法的时候，TypeScript 实际上已经帮你做了很多类型判断的工作了，比如：
 
@@ -86,9 +86,7 @@ interface Document extends Node, GlobalEventHandlers, NodeSelector, DocumentEven
 
 所以 `e` 被推断成了 `MouseEvent`，而 `MouseEvent` 是没有 `targetCurrent` 属性的，所以报错了。
 
-查看 TypeScript 核心库的定义：[TypeScript 核心库的定义文件]。
-
-需要注意的是，TypeScript 核心库的定义中不包含 Node.js 部分。
+注意，TypeScript 核心库的定义中不包含 Node.js 部分。
 
 ## 用 TypeScript 写 Node.js
 
@@ -100,8 +98,8 @@ npm install @types/node --save-dev
 
 ## Links
 
-- [内置对象]
-- [TypeScript 核心库的定义文件]
+- [内置对象][]
+- [TypeScript 核心库的定义文件][]
 
 [内置对象]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 [TypeScript 核心库的定义文件]: https://github.com/Microsoft/TypeScript/tree/master/src/lib

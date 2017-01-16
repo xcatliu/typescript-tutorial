@@ -1,5 +1,5 @@
-function loggingIdentity(arg) {
-    console.log(arg.length);
-    return arg;
-}
-loggingIdentity(7);
+var xcatliu = {
+    name: 'Xcat Liu',
+    website: 'http://xcatliu.com'
+};
+xcatliu.id = 89757;

@@ -6,7 +6,7 @@ JavaScript 的类型分为两种：原始数据类型（[Primitive data types][]
 
 本节主要介绍**前五种**原始数据类型在 TypeScript 中的应用。
 
-## 布尔值（Boolean）
+## 布尔值
 
 布尔值是最基础的数据类型，在 TypeScript 中，使用 `boolean` 定义布尔值类型：
 
@@ -17,7 +17,7 @@ let isDone: boolean = false;
 // 后面约定，未强调编译错误的代码片段，默认为编译通过
 ```
 
-注意，使用构造函数 `Boolean` 创造的对象不是布尔值：
+注意，使用构造函数 `Boolean` 创造的对象**不是**布尔值：
 
 ```ts
 let createdByNewBoolean: boolean = new Boolean(1);
@@ -40,7 +40,7 @@ let createdByBoolean: boolean = Boolean(1);
 
 在 TypeScript 中，`boolean` 是 JavaScript 中的基本类型，而 `Boolean` 是 JavaScript 中的构造函数。其他基本类型（除了 `null` 和 `undefined`）一样，不再赘述。
 
-## 数值（Number）
+## 数值
 
 使用 `number` 定义数值类型：
 
@@ -70,7 +70,7 @@ var infinityNumber = Infinity;
 
 其中 `0b1010` 和 `0o744` 是 [ES6 中的二进制和八进制表示法][]，它们会被编译为十进制数字。
 
-## 字符串（String）
+## 字符串
 
 使用 `string` 定义字符串类型：
 
@@ -94,9 +94,9 @@ var sentence = "Hello, my name is " + myName + ".\nI'll be " + (myAge + 1) + " y
 
 其中 <code>&#96;</code> 用来定义 [ES6 中的模板字符串][]，`${expr}` 用来在模板字符串中嵌入表达式。
 
-## 空值（Void）
+## 空值
 
-空值 `void` 一般用于没有任何返回值的函数：
+JavaScript 没有空值（Void）的概念，在 TypeScirpt 中，可以用 `void` 表示没有任何返回值的函数：
 
 ```ts
 function alertName(): void {
@@ -104,7 +104,7 @@ function alertName(): void {
 }
 ```
 
-声明一个 `void` 类型的变量没有什么大用，因为你只能将它赋值为 `undefined` 和 `null`：
+声明一个 `void` 类型的变量没有什么用，因为你只能将它赋值为 `undefined` 和 `null`：
 
 ```ts
 let unusable: void = undefined;
@@ -145,7 +145,7 @@ let num: number = u;
 
 ## 参考
 
-- [Handbook - Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)
+- [Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)
 - [Primitive data types][]
 - [ES6 中的新类型 `Symbol`][]
 - [ES6 中的二进制和八进制表示法][]

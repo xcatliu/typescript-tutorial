@@ -10,7 +10,7 @@
 let fibonacci: number[] = [1, 1, 2, 3, 5];
 ```
 
-数组的项中不允许出现其他的类型：
+数组的项中**不允许**出现其他的类型：
 
 ```ts
 let fibonacci: number[] = [1, '1', 2, 3, 5];
@@ -37,7 +37,7 @@ fibonacci.push('8');
 let fibonacci: Array<number> = [1, 1, 2, 3, 5];
 ```
 
-关于泛型，可以参考[《泛型》](../advanced/generics.md)一章。
+关于泛型，可以参考[泛型](../advanced/generics.md)一章。
 
 ## 用接口表示数组
 
@@ -81,12 +81,12 @@ function sum() {
 }
 ```
 
-关于内建类型，可以参考[内置对象](./built-in-objects.md)一章。
+关于内置对象，可以参考[内置对象](./built-in-objects.md)一章。
 
 ## Links
 
-- [Handbook - Basic Types # Array](http://www.typescriptlang.org/docs/handbook/basic-types.html#array) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#数组)
-- [Handbook - Interfaces # Indexable Types](http://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#数组类型)
+- [Basic Types # Array](http://www.typescriptlang.org/docs/handbook/basic-types.html#array) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#数组)
+- [Interfaces # Indexable Types](http://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#数组类型)
 
 ---
 

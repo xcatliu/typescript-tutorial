@@ -1,10 +1,13 @@
-interface Lengthwise {
-  length: number;
+interface Person {
+  readonly id: number;
+  name: string;
+  age?: number;
+  [propName: string]: any;
 }
 
-function loggingIdentity<T extends Lengthwise>(arg: T): T {
-  console.log(arg.length);
-  return arg;
-}
+let xcatliu: Person = {
+  name: 'Xcat Liu',
+  website: 'http://xcatliu.com',
+};
 
-loggingIdentity(7);
+xcatliu.id = 89757;
