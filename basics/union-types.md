@@ -61,7 +61,7 @@ console.log(myFavoriteNumber.length); // 编译时报错
 
 而第四行的 `myFavoriteNumber` 被推断成了 `number`，访问它的 `length` 属性时就报错了。
 
-## Links
+## 参考
 
 - [Advanced Types # Union Types](http://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Advanced%20Types.html#联合类型)
 

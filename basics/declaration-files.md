@@ -72,7 +72,7 @@ npm install @types/jquery --save-dev
 
 可以在[这个页面](http://microsoft.github.io/TypeSearch/)搜索你需要的声明文件。
 
-## Links
+## 参考
 
 - [Writing Declaration Files](http://www.typescriptlang.org/docs/handbook/writing-declaration-files.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Writing%20Definition%20Files.html)
 - [Triple-Slash Directives](http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Triple-Slash%20Directives.html)

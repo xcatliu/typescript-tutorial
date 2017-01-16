@@ -83,7 +83,7 @@ function sum() {
 
 关于内置对象，可以参考[内置对象](./built-in-objects.md)一章。
 
-## Links
+## 参考
 
 - [Basic Types # Array](http://www.typescriptlang.org/docs/handbook/basic-types.html#array) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#数组)
 - [Interfaces # Indexable Types](http://www.typescriptlang.org/docs/handbook/interfaces.html#indexable-types) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#数组类型)

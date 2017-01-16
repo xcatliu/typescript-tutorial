@@ -96,7 +96,7 @@ Node.js 不是内置对象的一部分，如果想用 TypeScript 写 Node.js，�
 npm install @types/node --save-dev
 ```
 
-## Links
+## 参考
 
 - [内置对象][]
 - [TypeScript 核心库的定义文件][]
