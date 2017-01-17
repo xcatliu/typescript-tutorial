@@ -1,6 +1,6 @@
 {
   "name": "typescript-tutorial",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript",
   "main": "README.md",
   "directories": {
