@@ -1,6 +1,6 @@
 ## 进阶
 
-TBD
+本部分介绍一些高级的类型与技术，具体内容包括：
 
 - [类型别名](type-aliases.md)
 - [字符串字面量类型](string-literal-types.md)

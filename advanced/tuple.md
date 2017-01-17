@@ -89,7 +89,7 @@ console.log(xcatliu[2].slice(1));
 
 ## 参考
 
-- [Handbook - Basic Types # Tuple](http://www.typescriptlang.org/docs/handbook/basic-types.html#tuple) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#元组-tuple)
+- [Basic Types # Tuple](http://www.typescriptlang.org/docs/handbook/basic-types.html#tuple)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#元组-tuple)）
 - [C# Tuple]
 
 ---

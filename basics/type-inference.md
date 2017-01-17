@@ -34,7 +34,7 @@ myFavoriteNumber = 7;
 
 ## 参考
 
-- [Type Inference](http://www.typescriptlang.org/docs/handbook/type-inference.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Type%20Inference.html)
+- [Type Inference](http://www.typescriptlang.org/docs/handbook/type-inference.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Type%20Inference.html)）
 
 ---
 

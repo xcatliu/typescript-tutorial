@@ -65,7 +65,7 @@ something.setName('Jerry Lee');
 
 ## 参考
 
-- [Basic Types # Any](http://www.typescriptlang.org/docs/handbook/basic-types.html#any) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#任意值)
+- [Basic Types # Any](http://www.typescriptlang.org/docs/handbook/basic-types.html#any)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#任意值)）
 
 ---
 

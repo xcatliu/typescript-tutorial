@@ -217,7 +217,7 @@ var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */];
 
 ## 参考
 
-- [Handbook - Enums](http://www.typescriptlang.org/docs/handbook/enums.html) | [中文版][中文手册 - 枚举]
+- [Enums](http://www.typescriptlang.org/docs/handbook/enums.html)（[中文版][中文手册 - 枚举]）
 - [C# Enum][]
 
 [中文手册 - 枚举]: https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Enums.html

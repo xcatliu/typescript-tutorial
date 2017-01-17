@@ -207,7 +207,7 @@ xcatliu.id = 89757;
 
 ## 参考 
 
-- [Interfaces](http://www.typescriptlang.org/docs/handbook/interfaces.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html)
+- [Interfaces](http://www.typescriptlang.org/docs/handbook/interfaces.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html)）
 
 ---
 

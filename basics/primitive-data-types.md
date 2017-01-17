@@ -145,7 +145,7 @@ let num: number = u;
 
 ## 参考
 
-- [Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)
+- [Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)）
 - [Primitive data types][]
 - [ES6 中的新类型 `Symbol`][]
 - [ES6 中的二进制和八进制表示法][]

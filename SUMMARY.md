@@ -26,8 +26,4 @@
   - [泛型](advanced/generics.md)
   - [声明合并](advanced/declaration-merging.md)
   - [扩展阅读](advanced/further-reading.md)
-- [实践](practice/README.md)
-  - [编译选项](practice/tsconfig.md)
-  - [代码检查](practice/tslint.md)
-  - [构建工具](practice/build.md)
 - [感谢](thanks/README.md)

@@ -118,20 +118,93 @@ loggingIdentity(7);
 多个类型参数之间也可以互相约束：
 
 ```ts
-TBD
+function copyFields<T extends U, U>(target: T, source: U): T {
+  for (let id in source) {
+    target[id] = (<T>source)[id];
+  }
+  return target;
+}
+
+let x = { a: 1, b: 2, c: 3, d: 4 };
+
+copyFields(x, { b: 10, d: 20 });
 ```
+
+上例中，我们使用了两个类型参数，其中要求 `T` 继承 `U`，这样就保证了 `U` 上不会出现 `T` 中不存在的字段。
 
 ## 泛型接口
 
-TBD
+[之前学习过](../basics/type-of-function.md#接口中函数的定义)，可以使用接口的方式来定义一个函数需要符合的形状：
+
+```ts
+interface SearchFunc {
+  (source: string, subString: string): boolean;
+}
+
+let mySearch: SearchFunc;
+mySearch = function(source: string, subString: string) {
+  return source.search(subString) !== -1;
+}
+```
+
+当然也可以使用含有泛型的接口来定义函数的形状：
+
+```ts
+interface CreateArrayFunc {
+  <T>(length: number, value: T): Array<T>;
+}
+
+let createArray: CreateArrayFunc;
+createArray = function<T>(length: number, value: T): Array<T> {
+  let result = [];
+  for (let i = 0; i < length; i++) {
+    result[i] = value;
+  }
+  return result;
+}
+
+createArray(3, 'x'); // ['x', 'x', 'x']
+```
+
+进一步，我们可以把泛型参数提前到接口名上：
+
+```ts
+interface CreateArrayFunc<T> {
+  (length: number, value: T): Array<T>;
+}
+
+let createArray: CreateArrayFunc<any>;
+createArray = function<T>(length: number, value: T): Array<T> {
+  let result = [];
+  for (let i = 0; i < length; i++) {
+    result[i] = value;
+  }
+  return result;
+}
+
+createArray(3, 'x'); // ['x', 'x', 'x']
+```
+
+注意，此时在使用泛型接口的时候，需要定义泛型的类型。
 
 ## 泛型类
 
-TBD
+与泛型接口类似，泛型也可以用于类的类型定义中：
+
+```ts
+class GenericNumber<T> {
+    zeroValue: T;
+    add: (x: T, y: T) => T;
+}
+
+let myGenericNumber = new GenericNumber<number>();
+myGenericNumber.zeroValue = 0;
+myGenericNumber.add = function(x, y) { return x + y; };
+```
 
 ## 参考
 
-- [Handbook - Generics](http://www.typescriptlang.org/docs/handbook/generics.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/generics.html)
+- [Generics](http://www.typescriptlang.org/docs/handbook/generics.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/generics.html)）
 
 ---
 

@@ -1,13 +1,7 @@
-interface Person {
-  readonly id: number;
-  name: string;
-  age?: number;
-  [propName: string]: any;
+interface Alarm {
+  price: number;
 }
-
-let xcatliu: Person = {
-  name: 'Xcat Liu',
-  website: 'http://xcatliu.com',
-};
-
-xcatliu.id = 89757;
+interface Alarm {
+  price: string;
+  weight: number;
+}

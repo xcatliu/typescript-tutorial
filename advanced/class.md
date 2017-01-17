@@ -336,9 +336,28 @@ var Cat = (function (_super) {
 var cat = new Cat('Tom');
 ```
 
+## 类的类型
+
+给类加上 TypeScript 的类型很简单，与接口类似：
+
+```ts
+class Animal {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  sayHi(): string {
+    return `My name is ${name}`;
+  }
+}
+
+let a: Animal = new Animal('Jack');
+console.log(a.sayHi()); // My name is Jack
+```
+
 ## 参考
 
-- [Handbook - Classes](http://www.typescriptlang.org/docs/handbook/classes.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Classes.html)
+- [Classes](http://www.typescriptlang.org/docs/handbook/classes.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Classes.html)）
 - [ECMAScript 6 入门 - Class]
 
 [ECMAScript 6 入门 - Class]: http://es6.ruanyifeng.com/#docs/class

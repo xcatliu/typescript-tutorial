@@ -211,8 +211,8 @@ function reverse(x: number | string): number | string {
 
 ## 参考
 
-- [Functions](http://www.typescriptlang.org/docs/handbook/functions.html) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Functions.html)
-- [Functions # Function Types](http://www.typescriptlang.org/docs/handbook/interfaces.html#function-types) | [中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#函数类型)
+- [Functions](http://www.typescriptlang.org/docs/handbook/functions.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Functions.html)）
+- [Functions # Function Types](http://www.typescriptlang.org/docs/handbook/interfaces.html#function-types)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html#函数类型)）
 - [JS 函数式编程指南](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
 - [ES6 中的箭头函数]
 - [ES6 中函数参数的默认值]
