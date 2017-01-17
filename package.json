@@ -1,0 +1,27 @@
+{
+  "name": "typescript-tutorial",
+  "version": "0.0.0",
+  "description": "从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript",
+  "main": "README.md",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xcatliu/typescript-tutorial.git"
+  },
+  "keywords": [
+    "typescript",
+    "tutorial",
+    "javascript"
+  ],
+  "author": "xcatliu <xcatliu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xcatliu/typescript-tutorial/issues"
+  },
+  "homepage": "https://github.com/xcatliu/typescript-tutorial#readme"
+}
