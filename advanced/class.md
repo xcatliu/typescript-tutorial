@@ -263,7 +263,7 @@ let a = new Animal('Jack');
 
 上面的例子中，我们定义了一个抽象类 `Animal`，并且定义了一个抽象方法 `sayHi`。在实例化抽象类的时候报错了。
 
-其次，抽象类中的抽象方法必须被之类实现：
+其次，抽象类中的抽象方法必须被子类实现：
 
 ```ts
 abstract class Animal {
@@ -285,7 +285,7 @@ let cat = new Cat('Tom');
 // index.ts(9,7): error TS2515: Non-abstract class 'Cat' does not implement inherited abstract member 'sayHi' from class 'Animal'.
 ```
 
-上面的例子中，我们定义了一个抽象类 `Cat` 继承了 `Animal`，但是没有实现抽象方法 `sayHi`，所以编译报错了。
+上面的例子中，我们定义了一个类 `Cat` 继承了抽象类 `Animal`，但是没有实现抽象方法 `sayHi`，所以编译报错了。
 
 下面是一个正确使用抽象类的例子：
 
