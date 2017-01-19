@@ -56,8 +56,8 @@ let xcatliu: Person = {
   website: 'http://xcatliu.com',
 };
 
-// index.ts(9,3): error TS2322: Type '{ name: string; age: number; github: string; }' is not assignable to type 'Person'.
-//   Object literal may only specify known properties, and 'github' does not exist in type 'Person'.
+// index.ts(9,3): error TS2322: Type '{ name: string; age: number; website: string; }' is not assignable to type 'Person'.
+//   Object literal may only specify known properties, and 'website' does not exist in type 'Person'.
 ```
 
 可见，**赋值的时候，变量的形状必须和接口的形状保持一致**。
@@ -126,7 +126,7 @@ let xcatliu: Person = {
 };
 ```
 
-使用 `[propName: string]` 可以定义任意属性是 `string` 的值的类型。
+使用 `[propName: string]` 定义了任意属性取 `string` 类型的值。
 
 需要注意的是，**一旦定义了任意属性，那么确定属性和可选属性都必须是它的子属性**：
 
@@ -144,7 +144,7 @@ let xcatliu: Person = {
 };
 
 // index.ts(3,3): error TS2411: Property 'age' of type 'number' is not assignable to string index type 'string'.
-// index.ts(7,5): error TS2322: Type '{ [x: string]: string | number; name: string; age: number; github: string; }' is not assignable to type 'Person'.
+// index.ts(7,5): error TS2322: Type '{ [x: string]: string | number; name: string; age: number; website: string; }' is not assignable to type 'Person'.
 //   Index signatures are incompatible.
 //     Type 'string | number' is not assignable to type 'string'.
 //       Type 'number' is not assignable to type 'string'.
@@ -152,7 +152,7 @@ let xcatliu: Person = {
 
 上例中，任意属性的值允许是 `string`，但是可选属性 `age` 的值却是 `number`，`number` 不是 `string` 的子属性，所以报错了。
 
-另外，在报错信息中可以看出，此时 `{ name: 'Xcat Liu', age: 25, website: 'http://xcatliu.com' }` 的类型被推断成了 `{ [x: string]: string | number; name: string; age: number; github: string; }`，这是联合类型和接口的结合。
+另外，在报错信息中可以看出，此时 `{ name: 'Xcat Liu', age: 25, website: 'http://xcatliu.com' }` 的类型被推断成了 `{ [x: string]: string | number; name: string; age: number; website: string; }`，这是联合类型和接口的结合。
 
 ## 只读属性
 
