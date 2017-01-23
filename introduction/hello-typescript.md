@@ -10,7 +10,7 @@ function sayHello(person: string) {
 }
 
 let user = 'Xcat Liu';
-document.body.innerHTML = sayHello(user);
+console.log(sayHello(user));
 ```
 
 然后执行
@@ -26,7 +26,7 @@ function sayHello(person) {
     return 'Hello, ' + person;
 }
 var user = 'Xcat Liu';
-document.body.innerHTML = sayHello(user);
+console.log(sayHello(user));
 ```
 
 TypeScript 中，使用 `:` 指定变量的类型，`:` 的前后有没有空格都可以。
@@ -45,7 +45,7 @@ function sayHello(person: string) {
 }
 
 let user = [0, 1, 2];
-document.body.innerHTML = sayHello(user);
+console.log(sayHello(user));
 ```
 
 编辑器中会提示错误，编译的时候也会出错：
@@ -61,7 +61,7 @@ function sayHello(person) {
     return 'Hello, ' + person;
 }
 var user = [0, 1, 2];
-document.body.innerHTML = sayHello(user);
+console.log(sayHello(user));
 ```
 
 **TypeScript 编译的时候即使报错了，还是会生成编译结果**，我们仍然可以使用这个编译之后的文件。
