@@ -11,7 +11,7 @@
 - [GitHub 地址][GitHub]
 - 作者：[xcatliu](https://github.com/xcatliu/)
 
-本书是作者在学习 [TypeScript] 后总结的入门教程。
+本书是作者在学习 [TypeScript] 后整理的学习笔记。
 
 随着对 TypeScript 理解的加深和 TypeScript 社区的发展，本书也会做出相应的更新，欢迎大家 [Star 收藏][GitHub]。
 
