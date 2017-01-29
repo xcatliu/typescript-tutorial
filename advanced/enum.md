@@ -84,15 +84,26 @@ var Days;
 
 所以使用的时候需要注意，最好不要出现这种覆盖的情况。
 
-手动赋值的枚举项只能为数字，任何其他类型都是不被允许的：
+手动赋值的枚举项可以不是数字，此时需要使用类型断言来让tsc无视类型检查 (编译出的js仍然是可用的)：
 
 ```ts
-enum Days {Sun = 7, Mon, Tue, Wed, Thu, Fri, Sat = "S"};
-
-// index.ts(1,52): error TS2322: Type 'string' is not assignable to type 'Days'.
+enum Days {Sun = 7, Mon, Tue, Wed, Thu, Fri, Sat = <any>"S"};
 ```
 
-当然，手动赋值的枚举项也可以为小数或负数，此时后续未手动赋值的项的递增步长任为 `1`：
+```js
+var Days;
+(function (Days) {
+    Days[Days["Sun"] = 7] = "Sun";
+    Days[Days["Mon"] = 8] = "Mon";
+    Days[Days["Tue"] = 9] = "Tue";
+    Days[Days["Wed"] = 10] = "Wed";
+    Days[Days["Thu"] = 11] = "Thu";
+    Days[Days["Fri"] = 12] = "Fri";
+    Days[Days["Sat"] = "S"] = "Sat";
+})(Days || (Days = {}));
+```
+
+当然，手动赋值的枚举项也可以为小数或负数，此时后续未手动赋值的项的递增步长仍为 `1`：
 
 ```ts
 enum Days {Sun = 7, Mon = 1.5, Tue, Wed, Thu, Fri, Sat};
