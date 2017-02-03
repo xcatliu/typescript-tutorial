@@ -1,6 +1,8 @@
 # 元组
 
-元组（Tuple）表示一些特定类型组合成的**数组**类型。
+数组合并了相同类型的对象，而元组（Tuple）合并了不同类型的对象。
+
+元组起源于函数编程语言（如 F#）,在这些语言中频繁使用元组。
 
 ## 简单的例子
 
@@ -85,16 +87,11 @@ console.log(xcatliu[2].slice(1));
 
 之前提到过，[如果一个值是联合类型，我们只能访问此联合类型的所有类型里共有的属性或方法。](../basics/union-types.md#访问联合类型的属性或方法)
 
-> 元组的概念[来源于 C#][C# Tuple]。区别是，C# 中的元组是只读的。
-
 ## 参考
 
 - [Basic Types # Tuple](http://www.typescriptlang.org/docs/handbook/basic-types.html#tuple)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#元组-tuple)）
-- [C# Tuple]
 
 ---
 
 - [上一章：字符串字面量类型](string-literal-types.md)
 - [下一章：枚举](enum.md)
-
-[C# Tuple]: https://msdn.microsoft.com/en-us/library/system.tuple(v=vs.110).aspx
