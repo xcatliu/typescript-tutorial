@@ -47,6 +47,12 @@ TypeScript 虽然有[官方手册][Handbook]及其[非官方中文版][中文手
 - 没有系统学习过 JavaScript
 - 已经能够很熟练的运用 TypeScript
 
+## 评价
+
+> 《TypeScript 入门教程》全面介绍了 TS 强大的类型系统，完整而简洁，示例丰富，比官方文档更易读，非常适合作为初学者学习 TS 的第一本书。
+>
+> —— [阮一峰](https://github.com/ruanyf)
+
 ## 目录
 
 - [前言](README.md)
