@@ -347,7 +347,7 @@ class Animal {
     this.name = name;
   }
   sayHi(): string {
-    return `My name is ${name}`;
+    return `My name is ${this.name}`;
   }
 }
 
