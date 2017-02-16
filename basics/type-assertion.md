@@ -1,8 +1,20 @@
 # 类型断言
 
-类型断言（Type Assertion）用来手动将一个联合类型的变量指定为一个更加具体的类型。
+类型断言（Type Assertion）可以用来绕过编译器的类型推断，手动指定一个值的类型（即程序员对编译器**断言**）。
 
-## 简单的例子
+## 语法
+
+```ts
+<类型>值
+
+// 或
+
+值 as 类型
+
+// 在TSX语法 (React的JSX语法的TS版）中必须用后一种
+```
+
+## 例子：将一个联合类型的变量指定为一个更加具体的类型
 
 [之前提到过](union-types.md#访问联合类型的属性或方法)，当 TypeScript 不确定一个联合类型的变量到底是哪个类型的时候，我们**只能访问此联合类型的所有类型里共有的属性或方法**：
 
@@ -61,6 +73,7 @@ function toBoolean(something: string | number): boolean {
 
 ## 参考
 
+- [TypeScript Deep Dive / Type Assertion](https://basarat.gitbooks.io/typescript/content/docs/types/type-assertion.html)
 - [Advanced Types # Type Guards and Differentiating Types](http://www.typescriptlang.org/docs/handbook/advanced-types.html#type-guards-and-differentiating-types)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Advanced%20Types.html#类型保护与区分类型（type-guards-and-differentiating-types）)）
 
 ---
