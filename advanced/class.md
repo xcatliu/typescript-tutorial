@@ -37,7 +37,7 @@ class Animal {
     this.name = name;
   }
   sayHi() {
-    return `My name is ${name}`;
+    return `My name is ${this.name}`;
   }
 }
 
@@ -47,7 +47,7 @@ console.log(a.sayHi()); // My name is Jack
 
 ### 类的继承
 
-使用 `extends` 关键字实现继承，子类中使用 `super` 表示父类的构造函数。
+使用 `extends` 关键字实现继承，子类中使用 `super` 关键字来调用父类的构造函数和方法。
 
 ```js
 class Cat extends Animal {
