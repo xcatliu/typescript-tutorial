@@ -174,7 +174,7 @@ let xcatliu: Person = {
 
 xcatliu.id = 9527;
 
-// index.ts(14,9): error TS2540: Cannot assign to 'id' because it is a constant or a read-only property.
+// index.ts(14,9): error TS2450: Cannot assign to 'id' because it is a constant or a read-only property.
 ```
 
 上例中，使用 `readonly` 定义的属性 `id` 初始化后，又被赋值了，所以报错了。
