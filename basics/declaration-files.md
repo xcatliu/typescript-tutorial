@@ -58,7 +58,7 @@ jQuery('#foo');
 
 ## 第三方声明文件
 
-当然，jQuery 的声明文件不需要我们定义了，已经有人帮我们定义好了：[jQuery in DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/jquery)。
+当然，jQuery 的声明文件不需要我们定义了，已经有人帮我们定义好了：[jQuery in DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/jquery/index.d.ts)。
 
 我们可以直接下载下来使用，但是更推荐的是使用工具统一管理第三方库的声明文件。
 
