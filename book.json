@@ -2,7 +2,7 @@
   "title": "TypeScript 入门教程",
   "description": "从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript。",
   "author": "xcatliu <xcatliu@gmail.com>",
-  "language": "zh",
+  "language": "zh-hans",
   "plugins": ["disqus", "github"],
   "pluginsConfig": {
     "disqus": {
