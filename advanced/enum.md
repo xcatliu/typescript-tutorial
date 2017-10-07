@@ -224,7 +224,7 @@ let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Ri
 var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */];
 ```
 
-> 枚举类型的概念[来源于 C#][C# Enum]。
+> TypeScript 的枚举类型的概念[来源于 C#][C# Enum]。
 
 ## 参考
 
