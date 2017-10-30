@@ -156,7 +156,7 @@ interface CreateArrayFunc {
 
 let createArray: CreateArrayFunc;
 createArray = function<T>(length: number, value: T): Array<T> {
-  let result = [];
+  let result: T[] = [];
   for (let i = 0; i < length; i++) {
     result[i] = value;
   }
@@ -175,7 +175,7 @@ interface CreateArrayFunc<T> {
 
 let createArray: CreateArrayFunc<any>;
 createArray = function<T>(length: number, value: T): Array<T> {
-  let result = [];
+  let result: T[] = [];
   for (let i = 0; i < length; i++) {
     result[i] = value;
   }
@@ -200,6 +200,20 @@ class GenericNumber<T> {
 let myGenericNumber = new GenericNumber<number>();
 myGenericNumber.zeroValue = 0;
 myGenericNumber.add = function(x, y) { return x + y; };
+```
+
+## 类型参数的默认类型
+
+在 TypeScript 2.3 以后，我们可以为泛型中的类型参数指定默认类型。当使用泛型时没有在代码中直接指定类型参数，从实际 (值) 参数中也无法推测出时，这个默认类型会起作用。
+
+```ts
+function foo<T = number>(e?: T[]): T[] {
+    return (e ? e : []) as T[];
+}
+
+const specified: string[] = foo<string>([]);
+const inferred: string[] = foo([""]);
+const default_used: number[] = foo();
 ```
 
 ## 参考
