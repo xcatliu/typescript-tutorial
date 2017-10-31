@@ -51,7 +51,7 @@ console.log(sayHello(user));
 编辑器中会提示错误，编译的时候也会出错：
 
 ```shell
-index.ts(6,36): error TS2345: Argument of type 'number[]' is not assignable to parameter of type 'string'.
+index.ts(6,22): error TS2345: Argument of type 'number[]' is not assignable to parameter of type 'string'.
 ```
 
 但是还是生成了 js 文件：

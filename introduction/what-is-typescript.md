@@ -2,7 +2,7 @@
 
 首先，我对 TypeScript 的理解如下：
 
-[TypeScript] 是 JavaScript 的一个超集，主要提供了**类型系统**和**对 ES6 的支持**，它由 Microsoft 开发，代码[开源于 GitHub](https://github.com/Microsoft/TypeScript) 上。
+[TypeScript][] 是 JavaScript 的一个超集，主要提供了**类型系统**和**对 ES6 的支持**，它由 Microsoft 开发，代码[开源于 GitHub](https://github.com/Microsoft/TypeScript) 上。
 
 其次引用[官网][TypeScript]的定义：
 
