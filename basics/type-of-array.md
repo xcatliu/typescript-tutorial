@@ -20,7 +20,9 @@ let fibonacci: number[] = [1, '1', 2, 3, 5];
 //     Type 'string' is not assignable to type 'number'.
 ```
 
-此时 `[1, '1', 2, 3, 5]` 的类型被推断为 `(number | string)[]`，这是联合类型和数组的结合。
+上例中，`[1, '1', 2, 3, 5]` 的类型被推断为 `(number | string)[]`，这是联合类型和数组的结合。
+
+数组的一些方法的参数也会根据数组在定义时约定的类型进行限制：
 
 ```ts
 let fibonacci: number[] = [1, 1, 2, 3, 5];
@@ -29,9 +31,11 @@ fibonacci.push('8');
 // index.ts(2,16): error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
 ```
 
+上例中，`push` 方法只允许传入 `number` 类型的参数，但是却传了一个 `string` 类型的参数，所以报错了。
+
 ## 数组泛型
 
-也可以使用数组泛型（Generic） `Array<elemType>` 来表示数组：
+也可以使用数组泛型（Array Generic） `Array<elemType>` 来表示数组：
 
 ```ts
 let fibonacci: Array<number> = [1, 1, 2, 3, 5];
@@ -45,7 +49,7 @@ let fibonacci: Array<number> = [1, 1, 2, 3, 5];
 
 ```ts
 interface NumberArray {
-  [index: number]: number;
+    [index: number]: number;
 }
 let fibonacci: NumberArray = [1, 1, 2, 3, 5];
 ```
@@ -66,7 +70,7 @@ let list: any[] = ['Xcat Liu', 25, { website: 'http://xcatliu.com' }];
 
 ```ts
 function sum() {
-  let args: number[] = arguments;
+    let args: number[] = arguments;
 }
 
 // index.ts(2,7): error TS2322: Type 'IArguments' is not assignable to type 'number[]'.
@@ -77,7 +81,7 @@ function sum() {
 
 ```ts
 function sum() {
-  let args: IArguments = arguments;
+    let args: IArguments = arguments;
 }
 ```
 

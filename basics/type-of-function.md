@@ -9,12 +9,12 @@
 ```js
 // 函数声明（Function Declaration）
 function sum(x, y) {
-  return x + y;
+    return x + y;
 }
 
 // 函数表达式（Function Expression）
 let mySum = function (x, y) {
-  return x + y;
+    return x + y;
 };
 ```
 
@@ -22,7 +22,7 @@ let mySum = function (x, y) {
 
 ```ts
 function sum(x: number, y: number): number {
-  return x + y;
+    return x + y;
 }
 ```
 
@@ -30,7 +30,7 @@ function sum(x: number, y: number): number {
 
 ```ts
 function sum(x: number, y: number): number {
-  return x + y;
+    return x + y;
 }
 sum(1, 2, 3);
 
@@ -39,7 +39,7 @@ sum(1, 2, 3);
 
 ```ts
 function sum(x: number, y: number): number {
-  return x + y;
+    return x + y;
 }
 sum(1);
 
@@ -52,7 +52,7 @@ sum(1);
 
 ```ts
 let mySum = function (x: number, y: number): number {
-  return x + y;
+    return x + y;
 };
 ```
 
@@ -60,26 +60,28 @@ let mySum = function (x: number, y: number): number {
 
 ```ts
 let mySum: (x: number, y: number) => number = function (x: number, y: number): number {
-  return x + y;
+    return x + y;
 };
 ```
 
+注意不要混淆了 TypeScript 中的 `=>` 和 ES6 中的 `=>`。
+
 在 TypeScript 的类型定义中，`=>` 用来表示函数的定义，左边是输入类型，需要用括号括起来，右边是输出类型。
 
-其中，`=>` 在 ES6 中叫箭头函数，应用十分广泛，可以参考 [ES6 中的箭头函数][]。
+在 ES6 中，`=>` 叫做箭头函数，应用十分广泛，可以参考 [ES6 中的箭头函数][]。
 
-## 接口中函数的定义
+## 用接口定义函数的形状
 
 我们也可以使用接口的方式来定义一个函数需要符合的形状：
 
 ```ts
 interface SearchFunc {
-  (source: string, subString: string): boolean;
+    (source: string, subString: string): boolean;
 }
 
 let mySearch: SearchFunc;
 mySearch = function(source: string, subString: string) {
-  return source.search(subString) !== -1;
+    return source.search(subString) !== -1;
 }
 ```
 
@@ -91,52 +93,52 @@ mySearch = function(source: string, subString: string) {
 
 ```ts
 function buildName(firstName: string, lastName?: string) {
-  if (lastName) {
-    return firstName + ' ' + lastName;
-  } else {
-    return firstName;
-  }
+    if (lastName) {
+        return firstName + ' ' + lastName;
+    } else {
+        return firstName;
+    }
 }
-let xcatliu = buildName('Xcat', 'Liu');
-let xcat = buildName('Xcat');
+let tomcat = buildName('Tom', 'Cat');
+let tom = buildName('Tom');
 ```
 
 需要注意的是，可选参数必须接在必需参数后面。换句话说，**可选参数后面不允许再出现必须参数了**：
 
 ```ts
 function buildName(firstName?: string, lastName: string) {
-  if (firstName) {
-    return firstName + ' ' + lastName;
-  } else {
-    return lastName;
-  }
+    if (firstName) {
+        return firstName + ' ' + lastName;
+    } else {
+        return lastName;
+    }
 }
-let xcatliu = buildName('Xcat', 'Liu');
-let xcat = buildName(undefined, 'Xcat');
+let tomcat = buildName('Tom', 'Cat');
+let tom = buildName(undefined, 'Tom');
 
 // index.ts(1,40): error TS1016: A required parameter cannot follow an optional parameter.
 ```
 
 ## 参数默认值
 
-在 ES6 中，我们允许给函数的参数添加默认值，TypeScript 会将**添加了默认值的参数识别为可选参数**：
+在 ES6 中，我们允许给函数的参数添加默认值，**TypeScript 会将添加了默认值的参数识别为可选参数**：
 
 ```ts
-function buildName(firstName: string, lastName: string = 'Liu') {
-  return firstName + ' ' + lastName;
+function buildName(firstName: string, lastName: string = 'Cat') {
+    return firstName + ' ' + lastName;
 }
-let xcatliu = buildName('Xcat', 'Liu');
-let xcat = buildName('Xcat');
+let tomcat = buildName('Tom', 'Cat');
+let tom = buildName('Tom');
 ```
 
 此时就不受「可选参数必须接在必需参数后面」的限制了：
 
 ```ts
-function buildName(firstName: string = 'Xcat', lastName: string) {
-  return firstName + ' ' + lastName;
+function buildName(firstName: string = 'Tom', lastName: string) {
+    return firstName + ' ' + lastName;
 }
-let xcatliu = buildName('Xcat', 'Liu');
-let xcat = buildName(undefined, 'Xcat');
+let tomcat = buildName('Tom', 'Cat');
+let cat = buildName(undefined, 'Cat');
 ```
 
 > 关于默认参数，可以参考 [ES6 中函数参数的默认值][]。
@@ -147,9 +149,9 @@ ES6 中，可以使用 `...rest` 的方式获取函数中的剩余参数（rest 
 
 ```js
 function push(array, ...items) {
-  items.forEach(function(item) {
-    array.push(item);
-  });
+    items.forEach(function(item) {
+        array.push(item);
+    });
 }
 
 let a = [];
@@ -160,9 +162,9 @@ push(a, 1, 2, 3);
 
 ```ts
 function push(array: any[], ...items: any[]) {
-  items.forEach(function(item) {
-    array.push(item);
-  });
+    items.forEach(function(item) {
+        array.push(item);
+    });
 }
 
 let a = [];
@@ -181,11 +183,11 @@ push(a, 1, 2, 3);
 
 ```ts
 function reverse(x: number | string): number | string {
-  if (typeof x === 'number') {
-    return Number(x.toString().split('').reverse().join(''));
-  } else if (typeof x === 'string') {
-    return x.split('').reverse().join('');
-  }
+    if (typeof x === 'number') {
+        return Number(x.toString().split('').reverse().join(''));
+    } else if (typeof x === 'string') {
+        return x.split('').reverse().join('');
+    }
 }
 ```
 
@@ -197,11 +199,11 @@ function reverse(x: number | string): number | string {
 function reverse(x: number): number;
 function reverse(x: string): string;
 function reverse(x: number | string): number | string {
-  if (typeof x === 'number') {
-    return Number(x.toString().split('').reverse().join(''));
-  } else if (typeof x === 'string') {
-    return x.split('').reverse().join('');
-  }
+    if (typeof x === 'number') {
+        return Number(x.toString().split('').reverse().join(''));
+    } else if (typeof x === 'string') {
+        return x.split('').reverse().join('');
+    }
 }
 ```
 

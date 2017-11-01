@@ -1,18 +1,20 @@
 # 类型断言
 
-类型断言（Type Assertion）可以用来绕过编译器的类型推断，手动指定一个值的类型（即程序员对编译器**断言**）。
+类型断言（Type Assertion）可以用来手动指定一个值的类型。
 
 ## 语法
 
 ```ts
 <类型>值
-
-// 或
-
-值 as 类型
-
-// 在TSX语法 (React的JSX语法的TS版）中必须用后一种
 ```
+
+或
+
+```ts
+值 as 类型
+```
+
+在 tsx 语法（React 的 jsx 语法的 ts 版）中必须用后一种。
 
 ## 例子：将一个联合类型的变量指定为一个更加具体的类型
 
@@ -20,10 +22,10 @@
 
 ```ts
 function getLength(something: string | number): number {
-  return something.length;
+    return something.length;
 }
 
-// index.ts(2,20): error TS2339: Property 'length' does not exist on type 'string | number'.
+// index.ts(2,22): error TS2339: Property 'length' does not exist on type 'string | number'.
 //   Property 'length' does not exist on type 'number'.
 ```
 
@@ -31,16 +33,16 @@ function getLength(something: string | number): number {
 
 ```ts
 function getLength(something: string | number): number {
-  if (something.length) {
-    return something.length;
-  } else {
-    return something.toString().length;
-  }
+    if (something.length) {
+        return something.length;
+    } else {
+        return something.toString().length;
+    }
 }
 
-// index.ts(2,17): error TS2339: Property 'length' does not exist on type 'string | number'.
+// index.ts(2,19): error TS2339: Property 'length' does not exist on type 'string | number'.
 //   Property 'length' does not exist on type 'number'.
-// index.ts(3,22): error TS2339: Property 'length' does not exist on type 'string | number'.
+// index.ts(3,26): error TS2339: Property 'length' does not exist on type 'string | number'.
 //   Property 'length' does not exist on type 'number'.
 ```
 
@@ -50,11 +52,11 @@ function getLength(something: string | number): number {
 
 ```ts
 function getLength(something: string | number): number {
-  if ((<string>something).length) {
-    return (<string>something).length;
-  } else {
-    return something.toString().length;
-  }
+    if ((<string>something).length) {
+        return (<string>something).length;
+    } else {
+        return something.toString().length;
+    }
 }
 ```
 
@@ -64,7 +66,7 @@ function getLength(something: string | number): number {
 
 ```ts
 function toBoolean(something: string | number): boolean {
-  return <boolean>something;
+    return <boolean>something;
 }
 
 // index.ts(2,10): error TS2352: Type 'string | number' cannot be converted to type 'boolean'.
