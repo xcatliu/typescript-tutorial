@@ -75,7 +75,7 @@ var infinityNumber = Infinity;
 使用 `string` 定义字符串类型：
 
 ```ts
-let myName: string = 'Xcat Liu';
+let myName: string = 'Tom';
 let myAge: number = 25;
 
 // 模板字符串
@@ -86,7 +86,7 @@ I'll be ${myAge + 1} years old next month.`;
 编译结果：
 
 ```js
-var myName = 'Xcat Liu';
+var myName = 'Tom';
 var myAge = 25;
 // 模板字符串
 var sentence = "Hello, my name is " + myName + ".\nI'll be " + (myAge + 1) + " years old next month.";
@@ -100,7 +100,7 @@ JavaScript 没有空值（Void）的概念，在 TypeScirpt 中，可以用 `voi
 
 ```ts
 function alertName(): void {
-  alert('My name is xcatliu');
+  alert('My name is Tom');
 }
 ```
 

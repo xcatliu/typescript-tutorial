@@ -33,9 +33,9 @@ console.log(anyThing.myName.firstName);
 也允许调用任何方法：
 
 ```ts
-let anyThing: any = 'Xcat Liu';
-anyThing.setName('Jerry Lee');
-anyThing.setName('Jerry Lee').sayHello();
+let anyThing: any = 'Tom';
+anyThing.setName('Jerry');
+anyThing.setName('Jerry').sayHello();
 anyThing.myName.setFirstName('Cat');
 ```
 
@@ -50,7 +50,7 @@ let something;
 something = 'seven';
 something = 7;
 
-something.setName('Jerry Lee');
+something.setName('Tom');
 ```
 
 等价于
@@ -60,7 +60,7 @@ let something: any;
 something = 'seven';
 something = 7;
 
-something.setName('Jerry Lee');
+something.setName('Tom');
 ```
 
 ## 参考

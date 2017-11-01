@@ -9,7 +9,7 @@ function sayHello(person: string) {
     return 'Hello, ' + person;
 }
 
-let user = 'Xcat Liu';
+let user = 'Tom';
 console.log(sayHello(user));
 ```
 
@@ -25,7 +25,7 @@ tsc hello.ts
 function sayHello(person) {
     return 'Hello, ' + person;
 }
-var user = 'Xcat Liu';
+var user = 'Tom';
 console.log(sayHello(user));
 ```
 

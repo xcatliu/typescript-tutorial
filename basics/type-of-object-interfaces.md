@@ -12,30 +12,30 @@ TypeScript 中的接口是一个非常灵活的概念，除了可用于[对类�
 
 ```ts
 interface Person {
-  name: string;
-  age: number;
+    name: string;
+    age: number;
 }
 
-let xcatliu: Person = {
-  name: 'Xcat Liu',
-  age: 25,
+let tom: Person = {
+    name: 'Tom',
+    age: 25
 };
 ```
 
-上面的例子中，我们定义了一个接口 `Person`，接着定义了一个变量 `xcatliu`，它的类型是 `Person`。这样，我们就约束了 `xcatliu` 的形状必须和接口 `Person` 一致。
+上面的例子中，我们定义了一个接口 `Person`，接着定义了一个变量 `tom`，它的类型是 `Person`。这样，我们就约束了 `tom` 的形状必须和接口 `Person` 一致。
 
-接口一般首字母大写。
+接口一般首字母大写。[有的编程语言中会建议接口的名称加上 `I` 前缀](https://msdn.microsoft.com/en-us/library/8bc1fexb(v=vs.71).aspx)。
 
 定义的变量比接口少了一些属性是不允许的：
 
 ```ts
 interface Person {
-  name: string;
-  age: number;
+    name: string;
+    age: number;
 }
 
-let xcatliu: Person = {
-  name: 'Xcat Liu',
+let tom: Person = {
+    name: 'Tom'
 };
 
 // index.ts(6,5): error TS2322: Type '{ name: string; }' is not assignable to type 'Person'.
@@ -46,18 +46,18 @@ let xcatliu: Person = {
 
 ```ts
 interface Person {
-  name: string;
-  age: number;
+    name: string;
+    age: number;
 }
 
-let xcatliu: Person = {
-  name: 'Xcat Liu',
-  age: 25,
-  website: 'http://xcatliu.com',
+let tom: Person = {
+    name: 'Tom',
+    age: 25,
+    gender: 'male'
 };
 
-// index.ts(9,3): error TS2322: Type '{ name: string; age: number; website: string; }' is not assignable to type 'Person'.
-//   Object literal may only specify known properties, and 'website' does not exist in type 'Person'.
+// index.ts(9,5): error TS2322: Type '{ name: string; age: number; gender: string; }' is not assignable to type 'Person'.
+//   Object literal may only specify known properties, and 'gender' does not exist in type 'Person'.
 ```
 
 可见，**赋值的时候，变量的形状必须和接口的形状保持一致**。
@@ -68,24 +68,24 @@ let xcatliu: Person = {
 
 ```ts
 interface Person {
-  name: string;
-  age?: number;
+    name: string;
+    age?: number;
 }
 
-let xcatliu: Person = {
-  name: 'Xcat Liu',
+let tom: Person = {
+    name: 'Tom'
 };
 ```
 
 ```ts
 interface Person {
-  name: string;
-  age?: number;
+    name: string;
+    age?: number;
 }
 
-let xcatliu: Person = {
-  name: 'Xcat Liu',
-  age: 25,
+let tom: Person = {
+    name: 'Tom',
+    age: 25
 };
 ```
 
@@ -95,18 +95,18 @@ let xcatliu: Person = {
 
 ```ts
 interface Person {
-  name: string;
-  age?: number;
+    name: string;
+    age?: number;
 }
 
-let xcatliu: Person = {
-  name: 'Xcat Liu',
-  age: 25,
-  website: 'http://xcatliu.com',
+let tom: Person = {
+    name: 'Tom',
+    age: 25,
+    gender: 'male'
 };
 
-// examples/playground/index.ts(9,3): error TS2322: Type '{ name: string; age: number; website: string; }' is not assignable to type 'Person'.
-//   Object literal may only specify known properties, and 'website' does not exist in type 'Person'.
+// examples/playground/index.ts(9,5): error TS2322: Type '{ name: string; age: number; gender: string; }' is not assignable to type 'Person'.
+//   Object literal may only specify known properties, and 'gender' does not exist in type 'Person'.
 ```
 
 ## 任意属性
@@ -115,14 +115,14 @@ let xcatliu: Person = {
 
 ```ts
 interface Person {
-  name: string;
-  age?: number;
-  [propName: string]: any;
+    name: string;
+    age?: number;
+    [propName: string]: any;
 }
 
-let xcatliu: Person = {
-  name: 'Xcat Liu',
-  website: 'http://xcatliu.com',
+let tom: Person = {
+    name: 'Tom',
+    gender: 'male'
 };
 ```
 
@@ -132,19 +132,19 @@ let xcatliu: Person = {
 
 ```ts
 interface Person {
-  name: string;
-  age?: number;
-  [propName: string]: string;
+    name: string;
+    age?: number;
+    [propName: string]: string;
 }
 
-let xcatliu: Person = {
-  name: 'Xcat Liu',
-  age: 25,
-  website: 'http://xcatliu.com',
+let tom: Person = {
+    name: 'Tom',
+    age: 25,
+    gender: 'male'
 };
 
-// index.ts(3,3): error TS2411: Property 'age' of type 'number' is not assignable to string index type 'string'.
-// index.ts(7,5): error TS2322: Type '{ [x: string]: string | number; name: string; age: number; website: string; }' is not assignable to type 'Person'.
+// index.ts(3,5): error TS2411: Property 'age' of type 'number' is not assignable to string index type 'string'.
+// index.ts(7,5): error TS2322: Type '{ [x: string]: string | number; name: string; age: number; gender: string; }' is not assignable to type 'Person'.
 //   Index signatures are incompatible.
 //     Type 'string | number' is not assignable to type 'string'.
 //       Type 'number' is not assignable to type 'string'.
@@ -152,7 +152,7 @@ let xcatliu: Person = {
 
 上例中，任意属性的值允许是 `string`，但是可选属性 `age` 的值却是 `number`，`number` 不是 `string` 的子属性，所以报错了。
 
-另外，在报错信息中可以看出，此时 `{ name: 'Xcat Liu', age: 25, website: 'http://xcatliu.com' }` 的类型被推断成了 `{ [x: string]: string | number; name: string; age: number; website: string; }`，这是联合类型和接口的结合。
+另外，在报错信息中可以看出，此时 `{ name: 'Tom', age: 25, gender: 'male' }` 的类型被推断成了 `{ [x: string]: string | number; name: string; age: number; gender: string; }`，这是联合类型和接口的结合。
 
 ## 只读属性
 
@@ -160,50 +160,50 @@ let xcatliu: Person = {
 
 ```ts
 interface Person {
-  readonly id: number;
-  name: string;
-  age?: number;
-  [propName: string]: any;
+    readonly id: number;
+    name: string;
+    age?: number;
+    [propName: string]: any;
 }
 
-let xcatliu: Person = {
-  id: 89757,
-  name: 'Xcat Liu',
-  website: 'http://xcatliu.com',
+let tom: Person = {
+    id: 89757,
+    name: 'Tom',
+    gender: 'male'
 };
 
-xcatliu.id = 9527;
+tom.id = 9527;
 
-// index.ts(14,9): error TS2540: Cannot assign to 'id' because it is a constant or a read-only property.
+// index.ts(14,5): error TS2540: Cannot assign to 'id' because it is a constant or a read-only property.
 ```
 
 上例中，使用 `readonly` 定义的属性 `id` 初始化后，又被赋值了，所以报错了。
 
-**只读的约束存在于第一次给对象赋值的时候，而不是第一次给只读属性赋值的时候**：
+**注意，只读的约束存在于第一次给对象赋值的时候，而不是第一次给只读属性赋值的时候**：
 
 ```ts
 interface Person {
-  readonly id: number;
-  name: string;
-  age?: number;
-  [propName: string]: any;
+    readonly id: number;
+    name: string;
+    age?: number;
+    [propName: string]: any;
 }
 
-let xcatliu: Person = {
-  name: 'Xcat Liu',
-  website: 'http://xcatliu.com',
+let tom: Person = {
+    name: 'Tom',
+    gender: 'male'
 };
 
-xcatliu.id = 89757;
+tom.id = 89757;
 
-// index.ts(8,5): error TS2322: Type '{ name: string; website: string; }' is not assignable to type 'Person'.
-//   Property 'id' is missing in type '{ name: string; website: string; }'.
-// index.ts(13,9): error TS2540: Cannot assign to 'id' because it is a constant or a read-only property.
+// index.ts(8,5): error TS2322: Type '{ name: string; gender: string; }' is not assignable to type 'Person'.
+//   Property 'id' is missing in type '{ name: string; gender: string; }'.
+// index.ts(13,5): error TS2540: Cannot assign to 'id' because it is a constant or a read-only property.
 ```
 
-上例中，报错信息有两处，第一处是在对 `xcatliu` 进行赋值的时候，没有给 `id` 赋值。
+上例中，报错信息有两处，第一处是在对 `tom` 进行赋值的时候，没有给 `id` 赋值。
 
-第二处是在给 `xcatliu.id` 赋值的时候，由于它是只读属性，所以报错了。
+第二处是在给 `tom.id` 赋值的时候，由于它是只读属性，所以报错了。
 
 ## 参考 
 

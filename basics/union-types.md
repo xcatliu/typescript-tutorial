@@ -20,7 +20,7 @@ myFavoriteNumber = true;
 
 联合类型使用 `|` 分隔每个类型。
 
-这里的 `string | number` 的含义是，允许 `myFavoriteNumber` 的类型是 `string` 或者 `number`，但是不能是其他类型。
+这里的 `let myFavoriteNumber: string | number` 的含义是，允许 `myFavoriteNumber` 的类型是 `string` 或者 `number`，但是不能是其他类型。
 
 ## 访问联合类型的属性或方法
 
@@ -28,10 +28,10 @@ myFavoriteNumber = true;
 
 ```ts
 function getLength(something: string | number): number {
-  return something.length;
+    return something.length;
 }
 
-// index.ts(2,20): error TS2339: Property 'length' does not exist on type 'string | number'.
+// index.ts(2,22): error TS2339: Property 'length' does not exist on type 'string | number'.
 //   Property 'length' does not exist on type 'number'.
 ```
 
@@ -41,7 +41,7 @@ function getLength(something: string | number): number {
 
 ```ts
 function getString(something: string | number): string {
-  return something.toString();
+    return something.toString();
 }
 ```
 
