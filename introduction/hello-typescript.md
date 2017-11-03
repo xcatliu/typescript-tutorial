@@ -15,7 +15,7 @@ console.log(sayHello(user));
 
 然后执行
 
-```shell
+```bash
 tsc hello.ts
 ```
 
@@ -50,7 +50,7 @@ console.log(sayHello(user));
 
 编辑器中会提示错误，编译的时候也会出错：
 
-```shell
+```bash
 index.ts(6,22): error TS2345: Argument of type 'number[]' is not assignable to parameter of type 'string'.
 ```
 

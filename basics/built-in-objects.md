@@ -92,7 +92,7 @@ interface Document extends Node, GlobalEventHandlers, NodeSelector, DocumentEven
 
 Node.js 不是内置对象的一部分，如果想用 TypeScript 写 Node.js，则需要引入第三方声明文件：
 
-```shell
+```bash
 npm install @types/node --save-dev
 ```
 

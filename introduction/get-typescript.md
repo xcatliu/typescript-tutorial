@@ -2,13 +2,15 @@
 
 TypeScript 的命令行工具安装方法如下：
 
-```shell
+```bash
 npm install -g typescript
 ```
 
-安装完成之后，就有了 `tsc` 命令。编译一个 TypeScript 文件很简单：
+以上命令会在全局环境下安装 `tsc` 命令，安装完成之后，我们就可以在任何地方执行 `tsc` 命令了。
 
-```shell
+编译一个 TypeScript 文件很简单：
+
+```bash
 tsc hello.ts
 ```
 

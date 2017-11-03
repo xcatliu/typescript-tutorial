@@ -66,7 +66,7 @@ jQuery('#foo');
 
 @types 的使用方式很简单，直接用 npm 安装对应的声明模块即可，以 jQuery 举例：
 
-```shell
+```bash
 npm install @types/jquery --save-dev
 ```
 
