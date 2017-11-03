@@ -6,14 +6,61 @@
 
 ## 为什么需要 ESLint
 
-TypeScript 已经可以对代码进行静态检查了，那么为什么还需要 ESLint 呢？
+TypeScript 除了是一个编译 ts 文件的工具以外，还可以[作为一个静态代码检查工具使用]()。
 
-其实 ESLint
+TypeScript 会对文件进行语法解析，如果遇到一些语法错误，或使用了未定义的变量，则会报错。
+
+ESLint 也会对文件进行语法解析，它可以对一些代码风格进行约束，发现未定义的变量，但是对于错误的属性或方法引用，却无能为力。
+
+我们对同样一段代码分别运行 `tsc` 和 `eslint`，会得到如下报错信息：
+
+```ts
+let myName = 'Tom';
+
+comsole.log(`My name is ${myName}`);
+console.log(`My name is ${myNane}`);
+console.log(`My name is ${myName.toStrng()}`);
+console.log(`My name is ${ myName }`)
+
+// tsc 报错信息：
+//
+// index.ts(3,1): error TS2552: Cannot find name 'comsole'. Did you mean 'Console'?
+// index.ts(4,27): error TS2552: Cannot find name 'myNane'. Did you mean 'myName'?
+// index.ts(5,34): error TS2551: Property 'toStrng' does not exist on type 'string'. Did you mean 'toString'?
+//
+//
+// eslint 报错信息：
+//
+// index.ts
+//   3:1   error  'comsole' is not defined        no-undef
+//   4:27  error  'myNane' is not defined         no-undef
+//   6:25  error  Unexpected space(s) after '${'  template-curly-spacing
+//   6:35  error  Unexpected space(s) before '}'  template-curly-spacing
+//   6:38  error  Missing semicolon               semi
+//
+// ✖ 5 problems (5 errors, 0 warnings)
+//   3 errors, 0 warnings potentially fixable with the `--fix` option.
+```
+
+| 存在的问题 | `tsc` 是否报错 | `eslint` 是否报错 |
+| --------- | ------------- | ---------------- |
+| `console` 被勿写成了 `comsole` | ✔️ | ✔️ |
+| `myName` 被勿写成了 `myNane` | ✔️ | ✔️ |
+| `toString` 被勿写成了 `toStrng` | ✔️ | ✖ |
+| 模版字符串中 `${}` 内前后多出了两个空格 | ✖ | ✔️ |
+| 少了一个分号 | ✖ | ✔️ |
+
+上例中，由于 `eslint` 无法识别 `myName` 存在哪些方法，所以对于拼写错误的 `toString` 没有检查出来。后面两个错误是代码风格，不影响编译，故 `tsc` 没有检查出来。而未定义的变量两者都能检查出来。
+
+值得注意的是，`tsc` 不仅检查出来了代码问题，还非常智能的给出了修改建议。
+
+下面 TypeScirpt 作为一个静态代码检查工具，与 ESLint 的关系图：
 
 ![TypeScript 和 ESLint 的关系](../assets/typescript-eslint.png)
 
+上图中，静态代码检查包括了很多种，其中 TypeScirpt 与 ESLint 有重叠的部分，也有各自独立的部分，虽然发现代码错误比统一的代码风格更重要，但是当一个项目越来越庞大，开发人员也越来越多的时候，代码风格的约束还是必不可少的。
 
-下面我们来一步一步给我们的 TypeScript 项目添加 ESLint 检查。
+下面我们就来一步一步给我们的 TypeScript 项目添加 ESLint 检查。
 
 ## 安装
 
