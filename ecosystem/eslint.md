@@ -64,13 +64,23 @@ console.log(`My name is ${ myName }`)
 
 ## 安装
 
-首先，我们需要安装 ESLint 和一些插件：
+首先，我们需要安装 ESLint：
 
 ```bash
 npm install -g eslint
 ```
 
-关于 TypeScript 与 ESLint，有过一些争论：
+以上命令会在全局环境下安装 `eslint` 命令，安装完成之后，我们就可以在任何地方执行 `eslint` 命令了。
+
+由于 ESLint 默认使用 [Espree](https://github.com/eslint/espree) 进行语法解析，无法识别 TypeScript 的一些语法，故我们需要安装 `typescript-eslint-parser`，替代掉默认的解析器：
+
+```bash
+npm install -g typescript-eslint-parser
+```
+
+## 创建配置文件
+
+如果没有创建配置文件，那么
 
 - 使用 ESLint 加上
 
@@ -84,7 +94,6 @@ npm install -g eslint
 
 
 cannot read property type of null
-
 react 规则不可用
 
 
