@@ -17,70 +17,77 @@ ESLint 也会对文件进行语法解析，它可以对一些代码风格进行�
 ```ts
 let myName = 'Tom';
 
-comsole.log(`My name is ${myName}`);
 console.log(`My name is ${myNane}`);
 console.log(`My name is ${myName.toStrng()}`);
-console.log(`My name is ${ myName }`)
+console.log(`My name is ${myName}`)
 
 // tsc 报错信息：
 //
-// index.ts(3,1): error TS2552: Cannot find name 'comsole'. Did you mean 'Console'?
-// index.ts(4,27): error TS2552: Cannot find name 'myNane'. Did you mean 'myName'?
-// index.ts(5,34): error TS2551: Property 'toStrng' does not exist on type 'string'. Did you mean 'toString'?
+// index.ts(3,27): error TS2552: Cannot find name 'myNane'. Did you mean 'myName'?
+// index.ts(4,34): error TS2551: Property 'toStrng' does not exist on type 'string'. Did you mean 'toString'?
 //
 //
 // eslint 报错信息：
 //
 // index.ts
-//   3:1   error  'comsole' is not defined        no-undef
-//   4:27  error  'myNane' is not defined         no-undef
-//   6:25  error  Unexpected space(s) after '${'  template-curly-spacing
-//   6:35  error  Unexpected space(s) before '}'  template-curly-spacing
-//   6:38  error  Missing semicolon               semi
+//   3:27  error  'myNane' is not defined         no-undef
+//   5:38  error  Missing semicolon               semi
 //
-// ✖ 5 problems (5 errors, 0 warnings)
-//   3 errors, 0 warnings potentially fixable with the `--fix` option.
+// ✖ 2 problems (2 errors, 0 warnings)
+//   1 errors, 0 warnings potentially fixable with the `--fix` option.
 ```
 
 | 存在的问题 | `tsc` 是否报错 | `eslint` 是否报错 |
 | --------- | ------------- | ---------------- |
-| `console` 被勿写成了 `comsole` | ✅ | ✅ |
 | `myName` 被勿写成了 `myNane` | ✅ | ✅ |
 | `toString` 被勿写成了 `toStrng` | ✅️ | ❌ |
-| 模版字符串中 `${}` 内前后多出了两个空格 | ❌ | ✅ |
 | 少了一个分号 | ❌ | ✅ |
 
-上例中，由于 `eslint` 无法识别 `myName` 存在哪些方法，所以对于拼写错误的 `toString` 没有检查出来。后面两个错误是代码风格，不影响编译，故 `tsc` 没有检查出来。而未定义的变量两者都能检查出来。
+上例中，由于 `eslint` 无法识别 `myName` 存在哪些方法，所以对于拼写错误的 `toString` 没有检查出来。而代码风格的错误不影响编译，故 `tsc` 没有检查出来。
+
+未定义的变量两者都能检查出来。
 
 值得注意的是，`tsc` 不仅检查出来了代码问题，还非常智能的给出了修改建议。
 
-下面 TypeScirpt 作为一个静态代码检查工具，与 ESLint 的关系图：
+下面是 TypeScirpt 作为一个静态代码检查工具，与 ESLint 的关系图：
 
 ![TypeScript 和 ESLint 的关系](../assets/typescript-eslint.png)
 
-上图中，静态代码检查包括了很多种，其中 TypeScirpt 与 ESLint 有重叠的部分，也有各自独立的部分，虽然发现代码错误比统一的代码风格更重要，但是当一个项目越来越庞大，开发人员也越来越多的时候，代码风格的约束还是必不可少的。
+上图中，TypeScript 与 ESLint 有重叠的部分，也有各自独立的部分，虽然发现代码错误比统一的代码风格更重要，但是当一个项目越来越庞大，开发人员也越来越多的时候，代码风格的约束还是必不可少的。
 
 下面我们就来一步一步给我们的 TypeScript 项目添加 ESLint 检查。
 
 ## 安装
 
-首先，我们需要安装 ESLint：
+ESLint 可以安装在当前项目中或全局环境下，因为代码检查是项目的重要组成部分，所以我们一般会将它安装在当前项目中。可以运行下面的脚本来安装：
 
 ```bash
-npm install -g eslint
+npm install eslint --save-dev
 ```
-
-以上命令会在全局环境下安装 `eslint` 命令，安装完成之后，我们就可以在任何地方执行 `eslint` 命令了。
 
 由于 ESLint 默认使用 [Espree](https://github.com/eslint/espree) 进行语法解析，无法识别 TypeScript 的一些语法，故我们需要安装 `typescript-eslint-parser`，替代掉默认的解析器：
 
 ```bash
-npm install -g typescript-eslint-parser
+npm install typescript-eslint-parser --save-dev
+```
+
+由于 `typescript-eslint-parser` 对一部分 ESLint 规则支持性不好，故我们需要安装 `eslint-plugin-typescript`，弥补一些支持性不好的规则。
+
+```bash
+npm install eslint-plugin-typescript --save-dev
 ```
 
 ## 创建配置文件
 
-如果没有创建配置文件，那么
+ESLint 需要一个配置文件来决定对哪些规则进行检查，配置文件的名称一般是 `.eslintrc.js` 或 `.eslintrc.json`。
+
+当运行 ESLint 的时候检查一个文件的时候，它会首先尝试读取该文件的目录下的配置文件，然后再一级一级往上查找，将所找到的配置合并起来，作为当前被检查文件的配置。
+
+我们在项目的根目录下创建一个 `.eslintrc.js`，内容如下：
+
+```js
+
+```
 
 - 使用 ESLint 加上
 
