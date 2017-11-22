@@ -4,15 +4,15 @@ module.exports = {
         'typescript'
     ],
     rules: {
-        'spaced-comment': 'off',
-        // 'react/no-unescaped-entities': 'off',
-        // 'react/self-closing-comp': 'off',
-        // 'react/void-dom-elements-no-children': 'off',
-        'react/jsx-indent': 'off',
-        // 'react/jsx-indent-props': 'off',
-        // 'react/jsx-max-props-per-line': 'off'
-        // 还不支持 properties https://github.com/yannickcr/eslint-plugin-react/issues/1342
-        'react/sort-comp': 'off',
-        'typescript/no-unused-vars': 'error'
+        // @fixable 必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外
+        'eqeqeq': [
+            'error',
+            'always',
+            {
+                null: 'ignore'
+            }
+        ],
+        // 类和接口的命名必须遵守帕斯卡命名法，比如 PersianCat
+        'typescript/class-name-casing': 'error'
     }
-};
+}
