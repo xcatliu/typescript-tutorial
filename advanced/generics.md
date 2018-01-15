@@ -28,7 +28,7 @@ createArray(3, 'x'); // ['x', 'x', 'x']
 
 ```ts
 function createArray<T>(length: number, value: T): Array<T> {
-  let result = [];
+  let result: T[] = [];
   for (let i = 0; i < length; i++) {
     result[i] = value;
   }
@@ -44,7 +44,7 @@ createArray<string>(3, 'x'); // ['x', 'x', 'x']
 
 ```ts
 function createArray<T>(length: number, value: T): Array<T> {
-  let result = [];
+  let result: T[] = [];
   for (let i = 0; i < length; i++) {
     result[i] = value;
   }
@@ -156,7 +156,7 @@ interface CreateArrayFunc {
 
 let createArray: CreateArrayFunc;
 createArray = function<T>(length: number, value: T): Array<T> {
-  let result = [];
+  let result: T[] = [];
   for (let i = 0; i < length; i++) {
     result[i] = value;
   }
@@ -175,7 +175,7 @@ interface CreateArrayFunc<T> {
 
 let createArray: CreateArrayFunc<any>;
 createArray = function<T>(length: number, value: T): Array<T> {
-  let result = [];
+  let result: T[] = [];
   for (let i = 0; i < length; i++) {
     result[i] = value;
   }
@@ -202,9 +202,24 @@ myGenericNumber.zeroValue = 0;
 myGenericNumber.add = function(x, y) { return x + y; };
 ```
 
+## 泛型参数的默认类型
+
+在 TypeScript 2.3 以后，我们可以为泛型中的类型参数指定默认类型。当使用泛型时没有在代码中直接指定类型参数，从实际值参数中也无法推测出时，这个默认类型就会起作用。
+
+```ts
+function createArray<T = string>(length: number, value: T): Array<T> {
+  let result: T[] = [];
+  for (let i = 0; i < length; i++) {
+    result[i] = value;
+  }
+  return result;
+}
+```
+
 ## 参考
 
 - [Generics](http://www.typescriptlang.org/docs/handbook/generics.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/generics.html)）
+- [Generic parameter defaults](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#generic-parameter-defaults)
 
 ---
 
