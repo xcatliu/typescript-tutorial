@@ -31,13 +31,13 @@ console.log(Days[6] === "Sat"); // true
 ```js
 var Days;
 (function (Days) {
-  Days[Days["Sun"] = 0] = "Sun";
-  Days[Days["Mon"] = 1] = "Mon";
-  Days[Days["Tue"] = 2] = "Tue";
-  Days[Days["Wed"] = 3] = "Wed";
-  Days[Days["Thu"] = 4] = "Thu";
-  Days[Days["Fri"] = 5] = "Fri";
-  Days[Days["Sat"] = 6] = "Sat";
+    Days[Days["Sun"] = 0] = "Sun";
+    Days[Days["Mon"] = 1] = "Mon";
+    Days[Days["Tue"] = 2] = "Tue";
+    Days[Days["Wed"] = 3] = "Wed";
+    Days[Days["Thu"] = 4] = "Thu";
+    Days[Days["Fri"] = 5] = "Fri";
+    Days[Days["Sat"] = 6] = "Sat";
 })(Days || (Days = {}));
 ```
 
@@ -72,13 +72,13 @@ console.log(Days[3] === "Wed"); // true
 ```js
 var Days;
 (function (Days) {
-  Days[Days["Sun"] = 3] = "Sun";
-  Days[Days["Mon"] = 1] = "Mon";
-  Days[Days["Tue"] = 2] = "Tue";
-  Days[Days["Wed"] = 3] = "Wed";
-  Days[Days["Thu"] = 4] = "Thu";
-  Days[Days["Fri"] = 5] = "Fri";
-  Days[Days["Sat"] = 6] = "Sat";
+    Days[Days["Sun"] = 3] = "Sun";
+    Days[Days["Mon"] = 1] = "Mon";
+    Days[Days["Tue"] = 2] = "Tue";
+    Days[Days["Wed"] = 3] = "Wed";
+    Days[Days["Thu"] = 4] = "Thu";
+    Days[Days["Fri"] = 5] = "Fri";
+    Days[Days["Sat"] = 6] = "Sat";
 })(Days || (Days = {}));
 ```
 
@@ -155,10 +155,10 @@ enum Color {Red = "red".length, Green, Blue};
 
 ```ts
 const enum Directions {
-  Up,
-  Down,
-  Left,
-  Right
+    Up,
+    Down,
+    Left,
+    Right
 }
 
 let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
@@ -186,10 +186,10 @@ const enum Color {Red, Green, Blue = "blue".length};
 
 ```ts
 declare enum Directions {
-  Up,
-  Down,
-  Left,
-  Right
+    Up,
+    Down,
+    Left,
+    Right
 }
 
 let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
@@ -209,10 +209,10 @@ var directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Ri
 
 ```ts
 declare const enum Directions {
-  Up,
-  Down,
-  Left,
-  Right
+    Up,
+    Down,
+    Left,
+    Right
 }
 
 let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];

@@ -100,7 +100,7 @@ JavaScript 没有空值（Void）的概念，在 TypeScirpt 中，可以用 `voi
 
 ```ts
 function alertName(): void {
-  alert('My name is Tom');
+    alert('My name is Tom');
 }
 ```
 

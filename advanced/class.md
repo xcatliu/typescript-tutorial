@@ -33,12 +33,12 @@ TypeScript 除了实现了所有 ES6 中的类的功能以外，还添加了一�
 
 ```js
 class Animal {
-  constructor(name) {
-    this.name = name;
-  }
-  sayHi() {
-    return `My name is ${this.name}`;
-  }
+    constructor(name) {
+        this.name = name;
+    }
+    sayHi() {
+        return `My name is ${this.name}`;
+    }
 }
 
 let a = new Animal('Jack');
@@ -51,13 +51,13 @@ console.log(a.sayHi()); // My name is Jack
 
 ```js
 class Cat extends Animal {
-  constructor(name) {
-    super(name); // 调用父类的 constructor(name)
-    console.log(this.name);
-  }
-  sayHi() {
-    return 'Meow, ' + super.sayHi(); // 调用父类的 sayHi()
-  }
+    constructor(name) {
+        super(name); // 调用父类的 constructor(name)
+        console.log(this.name);
+    }
+    sayHi() {
+        return 'Meow, ' + super.sayHi(); // 调用父类的 sayHi()
+    }
 }
 
 let c = new Cat('Tom'); // Tom
@@ -70,15 +70,15 @@ console.log(c.sayHi()); // Meow, My name is Tom
 
 ```js
 class Animal {
-  constructor(name) {
-    this.name = name;
-  }
-  get name() {
-    return 'Jack';
-  }
-  set name(value) {
-    console.log('setter: ' + value);
-  }
+    constructor(name) {
+        this.name = name;
+    }
+    get name() {
+        return 'Jack';
+    }
+    set name(value) {
+        console.log('setter: ' + value);
+    }
 }
 
 let a = new Animal('Kitty'); // setter: Kitty
@@ -92,9 +92,9 @@ console.log(a.name); // Jack
 
 ```js
 class Animal {
-  static isAnimal(a) {
-    return a instanceof Animal;
-  }
+    static isAnimal(a) {
+        return a instanceof Animal;
+    }
 }
 
 let a = new Animal('Jack');
@@ -112,11 +112,11 @@ ES6 中实例的属性只能通过构造函数中的 `this.xxx` 来定义，ES7 
 
 ```js
 class Animal {
-  name = 'Jack';
+    name = 'Jack';
 
-  constructor() {
-    // ...
-  }
+    constructor() {
+        // ...
+    }
 }
 
 let a = new Animal();
@@ -129,11 +129,11 @@ ES7 提案中，可以使用 `static` 定义一个静态属性：
 
 ```js
 class Animal {
-  static num = 42;
+    static num = 42;
 
-  constructor() {
-    // ...
-  }
+    constructor() {
+        // ...
+    }
 }
 
 console.log(Animal.num); // 42
@@ -153,10 +153,10 @@ TypeScript 可以使用三种访问修饰符（Access Modifiers），分别是 `
 
 ```ts
 class Animal {
-  public name;
-  public constructor(name) {
-    this.name = name;
-  }
+    public name;
+    public constructor(name) {
+        this.name = name;
+    }
 }
 
 let a = new Animal('Jack');
@@ -171,10 +171,10 @@ console.log(a.name); // Tom
 
 ```ts
 class Animal {
-  private name;
-  public constructor(name) {
-    this.name = name;
-  }
+    private name;
+    public constructor(name) {
+        this.name = name;
+    }
 }
 
 let a = new Animal('Jack');
@@ -205,17 +205,17 @@ a.name = 'Tom';
 
 ```ts
 class Animal {
-  private name;
-  public constructor(name) {
-    this.name = name;
-  }
+    private name;
+    public constructor(name) {
+        this.name = name;
+    }
 }
 
 class Cat extends Animal {
-  constructor(name) {
-    super(name);
-    console.log(this.name);
-  }
+    constructor(name) {
+        super(name);
+        console.log(this.name);
+    }
 }
 
 // index.ts(11,17): error TS2341: Property 'name' is private and only accessible within class 'Animal'.
@@ -225,17 +225,17 @@ class Cat extends Animal {
 
 ```ts
 class Animal {
-  protected name;
-  public constructor(name) {
-    this.name = name;
-  }
+    protected name;
+    public constructor(name) {
+        this.name = name;
+    }
 }
 
 class Cat extends Animal {
-  constructor(name) {
-    super(name);
-    console.log(this.name);
-  }
+    constructor(name) {
+        super(name);
+        console.log(this.name);
+    }
 }
 ```
 
@@ -249,11 +249,11 @@ class Cat extends Animal {
 
 ```ts
 abstract class Animal {
-  public name;
-  public constructor(name) {
-    this.name = name;
-  }
-  public abstract sayHi();
+    public name;
+    public constructor(name) {
+        this.name = name;
+    }
+    public abstract sayHi();
 }
 
 let a = new Animal('Jack');
@@ -267,17 +267,17 @@ let a = new Animal('Jack');
 
 ```ts
 abstract class Animal {
-  public name;
-  public constructor(name) {
-    this.name = name;
-  }
-  public abstract sayHi();
+    public name;
+    public constructor(name) {
+        this.name = name;
+    }
+    public abstract sayHi();
 }
 
 class Cat extends Animal {
-  public eat() {
-    console.log(`${this.name} is eating.`);
-  }
+    public eat() {
+        console.log(`${this.name} is eating.`);
+    }
 }
 
 let cat = new Cat('Tom');
@@ -291,17 +291,17 @@ let cat = new Cat('Tom');
 
 ```ts
 abstract class Animal {
-  public name;
-  public constructor(name) {
-    this.name = name;
-  }
-  public abstract sayHi();
+    public name;
+    public constructor(name) {
+        this.name = name;
+    }
+    public abstract sayHi();
 }
 
 class Cat extends Animal {
-  public sayHi() {
-    console.log(`Meow, My name is ${this.name}`);
-  }
+    public sayHi() {
+        console.log(`Meow, My name is ${this.name}`);
+    }
 }
 
 let cat = new Cat('Tom');
@@ -342,13 +342,13 @@ var cat = new Cat('Tom');
 
 ```ts
 class Animal {
-  name: string;
-  constructor(name: string) {
-    this.name = name;
-  }
-  sayHi(): string {
-    return `My name is ${this.name}`;
-  }
+    name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+    sayHi(): string {
+      return `My name is ${this.name}`;
+    }
 }
 
 let a: Animal = new Animal('Jack');

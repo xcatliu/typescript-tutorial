@@ -10,11 +10,11 @@
 function reverse(x: number): number;
 function reverse(x: string): string;
 function reverse(x: number | string): number | string {
-  if (typeof x === 'number') {
-    return Number(x.toString().split('').reverse().join(''));
-  } else if (typeof x === 'string') {
-    return x.split('').reverse().join('');
-  }
+    if (typeof x === 'number') {
+        return Number(x.toString().split('').reverse().join(''));
+    } else if (typeof x === 'string') {
+        return x.split('').reverse().join('');
+    }
 }
 ```
 
@@ -24,10 +24,10 @@ function reverse(x: number | string): number | string {
 
 ```ts
 interface Alarm {
-  price: number;
+    price: number;
 }
 interface Alarm {
-  weight: number;
+    weight: number;
 }
 ```
 
@@ -35,8 +35,8 @@ interface Alarm {
 
 ```ts
 interface Alarm {
-  price: number;
-  weight: number;
+    price: number;
+    weight: number;
 }
 ```
 
@@ -44,21 +44,21 @@ interface Alarm {
 
 ```ts
 interface Alarm {
-  price: number;
+    price: number;
 }
 interface Alarm {
-  price: number;  // 虽然重复了，但是类型都是 `number`，所以不会报错
-  weight: number;
+    price: number;  // 虽然重复了，但是类型都是 `number`，所以不会报错
+    weight: number;
 }
 ```
 
 ```ts
 interface Alarm {
-  price: number;
+    price: number;
 }
 interface Alarm {
-  price: string;  // 类型不一致，会报错
-  weight: number;
+    price: string;  // 类型不一致，会报错
+    weight: number;
 }
 
 // index.ts(5,3): error TS2403: Subsequent variable declarations must have the same type.  Variable 'price' must be of type 'number', but here has type 'string'.
@@ -68,12 +68,12 @@ interface Alarm {
 
 ```ts
 interface Alarm {
-  price: number;
-  alert(s: string): string;
+    price: number;
+    alert(s: string): string;
 }
 interface Alarm {
-  weight: number;
-  alert(s: string, n: number): string;
+    weight: number;
+    alert(s: string, n: number): string;
 }
 ```
 
@@ -81,10 +81,10 @@ interface Alarm {
 
 ```ts
 interface Alarm {
-  price: number;
-  weight: number;
-  alert(s: string): string;
-  alert(s: string, n: number): string;
+    price: number;
+    weight: number;
+    alert(s: string): string;
+    alert(s: string, n: number): string;
 }
 ```
 

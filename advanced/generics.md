@@ -8,11 +8,11 @@
 
 ```ts
 function createArray(length: number, value: any): Array<any> {
-  let result = [];
-  for (let i = 0; i < length; i++) {
-    result[i] = value;
-  }
-  return result;
+    let result = [];
+    for (let i = 0; i < length; i++) {
+        result[i] = value;
+    }
+    return result;
 }
 
 createArray(3, 'x'); // ['x', 'x', 'x']
@@ -28,11 +28,11 @@ createArray(3, 'x'); // ['x', 'x', 'x']
 
 ```ts
 function createArray<T>(length: number, value: T): Array<T> {
-  let result: T[] = [];
-  for (let i = 0; i < length; i++) {
-    result[i] = value;
-  }
-  return result;
+    let result: T[] = [];
+    for (let i = 0; i < length; i++) {
+        result[i] = value;
+    }
+    return result;
 }
 
 createArray<string>(3, 'x'); // ['x', 'x', 'x']
@@ -44,11 +44,11 @@ createArray<string>(3, 'x'); // ['x', 'x', 'x']
 
 ```ts
 function createArray<T>(length: number, value: T): Array<T> {
-  let result: T[] = [];
-  for (let i = 0; i < length; i++) {
-    result[i] = value;
-  }
-  return result;
+    let result: T[] = [];
+    for (let i = 0; i < length; i++) {
+        result[i] = value;
+    }
+    return result;
 }
 
 createArray(3, 'x'); // ['x', 'x', 'x']
@@ -60,7 +60,7 @@ createArray(3, 'x'); // ['x', 'x', 'x']
 
 ```ts
 function swap<T, U>(tuple: [T, U]): [U, T] {
-  return [tuple[1], tuple[0]];
+    return [tuple[1], tuple[0]];
 }
 
 swap([7, 'seven']); // ['seven', 7]
@@ -74,8 +74,8 @@ swap([7, 'seven']); // ['seven', 7]
 
 ```ts
 function loggingIdentity<T>(arg: T): T {
-  console.log(arg.length);
-  return arg;
+    console.log(arg.length);
+    return arg;
 }
 
 // index.ts(2,19): error TS2339: Property 'length' does not exist on type 'T'.
@@ -87,12 +87,12 @@ function loggingIdentity<T>(arg: T): T {
 
 ```ts
 interface Lengthwise {
-  length: number;
+    length: number;
 }
 
 function loggingIdentity<T extends Lengthwise>(arg: T): T {
-  console.log(arg.length);
-  return arg;
+    console.log(arg.length);
+    return arg;
 }
 ```
 
@@ -102,12 +102,12 @@ function loggingIdentity<T extends Lengthwise>(arg: T): T {
 
 ```ts
 interface Lengthwise {
-  length: number;
+    length: number;
 }
 
 function loggingIdentity<T extends Lengthwise>(arg: T): T {
-  console.log(arg.length);
-  return arg;
+    console.log(arg.length);
+    return arg;
 }
 
 loggingIdentity(7);
@@ -119,10 +119,10 @@ loggingIdentity(7);
 
 ```ts
 function copyFields<T extends U, U>(target: T, source: U): T {
-  for (let id in source) {
-    target[id] = (<T>source)[id];
-  }
-  return target;
+    for (let id in source) {
+        target[id] = (<T>source)[id];
+    }
+    return target;
 }
 
 let x = { a: 1, b: 2, c: 3, d: 4 };
@@ -143,7 +143,7 @@ interface SearchFunc {
 
 let mySearch: SearchFunc;
 mySearch = function(source: string, subString: string) {
-  return source.search(subString) !== -1;
+    return source.search(subString) !== -1;
 }
 ```
 
@@ -151,16 +151,16 @@ mySearch = function(source: string, subString: string) {
 
 ```ts
 interface CreateArrayFunc {
-  <T>(length: number, value: T): Array<T>;
+    <T>(length: number, value: T): Array<T>;
 }
 
 let createArray: CreateArrayFunc;
 createArray = function<T>(length: number, value: T): Array<T> {
-  let result: T[] = [];
-  for (let i = 0; i < length; i++) {
-    result[i] = value;
-  }
-  return result;
+    let result: T[] = [];
+    for (let i = 0; i < length; i++) {
+        result[i] = value;
+    }
+    return result;
 }
 
 createArray(3, 'x'); // ['x', 'x', 'x']
@@ -170,16 +170,16 @@ createArray(3, 'x'); // ['x', 'x', 'x']
 
 ```ts
 interface CreateArrayFunc<T> {
-  (length: number, value: T): Array<T>;
+    (length: number, value: T): Array<T>;
 }
 
 let createArray: CreateArrayFunc<any>;
 createArray = function<T>(length: number, value: T): Array<T> {
-  let result: T[] = [];
-  for (let i = 0; i < length; i++) {
-    result[i] = value;
-  }
-  return result;
+    let result: T[] = [];
+    for (let i = 0; i < length; i++) {
+        result[i] = value;
+    }
+    return result;
 }
 
 createArray(3, 'x'); // ['x', 'x', 'x']
@@ -208,11 +208,11 @@ myGenericNumber.add = function(x, y) { return x + y; };
 
 ```ts
 function createArray<T = string>(length: number, value: T): Array<T> {
-  let result: T[] = [];
-  for (let i = 0; i < length; i++) {
-    result[i] = value;
-  }
-  return result;
+    let result: T[] = [];
+    for (let i = 0; i < length; i++) {
+        result[i] = value;
+    }
+    return result;
 }
 ```
 

@@ -57,12 +57,12 @@ Math.pow(10, '2');
 
 ```ts
 interface Math {
-  /**
-   * Returns the value of a base expression taken to a specified power.
-   * @param x The base value of the expression.
-   * @param y The exponent value of the expression.
-   */
-  pow(x: number, y: number): number;
+    /**
+     * Returns the value of a base expression taken to a specified power.
+     * @param x The base value of the expression.
+     * @param y The exponent value of the expression.
+     */
+    pow(x: number, y: number): number;
 }
 ```
 
@@ -70,7 +70,7 @@ interface Math {
 
 ```ts
 document.addEventListener('click', function(e) {
-  console.log(e.targetCurrent);
+    console.log(e.targetCurrent);
 });
 
 // index.ts(2,17): error TS2339: Property 'targetCurrent' does not exist on type 'MouseEvent'.
@@ -80,7 +80,7 @@ document.addEventListener('click', function(e) {
 
 ```ts
 interface Document extends Node, GlobalEventHandlers, NodeSelector, DocumentEvent {
-  addEventListener(type: 'click', listener: (ev: MouseEvent) => any, useCapture?: boolean): void;
+    addEventListener(type: 'click', listener: (ev: MouseEvent) => any, useCapture?: boolean): void;
 }
 ```
 

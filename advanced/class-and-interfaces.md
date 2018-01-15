@@ -12,22 +12,22 @@
 
 ```ts
 interface Alarm {
-  alert();
+    alert();
 }
 
 class Door {
 }
 
 class SecurityDoor extends Door implements Alarm {
-  alert() {
-    console.log('SecurityDoor alert');
-  }
+    alert() {
+        console.log('SecurityDoor alert');
+    }
 }
 
 class Car implements Alarm {
-  alert() {
-    console.log('Car alert');
-  }
+    alert() {
+        console.log('Car alert');
+    }
 }
 ```
 
@@ -35,24 +35,24 @@ class Car implements Alarm {
 
 ```ts
 interface Alarm {
-  alert();
+    alert();
 }
 
 interface Light {
-  lightOn();
-  lightOff();
+    lightOn();
+    lightOff();
 }
 
 class Car implements Alarm, Light {
-  alert() {
-    console.log('Car alert');
-  }
-  lightOn() {
-    console.log('Car light on');
-  }
-  lightOff() {
-    console.log('Car light off');
-  }
+    alert() {
+        console.log('Car alert');
+    }
+    lightOn() {
+        console.log('Car light on');
+    }
+    lightOff() {
+        console.log('Car light off');
+    }
 }
 ```
 
@@ -64,12 +64,12 @@ class Car implements Alarm, Light {
 
 ```ts
 interface Alarm {
-  alert();
+    alert();
 }
 
 interface LightableAlarm extends Alarm {
-  lightOn();
-  lightOff();
+    lightOn();
+    lightOff();
 }
 ```
 
@@ -81,12 +81,12 @@ interface LightableAlarm extends Alarm {
 
 ```ts
 class Point {
-  x: number;
-  y: number;
+    x: number;
+    y: number;
 }
 
 interface Point3d extends Point {
-  z: number;
+    z: number;
 }
 
 let point3d: Point3d = {x: 1, y: 2, z: 3};
@@ -98,12 +98,12 @@ let point3d: Point3d = {x: 1, y: 2, z: 3};
 
 ```ts
 interface SearchFunc {
-  (source: string, subString: string): boolean;
+    (source: string, subString: string): boolean;
 }
 
 let mySearch: SearchFunc;
 mySearch = function(source: string, subString: string) {
-  return source.search(subString) !== -1;
+    return source.search(subString) !== -1;
 }
 ```
 
