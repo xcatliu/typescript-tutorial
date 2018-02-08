@@ -67,7 +67,7 @@ console.log(Days[3] === "Sun"); // false
 console.log(Days[3] === "Wed"); // true
 ```
 
-上面的例子中，递增到 `3` 的时候与前面的 `Sun` 的取值重复了，但是 TypeScript 并没有报错，导致 `Days[3]` 的值先是 `"Sun"`，而后又被 `"Web"` 覆盖了。编译的结果是：
+上面的例子中，递增到 `3` 的时候与前面的 `Sun` 的取值重复了，但是 TypeScript 并没有报错，导致 `Days[3]` 的值先是 `"Sun"`，而后又被 `"Wed"` 覆盖了。编译的结果是：
 
 ```js
 var Days;
