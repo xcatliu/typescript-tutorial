@@ -1,18 +1,29 @@
-# TypeScript 与 ESLint
+# 代码检查
 
-[ESLint][] 是一个代码检查工具，主要用来发现代码错误、统一代码风格，目前已被广泛的应用于各种 JavaScript 项目中。
+目前 TypeScript 的代码检查主要有两个方案：使用 [TSLint][] 或使用 [ESLint][] + [`typescript-eslint-parser`][]。
 
-它通过插件化的特性极大的丰富了适用范围，搭配 [`typescript-eslint-parser`][] 之后，甚至可以用来检查 TypeScript 代码。
+## 什么是代码检查
 
-## 为什么需要 ESLint
+代码检查主要是用来发现代码错误、统一代码风格。
 
-TypeScript 除了是一个编译 ts 文件的工具以外，还可以[作为一个静态代码检查工具使用]()。
+在 JavaScript 项目中，我们一般使用 [ESLint][] 来进行代码检查。它通过插件化的特性极大的丰富了适用范围，搭配 [`typescript-eslint-parser`][] 之后，甚至可以用来检查 TypeScript 代码。
 
-TypeScript 会对文件进行语法解析，如果遇到一些语法错误，或使用了未定义的变量，则会报错。
+[TSLint][] 与 [ESLint][] 类似，不过除了能检查常规的 js 代码风格之外，TSLint 还能够通过 TypeScript 的语法解析，利用类型系统做一些 ESLint 做不到的检查。
 
-ESLint 也会对文件进行语法解析，它可以对一些代码风格进行约束，发现未定义的变量，但是对于错误的属性或方法引用，却无能为力。
+## 为什么需要代码检查
 
-我们对同样一段代码分别运行 `tsc` 和 `eslint`，会得到如下报错信息：
+有人会觉得，JavaScript 非常灵活，所以需要代码检查。而 TypeScript 已经能够在编译阶段检查出很多问题了，为什么还需要代码检查呢？
+
+因为 TypeScript 关注的重心是类型的匹配，而不是代码风格。当团队的人员越来越多时，同样的逻辑不同的人写出来可能会有很大的区别：
+
+- 缩进应该是四个空格还是两个空格？
+- 是否应该禁用 `var`？
+- 接口名是否应该以 `I` 开头？
+- 是否应该强制使用 `===` 而不是 `==`？
+
+这些问题都是 TypeScript 不会关注，但是却影响到多人协作开发时的效率、代码的可理解性、和可维护性。
+
+下面来看一个具体的例子：
 
 ```ts
 let myName = 'Tom';
@@ -27,6 +38,7 @@ console.log(`My name is ${myName}`)
 // index.ts(4,34): error TS2551: Property 'toStrng' does not exist on type 'string'. Did you mean 'toString'?
 //
 //
+//
 // eslint 报错信息：
 //
 // /path/to/index.ts
@@ -35,29 +47,107 @@ console.log(`My name is ${myName}`)
 //
 // ✖ 2 problems (2 errors, 0 warnings)
 //   1 errors, 0 warnings potentially fixable with the `--fix` option.
+//
+//
+//
+// tslint 报错信息：
+//
+// ERROR: /path/to/index.ts[5, 36]: Missing semicolon
 ```
 
-| 存在的问题 | `tsc` 是否报错 | `eslint` 是否报错 |
-| --------- | ------------- | ---------------- |
-| `myName` 被勿写成了 `myNane` | ✅ | ✅ |
-| `toString` 被勿写成了 `toStrng` | ✅️ | ❌ |
-| 少了一个分号 | ❌ | ✅ |
+| 存在的问题 | `tsc` 是否报错 | `eslint` 是否报错 | `tslint` 是否报错 |
+| --------- | ------------- | ---------------- | ----------------- |
+| `myName` 被勿写成了 `myNane` | ✅ | ✅ | ❌ |
+| `toString` 被勿写成了 `toStrng` | ✅️ | ❌ | ❌ |
+| 少了一个分号 | ❌ | ✅ | ✅ |
 
-上例中，由于 `eslint` 无法识别 `myName` 存在哪些方法，所以对于拼写错误的 `toString` 没有检查出来。而代码风格的错误不影响编译，故 `tsc` 没有检查出来。
+上例中，由于 `eslint` 和 `tslint` 均无法识别 `myName` 存在哪些方法，所以对于拼写错误的 `toString` 没有检查出来。
 
-未定义的变量两者都能检查出来。
+而代码风格的错误不影响编译，故少了一个分号的错误 `tsc` 没有检查出来。
 
-值得注意的是，`tsc` 不仅检查出来了代码问题，还非常智能的给出了修改建议。
+对于未定义的变量 `myNane`，`tsc` 可以检测出来。由于用到 `tslint` 的地方肯定会接入 `tsc` 编译，所以 `tslint` 就没必要检测这个错误了。`eslint` 需要能够独立于某个编译环境，所以能检测出此类错误，但是对于 TypeScript 代码，这其实是一种冗余的检测了。
 
-下面是 TypeScirpt 作为一个静态代码检查工具，与 ESLint 的关系图：
+其实不止 `tsc` 与 `eslint` 之间有冗余的检测，`tsc` 与 `tslint` 之间也有一些冗余的检测，但是大部分都是因为早期的 `tsc` 还没能做到检测此类错误。
 
-![TypeScript 和 ESLint 的关系](../assets/typescript-eslint.png)
+比如 TSLint 中的 `typeof-compare` 要求 `typeof` 表达式比较的对象必须是 `'undefined'`, `'object'`, `'boolean'`, `'number'`, `'string'`, `'function'` 或 `'symbol'` 之一。而 TypeScript 2.2 之后，编译器就已经自带了这个功能。
 
-上图中，TypeScript 与 ESLint 有重叠的部分，也有各自独立的部分，虽然发现代码错误比统一的代码风格更重要，但是当一个项目越来越庞大，开发人员也越来越多的时候，代码风格的约束还是必不可少的。
+下图表示了 `tsc`, `eslint` 和 `tslint` 能覆盖的检查：
 
-下面我们就来一步一步给 TypeScript 项目添加 ESLint 检查。
+@TODO 图片待补充
 
-## 安装
+上图中，`tsc`, `eslint` 和 `tslint` 之间互相都有重叠的部分，也有各自独立的部分。
+
+虽然发现代码错误比统一的代码风格更重要，但是当一个项目越来越庞大，开发人员也越来越多的时候，代码风格的约束还是必不可少的。
+
+## 应该使用哪种代码检查工具
+
+TSLint 与 ESLint 作为检查 TypeScript 代码的工具，各自都有自己的优点：
+
+TSLint 的优点：
+
+1. 专为 TypeScript 服务，bug 比 ESLint 少
+2. 不受限于 ESLint 使用的语法树 [ESTree](https://github.com/estree/estree)
+3. 能直接通过 `tsconfig.json` 中的配置编译整个项目，使得在一个文件中的类型定义能够联动到其他文件中的代码检查
+
+ESLint 的优点：
+
+1. 基础规则比 TSLint 多很多（249 : 151）
+2. 社区繁荣，插件众多（[50+](https://github.com/dustinspecker/awesome-eslint#plugins) : 9）
+
+下面来看一些具体的例子：
+
+```ts
+let foo: string = 1 + '1';
+
+// tslint 报错信息：
+//
+// ERROR: /path/to/index.ts[1, 19]: Operands of '+' operation must either be both strings or both numbers, consider using template literals
+```
+
+以上代码在 TSLint 中会报错，原因是加号两边必须同为数字或同为字符串（需要开启 `restrict-plus-operands` 规则）。
+
+ESLint 无法知道加号两边的类型，所以对这种规则无能为力。
+
+```ts
+function foo(a, b, c, d, e, f, g, h) {
+    doSomething();
+}
+
+// eslint 报错信息：
+//
+// /path/to/index.ts
+//   1:1  error  Function 'foo' has too many parameters (8). Maximum allowed is 7  max-params
+//
+// ✖ 1 problem (1 error, 0 warnings)
+```
+
+ESLint 可以检测出来以上代码的函数参数超过了 7 个（需要开启 `max-params` 规则）。
+
+但是 TSLint 没有此项检查，虽然也可以实现，但是需要自己手动写一条规则。
+
+那么到底该使用哪种代码检测工具呢？经过一些实践，我建议可以按照以下流程决定：
+
+```ts
+if ('项目正在由 js 改造为 ts 的过程中') {
+    if ('原 js 项目使用了 eslint') {
+        if ('将会长时间处于 js 与 ts 共存的状态') {
+            // 由于一个项目中无法针对不同后缀的文件使用不同的 eslint 配置
+            // 故新 ts 文件只能使用 tslint 检查，老 js 文件保持使用 eslint 检查
+            return 'tslint' & 'eslint';
+        } else if ('能够快速的将所有文件都重构为 ts') {
+            // 使原有 eslint 支持对 ts 文件的检查
+            return 'eslint';
+        }
+    }
+}
+// TSLint 利用类型系统增强的一些检查大多是无关痛痒的，或者是可以在 tsc 编译过程中检查出来的
+// ESLint 生态环境更好，虽然现在还存在一些 bug，但是应该积极使用，推动它的发展
+return 'eslint';
+```
+
+## 在 TypeScript 中使用 ESLint
+
+### 安装 ESLint
 
 ESLint 可以安装在当前项目中或全局环境下，因为代码检查是项目的重要组成部分，所以我们一般会将它安装在当前项目中。可以运行下面的脚本来安装：
 
@@ -77,7 +167,7 @@ npm install typescript typescript-eslint-parser --save-dev
 npm install eslint-plugin-typescript --save-dev
 ```
 
-## 创建配置文件
+### 创建配置文件
 
 ESLint 需要一个配置文件来决定对哪些规则进行检查，配置文件的名称一般是 `.eslintrc.js` 或 `.eslintrc.json`。
 
@@ -118,7 +208,7 @@ module.exports = {
 - 警告：代码检查时输出错误信息，但是不会影响到 exit code
 - 报错：发现错误时，不仅会输出错误信息，而且 exit code 将被设为 1（一般 exit code 不为 0 则表示执行出现错误）
 
-## 检查一个 ts 文件
+### 检查一个 ts 文件
 
 创建了配置文件之后，我们来创建一个 ts 文件看看是否能用 ESLint 去检查它了。
 
@@ -172,7 +262,7 @@ if (tom.age == 25) {
 
 这时只需执行 `npm run eslint` 即可。
 
-## 检查整个项目的 ts 文件
+### 检查整个项目的 ts 文件
 
 我们的项目源文件一般是放在 `src` 目录下，所以需要将 `package.json` 中的 `eslint` 脚本改为对一个目录进行检查。由于 `eslint` 默认不会检查 `.ts` 后缀的文件，所以需要加上参数 `--ext .ts`：
 
@@ -186,7 +276,7 @@ if (tom.age == 25) {
 
 此时执行 `npm run eslint` 即会检查 `src` 目录下的所有 `.ts` 后缀的文件。
 
-## 在 VSCode 中集成 ESLint 检查
+### 在 VSCode 中集成 ESLint 检查
 
 在编辑器中集成 ESLint 检查，可以在开发过程中就发现错误，极大的增加了开发效率。
 
@@ -208,7 +298,7 @@ VSCode 中的 ESLint 插件默认是不会检查 `.ts` 后缀的，需要在「�
 
 ![VSCode ESLint 错误信息](../assets/vscode-eslint-error.png)
 
-## 使用已完善的配置
+### 使用已完善的配置
 
 ESLint 原生的规则和 `eslint-plugin-typescript` 的规则太多了，而且原生的规则有一些在 TypeScript 中支持的不好，需要禁用掉。
 
@@ -250,17 +340,17 @@ module.exports = {
 };
 ```
 
-## 使用 ESLint 检查 tsx 文件
+### 使用 ESLint 检查 tsx 文件
 
 如果需要同时支持对 tsx 文件的检查，则需要对以上步骤做一些调整：
 
-### 安装 `eslint-plugin-react`
+#### 安装 `eslint-plugin-react`
 
 ```bash
 npm install --save-dev eslint-plugin-react
 ```
 
-### package.json 中的 scripts.eslint 添加 `.tsx` 后缀
+#### package.json 中的 scripts.eslint 添加 `.tsx` 后缀
 
 ```json
 {
@@ -270,7 +360,7 @@ npm install --save-dev eslint-plugin-react
 }
 ```
 
-### VSCode 的配置中新增 typescriptreact 检查
+#### VSCode 的配置中新增 typescriptreact 检查
 
 ```json
 {
@@ -283,9 +373,13 @@ npm install --save-dev eslint-plugin-react
 }
 ```
 
-### 使用 AlloyTeam ESLint 规则中的 TypeScript React 版本
+#### 使用 AlloyTeam ESLint 规则中的 TypeScript React 版本
 
 [AlloyTeam ESLint 规则中的 TypeScript React 版本](https://github.com/AlloyTeam/eslint-config-alloy#typescript-react)
+
+## 在 TypeScirpt 中使用 TSLint
+
+@TODO 待补充
 
 ## Troubleshootings
 
@@ -296,6 +390,8 @@ npm install --save-dev eslint-plugin-react
 ### cannot read property type of null
 
 需要关闭 `eslint-plugin-react` 中的规则 `react/jsx-indent`。
+
+如果还不行，多半是因为某些规则需要被关闭，可以使用「二分排错法」检查是哪个规则造成了错误。也欢迎[给 eslint-config-alloy 提 issue](https://github.com/AlloyTeam/eslint-config-alloy/issues/new)
 
 ### VSCode 没有显示出 ESLint 的报错
 
@@ -308,5 +404,23 @@ npm install --save-dev eslint-plugin-react
 
 ![VSCode 的 ESLint 输出](../assets/vscode-output-eslint.png)
 
+### 为什么 ESLint 无法检查出使用了未定义的变量（`no-undef` 规则为什么被关闭了）？
+
+因为 `typescript-eslint-parser` [无法支持 `no-undef` 规则](https://github.com/eslint/typescript-eslint-parser/issues/416)。它针对正确的接口定义会报错。
+
+### 为什么有些定义了的变量（比如使用 `enum` 定义的变量）未使用，ESLint 却没有报错？
+
+因为无法支持这种变量定义的检查。建议在 `tsconfig.json` 中添加以下配置，使 `tsc` 编译过程能够检查出定义了未使用的变量：
+
+```json
+{
+    "compilerOptions": {
+        "noUnusedLocals": true,
+        "noUnusedParameters": true
+    }
+}
+```
+
+[TSLint]: https://palantir.github.io/tslint/
 [ESLint]: https://eslint.org/
 [`typescript-eslint-parser`]: https://github.com/eslint/typescript-eslint-parser

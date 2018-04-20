@@ -26,6 +26,6 @@
   - [泛型](advanced/generics.md)
   - [声明合并](advanced/declaration-merging.md)
   - [扩展阅读](advanced/further-reading.md)
-- [生态系统](ecosystem/README.md)
-  - [TypeScript 与 ESLint](ecosystem/eslint.md)
+- [工程](engineering/README.md)
+  - [代码检查](engineering/lint.md)
 - [感谢](thanks/README.md)
