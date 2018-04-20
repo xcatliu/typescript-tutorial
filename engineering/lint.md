@@ -21,7 +21,7 @@
 - 接口名是否应该以 `I` 开头？
 - 是否应该强制使用 `===` 而不是 `==`？
 
-这些问题都是 TypeScript 不会关注，但是却影响到多人协作开发时的效率、代码的可理解性、和可维护性。
+这些问题 TypeScript 不会关注，但是却影响到多人协作开发时的效率、代码的可理解性以及可维护性。
 
 下面来看一个具体的例子：
 
@@ -65,7 +65,7 @@ console.log(`My name is ${myName}`)
 
 而代码风格的错误不影响编译，故少了一个分号的错误 `tsc` 没有检查出来。
 
-对于未定义的变量 `myNane`，`tsc` 可以检测出来。由于用到 `tslint` 的地方肯定会接入 `tsc` 编译，所以 `tslint` 就没必要检测这个错误了。`eslint` 需要能够独立于某个编译环境，所以能检测出此类错误，而对于 TypeScript 代码，这其实是一种冗余的检测了。
+对于未定义的变量 `myNane`，`tsc` 可以检测出来。由于用到 `tslint` 的地方肯定会接入 `tsc` 编译，所以 `tslint` 就没必要检测这个错误了。`eslint` 需要能够独立于某个编译环境运行，所以能检测出此类错误，而对于 TypeScript 代码，这其实是一种冗余的检测了。
 
 事实上，不止 `tsc` 与 `eslint` 之间有冗余的检测，`tsc` 与 `tslint` 之间也有一些冗余的检测，但是大部分都是因为早期的 `tsc` 还没能做到检测此类错误。
 
@@ -451,7 +451,7 @@ TSLint 默认支持对 tsx 文件的检查，不需要做额外配置。
 
 需要关闭 `eslint-plugin-react` 中的规则 `react/jsx-indent`。
 
-如果还不行，多半是因为某些规则需要被关闭，可以使用「二分排错法」检查是哪个规则造成了错误。也欢迎[给 eslint-config-alloy 提 issue](https://github.com/AlloyTeam/eslint-config-alloy/issues/new)
+如果仍然报错，多半是因为某些规则需要被关闭，可以使用「二分排错法」检查是哪个规则造成了错误。也欢迎[给 eslint-config-alloy 提 issue](https://github.com/AlloyTeam/eslint-config-alloy/issues/new)。
 
 ### VSCode 没有显示出 ESLint 的报错
 
@@ -467,6 +467,8 @@ TSLint 默认支持对 tsx 文件的检查，不需要做额外配置。
 ### 为什么 ESLint 无法检查出使用了未定义的变量（`no-undef` 规则为什么被关闭了）？
 
 因为 `typescript-eslint-parser` [无法支持 `no-undef` 规则](https://github.com/eslint/typescript-eslint-parser/issues/416)。它针对正确的接口定义会报错。
+
+所以我们一般会关闭 `no-undef` 规则。
 
 ### 为什么有些定义了的变量（比如使用 `enum` 定义的变量）未使用，ESLint 却没有报错？
 
