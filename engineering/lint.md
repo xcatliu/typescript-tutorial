@@ -81,7 +81,7 @@ console.log(`My name is ${myName}`)
 
 ## 应该使用哪种代码检查工具
 
-TSLint 与 ESLint 作为检查 TypeScript 代码的工具，各自都有自己的优点：
+TSLint 与 ESLint 作为检查 TypeScript 代码的工具，各自有各自的优点：
 
 TSLint 的优点：
 
@@ -127,23 +127,7 @@ ESLint 可以检测出来以上代码的函数参数超过了 7 个（需要开�
 
 那么到底该使用哪种代码检测工具呢？经过一些实践，我建议可以按照以下流程决定：
 
-```ts
-if ('项目正在由 js 改造为 ts 的过程中') {
-    if ('原 js 项目使用了 eslint') {
-        if ('将会长时间处于 js 与 ts 共存的状态') {
-            // 由于一个项目中无法针对不同后缀的文件使用不同的 eslint 配置
-            // 故新 ts 文件只能使用 tslint 检查，老 js 文件保持使用 eslint 检查
-            return 'tslint' & 'eslint';
-        } else if ('能够快速的将所有文件都重构为 ts') {
-            // 使原有 eslint 支持对 ts 文件的检查
-            return 'eslint';
-        }
-    }
-}
-// TSLint 利用类型系统增强的一些检查大多是无关痛痒的，或者是可以在 tsc 编译过程中检查出来的
-// ESLint 生态环境更好，虽然现在还存在一些 bug，但是应该积极使用，推动它的发展
-return 'eslint';
-```
+![流程图：选择 ESLint 还是 TSLint](../assets/eslint-or-tslint-process.png)
 
 ## 在 TypeScript 中使用 ESLint
 
