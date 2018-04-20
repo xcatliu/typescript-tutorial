@@ -65,15 +65,15 @@ console.log(`My name is ${myName}`)
 
 而代码风格的错误不影响编译，故少了一个分号的错误 `tsc` 没有检查出来。
 
-对于未定义的变量 `myNane`，`tsc` 可以检测出来。由于用到 `tslint` 的地方肯定会接入 `tsc` 编译，所以 `tslint` 就没必要检测这个错误了。`eslint` 需要能够独立于某个编译环境，所以能检测出此类错误，但是对于 TypeScript 代码，这其实是一种冗余的检测了。
+对于未定义的变量 `myNane`，`tsc` 可以检测出来。由于用到 `tslint` 的地方肯定会接入 `tsc` 编译，所以 `tslint` 就没必要检测这个错误了。`eslint` 需要能够独立于某个编译环境，所以能检测出此类错误，而对于 TypeScript 代码，这其实是一种冗余的检测了。
 
-其实不止 `tsc` 与 `eslint` 之间有冗余的检测，`tsc` 与 `tslint` 之间也有一些冗余的检测，但是大部分都是因为早期的 `tsc` 还没能做到检测此类错误。
+事实上，不止 `tsc` 与 `eslint` 之间有冗余的检测，`tsc` 与 `tslint` 之间也有一些冗余的检测，但是大部分都是因为早期的 `tsc` 还没能做到检测此类错误。
 
-比如 TSLint 中的 `typeof-compare` 要求 `typeof` 表达式比较的对象必须是 `'undefined'`, `'object'`, `'boolean'`, `'number'`, `'string'`, `'function'` 或 `'symbol'` 之一。而 TypeScript 2.2 之后，编译器就已经自带了这个功能。
+举个例子，TSLint 中的 `typeof-compare` 要求 `typeof` 表达式比较的对象必须是 `'undefined'`, `'object'`, `'boolean'`, `'number'`, `'string'`, `'function'` 或 `'symbol'` 之一。而 TypeScript 2.2 之后，编译器就已经自带了这个功能。
 
 下图表示了 `tsc`, `eslint` 和 `tslint` 能覆盖的检查：
 
-@TODO 图片待补充
+![TypeScript vs ESLint vs TSLint](../assets/typescript-eslint-tslint.png)
 
 上图中，`tsc`, `eslint` 和 `tslint` 之间互相都有重叠的部分，也有各自独立的部分。
 
@@ -250,7 +250,7 @@ if (tom.age == 25) {
 
 需要注意的是，我们使用的是 `./node_modules/.bin/eslint`，而不是全局的 `eslint` 脚本，这是因为代码检查是项目的重要组成部分，所以我们一般会将它安装在当前项目中。
 
-可是每次执行这么长一段脚本颇有不便，我们可以在 `package.json` 中添加一个 `script` 来简化这个步骤：
+可是每次执行这么长一段脚本颇有不便，我们可以通过在 `package.json` 中添加一个 `script` 来创建一个 npm script 来简化这个步骤：
 
 ```json
 {
@@ -298,7 +298,7 @@ VSCode 中的 ESLint 插件默认是不会检查 `.ts` 后缀的，需要在「�
 
 ![VSCode ESLint 错误信息](../assets/vscode-eslint-error.png)
 
-### 使用已完善的配置
+### 使用 AlloyTeam 的 ESLint 配置
 
 ESLint 原生的规则和 `eslint-plugin-typescript` 的规则太多了，而且原生的规则有一些在 TypeScript 中支持的不好，需要禁用掉。
 
@@ -379,7 +379,83 @@ npm install --save-dev eslint-plugin-react
 
 ## 在 TypeScirpt 中使用 TSLint
 
-@TODO 待补充
+TSLint 的使用比较简单，参考[官网的步骤](https://palantir.github.io/tslint/)安装到本地即可：
+
+```bash
+npm install --save-dev tslint
+```
+
+创建配置文件 `tslint.json`
+
+```json
+{
+    "rules": {
+        // 必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外
+        "triple-equals": [
+            true,
+            "allow-null-check"
+        ]
+    },
+    "linterOptions": {
+        "exclude": [
+            "**/node_modules/**"
+        ]
+    }
+}
+```
+
+为 `package.json` 添加 `tslint` 脚本
+
+```json
+{
+    "scripts": {
+        "tslint": "tslint --project . src/**/*.ts src/**/*.tsx",
+    }
+}
+```
+
+其中 `--project .` 会要求 `tslint` 使用当前目录的 `tsconfig.json` 配置来获取类型信息，很多规则需要类型信息才能生效。
+
+此时执行 `npm run tslint` 即可检查整个项目。
+
+### 在 VSCode 中集成 TSLint 检查
+
+在 VSCode 中安装 `tslint` 插件即可，安装好之后，默认是开启的状态。
+
+### 使用 AlloyTeam 的 TSLint 配置
+
+AlloyTeam 为 TSLint 也打造了一套配置 [tslint-config-alloy](https://github.com/AlloyTeam/tslint-config-alloy)
+
+```bash
+npm install --save-dev tslint-config-alloy
+```
+
+安装之后修改 `tsconfig.json` 即可
+
+```json
+{
+    "extends": "tslint-config-alloy",
+    "rules": {
+        // 这里填入你的项目需要的个性化配置，比如：
+        //
+        // 一个缩进必须用两个空格替代
+        // "indent": [
+        //     true,
+        //     "spaces",
+        //     2
+        // ]
+    },
+    "linterOptions": {
+        "exclude": [
+            "**/node_modules/**"
+        ]
+    }
+}
+```
+
+### 使用 TSLint 检查 tsx 文件
+
+TSLint 默认支持对 tsx 文件的检查，不需要做额外配置。
 
 ## Troubleshootings
 
@@ -420,6 +496,12 @@ npm install --save-dev eslint-plugin-react
     }
 }
 ```
+
+### 为什么有的错误 TSLint 可以检查出来，vscode 里的 TSLint 却检查不出来？
+
+因为 TSLint 依赖 `tsconfig.json` 获得了类型信息，而 [vscode 里的 TSLint 暂不支持获取类型信息](https://github.com/Microsoft/vscode-tslint/tree/master/tslint#the-tslint-no-unused-variable-rule-doesnt-report-warnings-any-more)，所以 `no-unused-variable` 就失效了。
+
+不仅 `no-unused-variables` 失效了，[TSLint rules](https://palantir.github.io/tslint/rules/) 里面所有标有 `Requires Type Info` 的规则都失效了。
 
 [TSLint]: https://palantir.github.io/tslint/
 [ESLint]: https://eslint.org/
