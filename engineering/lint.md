@@ -483,6 +483,10 @@ TSLint 默认支持对 tsx 文件的检查，不需要做额外配置。
 }
 ```
 
+### 启用了 noUnusedParameters 之后，只使用了第二个参数，但是又必须传入第一个参数，这就会报错了
+
+第一个参数以下划线开头即可，参考 https://github.com/Microsoft/TypeScript/issues/9458
+
 ### 为什么有的错误 TSLint 可以检查出来，vscode 里的 TSLint 却检查不出来？
 
 因为 TSLint 依赖 `tsconfig.json` 获得了类型信息，而 [vscode 里的 TSLint 暂不支持获取类型信息](https://github.com/Microsoft/vscode-tslint/tree/master/tslint#the-tslint-no-unused-variable-rule-doesnt-report-warnings-any-more)，所以 `no-unused-variable` 就失效了。
