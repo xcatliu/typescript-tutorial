@@ -7,3 +7,8 @@
 那么一项大工程应该如何开展呢？本部分的内容就会介绍 TypeScript 工程化的最佳实践，具体内容包括：
 
 - [代码检查](lint.md)
+
+---
+
+- [上一章：扩展阅读](../advanced/further-reading.md)
+- [下一章：代码检查](lint.md)
