@@ -496,3 +496,8 @@ TSLint 默认支持对 tsx 文件的检查，不需要做额外配置。
 [TSLint]: https://palantir.github.io/tslint/
 [ESLint]: https://eslint.org/
 [`typescript-eslint-parser`]: https://github.com/eslint/typescript-eslint-parser
+
+---
+
+- [上一章：工程](README.md)
+- [下一章：感谢](../thanks/README.md)
