@@ -8,7 +8,8 @@
 - [在线阅读（GitHub 版）](https://github.com/xcatliu/typescript-tutorial/blob/master/README.md)
 - [GitHub 地址][GitHub]
 - 作者：[xcatliu](https://github.com/xcatliu/)
-- 官方群：[加入QQ群 767142358](https://jq.qq.com/?_wv=1027&k=5nkkFCl)
+- 官方 QQ 群：[加入QQ群 767142358](https://jq.qq.com/?_wv=1027&k=5nkkFCl)
+- 官方微信群：<img src="./assets/wechat.jpeg" width="100" />
 
 本书是作者在学习 [TypeScript] 后整理的学习笔记。
 
