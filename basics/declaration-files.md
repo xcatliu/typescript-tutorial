@@ -23,7 +23,7 @@ jQuery('#foo');
 这时，我们需要使用 `declare` 关键字来定义它的类型，帮助 TypeScript 判断我们传入的参数类型对不对：
 
 ```ts
-declare var jQuery: (string) => any;
+declare var jQuery: (selector: string) => any;
 
 jQuery('#foo');
 ```
