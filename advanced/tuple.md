@@ -55,14 +55,7 @@ xcatliu[1] = 25;
 
 ## 越界的元素
 
-当赋值给越界的元素时，它类型会被限制为元组中每个类型的联合类型：
-
-```ts
-let xcatliu: [string, number];
-xcatliu = ['Xcat Liu', 25, 'http://xcatliu.com/'];
-```
-
-上面的例子中，数组的第三项满足联合类型 `string | number`。
+当添加越界的元素时，它的类型会被限制为元组中每个类型的联合类型：
 
 ```ts
 let xcatliu: [string, number];
@@ -74,18 +67,6 @@ xcatliu.push(true);
 //   Type 'boolean' is not assignable to type 'number'.
 ```
 
-当访问一个越界的元素，也会识别为元组中每个类型的联合类型：
-
-```ts
-let xcatliu: [string, number];
-xcatliu = ['Xcat Liu', 25, 'http://xcatliu.com/'];
-
-console.log(xcatliu[2].slice(1));
-
-// index.ts(4,24): error TS2339: Property 'slice' does not exist on type 'string | number'.
-```
-
-之前提到过，[如果一个值是联合类型，我们只能访问此联合类型的所有类型里共有的属性或方法。](../basics/union-types.md#访问联合类型的属性或方法)
 
 ## 参考
 
