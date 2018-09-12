@@ -10,7 +10,7 @@
 
 - 在 [GitHub](https://github.com/xcatliu/typescript-tutorial) 上关注本书
 - 阅读[官方手册](http://www.typescriptlang.org/docs/handbook/basic-types.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/)）巩固知识
-- 阅读 [Project Configuration](http://www.typescriptlang.org/docs/handbook/tsconfig-json.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/tsconfig.json.html)） 学习如何配置 TypeScirpt 工程
+- 阅读 [Project Configuration](http://www.typescriptlang.org/docs/handbook/tsconfig-json.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/tsconfig.json.html)） 学习如何配置 TypeScript 工程
 - 查看[官方示例](http://www.typescriptlang.org/samples/index.html)，学习真实项目
 
 ---

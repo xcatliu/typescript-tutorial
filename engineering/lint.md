@@ -184,7 +184,7 @@ module.exports = {
 
 规则的取值一般是一个数组（上例中的 `eqeqeq`），其中第一项是 `off`、`warn` 或 `error` 中的一个，表示关闭、警告和报错。后面的项都是该规则的其他配置。
 
-如果没有其他配置的话，则可以将规则的取值简写为数组中的第一项（上例中的 `typescirpt/class-name-casing`）。
+如果没有其他配置的话，则可以将规则的取值简写为数组中的第一项（上例中的 `typescript/class-name-casing`）。
 
 关闭、警告和报错的含义如下：
 
@@ -361,7 +361,7 @@ npm install --save-dev eslint-plugin-react
 
 [AlloyTeam ESLint 规则中的 TypeScript React 版本](https://github.com/AlloyTeam/eslint-config-alloy#typescript-react)
 
-## 在 TypeScirpt 中使用 TSLint
+## 在 TypeScript 中使用 TSLint
 
 TSLint 的使用比较简单，参考[官网的步骤](https://palantir.github.io/tslint/)安装到本地即可：
 
