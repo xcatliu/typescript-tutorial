@@ -26,7 +26,7 @@
 
 - TypeScript 是 JavaScript 的超集，`.js` 文件可以直接重命名为 `.ts` 即可
 - 即使不显式的定义类型，也能够自动做出[类型推论](../basics/type-inference.md)
-- 可以定义从简单到复杂的一切类型
+- 可以定义从简单到复杂的几乎一切类型
 - 即使 TypeScript 编译报错，也可以生成 JavaScript 文件
 - 兼容第三方库，即使第三方库不是用 TypeScript 写的，也可以编写单独的类型文件供 TypeScript 读取
 
@@ -34,17 +34,16 @@
 
 - 大部分第三方库都有提供给 TypeScript 的类型定义文件
 - Google 开发的 Angular2 就是使用 TypeScript 编写的
-- ES6 的一部分特性是借鉴的 TypeScript 的（这条需要来源）
-- TypeScript 拥抱了 ES6 规范，也支持部分 ES7 草案的规范
+- TypeScript 拥抱了 ES6 规范，也支持部分 ESNext 草案的规范
 
 ### TypeScript 的缺点
 
 任何事物都是有两面性的，我认为 TypeScript 的弊端在于：
 
-- 有一定的学习成本，需要理解接口（Interfaces）、泛型（Generics）、类（Classes）、枚举类型（Enums）等前端工程师可能不是很熟悉的东西。而且它的中文资料也不多
-- 短期可能会增加一些开发成本，毕竟要多写一些类型的定义，不过对于一个需要长期维护的项目，TypeScript 能够减少其维护成本（这条需要来源）
+- 有一定的学习成本，需要理解接口（Interfaces）、泛型（Generics）、类（Classes）、枚举类型（Enums）等前端工程师可能不是很熟悉的概念
+- 短期可能会增加一些开发成本，毕竟要多写一些类型的定义，不过对于一个需要长期维护的项目，TypeScript 能够减少其维护成本
 - 集成到构建流程需要一些工作量
-- 可能和一些库结合的不是很完美（这条需要举例）
+- 可能和一些库结合的不是很完美
 
 大家可以根据自己团队和项目的情况判断是否需要使用 TypeScript。
 

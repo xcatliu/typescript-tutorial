@@ -14,11 +14,11 @@ npm install -g typescript
 tsc hello.ts
 ```
 
-我们约定使用 TypeScript 编写的文件以 `.ts` 为后缀。
+我们约定使用 TypeScript 编写的文件以 `.ts` 为后缀，用 TypeScript 编写 React 时，以 `.tsx` 为后缀。
 
 ## 编辑器
 
-TypeScript 最大的优势之一便是增强了编辑器和 IDE 的功能，包括代码补全、接口提示、跳转到定义、重构等。
+TypeScript 最大的优势便是增强了编辑器和 IDE 的功能，包括代码补全、接口提示、跳转到定义、重构等。
 
 主流的编辑器都支持 TypeScript，这里我推荐使用 [Visual Studio Code](https://code.visualstudio.com/)。
 
