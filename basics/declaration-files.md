@@ -74,7 +74,7 @@ npm install @types/jquery --save-dev
 
 ## 参考
 
-- [Writing Declaration Files](http://www.typescriptlang.org/docs/handbook/writing-declaration-files.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Writing%20Definition%20Files.html)）
+- [Writing Declaration Files](http://www.typescriptlang.org/docs/handbook/writing-declaration-files.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/declaration%20files/Introduction.html)）
 - [Triple-Slash Directives](http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Triple-Slash%20Directives.html)）
 
 ---
