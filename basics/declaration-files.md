@@ -42,7 +42,7 @@ jQuery('#foo');
 通常我们会把声明语句放到一个单独的文件（`jQuery.d.ts`）中，这就是声明文件：
 
 ```ts
-// jQuery.d.ts
+// src/jQuery.d.ts
 
 declare var jQuery: (selector: string) => any;
 ```
@@ -50,6 +50,15 @@ declare var jQuery: (selector: string) => any;
 声明文件必需以 `.d.ts` 为后缀。
 
 一般来说，ts 会解析项目中所有的 `*.ts` 文件，当然也包含以 `.d.ts` 结尾的文件。所以当我们将 `jQuery.d.ts` 放到项目中时，其他所有 `*.ts` 文件就都可以获得 `jQuery` 的类型定义了。
+
+```
+/path/to/project
+├── README.md
+├── src
+|  ├── index.ts
+|  └── jQuery.d.ts
+└── tsconfig.json
+```
 
 假如仍然无法解析，那么可以检查下 `tsconfig.json` 中的 `files`、`include` 和 `exclude` 配置，确保其包含了 `jQuery.d.ts` 文件。
 
@@ -81,7 +90,7 @@ npm install @types/jquery --save-dev
 - npm 包：通过 `import foo from 'foo'` 导入，符合 ES6 模块规范
 - UMD 库：既可以通过 `<script>` 标签引入，又可以通过 `import` 导入
 - 模块插件：通过 `import` 导入后，可以改变另一个模块的结构
-- 直接修改全局变量：通过 `<script>` 标签引入后，改变一个全局变量的结构。比如为 `Array.prototype` 新增了一个方法
+- 直接修改全局变量：通过 `<script>` 标签引入后，改变一个全局变量的结构。比如为 `String.prototype` 新增了一个方法
 - 通过导入修改全局变量：通过 `import` 导入后，可以改变一个全局变量的结构
 
 ### 全局变量
@@ -308,7 +317,7 @@ jQuery.fn.extend({
 除了全局变量之外，有一些类型我们可能也希望能暴露出来。在类型声明文件中，我们可以直接使用 `interface` 或 `type` 来声明一个全局的类型：
 
 ```ts
-// jQuery.d.ts
+// src/jQuery.d.ts
 
 interface AjaxSettings {
     method?: 'GET' | 'POST'
@@ -322,7 +331,7 @@ declare namespace jQuery {
 这样的话，在其他文件中也可以使用这个接口了：
 
 ```ts
-// index.ts
+// src/index.ts
 
 let settings: AjaxSettings = {
     method: 'POST',
@@ -340,7 +349,7 @@ jQuery.ajax('/api/post_something', settings);
 暴露在最外层的 `interface` 或 `type` 会作为全局类型作用于整个项目中，我们应该尽可能的减少全局变量或全局类型的数量。故应该将他们放到 `namespace` 下：
 
 ```ts
-// jQuery.d.ts
+// src/jQuery.d.ts
 
 declare namespace jQuery {
     interface AjaxSettings {
@@ -354,7 +363,7 @@ declare namespace jQuery {
 注意，在使用这个 `interface` 的时候，也应该加上 `jQuery` 前缀了：
 
 ```ts
-// index.ts
+// src/index.ts
 
 let settings: jQuery.AjaxSettings = {
     method: 'POST',
@@ -367,7 +376,7 @@ jQuery.ajax('/api/post_something', settings);
 
 #### 声明合并
 
-假如 jQuery 既是一个函数，可以直接被调用（`jQuery('#foo')`），又是一个对象，拥有子属性（`jQuery.ajax()`）（事实确实如此），则我们可以组合多个声明语句，它们会不冲突的合并起来：
+假如 jQuery 既是一个函数，可以直接被调用 `jQuery('#foo')`，又是一个对象，拥有子属性 `jQuery.ajax()`（事实确实如此），则我们可以组合多个声明语句，它们会不冲突的合并起来：
 
 ```ts
 declare function jQuery(selector: string): any;
@@ -395,7 +404,7 @@ jQuery.ajax('/api/get_something');
 1. 创建一个 `node_modules/@types/foo/index.d.ts` 文件，存放 `foo` 模块的声明文件。这种方式不需要额外的配置，但是 `node_modules` 目录不稳定，代码也没有被保存到仓库中，无法回溯版本，有不小心被删除的风险。
 2. 创建一个 `types` 目录，专门用来管理自己写的声明文件，将 `foo` 的声明文件放到 `types/foo/index.d.ts` 中。这种方式需要配置下 `tsconfig.json` 的 `paths` 和 `baseUrl` 字段。
 
-`types` 目录：
+目录结构：
 
 ```
 /path/to/project
@@ -522,7 +531,7 @@ export namespace foo {
 ```
 
 ```ts
-// index.ts
+// src/index.ts
 
 import { foo } from 'foo';
 
@@ -543,7 +552,7 @@ export default function foo(): string;
 ```
 
 ```ts
-// index.ts
+// src/index.ts
 
 import foo from 'foo';
 
@@ -636,7 +645,7 @@ declare namespace foo {
 
 准确地讲，`export = ` 不仅可以用在声明文件中，也可以用在普通的 ts 文件中。实际上，`import ... require` 和 `export =` 都是 ts 为了兼容 AMD 规范和 commonjs 规范而创立的新语法，由于并不常用也不推荐使用，所以这里就不详细介绍了，感兴趣的可以看[官方文档](https://www.typescriptlang.org/docs/handbook/modules.html#export--and-import--require)。
 
-由于很多第三方库是 commonjs 规范的，所以声明文件也就不得不用到 `export =` 这种语法了。但是还是需要强调下，相比与 `export =`，我们更推荐使用 ES6 标准的 `export default` 和 `export`。
+由于很多第三方库是 commonjs 规范的，所以声明文件也就不得不用到 `export =` 这种语法了。但是还是需要再强调下，相比与 `export =`，我们更推荐使用 ES6 标准的 `export default` 和 `export`。
 
 ### UMD 库
 
@@ -692,11 +701,11 @@ interface String {
 
 ### 通过导入修改全局变量
 
-如之前所说，对于一个 npm 包或者 UMD 库的声明文件，只有 `export` 导出的类型声明才会有效。所以对于 npm 包或 UMD 库，如果导入此库之后会修改全局变量，则需要使用另一种语法在声明文件中修改全局变量的类型，那就是 `declare global`
+如之前所说，对于一个 npm 包或者 UMD 库的声明文件，只有 `export` 导出的类型声明才会有效。所以对于 npm 包或 UMD 库，如果导入此库之后会修改全局变量，则需要使用另一种语法在声明文件中修改全局变量的类型，那就是 `declare global`。
 
 #### `declare global`
 
-我们将直接修改全局变量的部分，使用 `declare global` 包起来即可：
+使用 `declare global` 可以在 npm 包或者 UMD 库中修改全局变量的类型：
 
 ```ts
 // types/foo/index.d.ts
@@ -713,7 +722,7 @@ export default function foo(): string;
 当使用方导入 `foo` 之后，就可以使用字符串上的 `prependHello` 方法了：
 
 ```ts
-// index.ts
+// src/index.ts
 
 import foo from 'foo';
 'bar'.prependHello();
