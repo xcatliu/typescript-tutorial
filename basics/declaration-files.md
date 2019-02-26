@@ -90,8 +90,8 @@ npm install @types/jquery --save-dev
 - npm 包：通过 `import foo from 'foo'` 导入，符合 ES6 模块规范
 - UMD 库：既可以通过 `<script>` 标签引入，又可以通过 `import` 导入
 - 模块插件：通过 `import` 导入后，可以改变另一个模块的结构
-- 直接修改全局变量：通过 `<script>` 标签引入后，改变一个全局变量的结构。比如为 `String.prototype` 新增了一个方法
-- 通过导入修改全局变量：通过 `import` 导入后，可以改变一个全局变量的结构
+- 直接扩展全局变量：通过 `<script>` 标签引入后，改变一个全局变量的结构。比如为 `String.prototype` 新增了一个方法
+- 通过导入扩展全局变量：通过 `import` 导入后，可以改变一个全局变量的结构
 
 ### 全局变量
 
@@ -685,9 +685,9 @@ declare namespace foo {
 
 TODO
 
-### 直接修改全局变量
+### 直接扩展全局变量
 
-有的时候，我们在代码里面修改或者扩展了一个全局变量，可是它的类型却没有相应的更新过来，就会导致 ts 编译错误，此时就需要来修改全局变量的类型。比如扩展 `String`：
+有的时候，我们在代码里面扩展了一个全局变量，可是它的类型却没有相应的更新过来，就会导致 ts 编译错误，此时就需要来扩展全局变量的类型。比如扩展 `String`：
 
 ```ts
 interface String {
@@ -699,13 +699,13 @@ interface String {
 
 通过声明合并，使用 `interface String` 即可给全局变量 `String` 添加属性或方法。
 
-### 通过导入修改全局变量
+### 通过导入扩展全局变量
 
-如之前所说，对于一个 npm 包或者 UMD 库的声明文件，只有 `export` 导出的类型声明才会有效。所以对于 npm 包或 UMD 库，如果导入此库之后会修改全局变量，则需要使用另一种语法在声明文件中修改全局变量的类型，那就是 `declare global`。
+如之前所说，对于一个 npm 包或者 UMD 库的声明文件，只有 `export` 导出的类型声明才会有效。所以对于 npm 包或 UMD 库，如果导入此库之后会扩展全局变量，则需要使用另一种语法在声明文件中扩展全局变量的类型，那就是 `declare global`。
 
 #### `declare global`
 
-使用 `declare global` 可以在 npm 包或者 UMD 库中修改全局变量的类型：
+使用 `declare global` 可以在 npm 包或者 UMD 库中扩展全局变量的类型：
 
 ```ts
 // types/foo/index.d.ts
@@ -736,7 +736,7 @@ TODO
 
 TODO
 
-### 发布
+### 发布声明文件
 
 TODO
 
