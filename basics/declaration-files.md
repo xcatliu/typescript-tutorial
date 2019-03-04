@@ -417,7 +417,7 @@ jQuery.ajax('/api/get_something');
 └── tsconfig.json
 ```
 
-`package.json` 内容：
+`tsconfig.json` 内容：
 
 ```json
 {
