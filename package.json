@@ -7,7 +7,10 @@
     "example": "examples"
   },
   "scripts": {
-    "eslint": "eslint index.ts"
+    "eclint": "eclint check $(git ls-files)",
+    "eclint:fix": "eclint fix .",
+    "lint-md": "lint-md .",
+    "lint-md:fix": "lint-md --fix ."
   },
   "repository": {
     "type": "git",
@@ -25,9 +28,7 @@
   },
   "homepage": "https://github.com/xcatliu/typescript-tutorial#readme",
   "devDependencies": {
-    "eslint": "^4.11.0",
-    "eslint-plugin-typescript": "^0.8.0",
-    "typescript": "^2.6.1",
-    "typescript-eslint-parser": "^9.0.0"
+    "eclint": "^2.8.1",
+    "lint-md": "^0.1.1"
   }
 }
