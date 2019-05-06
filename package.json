@@ -8,14 +8,16 @@
     },
     "scripts": {
         "test": "npm run lint",
-        "lint": "run-s eclint prettier lint-md",
+        "lint": "run-s eclint prettier lint-md eslint",
         "lint:fix": "run-s eclint:fix prettier:fix lint-md:fix",
         "eclint": "eclint check .",
         "eclint:fix": "eclint fix .",
         "prettier": "prettier -l \"./**/*\"",
         "prettier:fix": "prettier --write -l \"./**/*\"",
         "lint-md": "lint-md .",
-        "lint-md:fix": "lint-md --fix ."
+        "lint-md:fix": "lint-md --fix .",
+        "eslint": "eslint --ext .ts .",
+        "eslint:fix": "eslint --ext .ts --fix ."
     },
     "husky": {
         "hooks": {
@@ -39,10 +41,16 @@
     },
     "homepage": "https://github.com/xcatliu/typescript-tutorial#readme",
     "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^1.7.0",
+        "babel-eslint": "^10.0.1",
         "eclint": "^2.8.1",
+        "eslint": "^5.16.0",
+        "eslint-config-alloy": "^2.0.0-alpha.2",
+        "eslint-config-prettier": "^4.2.0",
         "husky": "^2.2.0",
         "lint-md": "^0.1.1",
         "npm-run-all": "^4.1.5",
-        "prettier": "^1.17.0"
+        "prettier": "^1.17.0",
+        "typescript": "^3.4.5"
     }
 }

@@ -1,0 +1,23 @@
+{
+    "files.eol": "\n",
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "eslint.autoFixOnSave": false,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {
+            "language": "vue",
+            "autoFix": false
+        },
+        {
+            "language": "typescript",
+            "autoFix": false
+        },
+        {
+            "language": "typescriptreact",
+            "autoFix": false
+        }
+    ]
+}

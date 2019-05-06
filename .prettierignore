@@ -5,6 +5,7 @@ assets
 
 .DS_Store
 .editorconfig
+.eslintignore
 .gitignore
 .lintmdrc
 .prettierignore
