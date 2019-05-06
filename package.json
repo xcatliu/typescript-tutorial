@@ -17,6 +17,12 @@
         "lint-md": "lint-md .",
         "lint-md:fix": "lint-md --fix ."
     },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm test",
+            "pre-push": "npm test"
+        }
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/xcatliu/typescript-tutorial.git"
@@ -34,6 +40,7 @@
     "homepage": "https://github.com/xcatliu/typescript-tutorial#readme",
     "devDependencies": {
         "eclint": "^2.8.1",
+        "husky": "^2.2.0",
         "lint-md": "^0.1.1",
         "npm-run-all": "^4.1.5",
         "prettier": "^1.17.0"
