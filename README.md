@@ -1,5 +1,7 @@
 # TypeScript 入门教程
 
+[![Build Status](https://travis-ci.org/xcatliu/typescript-tutorial.svg?branch=master)](https://travis-ci.org/xcatliu/typescript-tutorial)
+
 从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript。
 
 ## 关于本书

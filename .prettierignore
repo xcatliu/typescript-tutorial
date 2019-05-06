@@ -1,0 +1,13 @@
+*.md
+
+_book
+assets
+
+.DS_Store
+.editorconfig
+.gitignore
+.lintmdrc
+.prettierignore
+
+.travis.yml
+package-lock.json
