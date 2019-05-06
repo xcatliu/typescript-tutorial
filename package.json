@@ -7,7 +7,7 @@
     "example": "examples"
   },
   "scripts": {
-    "eclint": "eclint check $(git ls-files)",
+    "eclint": "eclint check .",
     "eclint:fix": "eclint fix .",
     "lint-md": "lint-md .",
     "lint-md:fix": "lint-md --fix ."
