@@ -10,14 +10,14 @@
         "test": "npm run lint",
         "lint": "run-s eclint prettier lint-md eslint",
         "lint:fix": "run-s eclint:fix prettier:fix lint-md:fix",
-        "eclint": "eclint check .",
-        "eclint:fix": "eclint fix .",
+        "eclint": "eclint check $(git ls-files)",
+        "eclint:fix": "eclint fix $(git ls-files)",
         "prettier": "prettier -l \"./**/*\"",
         "prettier:fix": "prettier --write -l \"./**/*\"",
         "lint-md": "lint-md .",
         "lint-md:fix": "lint-md --fix .",
-        "eslint": "eslint --ext .ts .",
-        "eslint:fix": "eslint --ext .ts --fix ."
+        "eslint": "eslint --ext .ts examples/eslint",
+        "eslint:fix": "eslint --ext .ts --fix examples/eslint"
     },
     "husky": {
         "hooks": {

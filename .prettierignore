@@ -1,3 +1,5 @@
+node_modules
+
 *.md
 
 _book
@@ -12,3 +14,5 @@ assets
 
 .travis.yml
 package-lock.json
+
+examples/declaration-files/19-export-default-enum-error/types/foo/index.d.ts

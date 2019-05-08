@@ -14,7 +14,7 @@ $('#foo');
 jQuery('#foo');
 ```
 
-但是在 ts 中，编译器并不知道 `$` 或 `jQuery` 是什么东西：
+但是在 ts 中，编译器并不知道 `$` 或 `jQuery` 是什么东西[<sup>`1`</sup>](../examples/declaration-files/1-jquery)：
 
 ```ts
 jQuery('#foo');
@@ -80,7 +80,7 @@ npm install @types/jquery --save-dev
 
 ## 书写声明文件
 
-当一个第三方库没有提供声明文件时，我们就需要自己书写声明文件了。前面只介绍了最简单的声明文件内容，而真正书写一个声明文件并不是一件简单的事。以下会详细介绍如何书写声明文件。
+当一个第三方库没有提供声明文件时，我们就需要自己书写声明文件了。前面只介绍了最简单的声明文件内容，而真正书写一个声明文件并不是一件简单的事，以下会详细介绍如何书写声明文件。
 
 在不同的场景下，声明文件的内容和使用方式会有所区别。
 
@@ -89,9 +89,9 @@ npm install @types/jquery --save-dev
 - 全局变量：通过 `<script>` 标签引入第三方库，注入全局变量
 - npm 包：通过 `import foo from 'foo'` 导入，符合 ES6 模块规范
 - UMD 库：既可以通过 `<script>` 标签引入，又可以通过 `import` 导入
-- 模块插件：通过 `import` 导入后，可以改变另一个模块的结构
-- 直接扩展全局变量：通过 `<script>` 标签引入后，改变一个全局变量的结构。比如为 `String.prototype` 新增了一个方法
-- 通过导入扩展全局变量：通过 `import` 导入后，可以改变一个全局变量的结构
+- 直接扩展全局变量：通过 `<script>` 标签引入后，改变一个全局变量的结构
+- 在 npm 包或 UMD 库中扩展全局变量：引用 npm 包或 UMD 库后，改变一个全局变量的结构
+- 模块插件：通过 `<script>` 或 `import` 导入后，改变另一个模块的结构
 
 ### 全局变量
 
@@ -116,7 +116,7 @@ npm install @types/jquery --save-dev
 - `declare function` 声明全局方法
 - `declare class` 声明全局类
 - `declare enum` 声明全局枚举类型
-- `declare namespace` 声明全局对象（含有子属性）
+- `declare namespace` 声明（含有子属性的）全局对象
 - `interface` 和 `type` 声明全局类型
 
 ##### `declare var`
@@ -130,7 +130,7 @@ jQuery('#foo');
 // 使用 declare let 定义的 jQuery 类型，允许修改这个全局变量
 jQuery = function(selector) {
     return document.querySelector(selector);
-}
+};
 ```
 
 ```ts
@@ -140,7 +140,7 @@ jQuery('#foo');
 // 使用 declare const 定义的 jQuery 类型，禁止修改这个全局变量
 jQuery = function(selector) {
     return document.querySelector(selector);
-}
+};
 // ERROR: Cannot assign to 'jQuery' because it is a constant or a read-only property.
 ```
 
@@ -183,6 +183,7 @@ jQuery(function() {
 
 ```ts
 declare class Animal {
+    name: string;
     constructor(name: string);
     sayHi(): string;
 }
@@ -194,6 +195,7 @@ let cat = new Animal('Tom');
 
 ```ts
 declare class Animal {
+    name: string;
     constructor(name: string);
     sayHi() {
         return `My name is ${this.name}`;
@@ -245,7 +247,7 @@ declare namespace jQuery {
 jQuery.ajax('/api/get_something');
 ```
 
-注意，在 `declare namespace` 内部，我们直接使用 `function ajax` 来声明函数，而不是使用 `declare function ajax`。类似的，也可以使用 `const`、`class`、`enum` 等语句：
+注意，在 `declare namespace` 内部，我们直接使用 `function ajax` 来声明函数，而不是使用 `declare function ajax`。类似的，也可以使用 `const`, `class`, `enum` 等语句：
 
 ```ts
 declare namespace jQuery {
@@ -314,7 +316,7 @@ jQuery.fn.extend({
 
 #### `interface` 和 `type`
 
-除了全局变量之外，有一些类型我们可能也希望能暴露出来。在类型声明文件中，我们可以直接使用 `interface` 或 `type` 来声明一个全局的类型：
+除了全局变量之外，可能有一些类型我们也希望能暴露出来。在类型声明文件中，我们可以直接使用 `interface` 或 `type` 来声明一个全局的类型：
 
 ```ts
 // src/jQuery.d.ts
@@ -376,7 +378,7 @@ jQuery.ajax('/api/post_something', settings);
 
 #### 声明合并
 
-假如 jQuery 既是一个函数，可以直接被调用 `jQuery('#foo')`，又是一个对象，拥有子属性 `jQuery.ajax()`（事实确实如此），则我们可以组合多个声明语句，它们会不冲突的合并起来：
+假如 jQuery 既是一个函数，可以直接被调用 `jQuery('#foo')`，又是一个对象，拥有子属性 `jQuery.ajax()`（事实确实如此），那么我们可以组合多个声明语句，它们会不冲突的合并起来：
 
 ```ts
 declare function jQuery(selector: string): any;
@@ -388,21 +390,21 @@ jQuery('#foo');
 jQuery.ajax('/api/get_something');
 ```
 
-关于声明合并的更多用法，可以查看[声明合并（未完成）]章节。
+关于声明合并的更多用法，可以查看[声明合并（TODO）]章节。
 
 ### npm 包
 
 一般我们通过 `import foo from 'foo'` 导入一个 npm 包，这是符合 ES6 模块规范的。
 
-在我们尝试给一个 npm 包创建声明文件之前，首先[看看它的声明文件是否已经存在](https://www.tslang.cn/docs/handbook/declaration-files/publishing.html)。一般来说，npm 包的声明文件可能存在于两个地方：
+在我们尝试给一个 npm 包创建声明文件之前，需要先看看它的声明文件是否已经存在。一般来说，npm 包的声明文件可能存在于两个地方：
 
 1. 与该 npm 包绑定在一起。判断依据是 `package.json` 中有 `types` 字段，或者有一个 `index.d.ts` 声明文件。这种模式不需要额外安装其他包，是最为推荐的，所以以后我们自己创建 npm 包的时候，最好也将声明文件与 npm 包绑定在一起。
-2. 发布到了 `@types` 里。只要尝试安装一下对应的包就知道是否存在，安装命令是 `npm install @types/foo --save-dev`。这种模式一般是由于 npm 包的维护者没有提供声明文件，所以只能由其他人将声明文件发布到 `@types` 里了。
+2. 发布到 `@types` 里。我们只需要尝试安装一下对应的 `@types` 包就知道是否存在该声明文件，安装命令是 `npm install @types/foo --save-dev`。这种模式一般是由于 npm 包的维护者没有提供声明文件，所以只能由其他人将声明文件发布到 `@types` 里了。
 
 假如以上两种方式都没有找到对应的声明文件，那么我们就需要自己为它写声明文件了。由于是通过 `import` 语句导入的模块，所以声明文件存放的位置也有所约束，一般有两种方案：
 
-1. 创建一个 `node_modules/@types/foo/index.d.ts` 文件，存放 `foo` 模块的声明文件。这种方式不需要额外的配置，但是 `node_modules` 目录不稳定，代码也没有被保存到仓库中，无法回溯版本，有不小心被删除的风险。
-2. 创建一个 `types` 目录，专门用来管理自己写的声明文件，将 `foo` 的声明文件放到 `types/foo/index.d.ts` 中。这种方式需要配置下 `tsconfig.json` 的 `paths` 和 `baseUrl` 字段。
+1. 创建一个 `node_modules/@types/foo/index.d.ts` 文件，存放 `foo` 模块的声明文件。这种方式不需要额外的配置，但是 `node_modules` 目录不稳定，代码也没有被保存到仓库中，无法回溯版本，有不小心被删除的风险，故不太建议用这种方案，一般只用作临时测试。
+2. 创建一个 `types` 目录，专门用来管理自己写的声明文件，将 `foo` 的声明文件放到 `types/foo/index.d.ts` 中。这种方式需要配置下 `tsconfig.json` 中的 `paths` 和 `baseUrl` 字段。
 
 目录结构：
 
@@ -425,7 +427,7 @@ jQuery.ajax('/api/get_something');
         "module": "commonjs",
         "baseUrl": "./",
         "paths": {
-            "*" : ["types/*"]
+            "*": ["types/*"]
         }
     }
 }
@@ -435,13 +437,13 @@ jQuery.ajax('/api/get_something');
 
 注意 `module` 配置可以有很多种选项，不同的选项会影响模块的导入导出模式。这里我们使用了 `commonjs` 这个最常用的选项，后面的教程也都默认使用的这个选项。
 
-不管采用了以上两种方式中的哪一种，我都*强烈建议*大家将书写好的声明文件（通过给原作者发 pr，或者直接提交到 `@types` 里）发布到开源社区中，享受了这么多社区的优秀的资源，就应该在力所能及的时候给出一些回馈。只有所有人都参与进来，才能让 ts 社区更加繁荣。
+不管采用了以上两种方式中的哪一种，我都*强烈建议*大家将书写好的声明文件（通过给原作者发 pull request，或者直接提交到 `@types` 里）发布到开源社区中，享受了这么多社区的优秀的资源，就应该在力所能及的时候给出一些回馈。只有所有人都参与进来，才能让 ts 社区更加繁荣。
 
 #### `export`
 
 npm 包的声明文件与全局变量的声明文件有很大区别。在 npm 包的声明文件中，使用 `declare` 不再会声明一个全局变量，而只会在当前文件中声明一个局部变量。只有在声明文件中使用 `export` 导出，然后在使用方 `import` 导入后，才会应用到这些类型声明。
 
-`export` 的语法与非声明文件中的语法类似，区别仅在于声明文件中禁止定义具体的值：
+`export` 的语法与普通的 ts 中的语法类似，区别仅在于声明文件中禁止定义具体的值：
 
 ```ts
 // types/foo/index.d.ts
@@ -478,7 +480,7 @@ let options: Options = {
     data: {
         name: 'foo'
     }
-}
+};
 ```
 
 ##### 混用 `declare` 和 `export`
@@ -504,20 +506,14 @@ interface Options {
     data: any;
 }
 
-export {
-    name,
-    getName,
-    Animal,
-    Directions,
-    Options
-}
+export { name, getName, Animal, Directions, Options };
 ```
 
 注意，与全局变量的声明文件类似，`interface` 前是不需要 `declare` 的。
 
 #### `export namespace`
 
-与 `declare namespace` 类似，`export namespace` 也是用来导出一个拥有子属性的对象：
+与 `declare namespace` 类似，`export namespace` 用来导出一个拥有子属性的对象：
 
 ```ts
 // types/foo/index.d.ts
@@ -573,7 +569,22 @@ export default enum Directions {
 }
 ```
 
-上例中 `export default enum` 是错误的语法，需要先使用 `declare enum` 定义出来，再使用 `export default` 导出：
+上例中 `export default enum` 是错误的语法，需要使用 `declare enum` 定义出来，然后使用 `export default` 导出：
+
+```ts
+// types/foo/index.d.ts
+
+declare enum Directions {
+    Up,
+    Down,
+    Left,
+    Right
+}
+
+export default Directions;
+```
+
+针对这种默认导出，我们一般会将导出语句放在整个声明文件的最前面：
 
 ```ts
 // types/foo/index.d.ts
@@ -588,11 +599,9 @@ declare enum Directions {
 }
 ```
 
-如上例，针对这种默认导出，我们一般会将导出语句放在整个声明文件的最前面。
-
 #### `export =`
 
-在 commonjs 规范中，我们用以下方式来导出：
+在 commonjs 规范中，我们用以下方式来导出一个模块：
 
 ```js
 // 整体导出
@@ -601,7 +610,7 @@ module.exports = foo;
 exports.bar = bar;
 ```
 
-在 ts 中，针对这种导出，有多种方式可以导入，第一种方式是 `const ... = require`：
+在 ts 中，针对这种模块导出，有多种方式可以导入，第一种方式是 `const ... = require`：
 
 ```js
 // 整体导入
@@ -625,10 +634,10 @@ import { bar } from 'foo';
 // 整体导入
 import foo = require('foo');
 // 单个导入
-import bar = require('foo').bar;
+import bar = foo.bar;
 ```
 
-对于这种使用 commonjs 规范的库，假如要给它写类型声明文件的话，就需要使用到 `export =` 这种语法了：
+对于这种使用 commonjs 规范的库，假如要为它写类型声明文件的话，就需要使用到 `export =` 这种语法了：
 
 ```ts
 // types/foo/index.d.ts
@@ -641,7 +650,7 @@ declare namespace foo {
 }
 ```
 
-需要注意的是，上例中由于使用了 `export =` 之后，就不能再单个导出 `export { bar }` 了。所以我们通过声明合并，使用 `declare namespace foo` 来将 `bar` 合并到 `foo` 里。
+需要注意的是，上例中使用了 `export =` 之后，就不能再单个导出 `export { bar }` 了。所以我们通过声明合并，使用 `declare namespace foo` 来将 `bar` 合并到 `foo` 里。
 
 准确地讲，`export =` 不仅可以用在声明文件中，也可以用在普通的 ts 文件中。实际上，`import ... require` 和 `export =` 都是 ts 为了兼容 AMD 规范和 commonjs 规范而创立的新语法，由于并不常用也不推荐使用，所以这里就不详细介绍了，感兴趣的可以看[官方文档](https://www.typescriptlang.org/docs/handbook/modules.html#export--and-import--require)。
 
@@ -649,7 +658,7 @@ declare namespace foo {
 
 ### UMD 库
 
-既可以通过 `<script>` 标签引入，又可以通过 `import` 导入的库，称为 UMD 库。相比于 npm 包的类型声明文件，我们需要额外声明一个全局变量，为了实现这种方式，ts 提供了一个新语法 `export as namespace`
+既可以通过 `<script>` 标签引入，又可以通过 `import` 导入的库，称为 UMD 库。相比于 npm 包的类型声明文件，我们需要额外声明一个全局变量，为了实现这种方式，ts 提供了一个新语法 `export as namespace`。
 
 #### `export as namespace`
 
@@ -681,13 +690,9 @@ declare namespace foo {
 }
 ```
 
-### 模块插件
-
-TODO
-
 ### 直接扩展全局变量
 
-有的时候，我们在代码里面扩展了一个全局变量，可是它的类型却没有相应的更新过来，就会导致 ts 编译错误，此时就需要来扩展全局变量的类型。比如扩展 `String`：
+有的第三方库扩展了一个全局变量，可是此全局变量的类型却没有相应的更新过来，就会导致 ts 编译错误，此时就需要扩展全局变量的类型。比如扩展 `String` 类型：
 
 ```ts
 interface String {
@@ -697,15 +702,39 @@ interface String {
 'foo'.prependHello();
 ```
 
-通过声明合并，使用 `interface String` 即可给全局变量 `String` 添加属性或方法。
+通过声明合并，使用 `interface String` 即可给 `String` 添加属性或方法。
 
-### 通过导入扩展全局变量
+也可以使用 `declare namespace` 给已有的命名空间添加类型声明：
 
-如之前所说，对于一个 npm 包或者 UMD 库的声明文件，只有 `export` 导出的类型声明才会有效。所以对于 npm 包或 UMD 库，如果导入此库之后会扩展全局变量，则需要使用另一种语法在声明文件中扩展全局变量的类型，那就是 `declare global`。
+```ts
+// types/jquery-plugin/index.d.ts
+
+declare namespace JQuery {
+    interface CustomOptions {
+        bar: string;
+    }
+}
+
+interface JQueryStatic {
+    foo(options: JQuery.CustomOptions): string;
+}
+```
+
+```ts
+// src/index.ts
+
+jQuery.foo({
+    bar: ''
+});
+```
+
+### 在 npm 包或 UMD 库中扩展全局变量
+
+如之前所说，对于一个 npm 包或者 UMD 库的声明文件，只有 `export` 导出的类型声明才能被导入。所以对于 npm 包或 UMD 库，如果导入此库之后会扩展全局变量，则需要使用另一种语法在声明文件中扩展全局变量的类型，那就是 `declare global`。
 
 #### `declare global`
 
-使用 `declare global` 可以在 npm 包或者 UMD 库中扩展全局变量的类型：
+使用 `declare global` 可以在 npm 包或者 UMD 库的声明文件中扩展全局变量的类型：
 
 ```ts
 // types/foo/index.d.ts
@@ -716,16 +745,68 @@ declare global {
     }
 }
 
-export default function foo(): string;
+export {};
 ```
-
-当使用方导入 `foo` 之后，就可以使用字符串上的 `prependHello` 方法了：
 
 ```ts
 // src/index.ts
 
-import foo from 'foo';
 'bar'.prependHello();
+```
+
+注意即使此声明文件不需要导出任何东西，仍然需要导出一个空对象，用来告诉编译器这是一个模块的声明文件。
+
+### 模块插件
+
+有时通过 `import` 导入一个模块插件，可以改变另一个原有模块的结构。此时如果原有模块已经有了类型声明文件，而插件模块没有类型声明文件，就会导致类型不完整，缺少插件部分的类型。ts 提供了一个语法 `declare module`，它可以用来扩展原有模块的类型。
+
+#### `declare module`
+
+如果是需要扩展原有模块的话，需要在类型声明文件中先引用原有模块，再使用 `declare module` 扩展原有模块：
+
+```ts
+// types/moment-plugin/index.d.ts
+
+import * as moment from 'moment';
+
+declare module 'moment' {
+    export function foo(): moment.CalendarKey;
+}
+```
+
+```ts
+// src/index.ts
+
+import * as moment from 'moment';
+import 'moment-plugin';
+
+moment.foo();
+```
+
+`declare module` 也可用于在一个文件中一次性声明多个模块的类型：
+
+```ts
+// types/foo-bar.d.ts
+
+declare module 'foo' {
+    export interface Foo {
+        foo: string;
+    }
+}
+
+declare module 'bar' {
+    export function bar(): string;
+}
+```
+
+```ts
+// src/index.ts
+
+import { Foo } from 'foo';
+import * as bar from 'bar';
+
+let f: Foo;
+bar.bar();
 ```
 
 ### 三斜线指令
@@ -744,6 +825,7 @@ TODO
 
 - [Writing Declaration Files](http://www.typescriptlang.org/docs/handbook/writing-declaration-files.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/declaration%20files/Introduction.html)）
 - [Triple-Slash Directives](http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Triple-Slash%20Directives.html)）
+- [typeRoots or paths](https://github.com/Microsoft/TypeScript/issues/22217#issuecomment-369783776)
 
 ---
 
