@@ -100,7 +100,7 @@ TypeScript 虽然有[官方手册][Handbook]及其[非官方中文版][中文手
 - [Handbook]（[中文版][中文手册]）
 - [ECMAScript 6 入门]
 
----
+<hr />
 
 - [下一章：简介](introduction/README.md)
 
