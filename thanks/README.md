@@ -13,6 +13,8 @@
 - 阅读 [Project Configuration](http://www.typescriptlang.org/docs/handbook/tsconfig-json.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/tsconfig.json.html)） 学习如何配置 TypeScript 工程
 - 查看[官方示例](http://www.typescriptlang.org/samples/index.html)，学习真实项目
 
+测试 gitbook 同步功能
+
 ---
 
 - [上一章：代码检查](../engineering/lint.md)
