@@ -51,7 +51,7 @@ declare var jQuery: (selector: string) => any;
 
 一般来说，ts 会解析项目中所有的 `*.ts` 文件，当然也包含以 `.d.ts` 结尾的文件。所以当我们将 `jQuery.d.ts` 放到项目中时，其他所有 `*.ts` 文件就都可以获得 `jQuery` 的类型定义了。
 
-```bash
+```plain
 /path/to/project
 ├── README.md
 ├── src
@@ -99,7 +99,7 @@ npm install @types/jquery --save-dev
 
 使用全局变量的声明文件时，如果是以 `npm install @types/xxx --save-dev` 安装的，则不需要任何配置。如果是将声明文件直接存放于当前项目中，则建议和其他源码一起放到 `src` 目录下（或者对应的源码目录下）：
 
-```bash
+```plain
 /path/to/project
 ├── README.md
 ├── src
@@ -408,7 +408,7 @@ jQuery.ajax('/api/get_something');
 
 目录结构：
 
-```bash
+```plain
 /path/to/project
 ├── README.md
 ├── src
