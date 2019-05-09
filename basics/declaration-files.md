@@ -119,7 +119,7 @@ npm install @types/jquery --save-dev
 - `declare namespace` 声明（含有子属性的）全局对象
 - `interface` 和 `type` 声明全局类型
 
-##### `declare var`
+#### `declare var`
 
 在所有的声明语句中，`declare var` 是最简单的，如之前所学，它能够用来定义一个全局变量的类型。与其类似的，还有 `declare let` 和 `declare const`，使用 `let` 与使用 `var` 没有什么区别，而使用 `const` 定义时，表示此时的全局变量是一个常量，不允许再去修改它的值了[<sup>4</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/04-declare-const-jquery)：
 
@@ -146,7 +146,7 @@ jQuery = function(selector) {
 
 一般来说，全局变量都是禁止修改的常量，所以大部分情况都应该使用 `const` 而不是 `var` 或 `let`。
 
-需要注意的是，声明语句中只能定义类型，切勿在声明语句中定义具体的值[<sup>5</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/05-declare-jquery-value)：
+需要注意的是，声明语句中只能定义类型，切勿在声明语句中定义具体的实现[<sup>5</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/05-declare-jquery-value)：
 
 ```ts
 declare const jQuery = function(selector) {
@@ -191,7 +191,7 @@ declare class Animal {
 let cat = new Animal('Tom');
 ```
 
-同样的，`declare class` 语句也只能用来定义类型，不能用来定义具体的值，比如定义 `sayHi` 方法的具体实现则会报错：
+同样的，`declare class` 语句也只能用来定义类型，不能用来定义具体的实现，比如定义 `sayHi` 方法的具体实现则会报错：
 
 ```ts
 declare class Animal {
