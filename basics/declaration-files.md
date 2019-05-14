@@ -2,6 +2,25 @@
 
 当使用第三方库时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能。
 
+## 新语法索引
+
+由于本章涉及大量新语法，故在本章开头列出新语法的索引，方便大家在使用这些新语法时能快速查找到对应的讲解：
+
+- [`declare var`](#declare-var) 声明全局变量
+- [`declare function`](#declare-function) 声明全局方法
+- [`declare class`](#declare-class) 声明全局类
+- [`declare enum`](#declare-enum) 声明全局枚举类型
+- [`declare namespace`](#declare-namespace) 声明（含有子属性的）全局对象
+- [`interface` 和 `type`](#interface-he-type) 声明全局类型
+- [`export`](#export) 导出变量
+- [`export namespace`](#export-namespace) 导出（含有子属性的）对象
+- [`export default`](#export-default) ES6 默认导出
+- [`export =`](#export-1) commonjs 导出模块
+- [`export as namespace`](#export-as-namespace) UMD 库声明全局变量
+- [`declare global`](#declare-global) 扩展全局变量
+- [`declare module`](#declare-module) 扩展模块
+- [`/// <reference />`](#san-xie-xian-zhi-ling) 三斜线指令
+
 ## 什么是声明语句
 
 假如我们想使用第三方库 jQuery，一种常见的方式是在 html 中通过 `<script>` 标签引入 jQuery，然后就可以使用全局变量 `$` 或 `jQuery` 了。
@@ -504,6 +523,13 @@ jQuery.ajax('/api/get_something');
 
 不管采用了以上两种方式中的哪一种，我都*强烈建议*大家将书写好的声明文件（通过给原作者发 pull request，或者直接提交到 `@types` 里）发布到开源社区中，享受了这么多社区的优秀的资源，就应该在力所能及的时候给出一些回馈。只有所有人都参与进来，才能让 ts 社区更加繁荣。
 
+npm 包的声明文件主要有以下几种语法：
+
+- `export` 导出变量
+- `export namespace` 导出（含有子属性的）全局对象
+- `export default` ES6 默认导出
+- `export =` commonjs 导出模块
+
 #### `export`
 
 npm 包的声明文件与全局变量的声明文件有很大区别。在 npm 包的声明文件中，使用 `declare` 不再会声明一个全局变量，而只会在当前文件中声明一个局部变量。只有在声明文件中使用 `export` 导出，然后在使用方 `import` 导入后，才会应用到这些类型声明。
@@ -876,7 +902,7 @@ bar.bar();
 
 ### 声明文件中的依赖
 
-在一个声明文件中，有时会依赖另一个声明文件中的类型，比如在前面的 `declare module` 的例子中，我们就在声明文件中导入了 `moment`，并且使用了 `moment.CalendarKey` 这个类型：
+一个声明文件有时会依赖另一个声明文件中的类型，比如在前面的 `declare module` 的例子中，我们就在声明文件中导入了 `moment`，并且使用了 `moment.CalendarKey` 这个类型：
 
 ```ts
 // types/moment-plugin/index.d.ts
@@ -921,7 +947,7 @@ foo({});
 
 三斜线指令的语法如上，`///` 后面使用 xml 的格式添加了对 `jquery` 类型的依赖，这样就可以在声明文件中使用 `JQuery.AjaxSettings` 类型了。
 
-注意，三斜线指令必须放在文件的最顶端，一个三斜线指令的前面只能出现单行或多行注释，当然包括其它的三斜线指令。
+注意，三斜线指令必须放在文件的最顶端，三斜线指令的前面只允许出现单行或多行注释。
 
 ##### **依赖**一个全局变量的声明文件
 
@@ -943,15 +969,15 @@ import { foo } from 'node-plugin';
 foo(global.process);
 ```
 
-在上面的例子中，我们是通过三斜线指引入的 `node` 的类型，然后在声明文件中使用了 `NodeJS.Process` 这个类型。最后在使用到 `foo` 的时候，传入了 `node` 中的全局变量 `process`。
+在上面的例子中，我们通过三斜线指引入了 `node` 的类型，然后在声明文件中使用了 `NodeJS.Process` 这个类型。最后在使用到 `foo` 的时候，传入了 `node` 中的全局变量 `process`。
 
-由于引入的 `node` 的类型都是全局变量的类型，它们是没有办法通过 `import` 来导入的，所以只能通过三斜线指令来引入了。
+由于引入的 `node` 中的类型都是全局变量的类型，它们是没有办法通过 `import` 来导入的，所以这种场景下也只能通过三斜线指令来引入了。
 
-以上两种使用场景下，都是由于需要书写或需要依赖全局变量的声明文件，所以必须使用三斜线指令。在其他的一些不是必要的情况下，就都需要使用 `import` 来导入了。
+以上两种使用场景下，都是由于需要书写或需要依赖全局变量的声明文件，所以必须使用三斜线指令。在其他的一些不是必要使用三斜线指令的情况下，就都需要使用 `import` 来导入。
 
 ##### 拆分声明文件
 
-除了以上两种场景之外，当我们的全局变量的声明文件太大时，也可以通过拆分为多个文件，最后在一个入口文件中将它们全部引入，来提高代码的可维护性。比如 `jQuery` 的声明文件就是这样的：
+当我们的全局变量的声明文件太大时，可以通过拆分为多个文件，然后在一个入口文件中将它们一一引入，来提高代码的可维护性。比如 `jQuery` 的声明文件就是这样的：
 
 ```ts
 // node_modules/@types/jquery/index.d.ts
@@ -965,9 +991,13 @@ foo(global.process);
 export = jQuery;
 ```
 
+其中用到了 `types` 和 `path` 两种不同的指令。它们的区别是：`types` 用于声明对另一个库的依赖，而 `path` 用于声明对另一个文件的依赖。
+
+上例中，`sizzle` 是与 `jquery` 平行的另一个库，所以需要使用 `types="sizzle"` 来声明对它的依赖。而其他的三斜线指令就是将 `jquery` 的声明拆分到不同的文件中了，然后在这个入口文件中使用 `path="foo"` 将它们一一引入。
+
 ##### 其他三斜线指令
 
-除了这种三斜线指令，还有其他的三斜线指令，比如 `/// <reference no-default-lib="true"/>`, `/// <amd-module />` 等，但它们都是废弃的语法，故这里就不介绍了，详情可见[官网](http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html)。
+除了这两种三斜线指令之外，还有其他的三斜线指令，比如 `/// <reference no-default-lib="true"/>`, `/// <amd-module />` 等，但它们都是废弃的语法，故这里就不介绍了，详情可见[官网](http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html)。
 
 ### 最佳实践
 
