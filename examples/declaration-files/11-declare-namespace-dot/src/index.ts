@@ -1,6 +1,4 @@
-declare namespace jQuery.fn {
-    function extend(object: any): void;
-}
+// src/index.ts
 
 jQuery.fn.extend({
     check: function() {

@@ -4,7 +4,7 @@
 
 ## 什么是声明语句
 
-假如我们想使用第三方库 jQuery，一种常见的方式是在 html 中通过 `script` 标签引入 jQuery，然后就可以使用全局变量 `$` 或 `jQuery` 了。
+假如我们想使用第三方库 jQuery，一种常见的方式是在 html 中通过 `<script>` 标签引入 jQuery，然后就可以使用全局变量 `$` 或 `jQuery` 了。
 
 我们通常这样获取一个 `id` 是 `foo` 的元素：
 
@@ -45,6 +45,12 @@ jQuery('#foo');
 // src/jQuery.d.ts
 
 declare var jQuery: (selector: string) => any;
+```
+
+```ts
+// src/index.ts
+
+jQuery('#foo');
 ```
 
 声明文件必需以 `.d.ts` 为后缀。
@@ -121,10 +127,16 @@ npm install @types/jquery --save-dev
 
 #### `declare var`
 
-在所有的声明语句中，`declare var` 是最简单的，如之前所学，它能够用来定义一个全局变量的类型。与其类似的，还有 `declare let` 和 `declare const`，使用 `let` 与使用 `var` 没有什么区别，而使用 `const` 定义时，表示此时的全局变量是一个常量，不允许再去修改它的值了[<sup>4</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/04-declare-const-jquery)：
+在所有的声明语句中，`declare var` 是最简单的，如之前所学，它能够用来定义一个全局变量的类型。与其类似的，还有 `declare let` 和 `declare const`，使用 `let` 与使用 `var` 没有什么区别：
 
 ```ts
+// src/jQuery.d.ts
+
 declare let jQuery: (selector: string) => any;
+```
+
+```ts
+// src/index.ts
 
 jQuery('#foo');
 // 使用 declare let 定义的 jQuery 类型，允许修改这个全局变量
@@ -133,7 +145,11 @@ jQuery = function(selector) {
 };
 ```
 
+而当我们使用 `const` 定义时，表示此时的全局变量是一个常量，不允许再去修改它的值了[<sup>4</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/04-declare-const-jquery)：
+
 ```ts
+// src/jQuery.d.ts
+
 declare const jQuery: (selector: string) => any;
 
 jQuery('#foo');
@@ -150,7 +166,7 @@ jQuery = function(selector) {
 
 ```ts
 declare const jQuery = function(selector) {
-    return document.querySelector(selector)
+    return document.querySelector(selector);
 };
 // ERROR: An implementation cannot be declared in ambient contexts.
 ```
@@ -160,7 +176,13 @@ declare const jQuery = function(selector) {
 `declare function` 用来定义全局函数的类型。jQuery 其实就是一个函数，所以也可以用 `function` 来定义：
 
 ```ts
+// src/jQuery.d.ts
+
 declare function jQuery(selector: string): any;
+```
+
+```ts
+// src/index.ts
 
 jQuery('#foo');
 ```
@@ -168,8 +190,14 @@ jQuery('#foo');
 在函数类型的声明语句中，函数重载也是支持的[<sup>6</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/06-declare-function)：
 
 ```ts
+// src/jQuery.d.ts
+
 declare function jQuery(selector: string): any;
 declare function jQuery(domReadyCallback: () => any): any;
+```
+
+```ts
+// src/index.ts
 
 jQuery('#foo');
 jQuery(function() {
@@ -182,11 +210,17 @@ jQuery(function() {
 当全局变量是一个类的时候，我们用 `declare class` 来定义它的类型[<sup>7</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/07-declare-class)：
 
 ```ts
+// src/Animal.d.ts
+
 declare class Animal {
     name: string;
     constructor(name: string);
     sayHi(): string;
 }
+```
+
+```ts
+// src/index.ts
 
 let cat = new Animal('Tom');
 ```
@@ -194,6 +228,8 @@ let cat = new Animal('Tom');
 同样的，`declare class` 语句也只能用来定义类型，不能用来定义具体的实现，比如定义 `sayHi` 方法的具体实现则会报错：
 
 ```ts
+// src/Animal.d.ts
+
 declare class Animal {
     name: string;
     constructor(name: string);
@@ -209,17 +245,25 @@ declare class Animal {
 使用 `declare enum` 定义的枚举类型也称作外部枚举（Ambient Enums），举例如下[<sup>8</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/08-declare-enum)：
 
 ```ts
+// src/Directions.d.ts
+
 declare enum Directions {
     Up,
     Down,
     Left,
     Right
 }
+```
+
+```ts
+// src/index.ts
 
 let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
 ```
 
-与其他全局变量的类型声明一致，`declare enum` 仅用来定义类型，而不是具体的值。它仅仅会用于编译时的检查，在编译结果中会被删除。它编译结果是：
+与其他全局变量的类型声明一致，`declare enum` 仅用来定义类型，而不是具体的值。
+
+`Directions.d.ts` 仅仅会用于编译时的检查，声明文件里的内容在编译结果中会被删除。它编译结果是：
 
 ```js
 var directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
@@ -240,9 +284,15 @@ var directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Ri
 比如 `jQuery` 是一个全局变量，它是一个对象，提供了一个 `jQuery.ajax` 方法可以调用，那么我们就应该使用 `declare namespace jQuery` 来声明这个拥有多个子属性的全局变量。
 
 ```ts
+// src/jQuery.d.ts
+
 declare namespace jQuery {
     function ajax(url: string, settings?: any): void;
 }
+```
+
+```ts
+// src/index.ts
 
 jQuery.ajax('/api/get_something');
 ```
@@ -250,6 +300,8 @@ jQuery.ajax('/api/get_something');
 注意，在 `declare namespace` 内部，我们直接使用 `function ajax` 来声明函数，而不是使用 `declare function ajax`。类似的，也可以使用 `const`, `class`, `enum` 等语句[<sup>9</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/09-declare-namespace)：
 
 ```ts
+// src/jQuery.d.ts
+
 declare namespace jQuery {
     function ajax(url: string, settings?: any): void;
     const version: number;
@@ -260,19 +312,14 @@ declare namespace jQuery {
         CustomClick
     }
 }
+```
+
+```ts
+// src/index.ts
 
 jQuery.ajax('/api/get_something');
 console.log(jQuery.version);
 const e = new jQuery.Event();
-e.blur(jQuery.EventType.CustomClick);
-```
-
-在编译之后，`declare namespace` 内的所有内容都会被删除。它的编译结果是：
-
-```js
-jQuery.ajax('/api/get_something');
-console.log(jQuery.version);
-var e = new jQuery.Event();
 e.blur(jQuery.EventType.CustomClick);
 ```
 
@@ -281,12 +328,18 @@ e.blur(jQuery.EventType.CustomClick);
 如果对象拥有深层的层级，则需要用嵌套的 `namespace` 来声明深层的属性的类型[<sup>10</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/10-declare-namespace-nesting)：
 
 ```ts
+// src/jQuery.d.ts
+
 declare namespace jQuery {
     function ajax(url: string, settings?: any): void;
     namespace fn {
         function extend(object: any): void;
     }
 }
+```
+
+```ts
+// src/index.ts
 
 jQuery.ajax('/api/get_something');
 jQuery.fn.extend({
@@ -301,9 +354,15 @@ jQuery.fn.extend({
 假如 `jQuery` 下仅有 `fn` 这一个属性（没有 `ajax` 等其他属性或方法），则可以不需要嵌套 `namespace`[<sup>11</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/11-declare-namespace-dot)：
 
 ```ts
+// src/jQuery.d.ts
+
 declare namespace jQuery.fn {
     function extend(object: any): void;
 }
+```
+
+```ts
+// src/index.ts
 
 jQuery.fn.extend({
     check: function() {
@@ -316,7 +375,7 @@ jQuery.fn.extend({
 
 #### `interface` 和 `type`
 
-除了全局变量之外，可能有一些类型我们也希望能暴露出来。在类型声明文件中，我们可以直接使用 `interface` 或 `type` 来声明一个全局的类型[<sup>12</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/12-interface)：
+除了全局变量之外，可能有一些类型我们也希望能暴露出来。在类型声明文件中，我们可以直接使用 `interface` 或 `type` 来声明一个全局的接口或类型[<sup>12</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/12-interface)：
 
 ```ts
 // src/jQuery.d.ts
@@ -330,7 +389,7 @@ declare namespace jQuery {
 }
 ```
 
-这样的话，在其他文件中也可以使用这个接口了：
+这样的话，在其他文件中也可以使用这个接口或类型了：
 
 ```ts
 // src/index.ts
@@ -348,7 +407,7 @@ jQuery.ajax('/api/post_something', settings);
 
 ##### 防止命名冲突
 
-暴露在最外层的 `interface` 或 `type` 会作为全局类型作用于整个项目中，我们应该尽可能的减少全局变量或全局类型的数量。故应该将他们放到 `namespace` 下[<sup>13</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/13-avoid-name-conflict)：
+暴露在最外层的 `interface` 或 `type` 会作为全局类型作用于整个项目中，我们应该尽可能的减少全局变量或全局类型的数量。故最好将他们放到 `namespace` 下[<sup>13</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/13-avoid-name-conflict)：
 
 ```ts
 // src/jQuery.d.ts
@@ -362,7 +421,7 @@ declare namespace jQuery {
 }
 ```
 
-注意，在使用这个 `interface` 的时候，也应该加上 `jQuery` 前缀了：
+注意，在使用这个 `interface` 的时候，也应该加上 `jQuery` 前缀：
 
 ```ts
 // src/index.ts
@@ -381,16 +440,22 @@ jQuery.ajax('/api/post_something', settings);
 假如 jQuery 既是一个函数，可以直接被调用 `jQuery('#foo')`，又是一个对象，拥有子属性 `jQuery.ajax()`（事实确实如此），那么我们可以组合多个声明语句，它们会不冲突的合并起来[<sup>14</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/14-declaration-merging)：
 
 ```ts
+// src/jQuery.d.ts
+
 declare function jQuery(selector: string): any;
 declare namespace jQuery {
     function ajax(url: string, settings?: any): void;
 }
+```
+
+```ts
+// src/index.ts
 
 jQuery('#foo');
 jQuery.ajax('/api/get_something');
 ```
 
-关于声明合并的更多用法，可以查看[声明合并（TODO）]章节。
+关于声明合并的更多用法，可以查看[声明合并](../advanced/declaration-merging.md)章节。
 
 ### npm 包
 
@@ -443,7 +508,7 @@ jQuery.ajax('/api/get_something');
 
 npm 包的声明文件与全局变量的声明文件有很大区别。在 npm 包的声明文件中，使用 `declare` 不再会声明一个全局变量，而只会在当前文件中声明一个局部变量。只有在声明文件中使用 `export` 导出，然后在使用方 `import` 导入后，才会应用到这些类型声明。
 
-`export` 的语法与普通的 ts 中的语法类似，区别仅在于声明文件中禁止定义具体的值[<sup>15</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/15-export)：
+`export` 的语法与普通的 ts 中的语法类似，区别仅在于声明文件中禁止定义具体的实现[<sup>15</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/15-export)：
 
 ```ts
 // types/foo/index.d.ts
@@ -754,7 +819,7 @@ export {};
 'bar'.prependHello();
 ```
 
-注意即使此声明文件不需要导出任何东西，仍然需要导出一个空对象，用来告诉编译器这是一个模块的声明文件。
+注意即使此声明文件不需要导出任何东西，仍然需要导出一个空对象，用来告诉编译器这是一个模块的声明文件，而不是一个全局变量的声明文件。
 
 ### 模块插件
 
@@ -809,9 +874,100 @@ let f: Foo;
 bar.bar();
 ```
 
-### 三斜线指令
+### 声明文件中的依赖
 
-TODO
+在一个声明文件中，有时会依赖另一个声明文件中的类型，比如在前面的 `declare module` 的例子中，我们就在声明文件中导入了 `moment`，并且使用了 `moment.CalendarKey` 这个类型：
+
+```ts
+// types/moment-plugin/index.d.ts
+
+import * as moment from 'moment';
+
+declare module 'moment' {
+    export function foo(): moment.CalendarKey;
+}
+```
+
+除了可以在声明文件中通过 `import` 导入另一个声明文件中的类型之外，还有一个语法也可以用来导入另一个声明文件，那就是三斜线指令。
+
+#### 三斜线指令
+
+与 `namespace` 类似，三斜线指令也是 ts 在早期版本中为了描述模块之间的依赖关系而创造的语法。随着 ES6 的广泛应用，现在已经不建议再使用 ts 中的三斜线指令来声明模块之间的依赖关系了。
+
+但是在声明文件中，它还是有一定的用武之地。
+
+类似于声明文件中的 `import`，它可以用来导入另一个声明文件。与 `import` 的区别是，当且仅当在以下几个场景下，我们才需要使用三斜线指令替代 `import`：
+
+- 当我们在**书写**一个全局变量的声明文件时
+- 当我们需要**依赖**一个全局变量的声明文件时
+
+##### **书写**一个全局变量的声明文件
+
+这些场景听上去很拗口，但实际上很好理解——在全局变量的声明文件中，是不允许出现 `import`, `export` 关键字的。一旦出现了，那么他就会被视为一个 npm 包或 UMD 库，就不再是全局变量的声明文件了。故当我们在书写一个全局变量的声明文件时，如果需要引用另一个库的类型，那么就必须用三斜线指令了[<sup>28</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/28-triple-slash-directives)：
+
+```ts
+// types/jquery-plugin/index.d.ts
+
+/// <reference types="jquery" />
+
+declare function foo(options: JQuery.AjaxSettings): string;
+```
+
+```ts
+// src/index.ts
+
+foo({});
+```
+
+三斜线指令的语法如上，`///` 后面使用 xml 的格式添加了对 `jquery` 类型的依赖，这样就可以在声明文件中使用 `JQuery.AjaxSettings` 类型了。
+
+注意，三斜线指令必须放在文件的最顶端，一个三斜线指令的前面只能出现单行或多行注释，当然包括其它的三斜线指令。
+
+##### **依赖**一个全局变量的声明文件
+
+在另一个场景下，当我们需要依赖一个全局变量的声明文件时，由于全局变量不支持通过 `import` 导入，当然也就必须使用三斜线指令来引入了[<sup>29</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/29-triple-slash-directives-global)：
+
+```ts
+// types/node-plugin/index.d.ts
+
+/// <reference types="node" />
+
+export function foo(p: NodeJS.Process): string;
+```
+
+```ts
+// src/index.ts
+
+import { foo } from 'node-plugin';
+
+foo(global.process);
+```
+
+在上面的例子中，我们是通过三斜线指引入的 `node` 的类型，然后在声明文件中使用了 `NodeJS.Process` 这个类型。最后在使用到 `foo` 的时候，传入了 `node` 中的全局变量 `process`。
+
+由于引入的 `node` 的类型都是全局变量的类型，它们是没有办法通过 `import` 来导入的，所以只能通过三斜线指令来引入了。
+
+以上两种使用场景下，都是由于需要书写或需要依赖全局变量的声明文件，所以必须使用三斜线指令。在其他的一些不是必要的情况下，就都需要使用 `import` 来导入了。
+
+##### 拆分声明文件
+
+除了以上两种场景之外，当我们的全局变量的声明文件太大时，也可以通过拆分为多个文件，最后在一个入口文件中将它们全部引入，来提高代码的可维护性。比如 `jQuery` 的声明文件就是这样的：
+
+```ts
+// node_modules/@types/jquery/index.d.ts
+
+/// <reference types="sizzle" />
+/// <reference path="JQueryStatic.d.ts" />
+/// <reference path="JQuery.d.ts" />
+/// <reference path="misc.d.ts" />
+/// <reference path="legacy.d.ts" />
+
+export = jQuery;
+```
+
+##### 其他三斜线指令
+
+除了这种三斜线指令，还有其他的三斜线指令，比如 `/// <reference no-default-lib="true"/>`, `/// <amd-module />` 等，但它们都是废弃的语法，故这里就不介绍了，详情可见[官网](http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html)。
 
 ### 最佳实践
 

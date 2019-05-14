@@ -1,4 +1,4 @@
-declare const jQuery: (selector: string) => any;
+// src/index.ts
 
 jQuery('#foo');
 // 使用 declare const 定义的 jQuery 类型，禁止修改这个全局变量

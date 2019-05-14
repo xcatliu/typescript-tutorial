@@ -1,5 +1,4 @@
-declare function jQuery(selector: string): any;
-declare function jQuery(domReadyCallback: () => any): any;
+// src/index.ts
 
 jQuery('#foo');
 jQuery(function() {

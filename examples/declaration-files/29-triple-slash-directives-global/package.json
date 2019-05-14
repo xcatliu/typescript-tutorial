@@ -1,0 +1,15 @@
+{
+    "name": "24-merge-global-namespace",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "@types/node": "^12.0.1"
+    }
+}

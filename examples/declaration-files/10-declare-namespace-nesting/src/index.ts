@@ -1,9 +1,4 @@
-declare namespace jQuery {
-    function ajax(url: string, settings?: any): void;
-    namespace fn {
-        function extend(object: any): void;
-    }
-}
+// src/index.ts
 
 jQuery.ajax('/api/get_something');
 jQuery.fn.extend({

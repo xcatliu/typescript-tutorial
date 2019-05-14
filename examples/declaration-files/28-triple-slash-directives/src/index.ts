@@ -1,0 +1,3 @@
+// src/index.ts
+
+foo({});
