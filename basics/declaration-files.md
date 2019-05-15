@@ -78,7 +78,6 @@ jQuery('#foo');
 
 ```plain
 /path/to/project
-├── README.md
 ├── src
 |  ├── index.ts
 |  └── jQuery.d.ts
@@ -111,12 +110,12 @@ npm install @types/jquery --save-dev
 
 库的使用场景主要有以下几种：
 
-- 全局变量：通过 `<script>` 标签引入第三方库，注入全局变量
-- npm 包：通过 `import foo from 'foo'` 导入，符合 ES6 模块规范
-- UMD 库：既可以通过 `<script>` 标签引入，又可以通过 `import` 导入
-- 直接扩展全局变量：通过 `<script>` 标签引入后，改变一个全局变量的结构
-- 在 npm 包或 UMD 库中扩展全局变量：引用 npm 包或 UMD 库后，改变一个全局变量的结构
-- 模块插件：通过 `<script>` 或 `import` 导入后，改变另一个模块的结构
+- [全局变量](#quan-ju-bian-liang)：通过 `<script>` 标签引入第三方库，注入全局变量
+- [npm 包](#npm-bao)：通过 `import foo from 'foo'` 导入，符合 ES6 模块规范
+- [UMD 库](#umd-ku)：既可以通过 `<script>` 标签引入，又可以通过 `import` 导入
+- [直接扩展全局变量](#zhi-jie-kuo-zhan-quan-ju-bian-liang)：通过 `<script>` 标签引入后，改变一个全局变量的结构
+- [在 npm 包或 UMD 库中扩展全局变量](#zai-npm-bao-huo-umd-ku-zhong-kuo-zhan-quan-ju-bian-liang)：引用 npm 包或 UMD 库后，改变一个全局变量的结构
+- [模块插件](#mo-kuai-cha-jian)：通过 `<script>` 或 `import` 导入后，改变另一个模块的结构
 
 ### 全局变量
 
@@ -126,7 +125,6 @@ npm install @types/jquery --save-dev
 
 ```plain
 /path/to/project
-├── README.md
 ├── src
 |  ├── index.ts
 |  └── jQuery.d.ts
@@ -137,12 +135,12 @@ npm install @types/jquery --save-dev
 
 全局变量的声明文件主要有以下几种语法：
 
-- `declare var` 声明全局变量
-- `declare function` 声明全局方法
-- `declare class` 声明全局类
-- `declare enum` 声明全局枚举类型
-- `declare namespace` 声明（含有子属性的）全局对象
-- `interface` 和 `type` 声明全局类型
+- [`declare var`](#declare-var) 声明全局变量
+- [`declare function`](#declare-function) 声明全局方法
+- [`declare class`](#declare-class) 声明全局类
+- [`declare enum`](#declare-enum) 声明全局枚举类型
+- [`declare namespace`](#declare-namespace) 声明（含有子属性的）全局对象
+- [`interface` 和 `type`](#interface-he-type) 声明全局类型
 
 #### `declare var`
 
@@ -494,7 +492,6 @@ jQuery.ajax('/api/get_something');
 
 ```plain
 /path/to/project
-├── README.md
 ├── src
 |  └── index.ts
 ├── types
@@ -521,14 +518,14 @@ jQuery.ajax('/api/get_something');
 
 注意 `module` 配置可以有很多种选项，不同的选项会影响模块的导入导出模式。这里我们使用了 `commonjs` 这个最常用的选项，后面的教程也都默认使用的这个选项。
 
-不管采用了以上两种方式中的哪一种，我都*强烈建议*大家将书写好的声明文件（通过给原作者发 pull request，或者直接提交到 `@types` 里）发布到开源社区中，享受了这么多社区的优秀的资源，就应该在力所能及的时候给出一些回馈。只有所有人都参与进来，才能让 ts 社区更加繁荣。
+不管采用了以上两种方式中的哪一种，我都**强烈建议**大家将书写好的声明文件（通过给第三发库发 pull request，或者直接提交到 `@types` 里）发布到开源社区中，享受了这么多社区的优秀的资源，就应该在力所能及的时候给出一些回馈。只有所有人都参与进来，才能让 ts 社区更加繁荣。
 
 npm 包的声明文件主要有以下几种语法：
 
-- `export` 导出变量
-- `export namespace` 导出（含有子属性的）全局对象
-- `export default` ES6 默认导出
-- `export =` commonjs 导出模块
+- [`export`](#export) 导出变量
+- [`export namespace`](#export-namespace) 导出（含有子属性的）对象
+- [`export default`](#export-default) ES6 默认导出
+- [`export =`](#export-1) commonjs 导出模块
 
 #### `export`
 
@@ -999,21 +996,163 @@ export = jQuery;
 
 除了这两种三斜线指令之外，还有其他的三斜线指令，比如 `/// <reference no-default-lib="true"/>`, `/// <amd-module />` 等，但它们都是废弃的语法，故这里就不介绍了，详情可见[官网](http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html)。
 
-### 最佳实践
+### 自动生成声明文件
 
-TODO
+如果库的源码本身就是由 ts 写的，那么在使用 `tsc` 脚本将 ts 编译为 js 的时候，添加 `declaration` 选项，就可以同时也生成 `.d.ts` 声明文件了。
 
-### 发布声明文件
+我们可以在命令行中添加 `--declaration`（简写 `-d`），或者在 `tsconfig.json` 中添加 `declaration` 选项。这里以 `tsconfig.json` 为例：
 
-TODO
+```json
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "outDir": "lib",
+        "declaration": true,
+    }
+}
+```
+
+上例中我们添加了 `outDir` 选项，将 ts 文件的编译结果输出到 `lib` 目录下，然后添加了 `declaration` 选项，设置为 `true`，表示将会由 ts 文件自动生成 `.d.ts` 声明文件，也会输出到 `lib` 目录下。
+
+运行 `tsc` 之后，目录结构如下[<sup>30</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/30-auto-d-ts)：
+
+```plain
+/path/to/project
+├── lib
+|  ├── bar
+|  |  ├── index.d.ts
+|  |  └── index.js
+|  ├── index.d.ts
+|  └── index.js
+├── src
+|  ├── bar
+|  |  └── index.ts
+|  └── index.ts
+├── package.json
+└── tsconfig.json
+```
+
+在这个例子中，`src` 目录下有两个 ts 文件，分别是 `src/index.ts` 和 `src/bar/index.ts`，它们被编译到 `lib` 目录下的同时，也会生成对应的两个声明文件 `lib/index.d.ts` 和 `lib/bar/index.d.ts`。它们的内容分别是：
+
+```ts
+// src/index.ts
+
+export * from './bar';
+
+export default function foo() {
+    return 'foo';
+}
+```
+
+```ts
+// src/bar/index.ts
+
+export function bar() {
+    return 'bar';
+}
+```
+
+```ts
+// lib/index.d.ts
+
+export * from './bar';
+export default function foo(): string;
+```
+
+```ts
+// lib/bar/index.d.ts
+
+export declare function bar(): string;
+```
+
+可见，自动生成的声明文件基本保持了源码的结构，而将具体实现去掉了，生成了对应的类型声明。
+
+使用 `tsc` 自动生成声明文件时，每个 ts 文件都会对应一个 `.d.ts` 声明文件。这样的好处是，使用方不仅可以在使用 `import foo from 'foo'` 导入默认的模块时获得类型提示，还可以在使用 `import bar from 'foo/lib/bar'` 导入一个子模块时，也获得对应的类型提示。
+
+除了 `declaration` 选项之外，还有几个选项也与自动生成声明文件有关，这里只简单列举出来，不做详细演示了：
+
+- `declarationDir` 设置生成 `.d.ts` 文件的目录
+- `declarationMap` 对每个 `.d.ts` 文件，都生成对应的 `.d.ts.map`（sourcemap）文件
+- `emitDeclarationOnly` 仅生成 `.d.ts` 文件，不生成 `.js` 文件
+
+## 发布声明文件
+
+当我们为一个库写好了声明文件之后，下一步就是将它发布出去了。
+
+此时有两种方案：
+
+1. 将声明文件和源码放在一个仓库中
+2. 将声明文件发布到 `@types` 下
+
+这两种方案中优先选择第一种方案。保持声明文件与源码在一个仓库中，使用时就不需要额外增加单独的声明文件库的依赖了，而且也能保证声明文件的版本与源码的版本保持一致。
+
+仅当我们在给别人的仓库添加类型声明文件，但原作者不愿意合并 pull request 时，才需要使用第二种方案，将声明文件发布到 `@types` 下。
+
+### 将声明文件和源码放在一个仓库中
+
+如果声明文件是通过 `tsc` 自动生成的，那么无需做任何其他配置，只需要把编译好的文件也发布到 npm 上，使用方就可以获取到类型提示了。
+
+如果是手动写的声明文件，那么需要满足以下条件之一，才能被正确的识别：
+
+- 给 `package.json` 中的 `types` 或 `typings` 字段指定一个类型声明文件地址
+- 在项目根目录下，编写一个 `index.d.ts` 文件
+- 针对入口文件（`package.json` 中的 `main` 字段指定的入口文件），编写一个同名不同后缀的 `.d.ts` 文件
+
+第一种方式是给 `package.json` 中的 `types` 或 `typings` 字段指定一个类型声明文件地址。比如：
+
+```json
+{
+    "name": "foo",
+    "version": "1.0.0",
+    "main": "lib/index.js",
+    "types": "foo.d.ts",
+}
+```
+
+指定了 `types` 为 `foo.d.ts` 之后，导入此库的时候，就会去找 `foo.d.ts` 作为此库的类型声明文件了。
+
+`typings` 与 `types` 一样，只是另一种写法。
+
+如果没有指定 `types` 或 `typings`，那么就会在根目录下寻找 `index.d.ts` 文件，将它视为此库的类型声明文件。
+
+如果没有找到 `index.d.ts` 文件，那么就会寻找入口文件（`package.json` 中的 `main` 字段指定的入口文件）是否存在对应同名不同后缀的 `.d.ts` 文件。
+
+比如 `package.json` 是这样时：
+
+```json
+{
+    "name": "foo",
+    "version": "1.0.0",
+    "main": "lib/index.js"
+}
+```
+
+就会先识别 `package.json` 中是否存在 `types` 或 `typings` 字段。发现不存在，那么就会寻找是否存在 `index.d.ts` 文件。如果还是不存在，那么就会寻找是否存在 `lib/index.d.ts` 文件。假如说连 `lib/index.d.ts` 都不存在的话，就会被认为是一个没有提供类型声明文件的库了。
+
+有的库为了支持导入子模块，比如 `import bar from 'foo/lib/bar'`，就需要额外再编写一个类型声明文件 `lib/bar.d.ts` 或者 `lib/bar/index.d.ts`，这与自动生成声明文件类似，一个库中同时包含了多个类型声明文件。
+
+### 将声明文件发布到 `@types` 下
+
+如果我们是在给别人的仓库添加类型声明文件，但原作者不愿意合并 pull request，那么就需要将声明文件发布到 `@types` 下。
+
+与普通的 npm 模块不同，`@types` 是统一由 [DefinitelyTyped][] 管理的。要将声明文件发布到 `@types` 下，就需要给 [DefinitelyTyped][] 创建一个 pull-request，其中包含了类型声明文件，测试代码，以及 `tsconfig.json` 等。
+
+pull-request 需要符合它们的规范，并且通过测试，才能被合并，稍后就会被自动发布到 `@types` 下。
+
+在 [DefinitelyTyped][] 中创建一个新的类型声明，需要用到一些工具，[DefinitelyTyped][] 的文档中已经有了[详细的介绍](https://github.com/DefinitelyTyped/DefinitelyTyped#create-a-new-package)，这里就不赘述了，以官方文档为准。
+
+如果大家有此类需求，可以参考下笔者[提交的 pull-request](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/30336/files) 。
 
 ## 参考
 
 - [Writing Declaration Files](http://www.typescriptlang.org/docs/handbook/writing-declaration-files.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/declaration%20files/Introduction.html)）
 - [Triple-Slash Directives](http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Triple-Slash%20Directives.html)）
 - [typeRoots or paths](https://github.com/Microsoft/TypeScript/issues/22217#issuecomment-369783776)
+- [DefinitelyTyped][]
 
 ---
 
 - [上一章：类型断言](type-assertion.md)
 - [下一章：内置对象](built-in-objects.md)
+
+[DefinitelyTyped]: https://github.com/DefinitelyTyped/DefinitelyTyped/

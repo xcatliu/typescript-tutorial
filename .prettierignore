@@ -15,3 +15,4 @@ assets
 package-lock.json
 
 examples/declaration-files/19-export-default-enum-error/types/foo/index.d.ts
+examples/**/*.js
