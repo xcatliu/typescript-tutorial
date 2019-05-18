@@ -414,7 +414,7 @@ AlloyTeam 为 TSLint 也打造了一套配置 [tslint-config-alloy](https://gith
 npm install --save-dev tslint-config-alloy
 ```
 
-安装之后修改 `tsconfig.json` 即可
+安装之后修改 `tslint.json` 即可
 
 ```json
 {
