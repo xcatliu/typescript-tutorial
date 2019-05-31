@@ -1,4 +1,5 @@
 # 代码检查
+> ⚠️需要注意的是，TSLint将在2019年被淘汰使用，typescript-eslint-parser也已经被标记为deprecated
 
 目前 TypeScript 的代码检查主要有两个方案：使用 [TSLint][] 或使用 [ESLint][] + [`typescript-eslint-parser`][]。
 
