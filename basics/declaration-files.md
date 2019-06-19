@@ -100,7 +100,7 @@ jQuery('#foo');
 npm install @types/jquery --save-dev
 ```
 
-可以在[这个页面](http://microsoft.github.io/TypeSearch/)搜索你需要的声明文件。
+可以在[这个页面](https://microsoft.github.io/TypeSearch/)搜索你需要的声明文件。
 
 ## 书写声明文件
 
