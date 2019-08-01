@@ -43,23 +43,22 @@ anyThing.myName.setFirstName('Cat');
 
 ## 未声明类型的变量
 
-**变量如果在声明的时候，未指定其类型，那么它会被识别为任意值类型**：
+**变量如果在声明的时候，未指定其类型，它不会被识别为任意值类型(因为虽然可以赋予任何类型的值，但是不可以做任意的操作，应该按照类型推论来处理)**：
 
 ```ts
 let something;
 something = 'seven';
 something = 7;
 
-something.setName('Tom');
+something.setName('Tom'); //错误，提示Property 'setName' does not exist on type 'number'.ts(2339)
 ```
 
-等价于
+不等价于
 
 ```ts
 let something: any;
 something = 'seven';
 something = 7;
-
 something.setName('Tom');
 ```
 
