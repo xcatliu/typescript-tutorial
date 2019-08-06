@@ -167,7 +167,7 @@ function push(array: any[], ...items: any[]) {
     });
 }
 
-let a = [];
+let a: any[] = [];
 push(a, 1, 2, 3);
 ```
 
