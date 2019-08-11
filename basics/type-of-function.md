@@ -80,7 +80,7 @@ interface SearchFunc {
 }
 
 let mySearch: SearchFunc;
-mySearch = function(source: string, subString: string) {
+mySearch = function(source: string, subString: string) => {
     return source.search(subString) !== -1;
 }
 ```
