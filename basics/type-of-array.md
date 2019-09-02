@@ -15,12 +15,8 @@ let fibonacci: number[] = [1, 1, 2, 3, 5];
 ```ts
 let fibonacci: number[] = [1, '1', 2, 3, 5];
 
-// index.ts(1,5): error TS2322: Type '(number | string)[]' is not assignable to type 'number[]'.
-//   Type 'number | string' is not assignable to type 'number'.
-//     Type 'string' is not assignable to type 'number'.
+// Type 'string' is not assignable to type 'number'.
 ```
-
-上例中，`[1, '1', 2, 3, 5]` 的类型被推断为 `(number | string)[]`，这是联合类型和数组的结合。
 
 数组的一些方法的参数也会根据数组在定义时约定的类型进行限制：
 
@@ -28,14 +24,14 @@ let fibonacci: number[] = [1, '1', 2, 3, 5];
 let fibonacci: number[] = [1, 1, 2, 3, 5];
 fibonacci.push('8');
 
-// index.ts(2,16): error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+// Argument of type '"8"' is not assignable to parameter of type 'number'.
 ```
 
-上例中，`push` 方法只允许传入 `number` 类型的参数，但是却传了一个 `string` 类型的参数，所以报错了。
+上例中，`push` 方法只允许传入 `number` 类型的参数，但是却传了一个 `"8"` 类型的参数，所以报错了。这里 `"8"` 是一个字符串字面量类型，会在后续章节中详细介绍。
 
 ## 数组泛型
 
-也可以使用数组泛型（Array Generic） `Array<elemType>` 来表示数组：
+我们也可以使用数组泛型（Array Generic） `Array<elemType>` 来表示数组：
 
 ```ts
 let fibonacci: Array<number> = [1, 1, 2, 3, 5];
@@ -54,15 +50,11 @@ interface NumberArray {
 let fibonacci: NumberArray = [1, 1, 2, 3, 5];
 ```
 
-`NumberArray` 表示：只要 `index` 的类型是 `number`，那么值的类型必须是 `number`。
+`NumberArray` 表示：只要索引的类型是数字时，那么值的类型必须是数字。
 
-## any 在数组中的应用
+虽然接口也可以用来描述数组，但是我们一般不会这么做，因为这种方式比前两种方式复杂多了。
 
-一个比较常见的做法是，用 `any` 表示数组中允许出现任意类型：
-
-```ts
-let list: any[] = ['Xcat Liu', 25, { website: 'http://xcatliu.com' }];
-```
+不过有一种情况例外，那就是它常用来表示类数组。
 
 ## 类数组
 
@@ -73,11 +65,24 @@ function sum() {
     let args: number[] = arguments;
 }
 
-// index.ts(2,7): error TS2322: Type 'IArguments' is not assignable to type 'number[]'.
-//   Property 'push' is missing in type 'IArguments'.
+// Type 'IArguments' is missing the following properties from type 'number[]': pop, push, concat, join, and 24 more.
 ```
 
-事实上常见的类数组都有自己的接口定义，如 `IArguments`, `NodeList`, `HTMLCollection` 等：
+上例中，`arguments` 实际上是一个类数组，不能用普通的数组的方式来描述，而应该用接口：
+
+```ts
+function sum() {
+    let args: {
+        [index: number]: number;
+        length: number;
+        callee: Function;
+    } = arguments;
+}
+```
+
+在这个例子中，我们除了约束当索引的类型是数字时，值的类型必须是数字之外，也约束了它还有 `length` 和 `callee` 两个属性。
+
+事实上常用的类数组都有自己的接口定义，如 `IArguments`, `NodeList`, `HTMLCollection` 等：
 
 ```ts
 function sum() {
@@ -85,7 +90,25 @@ function sum() {
 }
 ```
 
+其中 `IArguments` 是 TypeScript 中定义好了的类型，它实际上就是：
+
+```ts
+interface IArguments {
+    [index: number]: any;
+    length: number;
+    callee: Function;
+}
+```
+
 关于内置对象，可以参考[内置对象](./built-in-objects.md)一章。
+
+## any 在数组中的应用
+
+一个比较常见的做法是，用 `any` 表示数组中允许出现任意类型：
+
+```ts
+let list: any[] = ['xcatliu', 25, { website: 'http://xcatliu.com' }];
+```
 
 ## 参考
 
