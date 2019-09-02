@@ -1,6 +1,7 @@
 {
   "excludeFiles": [],
   "rules": {
-    "no-trailing-punctuation": 0
+    "no-trailing-punctuation": 0,
+    "no-long-code": 0
   }
 }
