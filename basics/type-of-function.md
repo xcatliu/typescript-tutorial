@@ -103,7 +103,7 @@ let tomcat = buildName('Tom', 'Cat');
 let tom = buildName('Tom');
 ```
 
-需要注意的是，可选参数必须接在必需参数后面。换句话说，**可选参数后面不允许再出现必须参数了**：
+需要注意的是，可选参数必须接在必需参数后面。换句话说，**可选参数后面不允许再出现必需参数了**：
 
 ```ts
 function buildName(firstName?: string, lastName: string) {
