@@ -22,8 +22,8 @@ let isDone: boolean = false;
 ```ts
 let createdByNewBoolean: boolean = new Boolean(1);
 
-// index.ts(1,5): error TS2322: Type 'Boolean' is not assignable to type 'boolean'.
-// 后面约定，注释中标出了编译报错的代码片段，表示编译未通过
+// Type 'Boolean' is not assignable to type 'boolean'.
+//   'boolean' is a primitive, but 'Boolean' is a wrapper object. Prefer using 'boolean' when possible.
 ```
 
 事实上 `new Boolean()` 返回的是一个 `Boolean` 对象：
@@ -119,8 +119,6 @@ let u: undefined = undefined;
 let n: null = null;
 ```
 
-`undefined` 类型的变量只能被赋值为 `undefined`，`null` 类型的变量只能被赋值为 `null`。
-
 与 `void` 的区别是，`undefined` 和 `null` 是所有类型的子类型。也就是说 `undefined` 类型的变量，可以赋值给 `number` 类型的变量：
 
 ```ts
@@ -140,7 +138,7 @@ let num: number = u;
 let u: void;
 let num: number = u;
 
-// index.ts(2,5): error TS2322: Type 'void' is not assignable to type 'number'.
+// Type 'void' is not assignable to type 'number'.
 ```
 
 ## 参考

@@ -1,3 +1,2 @@
-function sum() {
-    let args: number[] = arguments;
-}
+let a: undefined = null;
+let b: null = undefined;

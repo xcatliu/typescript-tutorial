@@ -1,3 +1,2 @@
-function sum() {
-    var args = arguments;
-}
+var a = null;
+var b = undefined;
