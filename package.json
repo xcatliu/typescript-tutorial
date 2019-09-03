@@ -46,7 +46,7 @@
         "babel-eslint": "^10.0.1",
         "eclint": "^2.8.1",
         "eslint": "^6.3.0",
-        "eslint-config-alloy": "^2.1.0",
+        "eslint-config-alloy": "^3.0.0",
         "eslint-config-prettier": "^6.1.0",
         "husky": "^3.0.5",
         "lint-md-cli": "^0.1.1",
