@@ -239,6 +239,58 @@ class Cat extends Animal {
 }
 ```
 
+当构造函数修饰为 `private` 时，该类不允许被继承或者实例化：
+
+```ts
+class Animal {
+    public name;
+    private constructor (name) {
+        this.name = name;
+  }
+}
+class Cat extends Animal {
+    constructor (name) {
+        super(name);
+    }
+}
+
+let a = new Animal('Jack');
+
+// index.ts(7,19): TS2675: Cannot extend a class 'Animal'. Class constructor is marked as private.
+// index.ts(13,9): TS2673: Constructor of class 'Animal' is private and only accessible within the class declaration.
+```
+
+当构造函数修饰为 `protected` 时，该类只允许被继承：
+
+```ts
+class Animal {
+    public name;
+    private constructor (name) {
+        this.name = name;
+  }
+}
+class Cat extends Animal {
+    constructor (name) {
+        super(name);
+    }
+}
+
+let a = new Animal('Jack');
+
+// index.ts(13,9): TS2674: Constructor of class 'Animal' is protected and only accessible within the class declaration.
+```
+
+修饰符还可以使用在构造函数参数中，等同于类中定义该属性，使代码更简洁。
+
+```ts
+class Animal {
+    // public name: string;
+    public constructor (public name) {
+        this.name = name;
+    }
+}
+```
+
 ### 抽象类
 
 `abstract` 用于定义抽象类和其中的抽象方法。
