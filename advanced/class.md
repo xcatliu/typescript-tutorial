@@ -265,7 +265,7 @@ let a = new Animal('Jack');
 ```ts
 class Animal {
     public name;
-    private constructor (name) {
+    protected constructor (name) {
         this.name = name;
   }
 }
@@ -286,6 +286,36 @@ let a = new Animal('Jack');
 class Animal {
     // public name: string;
     public constructor (public name) {
+        this.name = name;
+    }
+}
+```
+
+### readonly
+
+只读属性关键字，只允许出现在属性声明或索引签名中。
+
+```ts
+class Animal {
+    readonly name;
+    public constructor(name) {
+        this.name = name;
+    }
+}
+
+let a = new Animal('Jack');
+console.log(a.name); // Jack
+a.name = 'Tom';
+
+// index.ts(10,3): TS2540: Cannot assign to 'name' because it is a read-only property.
+```
+
+注意如果 `readonly` 和其他访问修饰符同时存在的话，需要写在其后面。
+
+```ts
+class Animal {
+    // public readonly name;
+    public constructor(public readonly name) {
         this.name = name;
     }
 }
