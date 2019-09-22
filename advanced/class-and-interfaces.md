@@ -58,6 +58,64 @@ class Car implements Alarm, Light {
 
 上例中，`Car` 实现了 `Alarm` 和 `Light` 接口，既能报警，也能开关车灯。
 
+类实现接口时，**必须**声明接口中所有定义的属性和方法。
+
+```ts
+interface Animal {
+    name: string;
+    eat (): void;
+}
+
+class Cat implements Animal {
+    constructor (name: string) {
+        this.name = name;
+    }
+    name: string;
+    // eat () {};
+}
+
+// index.ts(6,9): TS2420: Class 'Cat' incorrectly implements interface 'Animal'. Property 'eat' is missing in type 'Cat' but required in type 'Animal'.
+```
+
+类实现接口时，声明接口中定义的属性和方法不能修饰为 `private` 或 `protected`。
+
+```ts
+interface Animal {
+    name: string;
+    eat (): void;
+}
+
+class Cat implements Animal {
+    constructor (name: string) {
+        this.name = name;
+    }
+    private name: string;
+    eat () {};
+}
+
+// index.ts(6,9): TS2420: Class 'Cat' incorrectly implements interface 'Animal'. Property 'name' is private in type 'Cat' but not in type 'Animal'.
+```
+
+接口不能约束类中的构造函数。
+
+```ts
+interface Animal {
+    new (name: string): void;
+    name: string;
+    eat (): void;
+}
+
+class Cat implements Animal {
+    constructor (name: string) {
+        this.name = name;
+    }
+    name: string;
+    eat () {};
+}
+
+// index.ts(7,9): TS2420: Class 'Cat' incorrectly implements interface 'Animal'. Type 'Cat' provides no match for the signature 'new (name: string): void'.
+```
+
 ## 接口继承接口
 
 接口与接口之间可以是继承关系：
@@ -128,6 +186,14 @@ c(10);
 c.reset();
 c.interval = 5.0;
 ```
+
+## 总结
+
+* 接口与接口、类与类之间可以相互继承（extends）。
+
+* 接口可以通过类来实现的（implements），接口只能约束类的公有成员。
+
+* 接口可以抽离出类的成员、包括公有（public）、私有（private）、受保护（protected）成员。
 
 ## 参考
 
