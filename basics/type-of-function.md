@@ -154,7 +154,7 @@ function push(array, ...items) {
     });
 }
 
-let a = [];
+let a: any[] = [];
 push(a, 1, 2, 3);
 ```
 
