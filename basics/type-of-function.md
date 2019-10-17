@@ -92,7 +92,7 @@ mySearch = function(source: string, subString: string) {
 与接口中的可选属性类似，我们用 `?` 表示可选的参数：
 
 ```ts
-function buildName(firstName: string, lastName?: string) {
+function buildName(firstName: string, lastName?: string): string {
     if (lastName) {
         return firstName + ' ' + lastName;
     } else {
@@ -106,7 +106,7 @@ let tom = buildName('Tom');
 需要注意的是，可选参数必须接在必需参数后面。换句话说，**可选参数后面不允许再出现必需参数了**：
 
 ```ts
-function buildName(firstName?: string, lastName: string) {
+function buildName(firstName?: string, lastName: string): string {
     if (firstName) {
         return firstName + ' ' + lastName;
     } else {
@@ -124,7 +124,7 @@ let tom = buildName(undefined, 'Tom');
 在 ES6 中，我们允许给函数的参数添加默认值，**TypeScript 会将添加了默认值的参数识别为可选参数**：
 
 ```ts
-function buildName(firstName: string, lastName: string = 'Cat') {
+function buildName(firstName: string, lastName: string = 'Cat'): string {
     return firstName + ' ' + lastName;
 }
 let tomcat = buildName('Tom', 'Cat');
@@ -134,7 +134,7 @@ let tom = buildName('Tom');
 此时就不受「可选参数必须接在必需参数后面」的限制了：
 
 ```ts
-function buildName(firstName: string = 'Tom', lastName: string) {
+function buildName(firstName: string = 'Tom', lastName: string): string {
     return firstName + ' ' + lastName;
 }
 let tomcat = buildName('Tom', 'Cat');
@@ -148,7 +148,7 @@ let cat = buildName(undefined, 'Cat');
 ES6 中，可以使用 `...rest` 的方式获取函数中的剩余参数（rest 参数）：
 
 ```js
-function push(array, ...items) {
+function push(array, ...items): void {
     items.forEach(function(item) {
         array.push(item);
     });
@@ -161,7 +161,7 @@ push(a, 1, 2, 3);
 事实上，`items` 是一个数组。所以我们可以用数组的类型来定义它：
 
 ```ts
-function push(array: any[], ...items: any[]) {
+function push(array: any[], ...items: any[]): void {
     items.forEach(function(item) {
         array.push(item);
     });
