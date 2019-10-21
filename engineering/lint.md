@@ -128,7 +128,7 @@ module.exports = {
 
 ### 检查一个 ts 文件
 
-创建了配置文件之后，我们来创建一个 ts 文件看看是否能用 ESLint 去检查它了。
+创建了配置文件之后，我们来创建一个 ts 文件看看是否能用 ESLint 去检查它。
 
 创建一个新文件 `index.ts`，将以下内容复制进去：
 
@@ -184,21 +184,6 @@ type Foo = {};
 ```
 
 此时执行 `npm run eslint` 即会检查 `src` 目录下的所有 `.ts` 后缀的文件。
-
-### 自动修复错误
-
-ESLint 的大部分规则都支持自动修复错误，我们可以配置一个 npm script：
-
-```json
-{
-    "scripts": {
-        "eslint": "eslint src --ext .ts",
-        "eslint:fix": "eslint src --fix --ext .ts"
-    }
-}
-```
-
-执行 `npm run eslint:fix` 即会在执行 ESLint 检查时自动修复错误。
 
 ### 在 VSCode 中集成 ESLint 检查
 
@@ -332,7 +317,7 @@ module.exports = {
 
 ESLint 原生的规则和 `@typescript-eslint/eslint-plugin` 的规则太多了，而且原生的规则有一些在 TypeScript 中支持的不好，需要禁用掉。
 
-这里我推荐使用 [AlloyTeam ESLint 规则中的 TypeScript 版本](https://github.com/AlloyTeam/eslint-config-alloy#typescript)，它已经为我们提供了一套完善的配置规则。
+这里我推荐使用 [AlloyTeam ESLint 规则中的 TypeScript 版本](https://github.com/AlloyTeam/eslint-config-alloy#typescript)，它已经为我们提供了一套完善的配置规则，并且与 Prettier 是完全兼容的（eslint-config-alloy 不包含任何代码格式的规则，代码格式的问题交给更专业的 Prettier 去处理）。
 
 安装：
 
@@ -387,8 +372,7 @@ npm install --save-dev eslint-plugin-react
 ```json
 {
     "scripts": {
-        "eslint": "eslint src --ext .ts,.tsx",
-        "eslint:fix": "eslint src --fix --ext .ts,.tsx"
+        "eslint": "eslint src --ext .ts,.tsx"
     }
 }
 ```
