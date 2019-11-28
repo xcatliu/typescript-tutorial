@@ -107,5 +107,5 @@ TypeScript 虽然有[官方手册][Handbook]及其[非官方中文版][中文手
 [GitHub]: https://github.com/xcatliu/typescript-tutorial
 [TypeScript]: http://www.typescriptlang.org/
 [Handbook]: http://www.typescriptlang.org/docs/handbook/basic-types.html
-[中文手册]: https://zhongsp.gitbooks.io/typescript-handbook/content/
+[中文手册]: https://zhongsp.gitbook.io/typescript-handbook/
 [ECMAScript 6 入门]: http://es6.ruanyifeng.com/
