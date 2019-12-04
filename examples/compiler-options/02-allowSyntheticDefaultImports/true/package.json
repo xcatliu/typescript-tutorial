@@ -1,0 +1,19 @@
+{
+    "name": "02-allow-synthetic-default-imports-false",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "tsc -w",
+        "build": "tsc",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "react": "^16.12.0"
+    },
+    "devDependencies": {
+        "@types/react": "^16.9.14"
+    }
+}

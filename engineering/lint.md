@@ -334,8 +334,8 @@ module.exports = {
         'alloy/typescript',
     ],
     env: {
-        // 这里填入你的项目用到的环境
-        // 它们预定义了不同环境的全局变量，比如：
+        // 您的环境变量（包含多个预定义的全局变量）
+        // Your environments (which contains several predefined global variables)
         //
         // browser: true,
         // node: true,
@@ -344,13 +344,14 @@ module.exports = {
         // jquery: true
     },
     globals: {
-        // 这里填入你的项目需要的全局变量
-        // false 表示这个全局变量不允许被重新赋值，比如：
+        // 您的全局变量（设置为 false 表示它不允许被重新赋值）
+        // Your global variables (setting to false means it's not allowed to be reassigned)
         //
         // myGlobal: false
     },
     rules: {
-        // 这里填入你的项目需要的个性化配置
+        // 自定义您的规则
+        // Customize your rules
     }
 };
 ```
@@ -446,4 +447,4 @@ npm install --save-dev eslint-plugin-react
 ---
 
 - [上一章：工程](README.md)
-- [下一章：感谢](../thanks/README.md)
+- [下一章：编译选项](./compiler-options.md)

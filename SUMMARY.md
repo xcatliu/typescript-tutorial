@@ -28,4 +28,5 @@
   - [扩展阅读](advanced/further-reading.md)
 - [工程](engineering/README.md)
   - [代码检查](engineering/lint.md)
+  - [编译选项](engineering/compiler-options.md)
 - [感谢](thanks/README.md)
