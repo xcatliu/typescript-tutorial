@@ -40,7 +40,7 @@ console.log(`My name is ${myName.toStrng()}`);
 分别用 tsc 编译和 eslint 检查后，报错信息如下：
 
 ```ts
-let myName = 'Tom';
+var myName = 'Tom';
 // eslint 报错信息：
 // Unexpected var, use let or const instead.eslint(no-var)
 
