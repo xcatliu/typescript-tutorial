@@ -280,20 +280,22 @@ let a = new Animal('Jack');
 // index.ts(13,9): TS2674: Constructor of class 'Animal' is protected and only accessible within the class declaration.
 ```
 
-修饰符还可以使用在构造函数参数中，等同于类中定义该属性，使代码更简洁。
+### 参数属性
+
+修饰符和`readonly`还可以使用在构造函数参数中，等同于类中定义该属性同时给该属性赋值，使代码更简洁。
 
 ```ts
 class Animal {
     // public name: string;
     public constructor (public name) {
-        this.name = name;
+        // this.name = name;
     }
 }
 ```
 
 ### readonly
 
-只读属性关键字，只允许出现在属性声明或索引签名中。
+只读属性关键字，只允许出现在属性声明或索引签名或构造函数中。
 
 ```ts
 class Animal {
@@ -316,7 +318,7 @@ a.name = 'Tom';
 class Animal {
     // public readonly name;
     public constructor(public readonly name) {
-        this.name = name;
+        // this.name = name;
     }
 }
 ```
