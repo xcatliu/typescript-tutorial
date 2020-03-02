@@ -187,7 +187,7 @@ let point3d: Point3d = {x: 1, y: 2, z: 3};
 
 当我们声明 `interface Point3d extends Point` 时，`Point3d` 继承的实际上是类 `Point` 的实例的类型。
 
-换句话说，我们实际上是定义了一个接口 `Point3d` 继承另一个接口 `PointInstanceType`。
+换句话说，可以理解为定义了一个接口 `Point3d` 继承另一个接口 `PointInstanceType`。
 
 所以「接口继承类」和「接口继承接口」没有什么本质的区别。
 
