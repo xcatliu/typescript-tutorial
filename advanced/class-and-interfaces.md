@@ -96,7 +96,7 @@ interface Point3d extends Point {
 let point3d: Point3d = {x: 1, y: 2, z: 3};
 ```
 
-为什么 TypeScript 能够支持接口继承类呢？
+为什么 TypeScript 会支持接口继承类呢？
 
 实际上，当我们在声明 `class Point` 时，除了会创建一个名为 `Point` 的类之外，同时也创建了一个名为 `Point` 的类型（实例的类型）。
 
@@ -160,7 +160,7 @@ printPoint(new Point(1, 2));
 
 上例中我们新声明的 `PointInstanceType` 类型，与声明 `class Point` 时创建的 `Point` 类型是等价的。
 
-所以回到 `Point3d` 的例子中，我们就能很容易的理解为什么 TypeScript 能够支持接口继承类了：
+所以回到 `Point3d` 的例子中，我们就能很容易的理解为什么 TypeScript 会支持接口继承类了：
 
 ```ts
 class Point {
@@ -193,7 +193,7 @@ let point3d: Point3d = {x: 1, y: 2, z: 3};
 
 值得注意的是，`PointInstanceType` 相比于 `Point`，缺少了 `constructor` 方法，这是因为声明 `Point` 类时创建的 `Point` 类型是不包含构造函数的。另外，除了构造函数是不包含的，静态属性或静态方法也是不包含的（实例的类型当然不应该包括构造函数、静态属性或静态方法）。
 
-换句话说，声明 `Point` 类时创建的 `Point` 类型只包含实例属性和实例方法：
+换句话说，声明 `Point` 类时创建的 `Point` 类型只包含其中的实例属性和实例方法：
 
 ```ts
 class Point {
