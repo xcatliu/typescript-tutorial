@@ -131,9 +131,7 @@ function printPoint(p: Point) {
     console.log(p.x, p.y);
 }
 
-const p = new Point(1, 2);
-
-printPoint(p);
+printPoint(new Point(1, 2));
 ```
 
 这个例子实际上可以等价于：
@@ -157,9 +155,7 @@ function printPoint(p: PointInstanceType) {
     console.log(p.x, p.y);
 }
 
-const p = new Point(1, 2);
-
-printPoint(p);
+printPoint(new Point(1, 2));
 ```
 
 上例中我们新声明的 `PointInstanceType` 类型，与声明 `class Point` 时创建的 `Point` 类型是等价的。
@@ -193,7 +189,7 @@ let point3d: Point3d = {x: 1, y: 2, z: 3};
 
 换句话说，我们实际上是定义了一个接口 `Point3d` 继承另一个接口 `PointInstanceType`。
 
-所以这种用法和接口继承接口没有什么本质的区别。
+所以「接口继承类」和「接口继承接口」没有什么本质的区别。
 
 值得注意的是，`PointInstanceType` 相比于 `Point`，缺少了 `constructor` 方法，这是因为声明 `Point` 类时创建的 `Point` 类型是不包含构造函数的。另外，除了构造函数是不包含的，静态属性或静态方法也是不包含的（实例的类型当然不应该包括构造函数、静态属性或静态方法）。
 
@@ -234,7 +230,7 @@ let p2: PointInstanceType;
 
 上例中最后的类型 `Point` 和类型 `PointInstanceType` 是等价的。
 
-也就是说，在接口继承类的时候，也只会继承它的实例属性和实例方法。
+同样的，在接口继承类的时候，也只会继承它的实例属性和实例方法。
 
 ## 参考
 
