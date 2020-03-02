@@ -3,21 +3,8 @@
     "editor.tabSize": 4,
     "editor.formatOnSave": true,
     "typescript.tsdk": "node_modules/typescript/lib",
-    "eslint.autoFixOnSave": false,
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        {
-            "language": "vue",
-            "autoFix": false
-        },
-        {
-            "language": "typescript",
-            "autoFix": false
-        },
-        {
-            "language": "typescriptreact",
-            "autoFix": false
-        }
-    ]
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue"]
 }
