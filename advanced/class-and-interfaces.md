@@ -201,7 +201,7 @@ class Point {
     static origin = new Point(0, 0);
     /** 静态方法，计算与原点距离 */
     static distanceToOrigin(p: Point) {
-        return 
+        return Math.sqrt(p.x * p.x + p.y * p.y);
     }
     /** 实例属性，x 轴的值 */
     x: number;
