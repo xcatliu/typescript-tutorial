@@ -33,6 +33,7 @@ TypeScript 除了实现了所有 ES6 中的类的功能以外，还添加了一�
 
 ```js
 class Animal {
+    public name;
     constructor(name) {
         this.name = name;
     }
