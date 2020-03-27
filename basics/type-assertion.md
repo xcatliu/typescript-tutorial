@@ -66,7 +66,7 @@ function isFish(animal: Cat | Fish) {
 //   Property 'swim' does not exist on type 'Cat'.
 ```
 
-上例中，获取 `animal.swim` 的时候会报错。
+上面的例子中，获取 `animal.swim` 的时候会报错。
 
 此时可以使用类型断言，将 `animal` 断言成 `Fish`：
 
@@ -90,7 +90,7 @@ function isFish(animal: Cat | Fish) {
 
 这样就可以解决访问 `animal.swim` 时报错的问题了。
 
-需要注意的是，类型断言只能够「欺骗」TypeScript 编译器，无法避免运行时的错误，甚至与滥用类型断言可能会导致运行时错误：
+需要注意的是，类型断言只能够「欺骗」TypeScript 编译器，无法避免运行时的错误，甚至于滥用类型断言可能会导致运行时错误：
 
 ```ts
 interface Cat {
@@ -106,11 +106,11 @@ function swim(animal: Cat | Fish) {
     (animal as Fish).swim();
 }
 
-const cat: Cat = {
+const tom: Cat = {
     name: 'Tom',
-    run() { console.log('run'); }
+    run() { console.log('run') }
 };
-swim(cat);
+swim(tom);
 ```
 
 上面的例子编译时不会报错，但在运行时会报错：
@@ -220,7 +220,7 @@ foo.length = 1;
 // index.ts:2:5 - error TS2339: Property 'length' does not exist on type 'number'.
 ```
 
-上例中，数字类型的变量 `foo` 上是没有 `length` 属性的，故 TypeScript 给出了相应的错误提示。
+上面的例子中，数字类型的变量 `foo` 上是没有 `length` 属性的，故 TypeScript 给出了相应的错误提示。
 
 这种错误提示显然是非常有用的。
 
@@ -232,7 +232,7 @@ window.foo = 1;
 // index.ts:1:8 - error TS2339: Property 'foo' does not exist on type 'Window & typeof globalThis'.
 ```
 
-上例中，我们需要将 `window` 上添加一个属性 `foo`，但 TypeScript 编译时会报错，提示我们 `window` 上不存在 `foo` 属性。
+上面的例子中，我们需要将 `window` 上添加一个属性 `foo`，但 TypeScript 编译时会报错，提示我们 `window` 上不存在 `foo` 属性。
 
 此时我们可以使用 `as any` 临时将 `window` 断言为 `any` 类型：
 
@@ -312,11 +312,11 @@ interface Cat {
     run(): void;
 }
 
-let cat: Cat = {
+let tom: Cat = {
     name: 'Tom',
     run: () => { console.log('run') }
 };
-let animal: Animal = cat;
+let animal: Animal = tom;
 ```
 
 我们知道，TypeScript 是结构类型系统，类型之间的对比只会比较它们最终的结构，而会忽略它们定义时的关系。
@@ -332,7 +332,7 @@ interface Cat extends Animal {
 }
 ```
 
-那么也不难理解为什么 `Cat` 类型的 `cat` 可以赋值给 `Animal` 类型的 `animal` 了——就像面向对象编程中我们可以将子类的实例赋值给类型为父类的变量。
+那么也不难理解为什么 `Cat` 类型的 `tom` 可以赋值给 `Animal` 类型的 `animal` 了——就像面向对象编程中我们可以将子类的实例赋值给类型为父类的变量。
 
 我们把它换成 TypeScript 中更专业的说法，即：`Animal` 兼容 `Cat`。
 
@@ -378,7 +378,7 @@ function testCat(cat: Cat) {
 - any 可以被断言为任何类型
 - 要使得 `A` 能够被断言为 `B`，只需要 `A` 兼容 `B` 或 `B` 兼容 `A` 即可
 
-其实前两种情况都是最后一个的特例。
+其实前四种情况都是最后一个的特例。
 
 ## 双重断言
 
@@ -556,7 +556,7 @@ const tom: Cat = getCacheData('tom');
 
 > 本小结的前置知识点：[范型][]
 
-在这个例子中：
+还是这个例子：
 
 ```ts
 function getCacheData(key: string): any {
