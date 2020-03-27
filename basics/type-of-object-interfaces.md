@@ -154,6 +154,21 @@ let tom: Person = {
 
 另外，在报错信息中可以看出，此时 `{ name: 'Tom', age: 25, gender: 'male' }` 的类型被推断成了 `{ [x: string]: string | number; name: string; age: number; gender: string; }`，这是联合类型和接口的结合。
 
+一个接口中只能定义一个任意属性。如果接口中有多个类型的属性，则可以在任意属性中使用联合类型：
+```ts
+interface Person {
+    name: string;
+    age?: number;
+    [propName: string]: string | number;
+}
+
+let tom: Person = {
+    name: 'Tom',
+    age: 25,
+    gender: 'male'
+};
+```
+
 ## 只读属性
 
 有时候我们希望对象中的一些字段只能在创建的时候被赋值，那么可以用 `readonly` 定义只读属性：
