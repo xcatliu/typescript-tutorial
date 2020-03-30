@@ -90,7 +90,7 @@ function isFish(animal: Cat | Fish) {
 
 这样就可以解决访问 `animal.swim` 时报错的问题了。
 
-需要注意的是，类型断言只能够「欺骗」TypeScript 编译器，无法避免运行时的错误，甚至于滥用类型断言可能会导致运行时错误：
+需要注意的是，类型断言只能够「欺骗」TypeScript 编译器，无法避免运行时的错误，反而滥用类型断言可能会导致运行时错误：
 
 ```ts
 interface Cat {
@@ -111,6 +111,7 @@ const tom: Cat = {
     run() { console.log('run') }
 };
 swim(tom);
+// Uncaught TypeError: animal.swim is not a function`
 ```
 
 上面的例子编译时不会报错，但在运行时会报错：
@@ -404,7 +405,7 @@ function testCat(cat: Cat) {
 
 在上面的例子中，若直接使用 `cat as Fish` 肯定会报错，因为 `Cat` 和 `Fish` 互相都不兼容。
 
-但是若使用双重断言，则可以打破「要使得 `A` 能够被断言为 `B`，只需要 `A` 兼容 `B` 或 `B` 兼容 `A` 即可」的规则，将任何一个类型断言为任何另一个类型。
+但是若使用双重断言，则可以打破「要使得 `A` 能够被断言为 `B`，只需要 `A` 兼容 `B` 或 `B` 兼容 `A` 即可」的限制，将任何一个类型断言为任何另一个类型。
 
 若你使用了这种双重断言，那么十有八九是非常错误的，它很可能会导致运行时错误。
 
@@ -483,7 +484,7 @@ const tom: Cat = getCacheData('tom');
 tom.run();
 ```
 
-上面的例子中，我们通过类型声明的方式，将 `tom` 声明为 `Cat`，然后再将 `getCacheData('tom')` 赋值给类型为 `Cat` 的 `tom`。
+上面的例子中，我们通过类型声明的方式，将 `tom` 声明为 `Cat`，然后再将 `any` 类型的 `getCacheData('tom')` 赋值给 `Cat` 类型的 `tom`。
 
 这和类型断言是非常相似的，而且产生的结果也几乎是一样的——`tom` 在接下来的代码中都变成了 `Cat` 类型。
 
