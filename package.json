@@ -42,7 +42,7 @@
     "homepage": "https://github.com/xcatliu/typescript-tutorial#readme",
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^2.21.0",
-        "@typescript-eslint/parser": "^2.21.0",
+        "@typescript-eslint/parser": "^3.0.0",
         "eclint": "^2.8.1",
         "eslint": "^6.8.0",
         "eslint-config-alloy": "^3.6.0",
