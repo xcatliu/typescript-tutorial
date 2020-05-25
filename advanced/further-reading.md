@@ -23,5 +23,5 @@
 
 ---
 
-- [上一章：声明合并](declaration-merging.md)
+- [上一章：交叉类型](intersections-types.md)
 - [下一章：工程](../engineering/README.md)

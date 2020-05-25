@@ -81,6 +81,7 @@ TypeScript 虽然有[官方手册][Handbook]及其[非官方中文版][中文手
   - [类与接口](advanced/class-and-interfaces.md)
   - [泛型](advanced/generics.md)
   - [声明合并](advanced/declaration-merging.md)
+  - [交叉类型](advanced/intersections-types.md)
   - [扩展阅读](advanced/further-reading.md)
 - [工程](engineering/README.md)
   - [代码检查](engineering/lint.md)

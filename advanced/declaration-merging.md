@@ -99,4 +99,4 @@ interface Alarm {
 ---
 
 - [上一章：泛型](generics.md)
-- [下一章：扩展阅读](further-reading.md)
+- [下一章：交叉类型](intersections-types.md)

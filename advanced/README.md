@@ -10,6 +10,7 @@
 - [类与接口](class-and-interfaces.md)
 - [泛型](generics.md)
 - [声明合并](declaration-merging.md)
+- [交叉类型](advanced/intersections-types.md)
 - [扩展阅读](further-reading.md)
 
 ---
