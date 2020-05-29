@@ -2,7 +2,6 @@ node_modules
 
 *.md
 
-_book
 assets
 
 .DS_Store
@@ -14,5 +13,5 @@ assets
 
 package-lock.json
 
-examples/declaration-files/19-export-default-enum-error/types/foo/index.d.ts
-examples/**/*.js
+examples
+public

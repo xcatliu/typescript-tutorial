@@ -1,55 +1,54 @@
 {
-    "name": "typescript-tutorial",
-    "version": "0.1.0",
-    "description": "从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript",
-    "main": "README.md",
-    "directories": {
-        "example": "examples"
-    },
-    "scripts": {
-        "test": "npm run lint",
-        "lint": "run-s eclint prettier lint-md eslint",
-        "lint:fix": "run-s eclint:fix prettier:fix lint-md:fix",
-        "eclint": "bash -c 'eclint check $(git ls-files)'",
-        "eclint:fix": "bash -c 'eclint fix $(git ls-files)'",
-        "prettier": "prettier -l \"./**/*\"",
-        "prettier:fix": "prettier --write -l \"./**/*\"",
-        "lint-md": "lint-md .",
-        "lint-md:fix": "lint-md --fix .",
-        "eslint": "eslint --ext .ts examples",
-        "eslint:fix": "eslint --ext .ts --fix examples"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm test",
-            "pre-push": "npm test"
-        }
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/xcatliu/typescript-tutorial.git"
-    },
-    "keywords": [
-        "typescript",
-        "tutorial",
-        "javascript"
-    ],
-    "author": "xcatliu <xcatliu@gmail.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/xcatliu/typescript-tutorial/issues"
-    },
-    "homepage": "https://github.com/xcatliu/typescript-tutorial#readme",
-    "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "^2.21.0",
-        "@typescript-eslint/parser": "^2.21.0",
-        "eclint": "^2.8.1",
-        "eslint": "^6.8.0",
-        "eslint-config-alloy": "^3.6.0",
-        "husky": "^4.2.3",
-        "lint-md-cli": "^0.1.2",
-        "npm-run-all": "^4.1.5",
-        "prettier": "^1.19.1",
-        "typescript": "^3.8.3"
+  "name": "typescript-tutorial",
+  "version": "0.1.0",
+  "description": "从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript",
+  "main": "README.md",
+  "scripts": {
+    "start": "deno run --unstable --allow-read --allow-write --allow-net https://deno.land/x/pagic/pagic.ts build --serve --watch",
+    "test": "npm run lint",
+    "lint": "run-s eclint prettier lint-md eslint",
+    "lint:fix": "run-s eclint:fix prettier:fix lint-md:fix",
+    "eclint": "bash -c 'eclint check $(git ls-files)'",
+    "eclint:fix": "bash -c 'eclint fix $(git ls-files)'",
+    "prettier": "prettier -l \"./**/*\"",
+    "prettier:fix": "prettier --write -l \"./**/*\"",
+    "lint-md": "lint-md .",
+    "lint-md:fix": "lint-md --fix .",
+    "eslint": "eslint --ext .ts examples",
+    "eslint:fix": "eslint --ext .ts --fix examples"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xcatliu/typescript-tutorial.git"
+  },
+  "keywords": [
+    "typescript",
+    "tutorial",
+    "javascript"
+  ],
+  "author": "xcatliu <xcatliu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xcatliu/typescript-tutorial/issues"
+  },
+  "homepage": "https://github.com/xcatliu/typescript-tutorial#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.0.2",
+    "@typescript-eslint/parser": "^3.0.2",
+    "eclint": "^2.8.1",
+    "eslint": "^7.1.0",
+    "eslint-config-alloy": "^3.7.2",
+    "eslint-plugin-react": "^7.20.0",
+    "husky": "^4.2.5",
+    "lint-md-cli": "^0.1.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.3"
+  }
 }

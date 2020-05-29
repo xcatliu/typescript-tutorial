@@ -6,8 +6,8 @@
 
 ## 关于本书
 
-- [在线阅读](https://ts.xcatliu.com/)（部署在 [GitBook](https://www.gitbook.com/book/xcatliu/typescript-tutorial/details) 上，可能需要翻墙）
-- [在线阅读（GitHub 版）](https://github.com/xcatliu/typescript-tutorial/blob/master/README.md)
+- [在线阅读](https://ts.xcatliu.com/)
+- [在线阅读（GitHub 版）](https://github.com/xcatliu/typescript-tutorial/blob/master/docs/README.md)
 - [GitHub 地址][GitHub]
 - 作者：[xcatliu](https://github.com/xcatliu/)
 - 官方 QQ 群：[加入 QQ 群 767142358](https://jq.qq.com/?_wv=1027&k=5nkkFCl)
