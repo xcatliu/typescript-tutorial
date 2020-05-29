@@ -16,7 +16,7 @@ const Layout: PagicLayout = ({ pagic, title, content, sidebar, outputPath }) => 
 
       <title>
         {title}
-        {outputPath !== 'index.html' ? ` | ${pagic.config.title}` : ''}
+        {outputPath !== 'index.html' ? ` · ${pagic.config.title}` : ''}
       </title>
       <meta charSet="utf-8" />
 
