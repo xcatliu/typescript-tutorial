@@ -38,6 +38,9 @@ const Layout: PagicLayout = ({ pagic, title, content, sidebar, outputPath }) => 
             <li>
               <a href="https://github.com/xcatliu/buy-me-a-coffee">赞助作者</a>
             </li>
+            <li>
+              <a href="https://github.com/xcatliu/pagic">使用 Pagic 构建</a>
+            </li>
           </ul>
         </nav>
       </header>
