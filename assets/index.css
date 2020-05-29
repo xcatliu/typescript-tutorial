@@ -1,0 +1,184 @@
+/* #region reset */
+* {
+  box-sizing: border-box;
+}
+body {
+  color: #333;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 18px;
+}
+h4,
+h5,
+h6 {
+  font-size: 16px;
+}
+hr {
+  display: block;
+  height: 1px;
+  border-top: 1px solid #eee;
+}
+
+a {
+  color: #267fd9;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+blockquote {
+  border-left: 5px solid #eee;
+  overflow: auto;
+  color: #999;
+}
+
+pre[class*='language-'] {
+  margin: 16px 0 0 0;
+}
+pre[class*='language-'],
+pre[class*='language-'] code {
+  font-size: 13px;
+}
+code {
+  font-size: 85%;
+  padding: 0.2em 0.3em;
+  background-color: #f2f2f2;
+}
+/* #endregion */
+
+/* #region 间隔 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 32px 0 0 0;
+}
+p,
+ul,
+ol,
+blockquote,
+pre {
+  margin: 16px 0 0 0;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin: 0;
+}
+ul,
+ol {
+  padding: 0 0 0 2em;
+}
+hr {
+  margin: 32px 0 32px 0;
+}
+blockquote {
+  padding: 0.5em 0 0.5em 1em;
+}
+blockquote > *:first-child {
+  margin-top: 0;
+}
+/* #endregion */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  z-index: 100;
+}
+header > * {
+  display: inline-block;
+}
+header h1 {
+  margin-top: 0;
+}
+header h1 a {
+  display: block;
+  width: 300px;
+  height: 60px;
+  padding: 0 32px;
+  font-size: 18px;
+  line-height: 60px;
+  color: #333;
+}
+header h1 a:hover {
+  text-decoration: none;
+}
+header ul {
+  margin: 0;
+  padding: 0;
+}
+header li {
+  display: inline-block;
+  margin: 0 0 0 2em;
+}
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 92px 0 32px 16px;
+  background-color: #fafafa;
+  border-right: 1px solid #eee;
+}
+.main {
+  margin: 60px 0 0 300px;
+  padding-bottom: 32px;
+}
+article {
+  overflow: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+aside ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+aside ul ul {
+  padding-left: 1em;
+  font-size: 14px;
+}
+aside li {
+}
+aside a {
+  color: #666;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  display: block;
+  border: 1px solid transparent;
+  border-right: none;
+}
+aside a.active {
+  background-color: white;
+  border-color: #eee !important;
+  color: #267fd9 !important;
+}
+aside a:hover {
+  color: #333;
+  text-decoration: none;
+  background-color: #f2f2f2;
+}
