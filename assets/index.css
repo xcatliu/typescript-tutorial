@@ -151,6 +151,12 @@ article {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 64px;
+  min-height: calc(100vh - 60px);
+}
+article.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 aside ul {

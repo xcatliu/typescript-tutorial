@@ -1,46 +1,25 @@
 import layoutMap from './layout_map.js';
 
-let lastPathname = location.pathname;
+let loading = false;
+let lastPathname = null;
+let lastLayout = null;
+let lastProps = null;
 
 async function main() {
-  let pathname = location.pathname;
-  if (pathname.endsWith('/')) {
-    pathname += 'index.html';
-  }
-  pathname = pathname.slice(1);
-  const layoutPath = layoutMap[pathname];
-  const propsPath = pathname.replace(/\.html$/, '_props.js');
-  const Layout = (await import('/' + layoutPath)).default;
-  const props = (await import('/' + propsPath)).default;
-  ReactDOM.hydrate(React.createElement(Layout, props), document);
+  rerender(location, { isHydrate: true });
 
   document.addEventListener('click', async (e) => {
-    const { origin, pathname, hash } = e.target;
+    const { origin, pathname } = e.target;
     if (typeof pathname !== 'string') return;
     if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
     if (origin !== location.origin) return;
-    if (pathname === lastPathname) {
-      if (!hash) {
-        e.preventDefault();
-      }
-      return;
-    }
-    const { layoutPath } = getPaths(pathname);
-    if (!layoutPath) return;
-    e.preventDefault();
-    await rerender(pathname);
-    window.history.pushState({}, '', e.target.href);
+    await rerender(e.target, {
+      preventDefault: () => e.preventDefault(),
+      pushState: () => window.history.pushState({}, '', e.target.href)
+    });
   });
 
-  window.addEventListener('popstate', async (e) => {
-    const { pathname } = location;
-    if (pathname === lastPathname) {
-      return;
-    }
-    const { layoutPath } = getPaths(pathname);
-    if (!layoutPath) return;
-    await rerender(pathname);
-  });
+  window.addEventListener('popstate', () => rerender(location));
 }
 
 function getPaths(pathname) {
@@ -57,13 +36,48 @@ function getPaths(pathname) {
   };
 }
 
-async function rerender(pathname) {
+async function rerender(
+  { pathname, hash },
+  { preventDefault = () => {}, pushState = () => {}, isHydrate = false } = {}
+) {
+  if (pathname === lastPathname) {
+    if (!hash) {
+      preventDefault();
+    }
+    return;
+  }
   const { layoutPath, propsPath } = getPaths(pathname);
+  if (!layoutPath) return;
+  preventDefault();
+  if (loading === true) {
+    return;
+  }
+  loading = true;
+  if (!isHydrate) {
+    setTimeout(() => {
+      if (loading === false) return;
+      ReactDOM.render(
+        React.createElement(lastLayout, {
+          ...lastProps,
+          content: React.createElement('article', { className: 'loading' }, 'Loading...')
+        }),
+        document
+      );
+    }, 100);
+  }
   const Layout = (await import('/' + layoutPath)).default;
   const props = (await import('/' + propsPath)).default;
-  ReactDOM.render(React.createElement(Layout, props), document);
-  window.scrollTo(0, 0);
+  if (isHydrate) {
+    ReactDOM.hydrate(React.createElement(Layout, props), document);
+  } else {
+    ReactDOM.render(React.createElement(Layout, props), document);
+    window.scrollTo(0, 0);
+    pushState();
+  }
   lastPathname = pathname;
+  lastLayout = Layout;
+  lastProps = props;
+  loading = false;
 }
 
 main();
