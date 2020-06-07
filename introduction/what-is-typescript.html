@@ -1,4 +1,4 @@
-<html><head><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-45256157-14"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-45256157-14');</script><title>什么是 TypeScript · TypeScript 入门教程</title><meta charSet="utf-8"/><link rel="shortcut icon" type="image/png" href="//xcatliu.github.io/favicon.ico"/><link rel="stylesheet" href="/assets/prism.css"/><link rel="stylesheet" href="/assets/index.css"/></head><body><header><h1><a href="/">TypeScript 入门教程</a></h1><nav><ul><li><a href="https://github.com/xcatliu/typescript-tutorial">GitHub</a></li><li><a href="https://github.com/xcatliu/buy-me-a-coffee">赞助作者</a></li><li><a href="https://github.com/xcatliu/pagic">本网站使用 Pagic 构建</a></li></ul></nav></header><aside><ul><li><a href="/index.html" class="">TypeScript 入门教程</a></li><li><a href="/introduction/index.html" class="">简介</a><ul><li><a href="/introduction/what-is-typescript.html" class="active">什么是 TypeScript</a></li><li><a href="/introduction/get-typescript.html" class="">安装 TypeScript</a></li><li><a href="/introduction/hello-typescript.html" class="">Hello TypeScript</a></li></ul></li><li><a href="/basics/index.html" class="">基础</a><ul><li><a href="/basics/primitive-data-types.html" class="">原始数据类型</a></li><li><a href="/basics/any.html" class="">任意值</a></li><li><a href="/basics/type-inference.html" class="">类型推论</a></li><li><a href="/basics/union-types.html" class="">联合类型</a></li><li><a href="/basics/type-of-object-interfaces.html" class="">对象的类型——接口</a></li><li><a href="/basics/type-of-array.html" class="">数组的类型</a></li><li><a href="/basics/type-of-function.html" class="">函数的类型</a></li><li><a href="/basics/type-assertion.html" class="">类型断言</a></li><li><a href="/basics/declaration-files.html" class="">声明文件</a></li><li><a href="/basics/built-in-objects.html" class="">内置对象</a></li></ul></li><li><a href="/advanced/index.html" class="">进阶</a><ul><li><a href="/advanced/type-aliases.html" class="">类型别名</a></li><li><a href="/advanced/string-literal-types.html" class="">字符串字面量类型</a></li><li><a href="/advanced/tuple.html" class="">元组</a></li><li><a href="/advanced/enum.html" class="">枚举</a></li><li><a href="/advanced/class.html" class="">类</a></li><li><a href="/advanced/class-and-interfaces.html" class="">类与接口</a></li><li><a href="/advanced/generics.html" class="">泛型</a></li><li><a href="/advanced/declaration-merging.html" class="">声明合并</a></li><li><a href="/advanced/further-reading.html" class="">扩展阅读</a></li></ul></li><li><a href="/engineering/index.html" class="">工程</a><ul><li><a href="/engineering/lint.html" class="">代码检查</a></li><li><a href="/engineering/compiler-options.html" class="">编译选项</a></li></ul></li><li><a href="/thanks/index.html" class="">感谢</a></li></ul></aside><section class="main"><article><h1 id="%E4%BB%80%E4%B9%88%E6%98%AF-typescript">什么是 TypeScript</h1>
+<html data-reactroot=""><head><script async="" src="https://www.google-analytics.com/analytics.js"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-45256157-14');</script><title>什么是 TypeScript · TypeScript 入门教程</title><meta charSet="utf-8"/><link rel="shortcut icon" type="image/png" href="//xcatliu.github.io/favicon.ico"/><link rel="stylesheet" href="/assets/prism.css"/><link rel="stylesheet" href="/assets/index.css"/></head><body><header><h1><a href="/">TypeScript 入门教程</a></h1><nav><ul><li><a href="https://github.com/xcatliu/typescript-tutorial">GitHub</a></li><li><a href="https://github.com/xcatliu/buy-me-a-coffee">赞助作者</a></li><li><a href="https://github.com/xcatliu/pagic">本网站使用 Pagic 构建</a></li></ul></nav></header><aside><ul><li><a href="/index.html" class="">TypeScript 入门教程</a></li><li><a href="/introduction/index.html" class="">简介</a><ul><li><a href="/introduction/what-is-typescript.html" class="active">什么是 TypeScript</a></li><li><a href="/introduction/get-typescript.html" class="">安装 TypeScript</a></li><li><a href="/introduction/hello-typescript.html" class="">Hello TypeScript</a></li></ul></li><li><a href="/basics/index.html" class="">基础</a><ul><li><a href="/basics/primitive-data-types.html" class="">原始数据类型</a></li><li><a href="/basics/any.html" class="">任意值</a></li><li><a href="/basics/type-inference.html" class="">类型推论</a></li><li><a href="/basics/union-types.html" class="">联合类型</a></li><li><a href="/basics/type-of-object-interfaces.html" class="">对象的类型——接口</a></li><li><a href="/basics/type-of-array.html" class="">数组的类型</a></li><li><a href="/basics/type-of-function.html" class="">函数的类型</a></li><li><a href="/basics/type-assertion.html" class="">类型断言</a></li><li><a href="/basics/declaration-files.html" class="">声明文件</a></li><li><a href="/basics/built-in-objects.html" class="">内置对象</a></li></ul></li><li><a href="/advanced/index.html" class="">进阶</a><ul><li><a href="/advanced/type-aliases.html" class="">类型别名</a></li><li><a href="/advanced/string-literal-types.html" class="">字符串字面量类型</a></li><li><a href="/advanced/tuple.html" class="">元组</a></li><li><a href="/advanced/enum.html" class="">枚举</a></li><li><a href="/advanced/class.html" class="">类</a></li><li><a href="/advanced/class-and-interfaces.html" class="">类与接口</a></li><li><a href="/advanced/generics.html" class="">泛型</a></li><li><a href="/advanced/declaration-merging.html" class="">声明合并</a></li><li><a href="/advanced/further-reading.html" class="">扩展阅读</a></li></ul></li><li><a href="/engineering/index.html" class="">工程</a><ul><li><a href="/engineering/lint.html" class="">代码检查</a></li><li><a href="/engineering/compiler-options.html" class="">编译选项</a></li></ul></li><li><a href="/thanks/index.html" class="">感谢</a></li></ul></aside><section class="main"><article><h1 id="%E4%BB%80%E4%B9%88%E6%98%AF-typescript">什么是 TypeScript <a class="header-anchor" href="#%E4%BB%80%E4%B9%88%E6%98%AF-typescript">§</a></h1>
 <p>首先，我对 TypeScript 的理解如下：</p>
 <p><a href="http://www.typescriptlang.org/">TypeScript</a> 是 JavaScript 的一个超集，主要提供了<strong>类型系统</strong>和<strong>对 ES6 的支持</strong>，它由 Microsoft 开发，代码<a href="https://github.com/Microsoft/TypeScript">开源于 GitHub</a> 上。</p>
 <p>其次引用<a href="http://www.typescriptlang.org/">官网</a>的定义：</p>
@@ -9,15 +9,15 @@
 <blockquote>
 <p>TypeScript 是 JavaScript 的类型的超集，它可以编译成纯 JavaScript。编译出来的 JavaScript 可以运行在任何浏览器上。TypeScript 编译工具可以运行在任何服务器和任何系统上。TypeScript 是开源的。</p>
 </blockquote>
-<h2 id="%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-typescript">为什么选择 TypeScript</h2>
+<h2 id="%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-typescript">为什么选择 TypeScript <a class="header-anchor" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-typescript">§</a></h2>
 <p><a href="http://www.typescriptlang.org/">TypeScript 官网</a>列举了一些优势，不过我更愿意自己总结一下：</p>
-<h3 id="typescript-%E5%A2%9E%E5%8A%A0%E4%BA%86%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8F%AF%E8%AF%BB%E6%80%A7%E5%92%8C%E5%8F%AF%E7%BB%B4%E6%8A%A4%E6%80%A7">TypeScript 增加了代码的可读性和可维护性</h3>
+<h3 id="typescript-%E5%A2%9E%E5%8A%A0%E4%BA%86%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8F%AF%E8%AF%BB%E6%80%A7%E5%92%8C%E5%8F%AF%E7%BB%B4%E6%8A%A4%E6%80%A7">TypeScript 增加了代码的可读性和可维护性 <a class="header-anchor" href="#typescript-%E5%A2%9E%E5%8A%A0%E4%BA%86%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8F%AF%E8%AF%BB%E6%80%A7%E5%92%8C%E5%8F%AF%E7%BB%B4%E6%8A%A4%E6%80%A7">§</a></h3>
 <ul>
 <li>类型系统实际上是最好的文档，大部分的函数看看类型的定义就可以知道如何使用了</li>
 <li>可以在编译阶段就发现大部分错误，这总比在运行时候出错好</li>
 <li>增强了编辑器和 IDE 的功能，包括代码补全、接口提示、跳转到定义、重构等</li>
 </ul>
-<h3 id="typescript-%E9%9D%9E%E5%B8%B8%E5%8C%85%E5%AE%B9">TypeScript 非常包容</h3>
+<h3 id="typescript-%E9%9D%9E%E5%B8%B8%E5%8C%85%E5%AE%B9">TypeScript 非常包容 <a class="header-anchor" href="#typescript-%E9%9D%9E%E5%B8%B8%E5%8C%85%E5%AE%B9">§</a></h3>
 <ul>
 <li>TypeScript 是 JavaScript 的超集，<code>.js</code> 文件可以直接重命名为 <code>.ts</code> 即可</li>
 <li>即使不显式的定义类型，也能够自动做出<a href="../basics/type-inference.html">类型推论</a></li>
@@ -25,13 +25,13 @@
 <li>即使 TypeScript 编译报错，也可以生成 JavaScript 文件</li>
 <li>兼容第三方库，即使第三方库不是用 TypeScript 写的，也可以编写单独的类型文件供 TypeScript 读取</li>
 </ul>
-<h3 id="typescript-%E6%8B%A5%E6%9C%89%E6%B4%BB%E8%B7%83%E7%9A%84%E7%A4%BE%E5%8C%BA">TypeScript 拥有活跃的社区</h3>
+<h3 id="typescript-%E6%8B%A5%E6%9C%89%E6%B4%BB%E8%B7%83%E7%9A%84%E7%A4%BE%E5%8C%BA">TypeScript 拥有活跃的社区 <a class="header-anchor" href="#typescript-%E6%8B%A5%E6%9C%89%E6%B4%BB%E8%B7%83%E7%9A%84%E7%A4%BE%E5%8C%BA">§</a></h3>
 <ul>
 <li>大部分第三方库都有提供给 TypeScript 的类型定义文件</li>
 <li>Google 开发的 Angular2 就是使用 TypeScript 编写的</li>
 <li>TypeScript 拥抱了 ES6 规范，也支持部分 ESNext 草案的规范</li>
 </ul>
-<h3 id="typescript-%E7%9A%84%E7%BC%BA%E7%82%B9">TypeScript 的缺点</h3>
+<h3 id="typescript-%E7%9A%84%E7%BC%BA%E7%82%B9">TypeScript 的缺点 <a class="header-anchor" href="#typescript-%E7%9A%84%E7%BC%BA%E7%82%B9">§</a></h3>
 <p>任何事物都是有两面性的，我认为 TypeScript 的弊端在于：</p>
 <ul>
 <li>有一定的学习成本，需要理解接口（Interfaces）、泛型（Generics）、类（Classes）、枚举类型（Enums）等前端工程师可能不是很熟悉的概念</li>
@@ -45,4 +45,4 @@
 <li><a href="index.html">上一章：简介</a></li>
 <li><a href="get-typescript.html">下一章：安装 TypeScript</a></li>
 </ul>
-</article></section></body></html>
+</article></section><script type="module" src="/main.js"></script></body></html>

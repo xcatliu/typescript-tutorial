@@ -1,6 +1,6 @@
-<html><head><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-45256157-14"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-45256157-14');</script><title>类型断言 · TypeScript 入门教程</title><meta charSet="utf-8"/><link rel="shortcut icon" type="image/png" href="//xcatliu.github.io/favicon.ico"/><link rel="stylesheet" href="/assets/prism.css"/><link rel="stylesheet" href="/assets/index.css"/></head><body><header><h1><a href="/">TypeScript 入门教程</a></h1><nav><ul><li><a href="https://github.com/xcatliu/typescript-tutorial">GitHub</a></li><li><a href="https://github.com/xcatliu/buy-me-a-coffee">赞助作者</a></li><li><a href="https://github.com/xcatliu/pagic">本网站使用 Pagic 构建</a></li></ul></nav></header><aside><ul><li><a href="/index.html" class="">TypeScript 入门教程</a></li><li><a href="/introduction/index.html" class="">简介</a><ul><li><a href="/introduction/what-is-typescript.html" class="">什么是 TypeScript</a></li><li><a href="/introduction/get-typescript.html" class="">安装 TypeScript</a></li><li><a href="/introduction/hello-typescript.html" class="">Hello TypeScript</a></li></ul></li><li><a href="/basics/index.html" class="">基础</a><ul><li><a href="/basics/primitive-data-types.html" class="">原始数据类型</a></li><li><a href="/basics/any.html" class="">任意值</a></li><li><a href="/basics/type-inference.html" class="">类型推论</a></li><li><a href="/basics/union-types.html" class="">联合类型</a></li><li><a href="/basics/type-of-object-interfaces.html" class="">对象的类型——接口</a></li><li><a href="/basics/type-of-array.html" class="">数组的类型</a></li><li><a href="/basics/type-of-function.html" class="">函数的类型</a></li><li><a href="/basics/type-assertion.html" class="active">类型断言</a></li><li><a href="/basics/declaration-files.html" class="">声明文件</a></li><li><a href="/basics/built-in-objects.html" class="">内置对象</a></li></ul></li><li><a href="/advanced/index.html" class="">进阶</a><ul><li><a href="/advanced/type-aliases.html" class="">类型别名</a></li><li><a href="/advanced/string-literal-types.html" class="">字符串字面量类型</a></li><li><a href="/advanced/tuple.html" class="">元组</a></li><li><a href="/advanced/enum.html" class="">枚举</a></li><li><a href="/advanced/class.html" class="">类</a></li><li><a href="/advanced/class-and-interfaces.html" class="">类与接口</a></li><li><a href="/advanced/generics.html" class="">泛型</a></li><li><a href="/advanced/declaration-merging.html" class="">声明合并</a></li><li><a href="/advanced/further-reading.html" class="">扩展阅读</a></li></ul></li><li><a href="/engineering/index.html" class="">工程</a><ul><li><a href="/engineering/lint.html" class="">代码检查</a></li><li><a href="/engineering/compiler-options.html" class="">编译选项</a></li></ul></li><li><a href="/thanks/index.html" class="">感谢</a></li></ul></aside><section class="main"><article><h1 id="%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80">类型断言</h1>
+<html data-reactroot=""><head><script async="" src="https://www.google-analytics.com/analytics.js"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-45256157-14');</script><title>类型断言 · TypeScript 入门教程</title><meta charSet="utf-8"/><link rel="shortcut icon" type="image/png" href="//xcatliu.github.io/favicon.ico"/><link rel="stylesheet" href="/assets/prism.css"/><link rel="stylesheet" href="/assets/index.css"/></head><body><header><h1><a href="/">TypeScript 入门教程</a></h1><nav><ul><li><a href="https://github.com/xcatliu/typescript-tutorial">GitHub</a></li><li><a href="https://github.com/xcatliu/buy-me-a-coffee">赞助作者</a></li><li><a href="https://github.com/xcatliu/pagic">本网站使用 Pagic 构建</a></li></ul></nav></header><aside><ul><li><a href="/index.html" class="">TypeScript 入门教程</a></li><li><a href="/introduction/index.html" class="">简介</a><ul><li><a href="/introduction/what-is-typescript.html" class="">什么是 TypeScript</a></li><li><a href="/introduction/get-typescript.html" class="">安装 TypeScript</a></li><li><a href="/introduction/hello-typescript.html" class="">Hello TypeScript</a></li></ul></li><li><a href="/basics/index.html" class="">基础</a><ul><li><a href="/basics/primitive-data-types.html" class="">原始数据类型</a></li><li><a href="/basics/any.html" class="">任意值</a></li><li><a href="/basics/type-inference.html" class="">类型推论</a></li><li><a href="/basics/union-types.html" class="">联合类型</a></li><li><a href="/basics/type-of-object-interfaces.html" class="">对象的类型——接口</a></li><li><a href="/basics/type-of-array.html" class="">数组的类型</a></li><li><a href="/basics/type-of-function.html" class="">函数的类型</a></li><li><a href="/basics/type-assertion.html" class="active">类型断言</a></li><li><a href="/basics/declaration-files.html" class="">声明文件</a></li><li><a href="/basics/built-in-objects.html" class="">内置对象</a></li></ul></li><li><a href="/advanced/index.html" class="">进阶</a><ul><li><a href="/advanced/type-aliases.html" class="">类型别名</a></li><li><a href="/advanced/string-literal-types.html" class="">字符串字面量类型</a></li><li><a href="/advanced/tuple.html" class="">元组</a></li><li><a href="/advanced/enum.html" class="">枚举</a></li><li><a href="/advanced/class.html" class="">类</a></li><li><a href="/advanced/class-and-interfaces.html" class="">类与接口</a></li><li><a href="/advanced/generics.html" class="">泛型</a></li><li><a href="/advanced/declaration-merging.html" class="">声明合并</a></li><li><a href="/advanced/further-reading.html" class="">扩展阅读</a></li></ul></li><li><a href="/engineering/index.html" class="">工程</a><ul><li><a href="/engineering/lint.html" class="">代码检查</a></li><li><a href="/engineering/compiler-options.html" class="">编译选项</a></li></ul></li><li><a href="/thanks/index.html" class="">感谢</a></li></ul></aside><section class="main"><article><h1 id="%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80">类型断言 <a class="header-anchor" href="#%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80">§</a></h1>
 <p>类型断言（Type Assertion）可以用来手动指定一个值的类型。</p>
-<h2 id="%E8%AF%AD%E6%B3%95">语法</h2>
+<h2 id="%E8%AF%AD%E6%B3%95">语法 <a class="header-anchor" href="#%E8%AF%AD%E6%B3%95">§</a></h2>
 <pre class="language-ts"><code class="language-ts">值 <span class="token keyword">as</span> 类型
 </code></pre>
 <p>或</p>
@@ -9,10 +9,10 @@
 <p>在 tsx 语法（React 的 jsx 语法的 ts 版）中必须使用前者，即 <code>值 as 类型</code>。</p>
 <p>形如 <code>&lt;Foo&gt;</code> 的语法在 tsx 中表示的是一个 <code>ReactNode</code>，在 ts 中除了表示类型断言之外，也可能是表示一个<a href="../advanced/generics.html">泛型</a>。</p>
 <p>故建议大家在使用类型断言时，统一使用 <code>值 as 类型</code> 这样的语法，本书中也会贯彻这一思想。</p>
-<h2 id="%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%E7%9A%84%E7%94%A8%E9%80%94">类型断言的用途</h2>
+<h2 id="%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%E7%9A%84%E7%94%A8%E9%80%94">类型断言的用途 <a class="header-anchor" href="#%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%E7%9A%84%E7%94%A8%E9%80%94">§</a></h2>
 <p>类型断言的常见用途有以下几种：</p>
-<h3 id="%E5%B0%86%E4%B8%80%E4%B8%AA%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%E4%B8%BA%E5%85%B6%E4%B8%AD%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%9E%8B">将一个联合类型断言为其中一个类型</h3>
-<p><a href="union-types.md#%E8%AE%BF%E9%97%AE%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%B1%9E%E6%80%A7%E6%88%96%E6%96%B9%E6%B3%95">之前提到过</a>，当 TypeScript 不确定一个联合类型的变量到底是哪个类型的时候，我们<strong>只能访问此联合类型的所有类型中共有的属性或方法</strong>：</p>
+<h3 id="%E5%B0%86%E4%B8%80%E4%B8%AA%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%E4%B8%BA%E5%85%B6%E4%B8%AD%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%9E%8B">将一个联合类型断言为其中一个类型 <a class="header-anchor" href="#%E5%B0%86%E4%B8%80%E4%B8%AA%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%E4%B8%BA%E5%85%B6%E4%B8%AD%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%9E%8B">§</a></h3>
+<p><a href="union-types.html#%E8%AE%BF%E9%97%AE%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%B1%9E%E6%80%A7%E6%88%96%E6%96%B9%E6%B3%95">之前提到过</a>，当 TypeScript 不确定一个联合类型的变量到底是哪个类型的时候，我们<strong>只能访问此联合类型的所有类型中共有的属性或方法</strong>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name"><span class="token maybe-class-name">Cat</span></span> <span class="token punctuation">{</span>
     name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
     <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
@@ -92,7 +92,7 @@
 <p>原因是 <code>(animal as Fish).swim()</code> 这段代码隐藏了 <code>animal</code> 可能为 <code>Cat</code> 的情况，将 <code>animal</code> 直接断言为 <code>Fish</code> 了，而 TypeScript 编译器信任了我们的断言，故在调用 <code>swim()</code> 时没有编译错误。</p>
 <p>可是 <code>swim</code> 函数接受的参数是 <code>Cat | Fish</code>，一旦传入的参数是 <code>Cat</code> 类型的变量，由于 <code>Cat</code> 上没有 <code>swim</code> 方法，就会导致运行时错误了。</p>
 <p>总之，使用类型断言时一定要格外小心，尽量避免断言后调用方法或引用深层属性，以减少不必要的运行时错误。</p>
-<h3 id="%E5%B0%86%E4%B8%80%E4%B8%AA%E7%88%B6%E7%B1%BB%E6%96%AD%E8%A8%80%E4%B8%BA%E6%9B%B4%E5%8A%A0%E5%85%B7%E4%BD%93%E7%9A%84%E5%AD%90%E7%B1%BB">将一个父类断言为更加具体的子类</h3>
+<h3 id="%E5%B0%86%E4%B8%80%E4%B8%AA%E7%88%B6%E7%B1%BB%E6%96%AD%E8%A8%80%E4%B8%BA%E6%9B%B4%E5%8A%A0%E5%85%B7%E4%BD%93%E7%9A%84%E5%AD%90%E7%B1%BB">将一个父类断言为更加具体的子类 <a class="header-anchor" href="#%E5%B0%86%E4%B8%80%E4%B8%AA%E7%88%B6%E7%B1%BB%E6%96%AD%E8%A8%80%E4%B8%BA%E6%9B%B4%E5%8A%A0%E5%85%B7%E4%BD%93%E7%9A%84%E5%AD%90%E7%B1%BB">§</a></h3>
 <p>当类之间有继承关系时，类型断言也是很常见的：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name"><span class="token known-class-name class-name">ApiError</span></span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token known-class-name class-name">Error</span></span> <span class="token punctuation">{</span>
     code<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -158,7 +158,7 @@
     <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="%E5%B0%86%E4%BB%BB%E4%BD%95%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%E4%B8%BA-any">将任何一个类型断言为 <code>any</code></h3>
+<h3 id="%E5%B0%86%E4%BB%BB%E4%BD%95%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%E4%B8%BA-any">将任何一个类型断言为 <code>any</code> <a class="header-anchor" href="#%E5%B0%86%E4%BB%BB%E4%BD%95%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%E4%B8%BA-any">§</a></h3>
 <p>理想情况下，TypeScript 的类型系统运转良好，每个值的类型都具体而精确。</p>
 <p>当我们引用一个在此类型上不存在的属性或方法时，就会报错：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token keyword">const</span> foo<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
@@ -182,7 +182,7 @@ foo<span class="token punctuation">.</span><span class="token property-access">l
 <p><strong>它极有可能掩盖了真正的类型错误，所以如果不是非常确定，就不要使用 <code>as any</code>。</strong></p>
 <p>上面的例子中，我们也可以通过[扩展 window 的类型（TODO）][]解决这个错误，不过如果只是临时的增加 <code>foo</code> 属性，<code>as any</code> 会更加方便。</p>
 <p>总之，<strong>一方面不能滥用 <code>as any</code>，另一方面也不要完全否定它的作用，我们需要在类型的严格性和开发的便利性之间掌握平衡</strong>（这也是 <a href="https://github.com/Microsoft/TypeScript/wiki/TypeScript-Design-Goals">TypeScript 的设计理念</a>之一），才能发挥出 TypeScript 最大的价值。</p>
-<h3 id="%E5%B0%86-any-%E6%96%AD%E8%A8%80%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%85%B7%E4%BD%93%E7%9A%84%E7%B1%BB%E5%9E%8B">将 <code>any</code> 断言为一个具体的类型</h3>
+<h3 id="%E5%B0%86-any-%E6%96%AD%E8%A8%80%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%85%B7%E4%BD%93%E7%9A%84%E7%B1%BB%E5%9E%8B">将 <code>any</code> 断言为一个具体的类型 <a class="header-anchor" href="#%E5%B0%86-any-%E6%96%AD%E8%A8%80%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%85%B7%E4%BD%93%E7%9A%84%E7%B1%BB%E5%9E%8B">§</a></h3>
 <p>在日常的开发中，我们不可避免的需要处理 <code>any</code> 类型的变量，它们可能是由于第三方库未能定义好自己的类型，也有可能是历史遗留的或其他人编写的烂代码，还可能是受到 TypeScript 类型系统的限制而无法精确定义类型的场景。</p>
 <p>遇到 <code>any</code> 类型的变量时，我们可以选择无视它，任由它滋生更多的 <code>any</code>。</p>
 <p>我们也可以选择改进它，通过类型断言及时的把 <code>any</code> 断言为精确的类型，亡羊补牢，使我们的代码向着高可维护性的目标发展。</p>
@@ -205,7 +205,7 @@ foo<span class="token punctuation">.</span><span class="token property-access">l
 tom<span class="token punctuation">.</span><span class="token method function property-access">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>上面的例子中，我们调用完 <code>getCacheData</code> 之后，立即将它断言为 <code>Cat</code> 类型。这样的话明确了 <code>tom</code> 的类型，后续对 <code>tom</code> 的访问时就有了代码补全，提高了代码的可维护性。</p>
-<h2 id="%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%E7%9A%84%E9%99%90%E5%88%B6">类型断言的限制</h2>
+<h2 id="%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%E7%9A%84%E9%99%90%E5%88%B6">类型断言的限制 <a class="header-anchor" href="#%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%E7%9A%84%E9%99%90%E5%88%B6">§</a></h2>
 <blockquote>
 <p>本小结的前置知识点：[结构类型系统（TODO）][]、[类型兼容性（TODO）][]</p>
 </blockquote>
@@ -280,7 +280,7 @@ tom<span class="token punctuation">.</span><span class="token method function pr
 <li>要使得 <code>A</code> 能够被断言为 <code>B</code>，只需要 <code>A</code> 兼容 <code>B</code> 或 <code>B</code> 兼容 <code>A</code> 即可</li>
 </ul>
 <p>其实前四种情况都是最后一个的特例。</p>
-<h2 id="%E5%8F%8C%E9%87%8D%E6%96%AD%E8%A8%80">双重断言</h2>
+<h2 id="%E5%8F%8C%E9%87%8D%E6%96%AD%E8%A8%80">双重断言 <a class="header-anchor" href="#%E5%8F%8C%E9%87%8D%E6%96%AD%E8%A8%80">§</a></h2>
 <p>既然：</p>
 <ul>
 <li>任何类型都可以被断言为 any</li>
@@ -302,7 +302,7 @@ tom<span class="token punctuation">.</span><span class="token method function pr
 <p>但是若使用双重断言，则可以打破「要使得 <code>A</code> 能够被断言为 <code>B</code>，只需要 <code>A</code> 兼容 <code>B</code> 或 <code>B</code> 兼容 <code>A</code> 即可」的限制，将任何一个类型断言为任何另一个类型。</p>
 <p>若你使用了这种双重断言，那么十有八九是非常错误的，它很可能会导致运行时错误。</p>
 <p><strong>除非迫不得已，千万别用双重断言。</strong></p>
-<h2 id="%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80-vs-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">类型断言 vs 类型转换</h2>
+<h2 id="%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80-vs-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">类型断言 vs 类型转换 <a class="header-anchor" href="#%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80-vs-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">§</a></h2>
 <p>类型断言只会影响 TypeScript 编译时的类型，类型断言语句在编译结果中会被删除：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token keyword">function</span> <span class="token function">toBoolean</span><span class="token punctuation">(</span>something<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> something <span class="token keyword">as</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
@@ -328,7 +328,7 @@ tom<span class="token punctuation">.</span><span class="token method function pr
 <span class="token function">toBoolean</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 返回值为 true</span>
 </code></pre>
-<h2 id="%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80-vs-%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E">类型断言 vs 类型声明</h2>
+<h2 id="%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80-vs-%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E">类型断言 vs 类型声明 <a class="header-anchor" href="#%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80-vs-%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E">§</a></h2>
 <p>在这个例子中：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token keyword">function</span> <span class="token function">getCacheData</span><span class="token punctuation">(</span>key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">any</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token dom variable">window</span> <span class="token keyword">as</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">cache</span><span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -405,7 +405,7 @@ tom<span class="token punctuation">.</span><span class="token method function pr
 </code></pre>
 <p>知道了它们的核心区别，就知道了类型声明是比类型断言更加严格的。</p>
 <p>所以为了增加代码的质量，我们最好优先使用类型声明，这也比类型断言的 <code>as</code> 语法更加优雅。</p>
-<h2 id="%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80-vs-%E6%B3%9B%E5%9E%8B">类型断言 vs 泛型</h2>
+<h2 id="%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80-vs-%E6%B3%9B%E5%9E%8B">类型断言 vs 泛型 <a class="header-anchor" href="#%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80-vs-%E6%B3%9B%E5%9E%8B">§</a></h2>
 <blockquote>
 <p>本小结的前置知识点：<a href="../advanced/generics.html">泛型</a></p>
 </blockquote>
@@ -436,7 +436,7 @@ tom<span class="token punctuation">.</span><span class="token method function pr
 tom<span class="token punctuation">.</span><span class="token method function property-access">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>通过给 <code>getCacheData</code> 函数添加了一个泛型 <code>&lt;T&gt;</code>，我们可以更加规范的实现对 <code>getCacheData</code> 返回值的约束，这也同时去除掉了代码中的 <code>any</code>，是最优的一个解决方案。</p>
-<h2 id="%E5%8F%82%E8%80%83">参考</h2>
+<h2 id="%E5%8F%82%E8%80%83">参考 <a class="header-anchor" href="#%E5%8F%82%E8%80%83">§</a></h2>
 <ul>
 <li><a href="https://basarat.gitbooks.io/typescript/content/docs/types/type-assertion.html">TypeScript Deep Dive / Type Assertion</a></li>
 <li><a href="http://www.typescriptlang.org/docs/handbook/advanced-types.html#type-guards-and-differentiating-types">Advanced Types # Type Guards and Differentiating Types</a>（<a href="https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Advanced%20Types.html#%E7%B1%BB%E5%9E%8B%E4%BF%9D%E6%8A%A4%E4%B8%8E%E5%8C%BA%E5%88%86%E7%B1%BB%E5%9E%8B%EF%BC%88type-guards-and-differentiating-types%EF%BC%89">中文版</a>）</li>
@@ -447,4 +447,4 @@ tom<span class="token punctuation">.</span><span class="token method function pr
 <li><a href="type-of-function.html">上一章：函数的类型</a></li>
 <li><a href="declaration-files.html">下一章：声明文件</a></li>
 </ul>
-</article></section></body></html>
+</article></section><script type="module" src="/main.js"></script></body></html>

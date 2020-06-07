@@ -182,3 +182,23 @@ aside a:hover {
   text-decoration: none;
   background-color: #f2f2f2;
 }
+
+.header-anchor,
+.header-anchor:hover {
+  opacity: 0;
+  text-decoration: none;
+  color: #267fd9;
+  font-weight: normal;
+}
+.header-anchor:hover {
+  color: #267fd9;
+}
+
+h1:hover .header-anchor,
+h2:hover .header-anchor,
+h3:hover .header-anchor,
+h4:hover .header-anchor,
+h5:hover .header-anchor,
+h6:hover .header-anchor {
+  opacity: 1;
+}
