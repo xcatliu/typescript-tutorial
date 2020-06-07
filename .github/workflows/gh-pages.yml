@@ -13,7 +13,7 @@ jobs:
 
       - name: Build
         run: |
-          curl -fsSL https://deno.land/x/install/install.sh | sh -s v1.0.0
+          curl -fsSL https://deno.land/x/install/install.sh | sh
           export DENO_INSTALL="/home/runner/.deno"
           export PATH="$DENO_INSTALL/bin:$PATH"
           deno --version
