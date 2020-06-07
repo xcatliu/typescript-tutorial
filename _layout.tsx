@@ -18,7 +18,7 @@ const Layout: PagicLayout = ({ config, title, content, script, sidebar, outputPa
 
       <link rel="shortcut icon" type="image/png" href="//xcatliu.github.io/favicon.ico" />
       <link rel="stylesheet" href="/assets/prism.css" />
-      {/* <link rel="stylesheet" href="/assets/prism-tomorrow.css" /> */}
+      {/* <link rel="stylesheet" href="/assets/prism_tomorrow.css" /> */}
       <link rel="stylesheet" href="/assets/index.css" />
     </head>
     <body>
