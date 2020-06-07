@@ -1,7 +1,7 @@
 export default {
   srcDir: '.',
   ignore: [/\/examples\//, /\/public\//, /\/\./, /\/package\-lock\.json/, /\/package\.json/, /\/pagic\.config\.ts/],
-  plugins: ['sidebar'],
+  plugins: ['sidebar', 'script'],
   title: 'TypeScript 入门教程',
   sidebar: [
     'README.md',

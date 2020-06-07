@@ -1,23 +1,19 @@
 // @deno-types="https://deno.land/x/types/react/v16.13.1/react.d.ts"
 import React from 'https://dev.jspm.io/react@16.13.1';
-import { PagicLayout } from 'https://raw.githubusercontent.com/xcatliu/pagic/master/pagic.ts';
+import { PagicLayout } from 'https://deno.land/x/pagic/mod.ts';
 
 import Sidebar from './_sidebar.tsx';
 
-const Layout: PagicLayout = ({ pagic, title, content, sidebar, outputPath }) => (
+const Layout: PagicLayout = ({ config, title, content, script, sidebar, outputPath }) => (
   <html>
     <head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45256157-14" />
+      <script async src="https://www.google-analytics.com/analytics.js" />
       <script
         dangerouslySetInnerHTML={{
           __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-45256157-14');`
         }}
       />
-
-      <title>
-        {title}
-        {outputPath !== 'index.html' ? ` · ${pagic.config.title}` : ''}
-      </title>
+      <title>{outputPath !== 'index.html' ? `${title} · ${config.title}` : title}</title>
       <meta charSet="utf-8" />
 
       <link rel="shortcut icon" type="image/png" href="//xcatliu.github.io/favicon.ico" />
@@ -28,7 +24,7 @@ const Layout: PagicLayout = ({ pagic, title, content, sidebar, outputPath }) => 
     <body>
       <header>
         <h1>
-          <a href="/">{pagic.config.title}</a>
+          <a href="/">{config.title}</a>
         </h1>
         <nav>
           <ul>
@@ -46,6 +42,7 @@ const Layout: PagicLayout = ({ pagic, title, content, sidebar, outputPath }) => 
       </header>
       <Sidebar sidebar={sidebar} outputPath={outputPath} />
       <section className="main">{content}</section>
+      {script}
     </body>
   </html>
 );

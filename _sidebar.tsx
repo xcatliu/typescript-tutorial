@@ -16,14 +16,14 @@ const Sidebar = ({ sidebar, outputPath }: SidebarProps) => (
   <aside>
     <ul>
       {sidebar.map(({ title, link, children }) => (
-        <li>
+        <li key={link}>
           <a href={link} className={link === `/${outputPath}` ? 'active' : ''}>
             {title}
           </a>
           {children && (
             <ul>
               {children.map(({ title, link }) => (
-                <li>
+                <li key={link}>
                   <a href={link} className={link === `/${outputPath}` ? 'active' : ''}>
                     {title}
                   </a>
