@@ -43,6 +43,11 @@ blockquote {
   color: #999;
 }
 
+code {
+  font-size: 85%;
+  padding: 0.2em 0.3em;
+  background-color: #f2f2f2;
+}
 pre[class*='language-'] {
   margin: 16px 0 0 0;
 }
@@ -50,10 +55,8 @@ pre[class*='language-'],
 pre[class*='language-'] code {
   font-size: 13px;
 }
-code {
-  font-size: 85%;
-  padding: 0.2em 0.3em;
-  background-color: #f2f2f2;
+pre[class*='language-'] code {
+  padding: 0;
 }
 /* #endregion */
 
@@ -148,6 +151,7 @@ aside {
 }
 article {
   overflow: auto;
+  /* 每行 42 个字最佳，42 * 16 + 64 + 64 = 800 */
   max-width: 800px;
   margin: 0 auto;
   padding: 0 64px;
