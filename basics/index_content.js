@@ -1,5 +1,4 @@
 
-import React from 'https://dev.jspm.io/react@16.13.1';
 export default function() {
   return React.createElement('article', {"dangerouslySetInnerHTML":{"__html":"<h1 id=\"%E5%9F%BA%E7%A1%80\">基础 <a class=\"header-anchor\" href=\"#%E5%9F%BA%E7%A1%80\">§</a></h1>\n<p>本部分介绍了 TypeScript 中的常用类型和一些基本概念，旨在让大家对 TypeScript 有个初步的理解。具体内容包括：</p>\n<ul>\n<li><a href=\"primitive-data-types.html\">原始数据类型</a></li>\n<li><a href=\"any.html\">任意值</a></li>\n<li><a href=\"type-inference.html\">类型推论</a></li>\n<li><a href=\"union-types.html\">联合类型</a></li>\n<li><a href=\"type-of-object-interfaces.html\">对象的类型——接口</a></li>\n<li><a href=\"type-of-array.html\">数组的类型</a></li>\n<li><a href=\"type-of-function.html\">函数的类型</a></li>\n<li><a href=\"type-assertion.html\">类型断言</a></li>\n<li><a href=\"declaration-files.html\">声明文件</a></li>\n<li><a href=\"built-in-objects.html\">内置对象</a></li>\n</ul>\n<hr>\n<ul>\n<li><a href=\"../introduction/hello-typescript.html\">上一章：Hello TypeScript</a></li>\n<li><a href=\"primitive-data-types.html\">下一章：原始数据类型</a></li>\n</ul>\n"}})
 };
