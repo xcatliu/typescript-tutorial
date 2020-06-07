@@ -23,7 +23,7 @@ html.dark {
   --color-background-aside: #1a1a1a;
   --color-background-aside-hover: #111;
   --color-border: #333;
-  --color-header-shadow: rgba(0, 0, 0, 0.5);
+  --color-header-shadow: rgba(0, 0, 0, 0.8);
 }
 
 /* #region reset */
