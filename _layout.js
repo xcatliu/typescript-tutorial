@@ -1,7 +1,7 @@
 // @deno-types="https://deno.land/x/types/react/v16.13.1/react.d.ts"
 
 import Sidebar from './_sidebar.js';
-import Gitalk from './_gitment.js';
+import Gitalk from './_gitalk.js';
 const Layout = ({ config, title, content, script, sidebar, outputPath }) => {
     const [isDark, setIsDark] = React.useState(
     // @ts-ignore
@@ -48,7 +48,7 @@ if (shouldSetIsDark) {
             React.createElement(Sidebar, { sidebar: sidebar, outputPath: outputPath }),
             React.createElement("section", { className: "main" },
                 content,
-                React.createElement(Gitalk, { clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", repo: "typescript-tutorial", owner: "xcatliu", admin: ['xcatliu'], id: outputPath })),
+                React.createElement(Gitalk, { clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", repo: "typescript-tutorial", owner: "xcatliu", admin: ['xcatliu'], id: outputPath, title: title })),
             script)));
 };
 export default Layout;
