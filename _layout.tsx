@@ -7,10 +7,10 @@ import Sidebar from './_sidebar.tsx';
 const Layout: PagicLayout = ({ config, title, content, script, sidebar, outputPath }) => {
   const [isDark, setIsDark] = React.useState(
     // @ts-ignore
-    !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    typeof Deno === 'undefined' ? document.documentElement.classList.contains('is_dark') : false
   );
   return (
-    <html className={isDark ? 'dark' : ''}>
+    <html className={isDark ? 'is_dark' : ''}>
       <head>
         <script async src="https://www.google-analytics.com/analytics.js" />
         <script
@@ -22,8 +22,20 @@ const Layout: PagicLayout = ({ config, title, content, script, sidebar, outputPa
         <meta charSet="utf-8" />
 
         <link rel="shortcut icon" type="image/png" href="//xcatliu.github.io/favicon.ico" />
-        <link rel="stylesheet" href={isDark ? '/assets/prism_tomorrow.css' : '/assets/prism.css'} />
+        <link id="prismTheme" rel="stylesheet" href={isDark ? '/assets/prism_tomorrow.css' : '/assets/prism.css'} />
         <link rel="stylesheet" href="/assets/index.css" />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+let shouldSetIsDark = document.cookie.includes('is_dark=1') ? true : document.cookie.includes('is_dark=0') ? false : window.matchMedia('(prefers-color-scheme: dark)').matches
+if (shouldSetIsDark) {
+  document.documentElement.classList.add('is_dark');
+  document.getElementById('prismTheme').href = "/assets/prism_tomorrow.css";
+}
+`
+          }}
+        />
       </head>
       <body>
         <header>
@@ -47,6 +59,8 @@ const Layout: PagicLayout = ({ config, title, content, script, sidebar, outputPa
                   onClick={(e) => {
                     e.preventDefault();
                     setIsDark(!isDark);
+                    // @ts-ignore
+                    document.cookie = `is_dark=${!isDark ? '1' : '0'}; expires=Tue, 19 Jun 2038 03:14:07 UTC; path=/`;
                   }}
                 >
                   {isDark ? '关闭黑暗模式' : '开启黑暗模式'}

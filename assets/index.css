@@ -13,7 +13,7 @@
   --width-aside: 288px;
 }
 
-html.dark {
+html.is_dark {
   --color-text: #aaa;
   --color-text-aside: #666;
   --color-muted: #777;
@@ -24,6 +24,15 @@ html.dark {
   --color-background-aside-hover: #111;
   --color-border: #333;
   --color-header-shadow: rgba(0, 0, 0, 0.8);
+
+}
+
+html.is_dark img {
+  opacity: .8;
+  transition: opacity .3s ease-in-out;
+}
+html.is_dark  img:hover {
+  opacity: 1;
 }
 
 /* #region reset */
