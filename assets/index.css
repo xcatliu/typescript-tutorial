@@ -15,7 +15,7 @@
 
 html.is_dark {
   --color-text: #aaa;
-  --color-text-aside: #666;
+  --color-text-aside: #777;
   --color-muted: #777;
   --color-link: hsl(210, 60%, 60%);
   --color-background: #222;
