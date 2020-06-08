@@ -205,6 +205,9 @@ article.loading {
   justify-content: center;
   align-items: center;
 }
+article img {
+  max-width: 100%;
+}
 
 aside ul {
   padding: 0;
