@@ -15,7 +15,7 @@
 
 html.is_dark {
   --color-text: #aaa;
-  --color-text-aside: #666;
+  --color-text-aside: #777;
   --color-muted: #777;
   --color-link: hsl(210, 60%, 60%);
   --color-background: #222;
@@ -196,7 +196,7 @@ article {
   max-width: 50rem;
   margin: 0 auto;
   padding: 0 4rem;
-  min-height: calc(100vh - var(--height-header));
+  min-height: calc(100vh - var(--height-header) - 2rem);
 }
 article.loading {
   display: flex;
