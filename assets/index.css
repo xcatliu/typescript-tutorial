@@ -277,15 +277,16 @@ h6:hover .header-anchor {
   background-color: var(--color-background-aside);
   color: var(--color-text);
 }
-.is_dark .gt-container .gt-btn-preview,
-.is_dark .gt-container .gt-header-textarea:hover,
-.is_dark .gt-container .gt-header-textarea:focus {
-  background-color: var(--color-background-aside-hover);
+.is_dark .gt-container .gt-btn-preview {
+  background-color: var(--color-background-aside);
 }
+.is_dark .gt-container .gt-header-textarea:hover,
+.is_dark .gt-container .gt-header-textarea:focus,
 .is_dark .gt-container .gt-btn-preview:hover {
   background-color: var(--color-background-aside-hover);
 }
-.is_dark .gt-container a.is--active {
+.is_dark .gt-container a.is--active,
+.is_dark .gt-container a.is--active:hover {
   color: var(--color-text);
 }
 .is_dark .gt-container .gt-comment-body {

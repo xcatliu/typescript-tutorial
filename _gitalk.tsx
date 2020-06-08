@@ -3,13 +3,14 @@ import React from 'https://dev.jspm.io/react@16.13.1';
 // @deno-types="https://deno.land/x/types/react-dom/v16.13.1/react-dom.d.ts"
 import ReactDOM from 'https://dev.jspm.io/react-dom@16.13.1';
 
-interface GitmentProps {
+interface GitalkProps {
   clientID: string;
   clientSecret: string;
   repo: string;
   owner: string;
   admin: string[];
   id: string;
+  title: string;
 }
 
 declare global {
@@ -19,7 +20,7 @@ declare global {
   }
 }
 
-const Gitalk = (props: GitmentProps) => {
+const Gitalk = (props: GitalkProps) => {
   React.useEffect(() => {
     // @ts-ignore
     const container = document.getElementById('gitalk-container');
