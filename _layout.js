@@ -1,10 +1,11 @@
 // @deno-types="https://deno.land/x/types/react/v16.13.1/react.d.ts"
 
 import Sidebar from './_sidebar.js';
+import Gitalk from './_gitment.js';
 const Layout = ({ config, title, content, script, sidebar, outputPath }) => {
     const [isDark, setIsDark] = React.useState(
     // @ts-ignore
-    typeof Deno === 'undefined' ? document.documentElement.classList.contains('is_dark') : false);
+    window.Deno ? false : document.documentElement.classList.contains('is_dark'));
     return (React.createElement("html", { className: isDark ? 'is_dark' : '' },
         React.createElement("head", null,
             React.createElement("script", { async: true, src: "https://www.google-analytics.com/analytics.js" }),
@@ -45,7 +46,9 @@ if (shouldSetIsDark) {
                                     document.cookie = `is_dark=${!isDark ? '1' : '0'}; expires=Tue, 19 Jun 2038 03:14:07 UTC; path=/`;
                                 } }, isDark ? '关闭黑暗模式' : '开启黑暗模式'))))),
             React.createElement(Sidebar, { sidebar: sidebar, outputPath: outputPath }),
-            React.createElement("section", { className: "main" }, content),
+            React.createElement("section", { className: "main" },
+                content,
+                React.createElement(Gitalk, { clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", repo: "typescript-tutorial", owner: "xcatliu", admin: ['xcatliu'], id: outputPath })),
             script)));
 };
 export default Layout;
