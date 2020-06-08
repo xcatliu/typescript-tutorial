@@ -9,8 +9,11 @@
   --color-background-aside-hover: #f2f2f2;
   --color-border: #eee;
   --color-header-shadow: rgba(0, 0, 0, 0.1);
-  --height-header: 4rem;
+  --height-header: 3rem;
   --width-aside: 288px;
+  /* 每行 42 个字最佳，42 * 16 + 64 + 64 = 50 * 16 = 50rem */
+  --width-article: 50rem;
+  --width-article-padding: 4rem;
 }
 
 html.is_dark {
@@ -28,8 +31,8 @@ html.is_dark {
 }
 
 html.is_dark img {
-  opacity: .8;
-  transition: opacity .3s ease-in-out;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
 }
 html.is_dark  img:hover {
   opacity: 1;
@@ -192,13 +195,12 @@ aside {
 }
 article {
   overflow: auto;
-  /* 每行 42 个字最佳，42 * 16 + 64 + 64 = 50 * 16 = 50rem */
-  max-width: 50rem;
+  max-width: var(--width-article);
+  padding: 0 var(--width-article-padding);
   margin: 0 auto;
-  padding: 0 4rem;
-  min-height: calc(100vh - var(--height-header) - 2rem);
 }
 article.loading {
+  min-height: calc(100vh - var(--height-header) - 2rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -250,3 +252,49 @@ h5:hover .header-anchor,
 h6:hover .header-anchor {
   opacity: 1;
 }
+
+/* #region gitalk */
+.gt-container {
+  max-width: var(--width-article);
+  padding: 0 var(--width-article-padding);
+  margin: 0 auto;
+  color: var(--color-text);
+  fill: var(--color-text);
+}
+.is_dark #gitalk-container * {
+  border-color: var(--color-border);
+}
+.is_dark .gt-container .gt-btn {
+  background-color: hsl(210, 70%, 40%);
+}
+.is_dark .gt-container .gt-btn:hover {
+  background-color: hsl(210, 70%, 35%);
+}
+.is_dark .gt-container .gt-header-textarea,
+.is_dark .gt-container .gt-popup,
+.is_dark .gt-container .gt-comment-admin .gt-comment-content,
+.is_dark .gt-container .gt-header-preview {
+  background-color: var(--color-background-aside);
+  color: var(--color-text);
+}
+.is_dark .gt-container .gt-btn-preview,
+.is_dark .gt-container .gt-header-textarea:hover,
+.is_dark .gt-container .gt-header-textarea:focus {
+  background-color: var(--color-background-aside-hover);
+}
+.is_dark .gt-container .gt-btn-preview:hover {
+  background-color: var(--color-background-aside-hover);
+}
+.is_dark .gt-container a.is--active {
+  color: var(--color-text);
+}
+.is_dark .gt-container .gt-comment-body {
+  color: var(--color-text) !important;
+}
+.is_dark .gt-container .gt-comment-content:hover {
+  box-shadow: none;
+}
+.is_dark .markdown-body .highlight pre, .markdown-body pre {
+  opacity: 0.8;
+}
+/* #endregion */
