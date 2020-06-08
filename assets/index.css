@@ -196,7 +196,7 @@ article {
   max-width: 50rem;
   margin: 0 auto;
   padding: 0 4rem;
-  min-height: calc(100vh - var(--height-header));
+  min-height: calc(100vh - var(--height-header) - 2rem);
 }
 article.loading {
   display: flex;
