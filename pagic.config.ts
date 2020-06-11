@@ -1,7 +1,8 @@
 export default {
   srcDir: '.',
   ignore: [/\/examples\//, /\/public\//, /\/\./, /\/package\-lock\.json/, /\/package\.json/, /\/pagic\.config\.ts/],
-  plugins: ['sidebar', 'script'],
+  theme: 'docs',
+  plugins: ['sidebar', 'script', 'gitalk', 'ga'],
   title: 'TypeScript 入门教程',
   sidebar: [
     'README.md',
@@ -47,5 +48,29 @@ export default {
       children: ['engineering/lint.md', 'engineering/compiler-options.md']
     },
     'thanks/README.md'
-  ]
+  ],
+  nav: [
+    {
+      text: 'GitHub',
+      link: 'https://github.com/xcatliu/typescript-tutorial'
+    },
+    {
+      text: '赞助作者',
+      link: 'https://github.com/xcatliu/typescript-tutorial'
+    },
+    {
+      text: '本网站使用 Pagic 构建',
+      link: 'https://github.com/xcatliu/pagic'
+    }
+  ],
+  gitalk: {
+    clientID: '29aa4941759fc887ed4f',
+    clientSecret: '33e355efdf3a1959624506a5d88311145208471b',
+    repo: 'typescript-tutorial',
+    owner: 'xcatliu',
+    admin: ['xcatliu']
+  },
+  ga: {
+    id: 'UA-45256157-14'
+  }
 };
