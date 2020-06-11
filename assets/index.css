@@ -11,7 +11,7 @@
   --color-header-shadow: rgba(0, 0, 0, 0.1);
   --height-header: 3rem;
   --width-aside: 288px;
-  /* 每行 42 个字最佳，42 * 16 + 64 + 64 = 50 * 16 = 50rem */
+  /* 42 words per line is the best, 42 * 16 + 64 + 64 = 50 * 16 = 50rem */
   --width-article: 50rem;
   --width-article-padding: 4rem;
 }
@@ -27,14 +27,13 @@ html.is_dark {
   --color-background-aside-hover: #111;
   --color-border: #333;
   --color-header-shadow: rgba(0, 0, 0, 0.8);
-
 }
 
 html.is_dark img {
-  opacity: 0.8;
+  opacity: 0.7;
   transition: opacity 0.3s ease-in-out;
 }
-html.is_dark  img:hover {
+html.is_dark img:hover {
   opacity: 1;
 }
 
@@ -93,7 +92,7 @@ code {
   background-color: var(--color-background-code);
 }
 pre,
-pre[class*="language-"] {
+pre[class*='language-'] {
   font-size: 13px;
 }
 pre code {
@@ -131,7 +130,7 @@ hr {
   margin: 2rem 0 2rem 0;
 }
 pre,
-pre[class*="language-"] {
+pre[class*='language-'] {
   margin: 1rem 0 0 0;
 }
 blockquote {
@@ -275,6 +274,7 @@ h6:hover .header-anchor {
 }
 .is_dark .gt-container .gt-header-textarea,
 .is_dark .gt-container .gt-popup,
+.is_dark .gt-container .gt-comment-content,
 .is_dark .gt-container .gt-comment-admin .gt-comment-content,
 .is_dark .gt-container .gt-header-preview {
   background-color: var(--color-background-aside);
@@ -298,7 +298,8 @@ h6:hover .header-anchor {
 .is_dark .gt-container .gt-comment-content:hover {
   box-shadow: none;
 }
-.is_dark .markdown-body .highlight pre, .markdown-body pre {
-  opacity: 0.8;
+.is_dark .markdown-body .highlight pre,
+.markdown-body pre {
+  opacity: 0.7;
 }
 /* #endregion */

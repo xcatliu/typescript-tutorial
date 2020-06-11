@@ -1,5 +1,3 @@
-import layoutMap from './layout_map.js';
-
 let loading = false;
 let lastPathname = null;
 let lastLayout = null;
@@ -22,20 +20,6 @@ async function main() {
   window.addEventListener('popstate', () => rerender(location));
 }
 
-function getPaths(pathname) {
-  let outputPath = pathname;
-  if (outputPath.endsWith('/')) {
-    outputPath += 'index.html';
-  }
-  outputPath = outputPath.slice(1);
-  const layoutPath = layoutMap[outputPath];
-  const propsPath = outputPath.replace(/\.html$/, '_props.js');
-  return {
-    layoutPath,
-    propsPath
-  };
-}
-
 async function rerender(
   { pathname, hash },
   { preventDefault = () => {}, pushState = () => {}, isHydrate = false } = {}
@@ -46,8 +30,7 @@ async function rerender(
     }
     return;
   }
-  const { layoutPath, propsPath } = getPaths(pathname);
-  if (!layoutPath) return;
+
   preventDefault();
   if (loading === true) {
     return;
@@ -65,14 +48,22 @@ async function rerender(
       );
     }, 100);
   }
-  const Layout = (await import('/' + layoutPath)).default;
-  const props = (await import('/' + propsPath)).default;
+
+  let propsPath = pathname;
+  if (propsPath.endsWith('/')) {
+    propsPath += 'index.html';
+  }
+  propsPath = propsPath.replace(/\.html$/, '_props.js');
+  const props = (await import(propsPath)).default;
+  let layoutPath = props.layoutPath.replace(/\.tsx$/, '.js');
+  const Layout = (await import(`${props.config.base}${layoutPath}`)).default;
   if (isHydrate) {
     ReactDOM.hydrate(React.createElement(Layout, props), document);
   } else {
     ReactDOM.render(React.createElement(Layout, props), document);
     window.scrollTo(0, 0);
     pushState();
+    window.dispatchEvent(new Event('rerender'));
   }
   lastPathname = pathname;
   lastLayout = Layout;
