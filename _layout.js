@@ -1,47 +1,45 @@
-import * as path from 'https://deno.land/std@0.56.0/path/mod.js';
-import * as fs from 'https://deno.land/std@0.56.0/fs/mod.js';
-import { green } from 'https://deno.land/std@0.56.0/fmt/colors.js';
-import * as ts from 'https://dev.jspm.io/typescript@3.9.3';
-/**
- * Compile input code from tsx to js, by typescript compiler
- * Will replace `.tsx` to `.js` in `import` statement, and remove react and react-dom imports
- */
-export function compile(input) {
-    return ts.default
-        .transpileModule(input, {
-        compilerOptions: {
-            target: 'ESNext',
-            module: 'ESNext',
-            jsx: 'React',
-            removeComments: false,
-            newLine: 'lf'
-        }
-    })
-        .outputText.replace(/(^import .*)\.tsx?((?:'|");?$)/gm, '$1.js$2')
-        .replace(/(^import .*)\/react(\/|'|"|@).*$/gm, '')
-        .replace(/(^import .*)\/react-dom(\/|'|"|@).*$/gm, '');
+// @deno-types="https://deno.land/x/types/react/v16.13.1/react.d.ts"
+
+import Sidebar from './_sidebar.js';
+const Layout = ({ config, title, content, ga, gitalk, script, sidebar, outputPath }) => {
+    const [isDark, setIsDark] = React.useState(
+    // @ts-ignore
+    window.Deno ? false : document.documentElement.classList.contains('is_dark'));
+    return (React.createElement("html", { className: isDark ? 'is_dark' : '' },
+        React.createElement("head", null,
+            ga,
+            React.createElement("title", null, outputPath !== 'index.html' ? `${title} · ${config.title}` : title),
+            React.createElement("meta", { charSet: "utf-8" }),
+            React.createElement("link", { id: "prismTheme", rel: "stylesheet", href: isDark ? `${config.base}assets/prism_tomorrow.css` : `${config.base}assets/prism.css` }),
+            React.createElement("script", { dangerouslySetInnerHTML: {
+                    __html: `
+let shouldSetIsDark = document.cookie.includes('is_dark=1') ? true : document.cookie.includes('is_dark=0') ? false : window.matchMedia('(prefers-color-scheme: dark)').matches
+if (shouldSetIsDark) {
+  document.documentElement.classList.add('is_dark');
+  document.getElementById('prismTheme').href = "${config.base}assets/prism_tomorrow.css";
 }
-/**
- * Read input file and then compile it
- */
-export async function compileFile(src) {
-    console.log(green('Compile file'), src);
-    const content = await fs.readFileStr(src);
-    return compile(content);
-}
-/**
- * Compile a pagic file with local or remote url
- */
-export async function compilePagicFile(pathToPagicRoot) {
-    console.log(green('Compile pagic file'), pathToPagicRoot);
-    let content = '';
-    if (import.meta.url.startsWith('file://')) {
-        const src = path.resolve(path.dirname(path.fromFileUrl(import.meta.url)), '../../', pathToPagicRoot);
-        content = await fs.readFileStr(src);
-    }
-    else {
-        const res = await fetch(import.meta.url.replace(/\/src\/utils\/mod\.ts$/, `/${pathToPagicRoot}`));
-        content = await res.text();
-    }
-    return compile(content);
-}
+`
+                } }),
+            React.createElement("link", { rel: "stylesheet", href: `${config.base}assets/index.css` })),
+        React.createElement("body", null,
+            React.createElement("header", null,
+                React.createElement("h1", null,
+                    React.createElement("a", { href: config.base }, config.title)),
+                React.createElement("nav", null,
+                    React.createElement("ul", null,
+                        config.nav.map(({ text, link }) => (React.createElement("li", { key: link },
+                            React.createElement("a", { href: link }, text)))),
+                        React.createElement("li", null,
+                            React.createElement("a", { href: "#", onClick: (e) => {
+                                    e.preventDefault();
+                                    setIsDark(!isDark);
+                                    // @ts-ignore
+                                    document.cookie = `is_dark=${!isDark ? '1' : '0'}; expires=Tue, 19 Jun 2038 03:14:07 UTC; path=/`;
+                                } }, isDark ? '关闭黑暗模式' : '开启黑暗模式'))))),
+            React.createElement(Sidebar, { sidebar: sidebar, outputPath: outputPath, config: config }),
+            React.createElement("section", { className: "main" },
+                content,
+                gitalk),
+            script)));
+};
+export default Layout;
