@@ -1,74 +1,25 @@
-let loading = false;
-let lastPathname = null;
-let lastLayout = null;
-let lastProps = null;
+import * as path from 'https://deno.land/std@0.56.0/path/mod.ts';
+import * as fs from 'https://deno.land/std@0.56.0/fs/mod.ts';
+import { green } from 'https://deno.land/std@0.56.0/fmt/colors.ts';
 
-async function main() {
-  rerender(location, { isHydrate: true });
-
-  document.addEventListener('click', async (e) => {
-    const { origin, pathname } = e.target;
-    if (typeof pathname !== 'string') return;
-    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
-    if (origin !== location.origin) return;
-    await rerender(e.target, {
-      preventDefault: () => e.preventDefault(),
-      pushState: () => window.history.pushState({}, '', e.target.href)
-    });
-  });
-
-  window.addEventListener('popstate', () => rerender(location));
+export async function ensureDirAndWriteFileStr(filename: string, content: string) {
+  console.log(green('Write'), filename);
+  await fs.ensureDir(path.dirname(filename));
+  await fs.writeFileStr(filename, content);
 }
-
-async function rerender(
-  { pathname, hash },
-  { preventDefault = () => {}, pushState = () => {}, isHydrate = false } = {}
-) {
-  if (pathname === lastPathname) {
-    if (!hash) {
-      preventDefault();
-    }
-    return;
-  }
-
-  preventDefault();
-  if (loading === true) {
-    return;
-  }
-  loading = true;
-  if (!isHydrate) {
-    setTimeout(() => {
-      if (loading === false) return;
-      ReactDOM.render(
-        React.createElement(lastLayout, {
-          ...lastProps,
-          content: React.createElement('article', { className: 'loading' }, 'Loading...')
-        }),
-        document
-      );
-    }, 100);
-  }
-
-  let propsPath = pathname;
-  if (propsPath.endsWith('/')) {
-    propsPath += 'index.html';
-  }
-  propsPath = propsPath.replace(/\.html$/, '_props.js');
-  const props = (await import(propsPath)).default;
-  let layoutPath = props.layoutPath.replace(/\.tsx$/, '.js');
-  const Layout = (await import(`${props.config.base}${layoutPath}`)).default;
-  if (isHydrate) {
-    ReactDOM.hydrate(React.createElement(Layout, props), document);
+export async function ensureDirAndCopy(src: string, dest: string, options?: fs.CopyOptions) {
+  console.log(green('Copy'), src);
+  await fs.ensureDir(path.dirname(dest));
+  await fs.copy(src, dest, options);
+}
+export async function copyPagicFile(pathToPagicRoot: string, dest: string) {
+  console.log(green('Copy pagic file'), pathToPagicRoot);
+  if (import.meta.url.startsWith('file://')) {
+    const src = path.resolve(path.dirname(path.fromFileUrl(import.meta.url)), '../../', pathToPagicRoot);
+    await ensureDirAndCopy(src, dest, { overwrite: true });
   } else {
-    ReactDOM.render(React.createElement(Layout, props), document);
-    window.scrollTo(0, 0);
-    pushState();
-    window.dispatchEvent(new Event('rerender'));
+    const res = await fetch(import.meta.url.replace(/\/src\/utils\/mod\.ts$/, `/${pathToPagicRoot}`));
+    const content = await res.text();
+    await ensureDirAndWriteFileStr(dest, content);
   }
-  lastPathname = pathname;
-  lastLayout = Layout;
-  lastProps = props;
-  loading = false;
 }
-
-main();
