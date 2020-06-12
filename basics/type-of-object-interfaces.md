@@ -143,23 +143,20 @@ let tom: Person = {
     gender: 'male'
 };
 
-// index.ts(3,5): error TS2411: Property 'age' of type 'number' is not assignable to string index type 'string'.
-// index.ts(7,5): error TS2322: Type '{ [x: string]: string | number; name: string; age: number; gender: string; }' is not assignable to type 'Person'.
-//   Index signatures are incompatible.
-//     Type 'string | number' is not assignable to type 'string'.
-//       Type 'number' is not assignable to type 'string'.
+// index.ts(3,5): error TS2411: Property 'age' of type 'number | undefined' is not assignable to string index type 'string'.
+// index.ts(7,5): error TS2322: Type '{ name: string; age: number; gender: string; }' is not assignable to type 'Person'.
+//   Property 'age' is incompatible with index signature.
+//     Type 'number' is not assignable to type 'string'.
 ```
 
-上例中，任意属性的值允许是 `string`，但是可选属性 `age` 的值却是 `number`，`number` 不是 `string` 的子属性，所以报错了。
-
-另外，在报错信息中可以看出，此时 `{ name: 'Tom', age: 25, gender: 'male' }` 的类型被推断成了 `{ [x: string]: string | number; name: string; age: number; gender: string; }`，这是联合类型和接口的结合。
+上例中，任意属性的值允许是 `string`，但是可选属性 `age` 的值却是 `number` 或者 `undefined`，它们不是 `string` 的子属性，所以报错了。
 
 一个接口中只能定义一个任意属性。如果接口中有多个类型的属性，则可以在任意属性中使用联合类型：
 ```ts
 interface Person {
     name: string;
     age?: number;
-    [propName: string]: string | number;
+    [propName: string]: string | number | undefined;
 }
 
 let tom: Person = {
