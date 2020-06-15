@@ -158,6 +158,7 @@ header > * {
 }
 header h1 {
   margin-top: 0;
+  vertical-align: middle;
 }
 header h1 a {
   display: block;
@@ -176,6 +177,28 @@ header ul {
 header li {
   display: inline-block;
   margin: 0 0 0 2rem;
+  vertical-align: middle;
+}
+.toggle_dark {
+  cursor: pointer;
+}
+.toggle_dark span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+}
+.toggle_dark .sun-l,
+.toggle_dark .moon {
+  display: none;
+}
+.is_dark .toggle_dark .sun-l,
+.is_dark .toggle_dark .moon {
+  display: inline-block;
+}
+.is_dark .toggle_dark .sun,
+.is_dark .toggle_dark .moon-l {
+  display: none;
 }
 aside {
   position: fixed;

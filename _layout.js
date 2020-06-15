@@ -29,13 +29,15 @@ if (shouldSetIsDark) {
                     React.createElement("ul", null,
                         config.nav.map(({ text, link }) => (React.createElement("li", { key: link },
                             React.createElement("a", { href: link }, text)))),
-                        React.createElement("li", null,
-                            React.createElement("a", { href: "#", onClick: (e) => {
-                                    e.preventDefault();
-                                    setIsDark(!isDark);
-                                    // @ts-ignore
-                                    document.cookie = `is_dark=${!isDark ? '1' : '0'}; expires=Tue, 19 Jun 2038 03:14:07 UTC; path=/`;
-                                } }, isDark ? '关闭黑暗模式' : '开启黑暗模式'))))),
+                        React.createElement("li", { onClick: () => {
+                                setIsDark(!isDark);
+                                // @ts-ignore
+                                document.cookie = `is_dark=${!isDark ? '1' : '0'}; expires=Tue, 19 Jun 2038 03:14:07 UTC; path=/`;
+                            }, className: "toggle_dark" },
+                            React.createElement("span", { className: "sun", style: { backgroundImage: `url("${config.base}assets/sun.svg")` } }),
+                            React.createElement("span", { className: "sun-l", style: { backgroundImage: `url("${config.base}assets/sun-l.svg")` } }),
+                            React.createElement("span", { className: "moon", style: { backgroundImage: `url("${config.base}assets/moon.svg")` } }),
+                            React.createElement("span", { className: "moon-l", style: { backgroundImage: `url("${config.base}assets/moon-l.svg")` } }))))),
             React.createElement(Sidebar, { sidebar: sidebar, outputPath: outputPath, config: config }),
             React.createElement("section", { className: "main" },
                 content,
