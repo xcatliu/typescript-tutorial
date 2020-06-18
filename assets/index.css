@@ -1,41 +1,36 @@
+/* #region variables */
 :root {
   --color-text: #333;
-  --color-text-aside: #777;
+  --color-text-sidebar: #777;
   --color-muted: #999;
   --color-link: hsl(210, 70%, 50%);
   --color-background: white;
   --color-background-code: #f2f2f2;
-  --color-background-aside: #fafafa;
-  --color-background-aside-hover: #f2f2f2;
+  --color-background-sidebar: #fafafa;
+  --color-background-sidebar-hover: #f2f2f2;
   --color-border: #eee;
   --color-header-shadow: rgba(0, 0, 0, 0.1);
   --height-header: 3rem;
-  --width-aside: 288px;
-  /* 42 words per line is the best, 42 * 16 + 64 + 64 = 50 * 16 = 50rem */
-  --width-article: 50rem;
-  --width-article-padding: 4rem;
+  --width-sidebar: 18rem;
+  /* 42 words per line is the best, 42 * 16 + 48 + 48 = 48 * 16 = 48rem */
+  --width-article: 48rem;
+  --width-article-padding: 3rem;
+  --width-toc: 12rem;
 }
 
 html.is_dark {
   --color-text: #aaa;
-  --color-text-aside: #777;
+  --color-text-sidebar: #777;
   --color-muted: #777;
   --color-link: hsl(210, 60%, 60%);
   --color-background: #222;
   --color-background-code: #333;
-  --color-background-aside: #1a1a1a;
-  --color-background-aside-hover: #111;
+  --color-background-sidebar: #1a1a1a;
+  --color-background-sidebar-hover: #111;
   --color-border: #333;
   --color-header-shadow: rgba(0, 0, 0, 0.8);
 }
-
-html.is_dark img {
-  opacity: 0.7;
-  transition: opacity 0.3s ease-in-out;
-}
-html.is_dark img:hover {
-  opacity: 1;
-}
+/* #endregion */
 
 /* #region reset */
 * {
@@ -98,6 +93,14 @@ pre[class*='language-'] {
 pre code {
   padding: 0;
 }
+
+html.is_dark img {
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+html.is_dark img:hover {
+  opacity: 1;
+}
 /* #endregion */
 
 /* #region paddings */
@@ -141,6 +144,7 @@ blockquote > *:first-child {
 }
 /* #endregion */
 
+/* #region header */
 header {
   position: fixed;
   top: 0;
@@ -162,7 +166,7 @@ header h1 {
 }
 header h1 a {
   display: block;
-  width: var(--width-aside);
+  width: var(--width-sidebar);
   padding: 0 2rem;
   font-size: 20px;
   color: var(--color-text);
@@ -200,26 +204,60 @@ header li {
 .is_dark .toggle_dark .moon-l {
   display: none;
 }
-aside {
+/* #endregion */
+
+/* #region sidebar */
+.sidebar {
   position: fixed;
   top: var(--height-header);
   left: 0;
-  width: var(--width-aside);
+  width: var(--width-sidebar);
   height: calc(100vh - var(--height-header));
   overflow-y: auto;
   padding: 2rem 0 2rem 1rem;
-  background-color: var(--color-background-aside);
+  background-color: var(--color-background-sidebar);
   border-right: 1px solid var(--color-border);
 }
-.main {
-  margin: var(--height-header) 0 0 var(--width-aside);
-  padding-bottom: 2rem;
+.sidebar ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
-article {
+.sidebar ol ol {
+  padding-left: 1rem;
+  font-size: 14px;
+}
+.sidebar a {
+  color: var(--color-text-sidebar);
+  text-decoration: none;
+  padding: 6px 15px;
+  display: block;
+  outline: 1px solid transparent;
+}
+.sidebar a.active {
+  background-color: var(--color-background);
+  outline-color: var(--color-border) !important;
+  color: var(--color-link) !important;
+}
+.sidebar a:hover {
+  color: var(--color-text);
+  text-decoration: none;
+  background-color: var(--color-background-sidebar-hover);
+}
+/* #endregion */
+
+/* #region article */
+.main {
+  margin: var(--height-header) 0 0 var(--width-sidebar);
+  display: flex;
+  justify-content: center;
+}
+.main-article {
   overflow: auto;
+  padding-bottom: 2rem;
+  width: var(--width-article);
   max-width: var(--width-article);
   padding: 0 var(--width-article-padding);
-  margin: 0 auto;
 }
 article.loading {
   min-height: calc(100vh - var(--height-header) - 2rem);
@@ -231,57 +269,69 @@ article img {
   max-width: 100%;
 }
 
-aside ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-aside ul ul {
-  padding-left: 1rem;
-  font-size: 14px;
-}
-aside a {
-  color: var(--color-text-aside);
-  text-decoration: none;
-  padding: 6px 15px;
-  display: block;
-  outline: 1px solid transparent;
-}
-aside a.active {
-  background-color: var(--color-background);
-  outline-color: var(--color-border) !important;
-  color: var(--color-link) !important;
-}
-aside a:hover {
-  color: var(--color-text);
-  text-decoration: none;
-  background-color: var(--color-background-aside-hover);
-}
-
-.header-anchor,
-.header-anchor:hover {
+.anchor,
+.anchor:hover {
   opacity: 0;
   text-decoration: none;
   color: var(--color-muted);
   font-weight: normal;
+  margin-left: 0.5em;
 }
-.header-anchor:hover {
+.anchor:hover {
   color: var(--color-link);
 }
 
-h1:hover .header-anchor,
-h2:hover .header-anchor,
-h3:hover .header-anchor,
-h4:hover .header-anchor,
-h5:hover .header-anchor,
-h6:hover .header-anchor {
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
   opacity: 1;
 }
+/* #endregion */
+
+/* #region toc */
+.main-toc {
+  width: calc(var(--width-toc) + 2rem);
+  min-width: calc(var(--width-toc) + 2rem);
+  font-size: 14px;
+  line-height: 1.25;
+  padding: 2rem 2rem 2rem 0;
+}
+.toc {
+  width: var(--width-toc);
+  min-width: var(--width-toc);
+  position: fixed;
+}
+.toc ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.toc ol ol {
+  padding-left: 1rem;
+}
+.toc li {
+  margin-top: 5px;
+}
+.toc a {
+  color: var(--color-text-sidebar);
+  text-decoration: none;
+}
+.toc a.active {
+  color: var(--color-link) !important;
+}
+.toc a:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
+/* #endregion */
 
 /* #region gitalk */
 .gt-container {
+  width: var(--width-article);
   max-width: var(--width-article);
-  padding: 0 var(--width-article-padding);
   margin: 0 auto;
   color: var(--color-text);
   fill: var(--color-text);
@@ -300,16 +350,16 @@ h6:hover .header-anchor {
 .is_dark .gt-container .gt-comment-content,
 .is_dark .gt-container .gt-comment-admin .gt-comment-content,
 .is_dark .gt-container .gt-header-preview {
-  background-color: var(--color-background-aside);
+  background-color: var(--color-background-sidebar);
   color: var(--color-text);
 }
 .is_dark .gt-container .gt-btn-preview {
-  background-color: var(--color-background-aside);
+  background-color: var(--color-background-sidebar);
 }
 .is_dark .gt-container .gt-header-textarea:hover,
 .is_dark .gt-container .gt-header-textarea:focus,
 .is_dark .gt-container .gt-btn-preview:hover {
-  background-color: var(--color-background-aside-hover);
+  background-color: var(--color-background-sidebar-hover);
 }
 .is_dark .gt-container a.is--active,
 .is_dark .gt-container a.is--active:hover {

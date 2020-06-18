@@ -122,12 +122,15 @@ export default {
     'outputPath': "introduction/index.html",
     'title': "简介",
     'content': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<h1 id="%E7%AE%80%E4%BB%8B">简介 <a class="header-anchor" href="#%E7%AE%80%E4%BB%8B">§</a></h1>\n<p>本部分介绍了在学习 TypeScript 之前需要了解的知识，具体内容包括：</p>\n<ul>\n<li><a href="what-is-typescript.html">什么是 TypeScript</a></li>\n<li><a href="get-typescript.html">安装 TypeScript</a></li>\n<li><a href="hello-typescript.html">Hello TypeScript</a></li>\n</ul>\n<hr>\n<ul>\n<li><a href="../index.html">上一章：前言</a></li>\n<li><a href="what-is-typescript.html">下一章：什么是 TypeScript</a></li>\n</ul>\n'
+            __html: '<h1>简介</h1>\n<p>本部分介绍了在学习 TypeScript 之前需要了解的知识，具体内容包括：</p>\n<ul>\n<li><a href="what-is-typescript.html">什么是 TypeScript</a></li>\n<li><a href="get-typescript.html">安装 TypeScript</a></li>\n<li><a href="hello-typescript.html">Hello TypeScript</a></li>\n</ul>\n<hr>\n<ul>\n<li><a href="../index.html">上一章：前言</a></li>\n<li><a href="what-is-typescript.html">下一章：什么是 TypeScript</a></li>\n</ul>\n'
         } }),
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { crossOrigin: "anonymous", src: "https://unpkg.com/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { crossOrigin: "anonymous", src: "https://unpkg.com/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/main.js", type: "module" })),
+    'toc': React.createElement("aside", { dangerouslySetInnerHTML: {
+            __html: '<nav class="toc"><ol></ol></nav>'
+        } }),
     'sidebar': [
         {
             "text": "TypeScript 入门教程",

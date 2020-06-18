@@ -60,9 +60,9 @@ async function rerender(
   if (isHydrate) {
     ReactDOM.hydrate(React.createElement(Layout, props), document);
   } else {
+    pushState();
     ReactDOM.render(React.createElement(Layout, props), document);
     window.scrollTo(0, 0);
-    pushState();
     window.dispatchEvent(new Event('rerender'));
   }
   lastPathname = pathname;

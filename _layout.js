@@ -1,7 +1,7 @@
 // @deno-types="https://deno.land/x/types/react/v16.13.1/react.d.ts"
 
 import Sidebar from './_sidebar.js';
-const Layout = ({ config, title, content, ga, gitalk, script, sidebar, outputPath }) => {
+const Layout = ({ config, title, content, toc, ga, gitalk, script, sidebar, outputPath }) => {
     const [isDark, setIsDark] = React.useState(
     // @ts-ignore
     window.Deno ? false : document.documentElement.classList.contains('is_dark'));
@@ -40,8 +40,10 @@ if (shouldSetIsDark) {
                             React.createElement("span", { className: "moon-l", style: { backgroundImage: `url("${config.base}assets/moon-l.svg")` } }))))),
             React.createElement(Sidebar, { sidebar: sidebar, outputPath: outputPath, config: config }),
             React.createElement("section", { className: "main" },
-                content,
-                gitalk),
+                React.createElement("div", { className: "main-article" },
+                    content,
+                    gitalk),
+                React.createElement("div", { className: "main-toc" }, toc)),
             script)));
 };
 export default Layout;
