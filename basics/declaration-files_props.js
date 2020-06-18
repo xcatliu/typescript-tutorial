@@ -97,7 +97,7 @@ export default {
             },
             {
                 "text": "赞助作者",
-                "link": "https://github.com/xcatliu/typescript-tutorial"
+                "link": "https://github.com/xcatliu/buy-me-a-coffee"
             },
             {
                 "text": "本网站使用 Pagic 构建",
