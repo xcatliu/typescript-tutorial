@@ -17,7 +17,7 @@ jobs:
           export DENO_INSTALL="/home/runner/.deno"
           export PATH="$DENO_INSTALL/bin:$PATH"
           deno --version
-          deno install --unstable --allow-read --allow-write --allow-net -n pagic https://deno.land/x/pagic@0.7.7/mod.ts
+          deno install --unstable --allow-read --allow-write --allow-net -n pagic https://deno.land/x/pagic@0.7.8/mod.ts
           pagic build
 
       - name: Deploy
