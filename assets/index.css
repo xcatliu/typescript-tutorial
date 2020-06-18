@@ -330,8 +330,6 @@ h6:hover .anchor {
 
 /* #region gitalk */
 .gt-container {
-  width: var(--width-article);
-  max-width: var(--width-article);
   margin: 0 auto;
   color: var(--color-text);
   fill: var(--color-text);
