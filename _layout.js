@@ -20,7 +20,8 @@ if (shouldSetIsDark) {
 }
 `
                 } }),
-            React.createElement("link", { rel: "stylesheet", href: `${config.base}assets/index.css` })),
+            React.createElement("link", { rel: "stylesheet", href: `${config.base}assets/index.css` }),
+            config.head),
         React.createElement("body", null,
             React.createElement("header", null,
                 React.createElement("h1", null,

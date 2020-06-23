@@ -313,7 +313,7 @@ h6:hover .anchor {
   padding-left: 1rem;
 }
 .toc li {
-  margin-top: 5px;
+  margin-top: 8px;
 }
 .toc a {
   color: var(--color-text-sidebar);

@@ -4,6 +4,12 @@
 
 const Gitalk = (props) => {
     React.useEffect(() => {
+        // https://pegasaas.com/how-to-defer-render-blocking-css/
+        // @ts-ignore
+        const css = document.getElementById('gitalk-css');
+        css.rel = 'stylesheet';
+    });
+    React.useEffect(() => {
         // @ts-ignore
         const container = document.getElementById('gitalk-container');
         ReactDOM.unmountComponentAtNode(container);
@@ -12,7 +18,7 @@ const Gitalk = (props) => {
     }, [props.id]);
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { id: "gitalk-container" }),
-        React.createElement("link", { rel: "stylesheet", href: "https://unpkg.com/gitalk@1.6.2/dist/gitalk.css" }),
-        React.createElement("script", { src: "https://unpkg.com/gitalk@1.6.2/dist/gitalk.min.js" })));
+        React.createElement("link", { id: "gitalk-css", rel: "preload", href: "https://unpkg.com/gitalk@1.6.2/dist/gitalk.css" }),
+        React.createElement("script", { defer: true, src: "https://unpkg.com/gitalk@1.6.2/dist/gitalk.min.js" })));
 };
 export default Gitalk;
