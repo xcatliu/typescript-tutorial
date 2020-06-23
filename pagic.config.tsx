@@ -1,9 +1,13 @@
+// @deno-types="https://deno.land/x/types/react/v16.13.1/react.d.ts"
+import React from 'https://dev.jspm.io/react@16.13.1';
+
 export default {
   srcDir: '.',
   ignore: [/\/examples\//, /\/public\//, /\/\./, /\/package\-lock\.json/, /\/package\.json/, /\/pagic\.config\.ts/],
   theme: 'docs',
   plugins: ['sidebar', 'script', 'gitalk', 'ga'],
   title: 'TypeScript 入门教程',
+  head: <link rel="icon" type="image/png" href="/favicon.png" />,
   sidebar: [
     'README.md',
     {
