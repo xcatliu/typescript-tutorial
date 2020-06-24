@@ -9,7 +9,6 @@ export default {
   title: 'TypeScript 入门教程',
   head: <link rel="icon" type="image/png" href="/favicon.png" />,
   sidebar: [
-    'README.md',
     {
       link: 'introduction/README.md',
       children: [
