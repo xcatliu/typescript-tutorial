@@ -35,10 +35,10 @@ if (shouldSetIsDark) {
                                 // @ts-ignore
                                 document.cookie = `is_dark=${!isDark ? '1' : '0'}; expires=Tue, 19 Jun 2038 03:14:07 UTC; path=/`;
                             }, className: "toggle_dark" },
-                            React.createElement("span", { className: "sun", style: { backgroundImage: `url("${config.base}assets/sun.svg")` } }),
-                            React.createElement("span", { className: "sun-l", style: { backgroundImage: `url("${config.base}assets/sun-l.svg")` } }),
-                            React.createElement("span", { className: "moon", style: { backgroundImage: `url("${config.base}assets/moon.svg")` } }),
-                            React.createElement("span", { className: "moon-l", style: { backgroundImage: `url("${config.base}assets/moon-l.svg")` } }))))),
+                            React.createElement("span", { className: "czs-sun", style: { backgroundImage: `url("${config.base}assets/czs-sun.svg")` } }),
+                            React.createElement("span", { className: "czs-sun-l", style: { backgroundImage: `url("${config.base}assets/czs-sun-l.svg")` } }),
+                            React.createElement("span", { className: "czs-moon", style: { backgroundImage: `url("${config.base}assets/czs-moon.svg")` } }),
+                            React.createElement("span", { className: "czs-moon-l", style: { backgroundImage: `url("${config.base}assets/czs-moon-l.svg")` } }))))),
             React.createElement(Sidebar, { sidebar: sidebar, outputPath: outputPath, config: config }),
             React.createElement("section", { className: "main" },
                 React.createElement("div", { className: "main-article" },

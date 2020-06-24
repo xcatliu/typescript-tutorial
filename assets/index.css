@@ -192,16 +192,16 @@ header li {
   height: 20px;
   background-size: 20px;
 }
-.toggle_dark .sun-l,
-.toggle_dark .moon {
+.toggle_dark .czs-sun-l,
+.toggle_dark .czs-moon {
   display: none;
 }
-.is_dark .toggle_dark .sun-l,
-.is_dark .toggle_dark .moon {
+.is_dark .toggle_dark .czs-sun-l,
+.is_dark .toggle_dark .czs-moon {
   display: inline-block;
 }
-.is_dark .toggle_dark .sun,
-.is_dark .toggle_dark .moon-l {
+.is_dark .toggle_dark .czs-sun,
+.is_dark .toggle_dark .czs-moon-l {
   display: none;
 }
 /* #endregion */
@@ -226,23 +226,60 @@ header li {
 .sidebar ol ol {
   padding-left: 1rem;
   font-size: 14px;
+  transition: height 0.3s;
+  overflow: hidden;
 }
 .sidebar a {
+  position: relative;
   color: var(--color-text-sidebar);
   text-decoration: none;
-  padding: 6px 15px;
+  padding: 5px 15px;
   display: block;
-  outline: 1px solid transparent;
+  border: 1px solid transparent;
+  border-right: none;
 }
 .sidebar a.active {
   background-color: var(--color-background);
-  outline-color: var(--color-border) !important;
+  border-color: var(--color-border) !important;
   color: var(--color-link) !important;
 }
 .sidebar a:hover {
   color: var(--color-text);
   text-decoration: none;
   background-color: var(--color-background-sidebar-hover);
+}
+.czs-angle {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 34px;
+  height: 34px;
+  background-size: 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.czs-angle-down-l {
+  display: inline-block;
+}
+.fold .czs-angle-down-l {
+  display: none;
+}
+.fold .czs-angle-up-l {
+  display: inline-block;
+}
+.fold .czs-angle {
+  opacity: 0.7;
+}
+.sidebar a:hover .czs-angle {
+  opacity: 0.7;
+}
+.sidebar a:hover .czs-angle:hover {
+  opacity: 1;
+}
+.fold ol {
+  height: 0 !important;
 }
 /* #endregion */
 

@@ -19,10 +19,6 @@ export default {
         } }),
     'sidebar': [
         {
-            "text": "TypeScript 入门教程",
-            "link": "index.html"
-        },
-        {
             "link": "introduction/index.html",
             "children": [
                 {
