@@ -53,16 +53,13 @@ export default {
     ],
     nav: [
         {
-            text: 'GitHub',
-            link: 'https://github.com/xcatliu/typescript-tutorial'
-        },
-        {
             text: '赞助作者',
             link: 'https://github.com/xcatliu/buy-me-a-coffee'
         },
         {
-            text: '本网站使用 Pagic 构建',
-            link: 'https://github.com/xcatliu/pagic'
+            text: 'GitHub',
+            link: 'https://github.com/xcatliu/typescript-tutorial',
+            align: 'right'
         }
     ],
     gitalk: {

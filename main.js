@@ -42,7 +42,7 @@ async function rerender(
       ReactDOM.render(
         React.createElement(lastLayout, {
           ...lastProps,
-          content: React.createElement('article', { className: 'loading' }, 'Loading...')
+          loading: true
         }),
         document
       );
