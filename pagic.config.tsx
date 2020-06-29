@@ -7,7 +7,16 @@ export default {
   theme: 'docs',
   plugins: ['sidebar', 'script', 'gitalk', 'ga'],
   title: 'TypeScript 入门教程',
-  head: <link rel="icon" type="image/png" href="/favicon.png" />,
+  head: (
+    <>
+      <link rel="icon" type="image/png" href="/favicon.png" />
+      <script
+        data-ad-client="ca-pub-8483371329009107"
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      />
+    </>
+  ),
   sidebar: [
     {
       link: 'introduction/README.md',
