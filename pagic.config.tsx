@@ -7,16 +7,18 @@ export default {
   theme: 'docs',
   plugins: ['sidebar', 'script', 'gitalk', 'ga'],
   title: 'TypeScript 入门教程',
-  head: (
-    <>
-      <link rel="icon" type="image/png" href="/favicon.png" />
-      <script
-        data-ad-client="ca-pub-8483371329009107"
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      />
-    </>
-  ),
+  head: <link rel="icon" type="image/png" href="/favicon.png" />,
+  nav: [
+    {
+      text: '赞助作者',
+      link: 'https://github.com/xcatliu/buy-me-a-coffee'
+    },
+    {
+      text: 'GitHub',
+      link: 'https://github.com/xcatliu/typescript-tutorial',
+      align: 'right'
+    }
+  ],
   sidebar: [
     {
       link: 'introduction/README.md',
@@ -61,17 +63,22 @@ export default {
     },
     'thanks/README.md'
   ],
-  nav: [
-    {
-      text: '赞助作者',
-      link: 'https://github.com/xcatliu/buy-me-a-coffee'
-    },
-    {
-      text: 'GitHub',
-      link: 'https://github.com/xcatliu/typescript-tutorial',
-      align: 'right'
-    }
-  ],
+  tocAd: (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: `
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 192*128 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:192px;height:128px"
+     data-ad-client="ca-pub-8483371329009107"
+     data-ad-slot="6487368873"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>`
+      }}
+    />
+  ),
   gitalk: {
     clientID: '29aa4941759fc887ed4f',
     clientSecret: '33e355efdf3a1959624506a5d88311145208471b',
