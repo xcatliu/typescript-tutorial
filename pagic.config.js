@@ -6,7 +6,9 @@ export default {
     theme: 'docs',
     plugins: ['sidebar', 'script', 'gitalk', 'ga'],
     title: 'TypeScript 入门教程',
-    head: React.createElement("link", { rel: "icon", type: "image/png", href: "/favicon.png" }),
+    head: (React.createElement(React.Fragment, null,
+        React.createElement("link", { rel: "icon", type: "image/png", href: "/favicon.png" }),
+        React.createElement("script", { "data-ad-client": "ca-pub-8483371329009107", async: true, src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" }))),
     sidebar: [
         {
             link: 'introduction/README.md',
