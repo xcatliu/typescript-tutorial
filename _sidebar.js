@@ -1,4 +1,4 @@
-// @deno-types="https://deno.land/x/types/react/v16.13.1/react.d.ts"
+
 
 import { classnames } from './_utils.js';
 const Sidebar = (props) => (React.createElement("aside", { className: "sidebar" },
@@ -45,7 +45,7 @@ const FoldableItem = ({ outputPath, config, text, link, children }) => {
             children && (React.createElement(React.Fragment, null,
                 React.createElement("span", { className: "czs-angle czs-angle-up-l", style: { backgroundImage: `url("${config.base}assets/czs-angle-up-l.svg")` }, onClick: toggleFold }),
                 React.createElement("span", { className: "czs-angle czs-angle-down-l", style: { backgroundImage: `url("${config.base}assets/czs-angle-down-l.svg")` }, onClick: toggleFold })))),
-        children && (React.createElement("ol", { ref: measuredRef, style: { height: olHeight } }, children.map(({ text, link }) => (React.createElement("li", { key: link },
+        children && (React.createElement("ol", { ref: measuredRef, style: { height: olHeight } }, children.map(({ text, link }, index) => (React.createElement("li", { key: index },
             React.createElement("a", { href: `${config.base}${link}`, className: classnames('nav_link', { active: link === outputPath }) }, text))))))));
 };
 export default Sidebar;

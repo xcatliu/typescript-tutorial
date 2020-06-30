@@ -1,4 +1,4 @@
-// @deno-types="https://deno.land/x/types/react/v16.13.1/react.d.ts"
+
 
 import Header from './_header.js';
 import Sidebar from './_sidebar.js';
@@ -31,10 +31,13 @@ if (shouldSetIsDark) {
             React.createElement(Header, { config: config, isDark: isDark, setIsDark: setIsDark }),
             React.createElement(Sidebar, { sidebar: sidebar, outputPath: outputPath, config: config }),
             React.createElement("section", { className: "main" },
-                React.createElement("div", { className: "main-article" },
+                React.createElement("div", { className: "main_article" },
                     loading ? React.createElement(Loading, null) : content,
                     gitalk),
-                React.createElement("div", { className: "main-toc nav_link_container" }, toc)),
+                React.createElement("div", { className: "main_toc_container nav_link_container" },
+                    React.createElement("div", { className: "main_toc" },
+                        config.tocAd && React.createElement("div", { className: "toc_ad" }, config.tocAd),
+                        toc))),
             script)));
 };
 export default Layout;

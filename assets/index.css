@@ -349,7 +349,7 @@ header li a:hover {
   display: flex;
   justify-content: center;
 }
-.main-article {
+.main_article {
   overflow: auto;
   padding: 0 var(--width-article-padding);
   padding-bottom: 2rem;
@@ -389,17 +389,22 @@ h6:hover .anchor {
 /* #endregion */
 
 /* #region toc */
-.main-toc {
+.main_toc_container {
   width: calc(var(--width-toc) + 2rem);
   min-width: calc(var(--width-toc) + 2rem);
   font-size: var(--font-size-small);
   line-height: var(--line-height-small);
   padding: 2rem 2rem 2rem 0;
 }
+.main_toc {
+  position: fixed;
+}
+.toc_ad {
+  margin-bottom: 2rem;
+}
 .toc {
   width: var(--width-toc);
   min-width: var(--width-toc);
-  position: fixed;
 }
 .toc ol {
   padding: 0;
