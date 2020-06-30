@@ -402,6 +402,13 @@ h6:hover .anchor {
 .toc_ad {
   margin-bottom: 2rem;
 }
+.is_dark .toc_ad {
+  opacity: var(--opacity);
+  transition: opacity 0.3s ease-in-out;
+}
+.is_dark .toc_ad:hover {
+  opacity: 1;
+}
 .toc {
   width: var(--width-toc);
   min-width: var(--width-toc);
