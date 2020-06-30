@@ -10,11 +10,16 @@ export default {
     nav: [
         {
             text: '赞助作者',
-            link: 'https://github.com/xcatliu/buy-me-a-coffee'
+            link: 'https://github.com/xcatliu/buy-me-a-coffee',
+            target: '_blank',
+            popover: (React.createElement(React.Fragment, null,
+                React.createElement("img", { src: "/assets/wechat.jpg", width: "256", style: { marginRight: '1rem', verticalAlign: 'top' } }),
+                React.createElement("img", { src: "/assets/alipay.jpg", width: "256", style: { verticalAlign: 'top' } })))
         },
         {
             text: 'GitHub',
             link: 'https://github.com/xcatliu/typescript-tutorial',
+            target: '_blank',
             align: 'right'
         }
     ],
@@ -79,7 +84,8 @@ export default {
         clientSecret: '33e355efdf3a1959624506a5d88311145208471b',
         repo: 'typescript-tutorial',
         owner: 'xcatliu',
-        admin: ['xcatliu']
+        admin: ['xcatliu'],
+        pagerDirection: 'first'
     },
     ga: {
         id: 'UA-45256157-14'

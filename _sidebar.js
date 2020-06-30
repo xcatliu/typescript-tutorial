@@ -1,14 +1,19 @@
 
 
 import { classnames } from './_utils.js';
-const Sidebar = (props) => (React.createElement("aside", { className: "sidebar" },
-    React.createElement("ol", null, props.sidebar.map((sidebarConfig) => (React.createElement(FoldableItem, Object.assign({}, props, sidebarConfig))))),
-    React.createElement("hr", null),
-    React.createElement("a", { className: "powered_by", href: "https://github.com/xcatliu/pagic", target: "_blank" },
-        "Powered by\u00A0",
-        React.createElement("img", { src: `${props.config.base}assets/pagic.png` }),
-        "agic")));
-const FoldableItem = ({ outputPath, config, text, link, children }) => {
+const Sidebar = (props) => {
+    if (!props.sidebar) {
+        return null;
+    }
+    return (React.createElement("aside", { className: "sidebar" },
+        React.createElement("ol", null, props.sidebar.map((sidebarItem, index) => (React.createElement(FoldableItem, Object.assign({ key: index }, props, { sidebarItem: sidebarItem }))))),
+        React.createElement("hr", null),
+        React.createElement("a", { className: "powered_by", href: "https://github.com/xcatliu/pagic", target: "_blank" },
+            "Powered by\u00A0",
+            React.createElement("img", { src: `${props.config.base}assets/pagic.png` }),
+            "agic")));
+};
+const FoldableItem = ({ config, outputPath, sidebarItem: { text, link, children } }) => {
     const [fold, setFold] = React.useState(false);
     const [olHeight, setOlHeight] = React.useState('auto');
     const measuredRef = React.useCallback((node) => {

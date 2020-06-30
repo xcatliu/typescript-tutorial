@@ -94,7 +94,7 @@ code {
 }
 pre,
 pre[class*='language-'] {
-  font-size: 13px;
+  font-size: 13px !important;
 }
 pre code {
   padding: 0;
@@ -123,6 +123,15 @@ html.is_dark img:hover {
 .nav_link.active,
 .nav_link_container a.active {
   color: var(--color-link);
+}
+
+.popover {
+  position: absolute;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 0 0.5rem var(--color-header-shadow);
+  padding: 1rem;
+  z-index: 200;
 }
 /* #endregion */
 
@@ -157,7 +166,7 @@ hr {
 }
 pre,
 pre[class*='language-'] {
-  margin: 1rem 0 0 0;
+  margin: 1rem 0 0 0 !important;
 }
 blockquote {
   padding: 0.5rem 0 0.5rem 1rem;
@@ -175,7 +184,6 @@ header {
   left: 0;
   width: 100vw;
   height: var(--height-header);
-  line-height: var(--height-header);
   border-bottom: 1px solid var(--color-border);
   box-shadow: 0 0 0.5rem var(--color-header-shadow);
   background-color: var(--color-background);
@@ -189,6 +197,7 @@ header h1 a {
   width: var(--width-sidebar);
   padding: 0 2rem;
   font-size: 20px;
+  line-height: var(--height-header);
   color: var(--color-text);
 }
 header h1 a:hover {
@@ -210,7 +219,9 @@ header li:last-child {
   margin-right: 1rem;
 }
 header li a {
+  margin: 0.5rem 0;
   padding: 0 1rem;
+  line-height: 2rem;
   display: block;
   color: var(--color-text);
 }
@@ -219,6 +230,7 @@ header li a:hover {
   text-decoration: none;
 }
 .toggle_dark {
+  margin: 0.5rem 0;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -263,7 +275,7 @@ header li a:hover {
   list-style: none;
 }
 .sidebar > ol {
-  min-height: calc(100vh - var(--height-header) - 6rem - 20px);
+  min-height: calc(100vh - var(--height-header) - 8rem - 20px);
 }
 .sidebar ol ol {
   padding-left: 1rem;
@@ -326,7 +338,7 @@ header li a:hover {
 
 .sidebar hr {
   margin-right: 1rem;
-  margin: 1rem 1rem 1rem 0;
+  margin: 2rem 1rem 2rem 0;
 }
 .powered_by {
   color: var(--color-muted);

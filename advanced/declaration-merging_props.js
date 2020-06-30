@@ -145,6 +145,6 @@ export default {
     ],
     'gitalk': React.createElement(Gitalk, { admin: [
             'xcatliu'
-        ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "advanced/declaration-merging.html", owner: "xcatliu", repo: "typescript-tutorial", title: "\u58F0\u660E\u5408\u5E76" }),
+        ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "advanced/declaration-merging.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u58F0\u660E\u5408\u5E76" }),
     'ga': React.createElement(Ga, { id: "UA-45256157-14" })
 };

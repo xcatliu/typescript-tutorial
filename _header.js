@@ -1,5 +1,6 @@
 
 
+import Popover from './_popover.js';
 const Header = ({ config, isDark, setIsDark }) => (React.createElement("header", null,
     React.createElement("h1", null,
         React.createElement("a", { href: config.base }, config.title)),
@@ -7,8 +8,8 @@ const Header = ({ config, isDark, setIsDark }) => (React.createElement("header",
         React.createElement("ul", null,
             config.nav
                 .filter(({ align }) => align !== 'right')
-                .map(({ text, link }) => (React.createElement("li", { key: link },
-                React.createElement("a", { href: link }, text)))),
+                .map(({ text, link, target, popover }) => (React.createElement("li", { key: link }, popover ? (React.createElement(Popover, { placement: "bottom-start", content: popover },
+                React.createElement("a", { href: link, target: target }, text))) : (React.createElement("a", { href: link, target: target }, text))))),
             React.createElement("li", { style: { flexGrow: 1 } }),
             React.createElement("li", { onClick: () => {
                     setIsDark(!isDark);
@@ -21,6 +22,6 @@ const Header = ({ config, isDark, setIsDark }) => (React.createElement("header",
                 React.createElement("span", { className: "czs-moon-l", style: { backgroundImage: `url("${config.base}assets/czs-moon-l.svg")` } })),
             config.nav
                 .filter(({ align }) => align === 'right')
-                .map(({ text, link }) => (React.createElement("li", { key: link },
-                React.createElement("a", { href: link }, text))))))));
+                .map(({ text, link, target, popover }) => (React.createElement("li", { key: link }, popover ? (React.createElement(Popover, { placement: "bottom-end", content: popover },
+                React.createElement("a", { href: link, target: target }, text))) : (React.createElement("a", { href: link, target: target }, text)))))))));
 export default Header;

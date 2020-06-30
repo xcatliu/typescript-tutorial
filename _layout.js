@@ -1,35 +1,20 @@
 
 
+import Head from './_head.js';
 import Header from './_header.js';
 import Sidebar from './_sidebar.js';
 import Loading from './_loading.js';
 import { classnames } from './_utils.js';
-const Layout = ({ config, title, content, loading, toc, ga, gitalk, script, sidebar, outputPath }) => {
+const Layout = (props) => {
+    const { config, content, loading, toc, gitalk, script } = props;
     const [isDark, setIsDark] = React.useState(
     // @ts-ignore
     window.Deno ? false : document.documentElement.classList.contains('is_dark'));
-    return (React.createElement("html", { className: classnames({
-            is_dark: isDark
-        }) },
-        React.createElement("head", null,
-            ga,
-            React.createElement("title", null, outputPath !== 'index.html' ? `${title} · ${config.title}` : title),
-            React.createElement("meta", { charSet: "utf-8" }),
-            React.createElement("link", { id: "prismTheme", rel: "stylesheet", href: isDark ? `${config.base}assets/prism_tomorrow.css` : `${config.base}assets/prism.css` }),
-            React.createElement("script", { dangerouslySetInnerHTML: {
-                    __html: `
-let shouldSetIsDark = document.cookie.includes('is_dark=1') ? true : document.cookie.includes('is_dark=0') ? false : window.matchMedia('(prefers-color-scheme: dark)').matches
-if (shouldSetIsDark) {
-  document.documentElement.classList.add('is_dark');
-  document.getElementById('prismTheme').href = "${config.base}assets/prism_tomorrow.css";
-}
-`
-                } }),
-            React.createElement("link", { rel: "stylesheet", href: `${config.base}assets/index.css` }),
-            config.head),
+    return (React.createElement("html", { className: classnames({ is_dark: isDark }) },
+        React.createElement(Head, Object.assign({}, props, { isDark: isDark })),
         React.createElement("body", null,
-            React.createElement(Header, { config: config, isDark: isDark, setIsDark: setIsDark }),
-            React.createElement(Sidebar, { sidebar: sidebar, outputPath: outputPath, config: config }),
+            React.createElement(Header, Object.assign({}, props, { isDark: isDark, setIsDark: setIsDark })),
+            React.createElement(Sidebar, Object.assign({}, props)),
             React.createElement("section", { className: "main" },
                 React.createElement("div", { className: "main_article" },
                     loading ? React.createElement(Loading, null) : content,

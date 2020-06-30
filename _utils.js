@@ -7,7 +7,7 @@ export function classnames(...args) {
         if (typeof arg === 'string') {
             classList.push(arg);
         }
-        else {
+        else if (typeof arg !== 'undefined') {
             classList = [...classList, ...Object.keys(arg).filter((key) => arg[key])];
         }
     }
