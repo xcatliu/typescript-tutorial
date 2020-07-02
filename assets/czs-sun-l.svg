@@ -1,7 +1,17 @@
-
-<svg width="1024" height="1024" viewBox="0 -64 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-  <path
-    d="M512 704c-140.8 0-256-115.2-256-256s115.2-256 256-256c140.8 0 256 115.2 256 256s-115.2 256-256 256zM512 256c-108.8 0-192 83.2-192 192s83.2 192 192 192c108.8 0 192-83.2 192-192s-83.2-192-192-192zM480 896h64v-128h-64v128zM480 128h64v-128h-64v128zM832 480h128v-64h-128v64zM64 480h128v-64h-128v64zM715.645 693.036l90.509 90.509 45.254-45.254-90.509-90.509-45.254 45.254zM172.579 157.709l90.509 90.509 45.254-45.254-90.509-90.509-45.254 45.254zM711.775 199.094l45.254 45.254 90.509-90.509-45.254-45.254-90.509 90.509zM176.449 742.16l45.254 45.254 90.509-90.509-45.254-45.254-90.509 90.509z"
-    fill="#777777"
-  />
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+<g>
+	<path fill="#777777" d="M8,4C5.8,4,4,5.8,4,8c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4C12,5.8,10.2,4,8,4z M8,11c-1.7,0-3-1.3-3-3c0-1.7,1.3-3,3-3
+		c1.7,0,3,1.3,3,3C11,9.7,9.7,11,8,11z"/>
+	<rect fill="#777777" x="7.5" y="1" width="1" height="2"/>
+	<rect fill="#777777" x="7.5" y="13" width="1" height="2"/>
+	<rect fill="#777777" x="13" y="7.5" width="2" height="1"/>
+	<rect fill="#777777" x="1" y="7.5" width="2" height="1"/>
+	<rect fill="#777777" x="11.2" y="3.3" transform="matrix(0.7071 -0.7071 0.7071 0.7071 0.929 9.7574)" width="2" height="1"/>
+	<rect fill="#777777" x="2.8" y="11.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -7.5564 6.2426)" width="2" height="1"/>
+	<rect fill="#777777" x="11.7" y="11.2" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.0711 12.2427)" width="1" height="2"/>
+	<rect fill="#777777" x="3.3" y="2.8" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -1.5563 3.7573)" width="1" height="2"/>
+</g>
 </svg>

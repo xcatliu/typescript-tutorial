@@ -6,6 +6,8 @@ export default {
     theme: 'docs',
     plugins: ['sidebar', 'script', 'gitalk', 'ga'],
     title: 'TypeScript 入门教程',
+    description: '从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript。',
+    github: 'https://github.com/xcatliu/typescript-tutorial',
     head: React.createElement("link", { rel: "icon", type: "image/png", href: "/favicon.png" }),
     nav: [
         {
@@ -15,12 +17,6 @@ export default {
             popover: (React.createElement(React.Fragment, null,
                 React.createElement("img", { src: "/assets/wechat.jpg", width: "256", style: { marginRight: '1rem', verticalAlign: 'top' } }),
                 React.createElement("img", { src: "/assets/alipay.jpg", width: "256", style: { verticalAlign: 'top' } })))
-        },
-        {
-            text: 'GitHub',
-            link: 'https://github.com/xcatliu/typescript-tutorial',
-            target: '_blank',
-            align: 'right'
         }
     ],
     sidebar: [

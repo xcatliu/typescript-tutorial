@@ -39,7 +39,13 @@ const FoldableItem = ({ config, outputPath, sidebarItem: { text, link, children 
                         }
                         else {
                             setFold(false);
+                            // @ts-ignore
+                            document.documentElement.classList.remove('show_sidebar');
                         }
+                    }
+                    else {
+                        // @ts-ignore
+                        document.documentElement.classList.remove('show_sidebar');
                     }
                 }
                 else {
@@ -48,9 +54,12 @@ const FoldableItem = ({ config, outputPath, sidebarItem: { text, link, children 
             } },
             text,
             children && (React.createElement(React.Fragment, null,
-                React.createElement("span", { className: "czs-angle czs-angle-up-l", style: { backgroundImage: `url("${config.base}assets/czs-angle-up-l.svg")` }, onClick: toggleFold }),
-                React.createElement("span", { className: "czs-angle czs-angle-down-l", style: { backgroundImage: `url("${config.base}assets/czs-angle-down-l.svg")` }, onClick: toggleFold })))),
+                React.createElement("span", { className: "czs-angle-up-l", style: { backgroundImage: `url("${config.base}assets/czs-angle-up-l.svg")` }, onClick: toggleFold }),
+                React.createElement("span", { className: "czs-angle-down-l", style: { backgroundImage: `url("${config.base}assets/czs-angle-down-l.svg")` }, onClick: toggleFold })))),
         children && (React.createElement("ol", { ref: measuredRef, style: { height: olHeight } }, children.map(({ text, link }, index) => (React.createElement("li", { key: index },
-            React.createElement("a", { href: `${config.base}${link}`, className: classnames('nav_link', { active: link === outputPath }) }, text))))))));
+            React.createElement("a", { href: `${config.base}${link}`, className: classnames('nav_link', { active: link === outputPath }), onClick: () => {
+                    // @ts-ignore
+                    document.documentElement.classList.remove('show_sidebar');
+                } }, text))))))));
 };
 export default Sidebar;

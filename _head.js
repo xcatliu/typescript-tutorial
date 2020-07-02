@@ -14,8 +14,11 @@ const Head = ({ config, title, ga, outputPath, isDark }) => {
         ga,
         config.head,
         React.createElement(Helmet, null,
-            React.createElement("title", null, outputPath !== 'index.html' ? `${title} · ${config.title}` : title),
             React.createElement("meta", { charSet: "utf-8" }),
+            React.createElement("meta", { httpEquiv: "x-ua-compatible", content: "ie=edge" }),
+            React.createElement("title", null, outputPath !== 'index.html' ? `${title} · ${config.title}` : title),
+            config.description && React.createElement("meta", { name: "description", content: config.description }),
+            React.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }),
             React.createElement("link", { rel: "stylesheet", href: `${config.base}assets/index.css` }),
             React.createElement("link", { id: "prismTheme", rel: "stylesheet", href: isDark ? `${config.base}assets/prism_tomorrow.css` : `${config.base}assets/prism.css` }),
             React.createElement("script", null, scriptSetIsDark))));

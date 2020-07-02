@@ -1,7 +1,16 @@
-
-<svg width="1024" height="1024" viewBox="0 -64 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-  <path
-    d="M768 448c0-141.385-114.615-256-256-256s-256 114.615-256 256c0 141.385 114.615 256 256 256s256-114.615 256-256zM480 896h64v-128h-64v128zM480 128h64v-128h-64v128zM832 480h128v-64h-128v64zM64 480h128v-64h-128v64zM715.645 693.036l90.509 90.509 45.254-45.254-90.509-90.509-45.254 45.254zM172.579 157.709l90.509 90.509 45.254-45.254-90.509-90.509-45.254 45.254zM711.775 199.094l45.254 45.254 90.509-90.509-45.254-45.254-90.509 90.509zM176.449 742.16l45.254 45.254 90.509-90.509-45.254-45.254-90.509 90.509z"
-    fill="#f0a742"
-  />
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+<g>
+	<circle fill="#f0a742" cx="8" cy="8" r="4"/>
+	<rect fill="#f0a742" x="7.5" y="1" width="1" height="2"/>
+	<rect fill="#f0a742" x="7.5" y="13" width="1" height="2"/>
+	<rect fill="#f0a742" x="13" y="7.5" width="2" height="1"/>
+	<rect fill="#f0a742" x="1" y="7.5" width="2" height="1"/>
+	<rect fill="#f0a742" x="11.2" y="3.3" transform="matrix(0.7071 -0.7071 0.7071 0.7071 0.929 9.7574)" width="2" height="1"/>
+	<rect fill="#f0a742" x="2.8" y="11.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -7.5564 6.2426)" width="2" height="1"/>
+	<rect fill="#f0a742" x="11.7" y="11.2" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.0711 12.2427)" width="1" height="2"/>
+	<rect fill="#f0a742" x="3.3" y="2.8" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -1.5563 3.7573)" width="1" height="2"/>
+</g>
 </svg>

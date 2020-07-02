@@ -45,8 +45,9 @@
   --font-family-monospace: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
 
   /* z-index */
-  --z-index-header: 100;
-  --z-index-popover: 200;
+  --z-index-sidebar: 100;
+  --z-index-header: 200;
+  --z-index-popover: 300;
 
   /* Others */
   --opacity: 0.7;

@@ -1,8 +1,8 @@
-
-<svg width="1024" height="1024" viewBox="0 -64 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-  <path
-    d="M512 211.2l-473.6 467.2 51.2 51.2 422.4-428.8 422.4 428.8 51.2-51.2z"
-    fill="#777777"
-  />
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+<g>
+	<polygon fill="#777777" points="8,11.7 0.6,4.4 1.4,3.6 8,10.3 14.6,3.6 15.4,4.4 	"/>
+</g>
 </svg>
-
