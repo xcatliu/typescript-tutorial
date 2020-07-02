@@ -60,8 +60,3 @@ tom.push(true);
 ## 参考
 
 - [Basic Types # Tuple](http://www.typescriptlang.org/docs/handbook/basic-types.html#tuple)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#元组-tuple)）
-
----
-
-- [上一章：字符串字面量类型](string-literal-types.md)
-- [下一章：枚举](enum.md)

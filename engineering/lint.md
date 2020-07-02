@@ -443,8 +443,3 @@ npm install --save-dev eslint-plugin-react
 
 [ESLint]: https://eslint.org/
 [typescript-eslint]: https://github.com/typescript-eslint/typescript-eslint
-
----
-
-- [上一章：工程](README.md)
-- [下一章：编译选项](./compiler-options.md)

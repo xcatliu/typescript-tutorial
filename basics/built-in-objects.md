@@ -103,8 +103,3 @@ npm install @types/node --save-dev
 
 [内置对象]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 [TypeScript 核心库的定义文件]: https://github.com/Microsoft/TypeScript/tree/master/src/lib
-
----
-
-- [上一章：声明文件](declaration-files.md)
-- [下一章：进阶](../advanced/README.md)

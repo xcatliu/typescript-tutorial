@@ -23,8 +23,3 @@ handleEvent(document.getElementById('world'), 'dblclick'); // 报错，event 不
 ## 参考
 
 - [Advanced Types # Type Aliases](http://www.typescriptlang.org/docs/handbook/advanced-types.html#string-literal-types)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Advanced%20Types.html#字符串字面量类型)）
-
----
-
-- [上一章：类型别名](type-aliases.md)
-- [下一章：元组](tuple.md)

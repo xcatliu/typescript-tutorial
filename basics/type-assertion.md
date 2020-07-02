@@ -597,10 +597,5 @@ tom.run();
 - [Advanced Types # Type Guards and Differentiating Types](http://www.typescriptlang.org/docs/handbook/advanced-types.html#type-guards-and-differentiating-types)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Advanced%20Types.html#类型保护与区分类型（type-guards-and-differentiating-types）)）
 - [TypeScript 的设计理念][]
 
----
-
-- [上一章：函数的类型](type-of-function.md)
-- [下一章：声明文件](declaration-files.md)
-
 [TypeScript 的设计理念]: https://github.com/Microsoft/TypeScript/wiki/TypeScript-Design-Goals
 [泛型]: ../advanced/generics.md

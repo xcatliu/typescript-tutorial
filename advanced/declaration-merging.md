@@ -95,8 +95,3 @@ interface Alarm {
 ## 参考
 
 - [Declaration Merging](http://www.typescriptlang.org/docs/handbook/declaration-merging.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Declaration%20Merging.html)）
-
----
-
-- [上一章：泛型](generics.md)
-- [下一章：扩展阅读](further-reading.md)

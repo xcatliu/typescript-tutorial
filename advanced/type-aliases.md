@@ -24,8 +24,3 @@ function getName(n: NameOrResolver): Name {
 ## 参考
 
 - [Advanced Types # Type Aliases](http://www.typescriptlang.org/docs/handbook/advanced-types.html#type-aliases)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Advanced%20Types.html#类型别名)）
-
----
-
-- [上一章：进阶](../advanced/README.md)
-- [下一章：字符串字面量类型](string-literal-types.md)

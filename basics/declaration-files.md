@@ -1150,9 +1150,4 @@ pull-request 需要符合它们的规范，并且通过测试，才能被合并�
 - [typeRoots or paths](https://github.com/Microsoft/TypeScript/issues/22217#issuecomment-369783776)
 - [DefinitelyTyped][]
 
----
-
-- [上一章：类型断言](type-assertion.md)
-- [下一章：内置对象](built-in-objects.md)
-
 [DefinitelyTyped]: https://github.com/DefinitelyTyped/DefinitelyTyped/

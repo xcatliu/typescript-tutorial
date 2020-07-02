@@ -235,8 +235,3 @@ let p2: PointInstanceType;
 ## 参考
 
 - [Interfaces](http://www.typescriptlang.org/docs/handbook/interfaces.html)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html)）
-
----
-
-- [上一章：类](class.md)
-- [下一章：泛型](generics.md)

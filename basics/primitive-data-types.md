@@ -149,11 +149,6 @@ let num: number = u;
 - [ES6 中的二进制和八进制表示法][]
 - [ES6 中的模板字符串][]
 
----
-
-- [上一章：基础](README.md)
-- [下一章：任意值](any.md)
-
 [Primitive data types]: https://developer.mozilla.org/en-US/docs/Glossary/Primitive
 [ES6 中的新类型 `Symbol`]: http://es6.ruanyifeng.com/#docs/symbol
 [ES6 中的二进制和八进制表示法]: http://es6.ruanyifeng.com/#docs/number#二进制和八进制表示法

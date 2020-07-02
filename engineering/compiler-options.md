@@ -74,8 +74,3 @@ import React from 'react';
 ```
 
 解决办法就是将 `allowSyntheticDefaultImports` 设置为 `true`。
-
----
-
-- [上一章：代码检查](./lint.md)
-- [下一章：感谢](../thanks/README.md)

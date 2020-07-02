@@ -64,8 +64,3 @@ console.log(myFavoriteNumber.length); // 编译时报错
 ## 参考
 
 - [Advanced Types # Union Types](http://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Advanced%20Types.html#联合类型)）
-
----
-
-- [上一章：类型推论](type-inference.md)
-- [下一章：对象的类型——接口](type-of-object-interfaces.md)

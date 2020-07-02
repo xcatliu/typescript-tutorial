@@ -66,8 +66,3 @@ something.setName('Tom');
 ## 参考
 
 - [Basic Types # Any](http://www.typescriptlang.org/docs/handbook/basic-types.html#any)（[中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#任意值)）
-
----
-
-- [上一章：原始数据类型](primitive-data-types.md)
-- [下一章：类型推论](type-inference.md)

@@ -7,6 +7,8 @@ export default {
   theme: 'docs',
   plugins: ['sidebar', 'script', 'gitalk', 'ga'],
   title: 'TypeScript 入门教程',
+  description: '从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript。',
+  github: 'https://github.com/xcatliu/typescript-tutorial',
   head: <link rel="icon" type="image/png" href="/favicon.png" />,
   nav: [
     {
@@ -19,12 +21,6 @@ export default {
           <img src="/assets/alipay.jpg" width="256" style={{ verticalAlign: 'top' }} />
         </>
       )
-    },
-    {
-      text: 'GitHub',
-      link: 'https://github.com/xcatliu/typescript-tutorial',
-      target: '_blank',
-      align: 'right'
     }
   ],
   sidebar: [

@@ -38,8 +38,3 @@ TypeScript 最大的优势便是增强了编辑器和 IDE 的功能，包括代�
 - [Eclipse](https://github.com/palantir/eclipse-typescript)
 - [Visual Studio 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48593)
 - [Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=48739)
-
----
-
-- [上一章：什么是 TypeScript](what-is-typescript.md)
-- [下一章：Hello TypeScript](hello-typescript.md)

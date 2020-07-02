@@ -233,8 +233,3 @@ var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */];
 
 [中文手册 - 枚举]: https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Enums.html
 [C# Enum]: https://msdn.microsoft.com/zh-cn/library/sbbt4032.aspx
-
----
-
-- [上一章：元组](tuple.md)
-- [下一章：类](class.md)

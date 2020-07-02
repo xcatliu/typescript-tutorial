@@ -450,8 +450,3 @@ console.log(a.sayHi()); // My name is Jack
 - [ECMAScript 6 入门 - Class]
 
 [ecmascript 6 入门 - class]: http://es6.ruanyifeng.com/#docs/class
-
----
-
-- [上一章：枚举](enum.md)
-- [下一章：类与接口](class-and-interfaces.md)

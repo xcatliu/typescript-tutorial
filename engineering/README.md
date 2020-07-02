@@ -8,8 +8,3 @@
 
 - [代码检查](lint.md)
 - [编译选项](compiler-options.md)
-
----
-
-- [上一章：扩展阅读](../advanced/further-reading.md)
-- [下一章：代码检查](lint.md)
