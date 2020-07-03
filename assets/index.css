@@ -443,6 +443,9 @@ table th {
   header > h1 {
     display: none;
   }
+  .show_sidebar body {
+    overflow-y: hidden;
+  }
   .sidebar {
     transform: translateX(-100%);
     transition: transform var(--transition-duration);

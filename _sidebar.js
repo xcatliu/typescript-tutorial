@@ -38,9 +38,9 @@ const FoldableItem = ({ config, outputPath, sidebarItem: { text, link, children 
                             setFold(!fold);
                         }
                         else {
-                            setFold(false);
                             // @ts-ignore
                             document.documentElement.classList.remove('show_sidebar');
+                            setFold(false);
                         }
                     }
                     else {
