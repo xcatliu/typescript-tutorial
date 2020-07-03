@@ -3,7 +3,7 @@
 import throttle from 'https://dev.jspm.io/lodash@4.17.15/throttle';
 import Loading from './_loading.js';
 const Main = (props) => {
-    const { config, content, loading, toc, previous, next, gitalk } = props;
+    const { config, content, loading, toc, prev, next, gitalk } = props;
     React.useEffect(() => {
         if (window.Deno) {
             return;
@@ -51,10 +51,10 @@ const Main = (props) => {
     return (React.createElement("section", { className: "main" },
         React.createElement("div", { className: "main_article" },
             loading ? React.createElement(Loading, null) : content,
-            (previous || next) && (React.createElement("div", { className: "previous_next" },
-                previous && (React.createElement("a", { className: "previous button", href: `${config.base}${previous.link}` },
+            (prev || next) && (React.createElement("div", { className: "prev_next" },
+                prev && (React.createElement("a", { className: "prev button", href: `${config.base}${prev.link}` },
                     "\u00AB\u00A0\u00A0",
-                    previous.text)),
+                    prev.text)),
                 next && (React.createElement("a", { className: "next button", href: `${config.base}${next.link}` },
                     next.text,
                     "\u00A0\u00A0\u00BB")))),

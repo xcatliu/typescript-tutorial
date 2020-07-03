@@ -6,6 +6,14 @@ export default {
     'gitalk': React.createElement(Gitalk, { admin: [
             'xcatliu'
         ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "introduction/index.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u7B80\u4ECB" }),
+    'prev': {
+        "text": "TypeScript 入门教程",
+        "link": "index.html"
+    },
+    'next': {
+        "text": "什么是 TypeScript",
+        "link": "introduction/what-is-typescript.html"
+    },
     'sidebar': [
         {
             "link": "introduction/index.html",
@@ -161,14 +169,6 @@ export default {
             "pagePath": "thanks/README.md"
         }
     ],
-    'previous': {
-        "text": "TypeScript 入门教程",
-        "link": "index.html"
-    },
-    'next': {
-        "text": "什么是 TypeScript",
-        "link": "introduction/what-is-typescript.html"
-    },
     config: { "srcDir": "src", "publicDir": "public", "base": "/", ...projectConfig },
     'pagePath': "introduction/README.md",
     'layoutPath': "_layout.tsx",

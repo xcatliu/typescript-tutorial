@@ -6,6 +6,14 @@ export default {
     'gitalk': React.createElement(Gitalk, { admin: [
             'xcatliu'
         ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "basics/type-of-object-interfaces.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u5BF9\u8C61\u7684\u7C7B\u578B\u2014\u2014\u63A5\u53E3" }),
+    'prev': {
+        "text": "联合类型",
+        "link": "basics/union-types.html"
+    },
+    'next': {
+        "text": "数组的类型",
+        "link": "basics/type-of-array.html"
+    },
     'sidebar': [
         {
             "link": "introduction/index.html",
@@ -161,14 +169,6 @@ export default {
             "pagePath": "thanks/README.md"
         }
     ],
-    'previous': {
-        "text": "联合类型",
-        "link": "basics/union-types.html"
-    },
-    'next': {
-        "text": "数组的类型",
-        "link": "basics/type-of-array.html"
-    },
     config: { "srcDir": "src", "publicDir": "public", "base": "/", ...projectConfig },
     'pagePath': "basics/type-of-object-interfaces.md",
     'layoutPath': "_layout.tsx",

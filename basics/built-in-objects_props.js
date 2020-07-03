@@ -6,6 +6,14 @@ export default {
     'gitalk': React.createElement(Gitalk, { admin: [
             'xcatliu'
         ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "basics/built-in-objects.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u5185\u7F6E\u5BF9\u8C61" }),
+    'prev': {
+        "text": "声明文件",
+        "link": "basics/declaration-files.html"
+    },
+    'next': {
+        "link": "advanced/index.html",
+        "text": "进阶"
+    },
     'sidebar': [
         {
             "link": "introduction/index.html",
@@ -161,14 +169,6 @@ export default {
             "pagePath": "thanks/README.md"
         }
     ],
-    'previous': {
-        "text": "声明文件",
-        "link": "basics/declaration-files.html"
-    },
-    'next': {
-        "link": "advanced/index.html",
-        "text": "进阶"
-    },
     config: { "srcDir": "src", "publicDir": "public", "base": "/", ...projectConfig },
     'pagePath': "basics/built-in-objects.md",
     'layoutPath': "_layout.tsx",

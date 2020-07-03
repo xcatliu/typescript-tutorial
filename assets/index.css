@@ -302,27 +302,27 @@ table th {
   font-weight: var(--font-weight-bold);
 }
 
-.previous_next {
+.prev_next {
   display: flex;
   align-items: stretch;
   margin: 3rem 0 2rem;
   padding-top: 3rem;
   border-top: 1px solid var(--color-border);
 }
-.previous_next a {
+.prev_next a {
   width: calc(50% - 1rem);
   display: flex;
   align-items: center;
 }
-.previous_next .previous {
+.prev_next .prev {
   margin-right: 1rem;
 }
-.previous_next .next {
+.prev_next .next {
   text-align: right;
   margin-left: calc(50% + 2rem);
   justify-content: flex-end;
 }
-.previous_next .previous + .next {
+.prev_next .prev + .next {
   margin-left: 1rem;
 }
 /* #endregion */
@@ -485,17 +485,17 @@ table th {
   .anchor {
     opacity: 1;
   }
-  .previous_next a {
+  .prev_next a {
     font-size: 14px;
     width: calc(50% - 0.5rem);
   }
-  .previous_next .previous {
+  .prev_next .prev {
     margin-right: 0.5rem;
   }
-  .previous_next .next {
+  .prev_next .next {
     margin-left: calc(50% + 0.5rem);
   }
-  .previous_next .previous + .next {
+  .prev_next .prev + .next {
     margin-left: 0.5rem;
   }
 }

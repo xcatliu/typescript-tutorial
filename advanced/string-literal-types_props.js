@@ -6,6 +6,14 @@ export default {
     'gitalk': React.createElement(Gitalk, { admin: [
             'xcatliu'
         ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "advanced/string-literal-types.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u5B57\u7B26\u4E32\u5B57\u9762\u91CF\u7C7B\u578B" }),
+    'prev': {
+        "text": "类型别名",
+        "link": "advanced/type-aliases.html"
+    },
+    'next': {
+        "text": "元组",
+        "link": "advanced/tuple.html"
+    },
     'sidebar': [
         {
             "link": "introduction/index.html",
@@ -161,14 +169,6 @@ export default {
             "pagePath": "thanks/README.md"
         }
     ],
-    'previous': {
-        "text": "类型别名",
-        "link": "advanced/type-aliases.html"
-    },
-    'next': {
-        "text": "元组",
-        "link": "advanced/tuple.html"
-    },
     config: { "srcDir": "src", "publicDir": "public", "base": "/", ...projectConfig },
     'pagePath': "advanced/string-literal-types.md",
     'layoutPath': "_layout.tsx",

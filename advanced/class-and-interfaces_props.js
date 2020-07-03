@@ -6,6 +6,14 @@ export default {
     'gitalk': React.createElement(Gitalk, { admin: [
             'xcatliu'
         ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "advanced/class-and-interfaces.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u7C7B\u4E0E\u63A5\u53E3" }),
+    'prev': {
+        "text": "类",
+        "link": "advanced/class.html"
+    },
+    'next': {
+        "text": "泛型",
+        "link": "advanced/generics.html"
+    },
     'sidebar': [
         {
             "link": "introduction/index.html",
@@ -161,14 +169,6 @@ export default {
             "pagePath": "thanks/README.md"
         }
     ],
-    'previous': {
-        "text": "类",
-        "link": "advanced/class.html"
-    },
-    'next': {
-        "text": "泛型",
-        "link": "advanced/generics.html"
-    },
     config: { "srcDir": "src", "publicDir": "public", "base": "/", ...projectConfig },
     'pagePath': "advanced/class-and-interfaces.md",
     'layoutPath': "_layout.tsx",

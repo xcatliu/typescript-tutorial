@@ -6,6 +6,14 @@ export default {
     'gitalk': React.createElement(Gitalk, { admin: [
             'xcatliu'
         ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "engineering/lint.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u4EE3\u7801\u68C0\u67E5" }),
+    'prev': {
+        "link": "engineering/index.html",
+        "text": "工程"
+    },
+    'next': {
+        "text": "编译选项",
+        "link": "engineering/compiler-options.html"
+    },
     'sidebar': [
         {
             "link": "introduction/index.html",
@@ -161,14 +169,6 @@ export default {
             "pagePath": "thanks/README.md"
         }
     ],
-    'previous': {
-        "link": "engineering/index.html",
-        "text": "工程"
-    },
-    'next': {
-        "text": "编译选项",
-        "link": "engineering/compiler-options.html"
-    },
     config: { "srcDir": "src", "publicDir": "public", "base": "/", ...projectConfig },
     'pagePath': "engineering/lint.md",
     'layoutPath': "_layout.tsx",

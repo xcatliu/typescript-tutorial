@@ -4,7 +4,7 @@ export default {
     srcDir: '.',
     ignore: [/\/examples\//, /\/public\//, /\/\./, /\/package\-lock\.json/, /\/package\.json/, /\/pagic\.config\.ts/],
     theme: 'docs',
-    plugins: ['sidebar', 'script', 'gitalk', 'ga'],
+    plugins: ['sidebar', 'prev_next', 'gitalk', 'ga'],
     title: 'TypeScript 入门教程',
     description: '从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript。',
     github: 'https://github.com/xcatliu/typescript-tutorial',

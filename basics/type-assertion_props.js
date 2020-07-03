@@ -6,6 +6,14 @@ export default {
     'gitalk': React.createElement(Gitalk, { admin: [
             'xcatliu'
         ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "basics/type-assertion.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u7C7B\u578B\u65AD\u8A00" }),
+    'prev': {
+        "text": "函数的类型",
+        "link": "basics/type-of-function.html"
+    },
+    'next': {
+        "text": "声明文件",
+        "link": "basics/declaration-files.html"
+    },
     'sidebar': [
         {
             "link": "introduction/index.html",
@@ -161,14 +169,6 @@ export default {
             "pagePath": "thanks/README.md"
         }
     ],
-    'previous': {
-        "text": "函数的类型",
-        "link": "basics/type-of-function.html"
-    },
-    'next': {
-        "text": "声明文件",
-        "link": "basics/declaration-files.html"
-    },
     config: { "srcDir": "src", "publicDir": "public", "base": "/", ...projectConfig },
     'pagePath': "basics/type-assertion.md",
     'layoutPath': "_layout.tsx",

@@ -6,6 +6,14 @@ export default {
     'gitalk': React.createElement(Gitalk, { admin: [
             'xcatliu'
         ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "basics/primitive-data-types.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u539F\u59CB\u6570\u636E\u7C7B\u578B" }),
+    'prev': {
+        "link": "basics/index.html",
+        "text": "基础"
+    },
+    'next': {
+        "text": "任意值",
+        "link": "basics/any.html"
+    },
     'sidebar': [
         {
             "link": "introduction/index.html",
@@ -161,14 +169,6 @@ export default {
             "pagePath": "thanks/README.md"
         }
     ],
-    'previous': {
-        "link": "basics/index.html",
-        "text": "基础"
-    },
-    'next': {
-        "text": "任意值",
-        "link": "basics/any.html"
-    },
     config: { "srcDir": "src", "publicDir": "public", "base": "/", ...projectConfig },
     'pagePath': "basics/primitive-data-types.md",
     'layoutPath': "_layout.tsx",

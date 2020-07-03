@@ -6,6 +6,14 @@ export default {
     'gitalk': React.createElement(Gitalk, { admin: [
             'xcatliu'
         ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "basics/type-of-array.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u6570\u7EC4\u7684\u7C7B\u578B" }),
+    'prev': {
+        "text": "对象的类型——接口",
+        "link": "basics/type-of-object-interfaces.html"
+    },
+    'next': {
+        "text": "函数的类型",
+        "link": "basics/type-of-function.html"
+    },
     'sidebar': [
         {
             "link": "introduction/index.html",
@@ -161,14 +169,6 @@ export default {
             "pagePath": "thanks/README.md"
         }
     ],
-    'previous': {
-        "text": "对象的类型——接口",
-        "link": "basics/type-of-object-interfaces.html"
-    },
-    'next': {
-        "text": "函数的类型",
-        "link": "basics/type-of-function.html"
-    },
     config: { "srcDir": "src", "publicDir": "public", "base": "/", ...projectConfig },
     'pagePath': "basics/type-of-array.md",
     'layoutPath': "_layout.tsx",

@@ -6,6 +6,14 @@ export default {
     'gitalk': React.createElement(Gitalk, { admin: [
             'xcatliu'
         ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "advanced/class.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u7C7B" }),
+    'prev': {
+        "text": "枚举",
+        "link": "advanced/enum.html"
+    },
+    'next': {
+        "text": "类与接口",
+        "link": "advanced/class-and-interfaces.html"
+    },
     'sidebar': [
         {
             "link": "introduction/index.html",
@@ -161,14 +169,6 @@ export default {
             "pagePath": "thanks/README.md"
         }
     ],
-    'previous': {
-        "text": "枚举",
-        "link": "advanced/enum.html"
-    },
-    'next': {
-        "text": "类与接口",
-        "link": "advanced/class-and-interfaces.html"
-    },
     config: { "srcDir": "src", "publicDir": "public", "base": "/", ...projectConfig },
     'pagePath': "advanced/class.md",
     'layoutPath': "_layout.tsx",
