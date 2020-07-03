@@ -1,7 +1,5 @@
 ---
-next:
-  text: 简介
-  link: introduction/index.html
+next: introduction/README.md
 ---
 
 # TypeScript 入门教程

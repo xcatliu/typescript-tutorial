@@ -1,7 +1,5 @@
 ---
-previous:
-  text: TypeScript 入门教程
-  link: index.html
+prev: README.md
 ---
 
 # 简介
