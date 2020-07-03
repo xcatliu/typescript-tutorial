@@ -59,9 +59,9 @@ const Main = (props) => {
                     next.text,
                     "\u00A0\u00A0\u00BB")))),
             gitalk),
-        React.createElement("div", { className: "main_toc_container nav_link_container" },
+        toc && (React.createElement("div", { className: "main_toc_container nav_link_container" },
             React.createElement("div", { className: "main_toc" },
                 config.tocAd && React.createElement("div", { className: "toc_ad" }, config.tocAd),
-                toc))));
+                toc)))));
 };
 export default Main;

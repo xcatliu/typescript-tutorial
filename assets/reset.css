@@ -157,6 +157,7 @@ ul ol {
 
 table {
   font-size: 14px;
+  line-height: var(--line-height-small);
 }
 
 hr {

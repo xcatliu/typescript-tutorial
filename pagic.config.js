@@ -63,6 +63,10 @@ export default {
         },
         'thanks/README.md'
     ],
+    tools: {
+        editOnGithub: true,
+        backToTop: true
+    },
     tocAd: (React.createElement("div", { dangerouslySetInnerHTML: {
             __html: `
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
