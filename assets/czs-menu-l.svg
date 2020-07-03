@@ -4,13 +4,13 @@
 	 width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
 <g>
 	<g>
-		<polygon points="14,3 2,3 2,4 14,4 14,3 		"/>
+		<polygon fill="#777777" points="14,3 2,3 2,4 14,4 14,3 		"/>
 	</g>
 	<g>
-		<polygon points="14,7 2,7 2,8 14,8 14,7 		"/>
+		<polygon fill="#777777" points="14,7 2,7 2,8 14,8 14,7 		"/>
 	</g>
 	<g>
-		<polygon points="14,11 2,11 2,12 14,12 14,11 		"/>
+		<polygon fill="#777777" points="14,11 2,11 2,12 14,12 14,11 		"/>
 	</g>
 </g>
 </svg>

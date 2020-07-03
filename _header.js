@@ -25,7 +25,10 @@ const Header = ({ config, isDark, setIsDark }) => (React.createElement("header",
                     } })),
             React.createElement("li", { className: "mobile_header" },
                 React.createElement("h1", null,
-                    React.createElement("a", { href: config.base }, config.title))),
+                    React.createElement("a", { href: config.base, onClick: () => {
+                            // @ts-ignore
+                            document.documentElement.classList.remove('show_sidebar');
+                        } }, config.title))),
             React.createElement("li", { style: { flexGrow: 1 } }),
             config.nav
                 .filter(({ align }) => align === 'right')

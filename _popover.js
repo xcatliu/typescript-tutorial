@@ -39,14 +39,8 @@ export const Popover = ({ content, placement = 'top', className, style, children
     let validChildren;
     const props = {
         ref: measuredRef,
-        onMouseEnter: () => {
-            console.log(1, 'enter');
-            onMouseEnter();
-        },
-        onMouseLeave: () => {
-            console.log(1, 'leave');
-            onMouseLeave();
-        },
+        onMouseEnter,
+        onMouseLeave,
         onClick
     };
     if (React.isValidElement(children)) {
@@ -61,13 +55,7 @@ export const Popover = ({ content, placement = 'top', className, style, children
                 top: topLeft.top,
                 left: topLeft.left,
                 ...style
-            }, className: className, onMouseEnter: () => {
-                console.log(2, 'enter');
-                onMouseEnter();
-            }, onMouseLeave: () => {
-                console.log(2, 'leave');
-                onMouseLeave();
-            } })),
+            }, className: className, onMouseEnter: onMouseEnter, onMouseLeave: onMouseLeave })),
         validChildren));
 };
 const PopoverProtal = ({ popoverRootId, content, placement = 'top', className, style, onMouseEnter, onMouseLeave }) => {

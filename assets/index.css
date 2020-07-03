@@ -143,6 +143,7 @@ header li a:hover {
   width: var(--width-sidebar);
   height: calc(100vh - var(--height-header));
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 2rem 0 2rem 1rem;
   background-color: var(--color-background-sidebar);
   border-right: 1px solid var(--color-border);
@@ -445,10 +446,10 @@ table th {
   .sidebar {
     transform: translateX(-100%);
     transition: transform var(--transition-duration);
-    box-shadow: var(--box-shadow);
   }
   .show_sidebar .sidebar {
     transform: translateX(0);
+    box-shadow: var(--box-shadow);
   }
   .sidebar [class^='czs-angle-'] {
     opacity: 1 !important;
