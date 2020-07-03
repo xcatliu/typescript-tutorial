@@ -20,21 +20,21 @@
 
 - 类型系统实际上是最好的文档，大部分的函数看看类型的定义就可以知道如何使用了
 - 可以在编译阶段就发现大部分错误，这总比在运行时候出错好
-- 增强了编辑器和 IDE 的功能，包括代码补全、接口提示、跳转到定义、重构等
+- 增强了编辑器和 IDE 的功能，包括代码补全、接口提示、跳转到定义、代码重构等
 
 ### TypeScript 非常包容
 
 - TypeScript 是 JavaScript 的超集，`.js` 文件可以直接重命名为 `.ts` 即可
 - 即使不显式的定义类型，也能够自动做出[类型推论](../basics/type-inference.md)
-- 可以定义从简单到复杂的几乎一切类型
+- TypeScript 的类型系统是图灵完备的，可以定义从简单到复杂的几乎一切类型
 - 即使 TypeScript 编译报错，也可以生成 JavaScript 文件
 - 兼容第三方库，即使第三方库不是用 TypeScript 写的，也可以编写单独的类型文件供 TypeScript 读取
 
 ### TypeScript 拥有活跃的社区
 
 - 大部分第三方库都有提供给 TypeScript 的类型定义文件
-- Google 开发的 Angular2 就是使用 TypeScript 编写的
-- TypeScript 拥抱了 ES6 规范，也支持部分 ESNext 草案的规范
+- Angular、Vue、VS Code、Ant Design 等等耳熟能详的项目都是使用 TypeScript 编写的
+- TypeScript 拥抱了 ES6 规范，支持 ESNext 草案中处于第三阶状态（Stage 3）的特性
 
 ### TypeScript 的缺点
 

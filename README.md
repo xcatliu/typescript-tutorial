@@ -36,7 +36,7 @@ TypeScript 虽然有[官方手册][Handbook]及其[非官方中文版][中文手
 
 [TypeScript] 是 JavaScript 的一个超集，主要提供了**类型系统**和**对 ES6 的支持**，它由 Microsoft 开发，代码[开源于 GitHub](https://github.com/Microsoft/TypeScript) 上。
 
-它的第一个版本发布于 2012 年 10 月，经历了多次更新后，现在已成为前端社区中不可忽视的力量，不仅在 Microsoft 内部得到广泛运用，而且 Google 的 [Angular2](https://angular.io/) 也使用了 TypeScript 作为开发语言。
+它的第一个版本发布于 2012 年 10 月，经历了多次更新后，现在已成为前端社区中不可忽视的力量，不仅在 Microsoft 内部得到广泛运用，而且 Google 开发的 [Angular](https://angular.io/) 从 2.0 开始就使用了 TypeScript 作为开发语言，[Vue](https://vuejs.org/) 3.0 也使用 TypeScript 进行了重构。
 
 ## 适合人群
 
@@ -54,7 +54,7 @@ TypeScript 虽然有[官方手册][Handbook]及其[非官方中文版][中文手
 
 ## 评价
 
-> 《TypeScript 入门教程》全面介绍了 TS 强大的类型系统，完整而简洁，示例丰富，比官方文档更易读，非常适合作为初学者学习 TS 的第一本书。
+> 《TypeScript 入门教程》全面介绍了 TypeScript 强大的类型系统，完整而简洁，示例丰富，比官方文档更易读，非常适合作为初学者学习 TypeScript 的第一本书。
 >
 > —— [阮一峰](https://github.com/ruanyf)
 

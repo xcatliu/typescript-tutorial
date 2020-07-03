@@ -67,6 +67,10 @@ export default {
     },
     'thanks/README.md'
   ],
+  tools: {
+    editOnGithub: true,
+    backToTop: true
+  },
   tocAd: (
     <div
       dangerouslySetInnerHTML={{
