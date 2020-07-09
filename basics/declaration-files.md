@@ -11,7 +11,7 @@
 - [`declare class`](#declare-class) 声明全局类
 - [`declare enum`](#declare-enum) 声明全局枚举类型
 - [`declare namespace`](#declare-namespace) 声明（含有子属性的）全局对象
-- [`interface` 和 `type`](#interface-he-type) 声明全局类型
+- [`interface` 和 `type`](#interface-和-type) 声明全局类型
 - [`export`](#export) 导出变量
 - [`export namespace`](#export-namespace) 导出（含有子属性的）对象
 - [`export default`](#export-default) ES6 默认导出
