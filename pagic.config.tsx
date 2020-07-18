@@ -3,7 +3,7 @@ import React from 'https://dev.jspm.io/react@16.13.1';
 
 export default {
   srcDir: '.',
-  ignore: [/\/examples\//, /\/public\//, /\/\./, /\/package\-lock\.json/, /\/package\.json/, /\/pagic\.config\.ts/],
+  exclude: ['examples'],
   theme: 'docs',
   plugins: ['sidebar', 'prev_next', 'gitalk', 'ga'],
   title: 'TypeScript 入门教程',
