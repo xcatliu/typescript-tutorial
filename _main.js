@@ -1,5 +1,3 @@
-
-
 import throttle from 'https://dev.jspm.io/lodash@4.17.15/throttle';
 import Loading from './_loading.js';
 const Main = (props) => {
@@ -52,10 +50,10 @@ const Main = (props) => {
         React.createElement("div", { className: "main_article" },
             loading ? React.createElement(Loading, null) : content,
             (prev || next) && (React.createElement("div", { className: "prev_next" },
-                prev && (React.createElement("a", { className: "prev button", href: `${config.base}${prev.link}` },
+                prev && (React.createElement("a", { className: "prev button", href: `${config.root}${prev.link}` },
                     "\u00AB\u00A0\u00A0",
                     prev.text)),
-                next && (React.createElement("a", { className: "next button", href: `${config.base}${next.link}` },
+                next && (React.createElement("a", { className: "next button", href: `${config.root}${next.link}` },
                     next.text,
                     "\u00A0\u00A0\u00BB")))),
             gitalk),

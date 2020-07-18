@@ -3,9 +3,6 @@ import Gitalk from '/_gitalk.js';
 import projectConfig from '/pagic.config.js';
 export default {
     'ga': React.createElement(Ga, { id: "UA-45256157-14" }),
-    'gitalk': React.createElement(Gitalk, { admin: [
-            'xcatliu'
-        ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "engineering/index.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u5DE5\u7A0B" }),
     'prev': {
         "text": "扩展阅读",
         "link": "advanced/further-reading.html"
@@ -14,6 +11,9 @@ export default {
         "text": "代码检查",
         "link": "engineering/lint.html"
     },
+    'gitalk': React.createElement(Gitalk, { admin: [
+            'xcatliu'
+        ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "engineering/index.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u5DE5\u7A0B" }),
     'sidebar': [
         {
             "link": "introduction/index.html",
@@ -169,19 +169,17 @@ export default {
             "pagePath": "thanks/README.md"
         }
     ],
-    config: { "srcDir": "src", "publicDir": "public", "base": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig },
     'pagePath': "engineering/README.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "engineering/index.html",
     'title': "工程",
     'content': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<h1>工程</h1>\n<p>掌握了 TypeScript 的语法就像学会了砌墙的工艺。</p>\n<p>我们学习 TypeScript 的目的不是为了造一间小茅屋，而是为了造高楼大厦，这也正是 TypeScript 的类型系统带来的优势。</p>\n<p>那么一项大工程应该如何开展呢？本部分的内容就会介绍 TypeScript 工程化的最佳实践，具体内容包括：</p>\n<ul>\n<li><a href="lint.html">代码检查</a></li>\n<li><a href="compiler-options.html">编译选项</a></li>\n</ul>\n'
+            __html: '<h1>工程</h1>\n<p>掌握了 TypeScript 的语法就像学会了砌墙的工艺。</p>\n<p>我们学习 TypeScript 的目的不是为了造一间小茅屋，而是为了造高楼大厦，这也正是 TypeScript 的类型系统带来的优势。</p>\n<p>那么一项大工程应该如何开展呢？本部分的内容就会介绍 TypeScript 工程化的最佳实践，具体内容包括：</p>\n<ul>\n<li><a href="lint.html">代码检查</a></li>\n<li><a href="compiler-options.html">编译选项</a></li>\n</ul>'
         } }),
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { crossOrigin: "anonymous", src: "https://unpkg.com/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { crossOrigin: "anonymous", src: "https://unpkg.com/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
-    'toc': React.createElement("aside", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol></ol></nav>'
-        } })
+    'toc': null
 };

@@ -1,46 +1,63 @@
-
-
 import { classnames } from './_utils.js';
-const Sidebar = (props) => {
-    if (!props.sidebar) {
+const Sidebar = ({ config, outputPath, sidebar }) => {
+    if (!sidebar) {
         return null;
     }
     return (React.createElement("aside", { className: "sidebar" },
-        React.createElement("ol", null, props.sidebar.map((sidebarItem, index) => (React.createElement(FoldableItem, Object.assign({ key: index }, props, { sidebarItem: sidebarItem }))))),
+        React.createElement("ol", null, sidebar.map((sidebarItem, index) => (React.createElement(FoldableItem, { key: index, config: config, outputPath: outputPath, sidebarItem: sidebarItem })))),
         React.createElement("hr", null),
         React.createElement("a", { className: "powered_by", href: "https://github.com/xcatliu/pagic", target: "_blank" },
             "Powered by\u00A0",
-            React.createElement("img", { src: `${props.config.base}assets/pagic.png` }),
+            React.createElement("img", { src: `${config.root}assets/pagic.png` }),
             "agic")));
 };
 const FoldableItem = ({ config, outputPath, sidebarItem: { text, link, children } }) => {
+    const olRef = React.useRef(null);
     const [fold, setFold] = React.useState(false);
-    const [olHeight, setOlHeight] = React.useState('auto');
-    const measuredRef = React.useCallback((node) => {
-        if (node !== null) {
-            setOlHeight(node.getBoundingClientRect().height);
-        }
-    }, []);
+    const [olHeight, setOlHeight] = React.useState(0);
     const isActive = link === outputPath;
+    const foldOl = (fold) => {
+        if (olRef.current === null) {
+            return;
+        }
+        const currentHeight = olRef.current.getBoundingClientRect().height;
+        if (fold) {
+            setOlHeight(currentHeight);
+            olRef.current.style.height = `${currentHeight}px`;
+            setTimeout(() => {
+                olRef.current.style.height = 0;
+                setFold(fold);
+            }, 17);
+        }
+        else {
+            olRef.current.style.height = `${olHeight}px`;
+            setFold(fold);
+            setTimeout(() => {
+                olRef.current.style.height = 'auto';
+            }, 300);
+        }
+    };
     const toggleFold = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        setFold(!fold);
+        foldOl(!fold);
     };
     return (React.createElement("li", { className: fold ? 'fold' : 'unfold' },
-        React.createElement("a", { href: link ? `${config.base}${link}` : '#', className: classnames('nav_link', {
+        React.createElement("a", { href: link ? `${config.root}${link}` : '#', className: classnames('nav_link', {
                 active: isActive,
                 no_link: !link
-            }), onClick: () => {
+            }), onClick: (e) => {
                 if (link) {
                     if (children) {
                         if (isActive) {
-                            setFold(!fold);
+                            toggleFold(e);
                         }
                         else {
                             // @ts-ignore
                             document.documentElement.classList.remove('show_sidebar');
-                            setFold(false);
+                            if (fold) {
+                                foldOl(false);
+                            }
                         }
                     }
                     else {
@@ -49,17 +66,13 @@ const FoldableItem = ({ config, outputPath, sidebarItem: { text, link, children 
                     }
                 }
                 else {
-                    setFold(!fold);
+                    toggleFold(e);
                 }
             } },
             text,
             children && (React.createElement(React.Fragment, null,
-                React.createElement("span", { className: "czs-angle-up-l", style: { backgroundImage: `url("${config.base}assets/czs-angle-up-l.svg")` }, onClick: toggleFold }),
-                React.createElement("span", { className: "czs-angle-down-l", style: { backgroundImage: `url("${config.base}assets/czs-angle-down-l.svg")` }, onClick: toggleFold })))),
-        children && (React.createElement("ol", { ref: measuredRef, style: { height: olHeight } }, children.map(({ text, link }, index) => (React.createElement("li", { key: index },
-            React.createElement("a", { href: `${config.base}${link}`, className: classnames('nav_link', { active: link === outputPath }), onClick: () => {
-                    // @ts-ignore
-                    document.documentElement.classList.remove('show_sidebar');
-                } }, text))))))));
+                React.createElement("span", { className: "czs-angle-up-l", style: { backgroundImage: `url("${config.root}assets/czs-angle-up-l.svg")` }, onClick: toggleFold }),
+                React.createElement("span", { className: "czs-angle-down-l", style: { backgroundImage: `url("${config.root}assets/czs-angle-down-l.svg")` }, onClick: toggleFold })))),
+        children && (React.createElement("ol", { ref: olRef }, children.map((sidebarItem, index) => (React.createElement(FoldableItem, { key: index, config: config, outputPath: outputPath, sidebarItem: sidebarItem })))))));
 };
 export default Sidebar;

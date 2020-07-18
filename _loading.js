@@ -1,5 +1,3 @@
-
-
 const style = `
 .sk-circle {
   margin: 100px auto;

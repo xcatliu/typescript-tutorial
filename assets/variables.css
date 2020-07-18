@@ -16,7 +16,7 @@
   /* Layout */
   --height-header: 3rem;
   --width-sidebar: 18rem;
-  /* 42 words per line is the best, 42 * 16 + 48 + 48 = 48 * 16 = 48rem */
+  /* 42 words per line is the best, 42rem + 3rem + 3rem = 48rem */
   --width-article: 48rem;
   --width-article-padding: 3rem;
   --width-toc: 12rem;

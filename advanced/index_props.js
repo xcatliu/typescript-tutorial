@@ -3,9 +3,6 @@ import Gitalk from '/_gitalk.js';
 import projectConfig from '/pagic.config.js';
 export default {
     'ga': React.createElement(Ga, { id: "UA-45256157-14" }),
-    'gitalk': React.createElement(Gitalk, { admin: [
-            'xcatliu'
-        ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "advanced/index.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u8FDB\u9636" }),
     'prev': {
         "text": "内置对象",
         "link": "basics/built-in-objects.html"
@@ -14,6 +11,9 @@ export default {
         "text": "类型别名",
         "link": "advanced/type-aliases.html"
     },
+    'gitalk': React.createElement(Gitalk, { admin: [
+            'xcatliu'
+        ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "advanced/index.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u8FDB\u9636" }),
     'sidebar': [
         {
             "link": "introduction/index.html",
@@ -169,19 +169,17 @@ export default {
             "pagePath": "thanks/README.md"
         }
     ],
-    config: { "srcDir": "src", "publicDir": "public", "base": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig },
     'pagePath': "advanced/README.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "advanced/index.html",
     'title': "进阶",
     'content': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<h1>进阶</h1>\n<p>本部分介绍一些高级的类型与技术，具体内容包括：</p>\n<ul>\n<li><a href="type-aliases.html">类型别名</a></li>\n<li><a href="string-literal-types.html">字符串字面量类型</a></li>\n<li><a href="tuple.html">元组</a></li>\n<li><a href="enum.html">枚举</a></li>\n<li><a href="class.html">类</a></li>\n<li><a href="class-and-interfaces.html">类与接口</a></li>\n<li><a href="generics.html">泛型</a></li>\n<li><a href="declaration-merging.html">声明合并</a></li>\n<li><a href="further-reading.html">扩展阅读</a></li>\n</ul>\n'
+            __html: '<h1>进阶</h1>\n<p>本部分介绍一些高级的类型与技术，具体内容包括：</p>\n<ul>\n<li><a href="type-aliases.html">类型别名</a></li>\n<li><a href="string-literal-types.html">字符串字面量类型</a></li>\n<li><a href="tuple.html">元组</a></li>\n<li><a href="enum.html">枚举</a></li>\n<li><a href="class.html">类</a></li>\n<li><a href="class-and-interfaces.html">类与接口</a></li>\n<li><a href="generics.html">泛型</a></li>\n<li><a href="declaration-merging.html">声明合并</a></li>\n<li><a href="further-reading.html">扩展阅读</a></li>\n</ul>'
         } }),
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { crossOrigin: "anonymous", src: "https://unpkg.com/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { crossOrigin: "anonymous", src: "https://unpkg.com/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
-    'toc': React.createElement("aside", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol></ol></nav>'
-        } })
+    'toc': null
 };

@@ -1,7 +1,3 @@
-
-
-
-
 const Gitalk = (props) => {
     React.useEffect(() => {
         // https://pegasaas.com/how-to-defer-render-blocking-css/

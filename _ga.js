@@ -1,5 +1,3 @@
-
-
 const Ga = ({ id }) => {
     React.useEffect(() => {
         window.addEventListener('rerender', () => {

@@ -3,9 +3,6 @@ import Gitalk from '/_gitalk.js';
 import projectConfig from '/pagic.config.js';
 export default {
     'ga': React.createElement(Ga, { id: "UA-45256157-14" }),
-    'gitalk': React.createElement(Gitalk, { admin: [
-            'xcatliu'
-        ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "introduction/index.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u7B80\u4ECB" }),
     'prev': {
         "text": "TypeScript 入门教程",
         "link": "index.html"
@@ -14,6 +11,9 @@ export default {
         "text": "什么是 TypeScript",
         "link": "introduction/what-is-typescript.html"
     },
+    'gitalk': React.createElement(Gitalk, { admin: [
+            'xcatliu'
+        ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "introduction/index.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u7B80\u4ECB" }),
     'sidebar': [
         {
             "link": "introduction/index.html",
@@ -169,19 +169,17 @@ export default {
             "pagePath": "thanks/README.md"
         }
     ],
-    config: { "srcDir": "src", "publicDir": "public", "base": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig },
     'pagePath': "introduction/README.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "introduction/index.html",
     'title': "简介",
     'content': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<h1>简介</h1>\n<p>本部分介绍了在学习 TypeScript 之前需要了解的知识，具体内容包括：</p>\n<ul>\n<li><a href="what-is-typescript.html">什么是 TypeScript</a></li>\n<li><a href="get-typescript.html">安装 TypeScript</a></li>\n<li><a href="hello-typescript.html">Hello TypeScript</a></li>\n</ul>\n'
+            __html: '<h1>简介</h1>\n<p>本部分介绍了在学习 TypeScript 之前需要了解的知识，具体内容包括：</p>\n<ul>\n<li><a href="what-is-typescript.html">什么是 TypeScript</a></li>\n<li><a href="get-typescript.html">安装 TypeScript</a></li>\n<li><a href="hello-typescript.html">Hello TypeScript</a></li>\n</ul>'
         } }),
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { crossOrigin: "anonymous", src: "https://unpkg.com/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { crossOrigin: "anonymous", src: "https://unpkg.com/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
-    'toc': React.createElement("aside", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol></ol></nav>'
-        } })
+    'toc': null
 };

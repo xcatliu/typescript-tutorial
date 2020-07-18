@@ -3,9 +3,6 @@ import Gitalk from '/_gitalk.js';
 import projectConfig from '/pagic.config.js';
 export default {
     'ga': React.createElement(Ga, { id: "UA-45256157-14" }),
-    'gitalk': React.createElement(Gitalk, { admin: [
-            'xcatliu'
-        ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "basics/index.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u57FA\u7840" }),
     'prev': {
         "text": "Hello TypeScript",
         "link": "introduction/hello-typescript.html"
@@ -14,6 +11,9 @@ export default {
         "text": "原始数据类型",
         "link": "basics/primitive-data-types.html"
     },
+    'gitalk': React.createElement(Gitalk, { admin: [
+            'xcatliu'
+        ], clientID: "29aa4941759fc887ed4f", clientSecret: "33e355efdf3a1959624506a5d88311145208471b", id: "basics/index.html", owner: "xcatliu", pagerDirection: "first", repo: "typescript-tutorial", title: "\u57FA\u7840" }),
     'sidebar': [
         {
             "link": "introduction/index.html",
@@ -169,19 +169,17 @@ export default {
             "pagePath": "thanks/README.md"
         }
     ],
-    config: { "srcDir": "src", "publicDir": "public", "base": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig },
     'pagePath': "basics/README.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "basics/index.html",
     'title': "基础",
     'content': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<h1>基础</h1>\n<p>本部分介绍了 TypeScript 中的常用类型和一些基本概念，旨在让大家对 TypeScript 有个初步的理解。具体内容包括：</p>\n<ul>\n<li><a href="primitive-data-types.html">原始数据类型</a></li>\n<li><a href="any.html">任意值</a></li>\n<li><a href="type-inference.html">类型推论</a></li>\n<li><a href="union-types.html">联合类型</a></li>\n<li><a href="type-of-object-interfaces.html">对象的类型——接口</a></li>\n<li><a href="type-of-array.html">数组的类型</a></li>\n<li><a href="type-of-function.html">函数的类型</a></li>\n<li><a href="type-assertion.html">类型断言</a></li>\n<li><a href="declaration-files.html">声明文件</a></li>\n<li><a href="built-in-objects.html">内置对象</a></li>\n</ul>\n'
+            __html: '<h1>基础</h1>\n<p>本部分介绍了 TypeScript 中的常用类型和一些基本概念，旨在让大家对 TypeScript 有个初步的理解。具体内容包括：</p>\n<ul>\n<li><a href="primitive-data-types.html">原始数据类型</a></li>\n<li><a href="any.html">任意值</a></li>\n<li><a href="type-inference.html">类型推论</a></li>\n<li><a href="union-types.html">联合类型</a></li>\n<li><a href="type-of-object-interfaces.html">对象的类型——接口</a></li>\n<li><a href="type-of-array.html">数组的类型</a></li>\n<li><a href="type-of-function.html">函数的类型</a></li>\n<li><a href="type-assertion.html">类型断言</a></li>\n<li><a href="declaration-files.html">声明文件</a></li>\n<li><a href="built-in-objects.html">内置对象</a></li>\n</ul>'
         } }),
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { crossOrigin: "anonymous", src: "https://unpkg.com/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { crossOrigin: "anonymous", src: "https://unpkg.com/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
-    'toc': React.createElement("aside", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol></ol></nav>'
-        } })
+    'toc': null
 };

@@ -1,7 +1,3 @@
-
-
-
-
 import { classnames } from './_utils.js';
 let hoverMap = {};
 export const Popover = ({ content, placement = 'top', className, style, children, onClick }) => {
