@@ -35,7 +35,7 @@
 </code></pre>
 <p>在 TypeScript 中，我们使用 <code>:</code> 指定变量的类型，<code>:</code> 的前后有没有空格都可以。</p>
 <p>上述例子中，我们用 <code>:</code> 指定 <code>person</code> 参数类型为 <code>string</code>。但是编译为 js 之后，并没有什么检查的代码被插入进来。</p>
-<p>这是因为 **TypeScript 只会在编译时对类型进行静态检查，如果发现有错误，编译的时候就会报错。**而在运行时，与普通的 JavaScript 文件一样，不会对类型进行检查。</p>
+<p>这是因为 <strong>TypeScript 只会在编译时对类型进行静态检查，如果发现有错误，编译的时候就会报错</strong>。而在运行时，与普通的 JavaScript 文件一样，不会对类型进行检查。</p>
 <p>如果我们需要保证运行时的参数类型，还是得手动对类型进行判断：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token keyword">function</span> <span class="token function">sayHello</span><span class="token punctuation">(</span>person<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> person <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
