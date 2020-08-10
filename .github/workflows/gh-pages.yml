@@ -11,16 +11,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build
+      - name: Setup deno
+        uses: denolib/setup-deno@v2
+        with:
+          deno-version: v1.2.3
+
+      - name: Build gh-pages
         run: |
-          curl -fsSL https://deno.land/x/install/install.sh | sh
-          export DENO_INSTALL="/home/runner/.deno"
-          export PATH="$DENO_INSTALL/bin:$PATH"
-          deno --version
           deno install --unstable --allow-read --allow-write --allow-net -n pagic https://deno.land/x/pagic@v0.8.4/mod.ts
           pagic build
 
-      - name: Deploy
+      - name: Deploy gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
