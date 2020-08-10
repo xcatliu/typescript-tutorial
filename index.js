@@ -19,10 +19,10 @@ function popstateHandler() {
 }
 
 async function main() {
-  await rerender(location, { isHydrate: true }).catch(errorHandler);
-
   document.addEventListener('click', clickHandler);
   window.addEventListener('popstate', popstateHandler);
+
+  await rerender(location, { isHydrate: true }).catch(errorHandler);
 }
 
 async function errorHandler(e) {
