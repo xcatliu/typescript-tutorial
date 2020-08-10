@@ -16,11 +16,14 @@ jobs:
         with:
           deno-version: v1.2.3
 
-      - name: Install pagic
-        run: deno install --unstable --allow-read --allow-write --allow-net -n pagic https://deno.land/x/pagic@v0.8.4/mod.ts
-
       - name: Build gh-pages
-        run: pagic build
+        run: |
+          curl -fsSL https://deno.land/x/install/install.sh | sh
+          export DENO_INSTALL="/home/runner/.deno"
+          export PATH="$DENO_INSTALL/bin:$PATH"
+          deno --version
+          deno install --unstable --allow-read --allow-write --allow-net -n pagic https://deno.land/x/pagic@v0.8.4/mod.ts
+          pagic build
 
       - name: Deploy gh-pages
         uses: peaceiris/actions-gh-pages@v3
