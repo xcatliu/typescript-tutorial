@@ -136,7 +136,7 @@ let tom = buildName('Tom');
 此时就不受「可选参数必须接在必需参数后面」的限制了：
 
 ```ts
-function buildName(firstName: string = 'Tom', lastName: string) {
+function buildName(firstName?: string = 'Tom', lastName: string) {
     return firstName + ' ' + lastName;
 }
 let tomcat = buildName('Tom', 'Cat');
