@@ -382,7 +382,7 @@ npm install --save-dev eslint-plugin-react
 
 ```json
 {
-    "files.eol": "\n",
+    "files.eol": "\\n",
     "editor.tabSize": 4,
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
