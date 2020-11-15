@@ -1,5 +1,4 @@
-// @deno-types="https://deno.land/x/pagic@v0.8.4/src/types/react/v16.13.1/react.d.ts"
-import React from 'https://dev.jspm.io/react@16.13.1';
+import { React } from 'https://deno.land/x/pagic/mod.ts';
 
 export default {
   srcDir: '.',
@@ -70,7 +69,7 @@ export default {
     ]
   },
   tools: {
-    editOnGithub: true,
+    editOnGitHub: true,
     backToTop: true
   },
   tocAd: (
@@ -79,12 +78,14 @@ export default {
         __html: `
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- 192*128 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:192px;height:128px"
-     data-ad-client="ca-pub-8483371329009107"
-     data-ad-slot="6487368873"></ins>
+<ins
+  class="adsbygoogle"
+  style="display:inline-block;width:192px;height:128px"
+  data-ad-client="ca-pub-8483371329009107"
+  data-ad-slot="6487368873"
+></ins>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+  (adsbygoogle = window.adsbygoogle || []).push({});
 </script>`
       }}
     />
