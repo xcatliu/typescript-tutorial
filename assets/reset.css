@@ -38,17 +38,22 @@ textarea {
 code,
 kbd,
 samp,
-pre {
+pre,
+time {
   font-family: var(--font-family-monospace);
 }
 
 h1,
 h2,
 h3,
-h4,
-h5,
+h4 {
+  margin-top: 2rem;
+}
+h5 {
+  margin-top: 1.5rem;
+}
 h6 {
-  margin: 2rem 0 0 0;
+  margin-top: 1rem;
 }
 p,
 blockquote,
@@ -71,6 +76,8 @@ h4,
 h5,
 h6 {
   font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-small);
+  margin-bottom: 0.5rem;
 }
 h1 {
   font-size: 32px;
@@ -144,7 +151,8 @@ blockquote > *:first-child {
 
 ul,
 ol {
-  padding: 0 0 0 2rem;
+  padding: 0 0 0 1.5em;
+  line-height: var(--line-height-small);
 }
 dt,
 dd,
@@ -153,6 +161,9 @@ ul ul,
 ol ul,
 ul ol {
   margin: 0;
+}
+li {
+  margin-top: 0.5rem;
 }
 
 table {
@@ -187,6 +198,7 @@ sup {
 address,
 time {
   font-style: normal;
+  color: var(--color-text-muted);
 }
 mark {
   background-color: yellow;

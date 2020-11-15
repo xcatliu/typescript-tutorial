@@ -5,7 +5,7 @@
             ga('send', 'pageview');</script><link rel="icon" type="image/png" href="/favicon.png"/>
 <meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" http-equiv="x-ua-compatible" content="ie=edge"/><meta data-react-helmet="true" name="description" content="从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript。"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/>
 <title data-react-helmet="true">声明文件 · TypeScript 入门教程</title>
-<link data-react-helmet="true" id="prismTheme" rel="stylesheet" href="/assets/prism.css"/><link data-react-helmet="true" rel="stylesheet" href="/assets/index.css"/>
+<link data-react-helmet="true" rel="stylesheet" href="/assets/index.css"/><link data-react-helmet="true" id="prismTheme" rel="stylesheet" href="/assets/prism.css"/>
 <script data-react-helmet="true" >
     const shouldSetIsDark = document.cookie.includes('is_dark=1') ? true : document.cookie.includes('is_dark=0') ? false : window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (shouldSetIsDark) {
@@ -13,7 +13,7 @@
       document.getElementById('prismTheme').href = "/assets/prism_tomorrow.css";
     }
   </script>
-</head><body><header><h1 class="hide_on_mobile"><a href="/">TypeScript 入门教程</a></h1><nav><ul><li class="show_on_mobile flex_center"><a class="czs-menu-l" href="#" style="background-image:url(&quot;/assets/czs-menu-l.svg&quot;)"></a></li><li class="show_on_mobile"><h1 class="mobile_title"><a href="/">TypeScript 入门教程</a></h1></li><li class="hide_on_mobile"><a href="https://github.com/xcatliu/buy-me-a-coffee" target="_blank">赞助作者</a></li><li style="flex-grow:1"></li><li class="flex_center"><a class="czs-github-logo" href="https://github.com/xcatliu/typescript-tutorial" target="_blank" style="background-image:url(&quot;/assets/czs-github-logo.svg&quot;)"></a></li><li class="toggle_dark flex_center"><span class="czs-sun" style="background-image:url(&quot;/assets/czs-sun.svg&quot;)"></span><span class="czs-sun-l" style="background-image:url(&quot;/assets/czs-sun-l.svg&quot;)"></span><span class="czs-moon" style="background-image:url(&quot;/assets/czs-moon.svg&quot;)"></span><span class="czs-moon-l" style="background-image:url(&quot;/assets/czs-moon-l.svg&quot;)"></span></li></ul></nav></header><aside class="sidebar"><ol><li class="unfold"><a href="/introduction/index.html" class="nav_link">简介<span class="czs-angle-up-l" style="background-image:url(&quot;/assets/czs-angle-up-l.svg&quot;)"></span><span class="czs-angle-down-l" style="background-image:url(&quot;/assets/czs-angle-down-l.svg&quot;)"></span></a><ol><li class=""><a href="/introduction/what-is-typescript.html" class="nav_link">什么是 TypeScript</a></li><li class=""><a href="/introduction/get-typescript.html" class="nav_link">安装 TypeScript</a></li><li class=""><a href="/introduction/hello-typescript.html" class="nav_link">Hello TypeScript</a></li></ol></li><li class="unfold"><a href="/basics/index.html" class="nav_link">基础<span class="czs-angle-up-l" style="background-image:url(&quot;/assets/czs-angle-up-l.svg&quot;)"></span><span class="czs-angle-down-l" style="background-image:url(&quot;/assets/czs-angle-down-l.svg&quot;)"></span></a><ol><li class=""><a href="/basics/primitive-data-types.html" class="nav_link">原始数据类型</a></li><li class=""><a href="/basics/any.html" class="nav_link">任意值</a></li><li class=""><a href="/basics/type-inference.html" class="nav_link">类型推论</a></li><li class=""><a href="/basics/union-types.html" class="nav_link">联合类型</a></li><li class=""><a href="/basics/type-of-object-interfaces.html" class="nav_link">对象的类型——接口</a></li><li class=""><a href="/basics/type-of-array.html" class="nav_link">数组的类型</a></li><li class=""><a href="/basics/type-of-function.html" class="nav_link">函数的类型</a></li><li class=""><a href="/basics/type-assertion.html" class="nav_link">类型断言</a></li><li class=""><a href="/basics/declaration-files.html" class="nav_link active">声明文件</a></li><li class=""><a href="/basics/built-in-objects.html" class="nav_link">内置对象</a></li></ol></li><li class="unfold"><a href="/advanced/index.html" class="nav_link">进阶<span class="czs-angle-up-l" style="background-image:url(&quot;/assets/czs-angle-up-l.svg&quot;)"></span><span class="czs-angle-down-l" style="background-image:url(&quot;/assets/czs-angle-down-l.svg&quot;)"></span></a><ol><li class=""><a href="/advanced/type-aliases.html" class="nav_link">类型别名</a></li><li class=""><a href="/advanced/string-literal-types.html" class="nav_link">字符串字面量类型</a></li><li class=""><a href="/advanced/tuple.html" class="nav_link">元组</a></li><li class=""><a href="/advanced/enum.html" class="nav_link">枚举</a></li><li class=""><a href="/advanced/class.html" class="nav_link">类</a></li><li class=""><a href="/advanced/class-and-interfaces.html" class="nav_link">类与接口</a></li><li class=""><a href="/advanced/generics.html" class="nav_link">泛型</a></li><li class=""><a href="/advanced/declaration-merging.html" class="nav_link">声明合并</a></li><li class=""><a href="/advanced/further-reading.html" class="nav_link">扩展阅读</a></li></ol></li><li class="unfold"><a href="/engineering/index.html" class="nav_link">工程<span class="czs-angle-up-l" style="background-image:url(&quot;/assets/czs-angle-up-l.svg&quot;)"></span><span class="czs-angle-down-l" style="background-image:url(&quot;/assets/czs-angle-down-l.svg&quot;)"></span></a><ol><li class=""><a href="/engineering/lint.html" class="nav_link">代码检查</a></li><li class=""><a href="/engineering/compiler-options.html" class="nav_link">编译选项</a></li></ol></li><li class=""><a href="/thanks/index.html" class="nav_link">感谢</a></li></ol></aside><section class="main"><div class="main_article"><article><h1>声明文件</h1>
+</head><body><header><h1 class="hide_on_mobile"><a href="/">TypeScript 入门教程</a></h1><nav><ul><li class="show_on_mobile flex_center"><a class="czs-menu-l" href="#" style="background-image:url(&quot;/assets/czs-menu-l.svg&quot;)"></a></li><li class="show_on_mobile"><h1 class="mobile_title"><a href="/">TypeScript 入门教程</a></h1></li><li class="hide_on_mobile"><a href="https://github.com/xcatliu/buy-me-a-coffee" target="_blank">赞助作者</a></li><li style="flex-grow:1"></li><li class="flex_center"><a class="czs-github-logo" href="https://github.com/xcatliu/typescript-tutorial" target="_blank" style="background-image:url(&quot;/assets/czs-github-logo.svg&quot;)"></a></li><li class="toggle_dark flex_center"><span class="czs-sun" style="background-image:url(&quot;/assets/czs-sun.svg&quot;)"></span><span class="czs-sun-l" style="background-image:url(&quot;/assets/czs-sun-l.svg&quot;)"></span><span class="czs-moon" style="background-image:url(&quot;/assets/czs-moon.svg&quot;)"></span><span class="czs-moon-l" style="background-image:url(&quot;/assets/czs-moon-l.svg&quot;)"></span></li></ul></nav></header><aside class="sidebar"><ol class="list_style_none"><li class="unfold"><a href="/introduction/index.html" class="nav_link">简介<span class="czs-angle-up-l" style="background-image:url(&quot;/assets/czs-angle-up-l.svg&quot;)"></span><span class="czs-angle-down-l" style="background-image:url(&quot;/assets/czs-angle-down-l.svg&quot;)"></span></a><ol><li class=""><a href="/introduction/what-is-typescript.html" class="nav_link">什么是 TypeScript</a></li><li class=""><a href="/introduction/get-typescript.html" class="nav_link">安装 TypeScript</a></li><li class=""><a href="/introduction/hello-typescript.html" class="nav_link">Hello TypeScript</a></li></ol></li><li class="unfold"><a href="/basics/index.html" class="nav_link">基础<span class="czs-angle-up-l" style="background-image:url(&quot;/assets/czs-angle-up-l.svg&quot;)"></span><span class="czs-angle-down-l" style="background-image:url(&quot;/assets/czs-angle-down-l.svg&quot;)"></span></a><ol><li class=""><a href="/basics/primitive-data-types.html" class="nav_link">原始数据类型</a></li><li class=""><a href="/basics/any.html" class="nav_link">任意值</a></li><li class=""><a href="/basics/type-inference.html" class="nav_link">类型推论</a></li><li class=""><a href="/basics/union-types.html" class="nav_link">联合类型</a></li><li class=""><a href="/basics/type-of-object-interfaces.html" class="nav_link">对象的类型——接口</a></li><li class=""><a href="/basics/type-of-array.html" class="nav_link">数组的类型</a></li><li class=""><a href="/basics/type-of-function.html" class="nav_link">函数的类型</a></li><li class=""><a href="/basics/type-assertion.html" class="nav_link">类型断言</a></li><li class=""><a href="/basics/declaration-files.html" class="nav_link active">声明文件</a></li><li class=""><a href="/basics/built-in-objects.html" class="nav_link">内置对象</a></li></ol></li><li class="unfold"><a href="/advanced/index.html" class="nav_link">进阶<span class="czs-angle-up-l" style="background-image:url(&quot;/assets/czs-angle-up-l.svg&quot;)"></span><span class="czs-angle-down-l" style="background-image:url(&quot;/assets/czs-angle-down-l.svg&quot;)"></span></a><ol><li class=""><a href="/advanced/type-aliases.html" class="nav_link">类型别名</a></li><li class=""><a href="/advanced/string-literal-types.html" class="nav_link">字符串字面量类型</a></li><li class=""><a href="/advanced/tuple.html" class="nav_link">元组</a></li><li class=""><a href="/advanced/enum.html" class="nav_link">枚举</a></li><li class=""><a href="/advanced/class.html" class="nav_link">类</a></li><li class=""><a href="/advanced/class-and-interfaces.html" class="nav_link">类与接口</a></li><li class=""><a href="/advanced/generics.html" class="nav_link">泛型</a></li><li class=""><a href="/advanced/declaration-merging.html" class="nav_link">声明合并</a></li><li class=""><a href="/advanced/further-reading.html" class="nav_link">扩展阅读</a></li></ol></li><li class="unfold"><a href="/engineering/index.html" class="nav_link">工程<span class="czs-angle-up-l" style="background-image:url(&quot;/assets/czs-angle-up-l.svg&quot;)"></span><span class="czs-angle-down-l" style="background-image:url(&quot;/assets/czs-angle-down-l.svg&quot;)"></span></a><ol><li class=""><a href="/engineering/lint.html" class="nav_link">代码检查</a></li><li class=""><a href="/engineering/compiler-options.html" class="nav_link">编译选项</a></li></ol></li><li class=""><a href="/thanks/index.html" class="nav_link">感谢</a></li></ol></aside><section class="main"><div class="main_article"><article><h1>声明文件</h1>
 <p>当使用第三方库时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能。</p>
 <h2 id="%E6%96%B0%E8%AF%AD%E6%B3%95%E7%B4%A2%E5%BC%95">新语法索引<a class="anchor" href="#%E6%96%B0%E8%AF%AD%E6%B3%95%E7%B4%A2%E5%BC%95">§</a></h2>
 <p>由于本章涉及大量新语法，故在本章开头列出新语法的索引，方便大家在使用这些新语法时能快速查找到对应的讲解：</p>
@@ -45,7 +45,7 @@
 <span class="token comment">// ERROR: Cannot find name 'jQuery'.</span>
 </code></pre>
 <p>这时，我们需要使用 <code>declare var</code> 来定义它的类型<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/02-declare-var"><sup>2</sup></a>：</p>
-<pre class="language-ts"><code class="language-ts"><span class="token keyword">declare</span> <span class="token keyword">var</span> <span class="token function-variable function">jQuery</span><span class="token operator">:</span> <span class="token punctuation">(</span>selector<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token builtin">any</span><span class="token punctuation">;</span>
+<pre class="language-ts"><code class="language-ts"><span class="token keyword">declare</span> <span class="token keyword">var</span> <span class="token function-variable function">jQuery</span><span class="token operator">:</span> <span class="token punctuation">(</span>selector<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">any</span><span class="token punctuation">;</span>
 
 <span class="token function">jQuery</span><span class="token punctuation">(</span><span class="token string">'#foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
@@ -57,7 +57,7 @@
 <p>通常我们会把声明语句放到一个单独的文件（<code>jQuery.d.ts</code>）中，这就是声明文件<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/03-jquery-d-ts"><sup>3</sup></a>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/jQuery.d.ts</span>
 
-<span class="token keyword">declare</span> <span class="token keyword">var</span> <span class="token function-variable function">jQuery</span><span class="token operator">:</span> <span class="token punctuation">(</span>selector<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token builtin">any</span><span class="token punctuation">;</span>
+<span class="token keyword">declare</span> <span class="token keyword">var</span> <span class="token function-variable function">jQuery</span><span class="token operator">:</span> <span class="token punctuation">(</span>selector<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">any</span><span class="token punctuation">;</span>
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
@@ -115,32 +115,32 @@
 <p>在所有的声明语句中，<code>declare var</code> 是最简单的，如之前所学，它能够用来定义一个全局变量的类型。与其类似的，还有 <code>declare let</code> 和 <code>declare const</code>，使用 <code>let</code> 与使用 <code>var</code> 没有什么区别：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/jQuery.d.ts</span>
 
-<span class="token keyword">declare</span> <span class="token keyword">let</span> <span class="token function-variable function">jQuery</span><span class="token operator">:</span> <span class="token punctuation">(</span>selector<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token builtin">any</span><span class="token punctuation">;</span>
+<span class="token keyword">declare</span> <span class="token keyword">let</span> <span class="token function-variable function">jQuery</span><span class="token operator">:</span> <span class="token punctuation">(</span>selector<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">any</span><span class="token punctuation">;</span>
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
 <span class="token function">jQuery</span><span class="token punctuation">(</span><span class="token string">'#foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 使用 declare let 定义的 jQuery 类型，允许修改这个全局变量</span>
 <span class="token function-variable function">jQuery</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>而当我们使用 <code>const</code> 定义时，表示此时的全局变量是一个常量，不允许再去修改它的值了<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/04-declare-const-jquery"><sup>4</sup></a>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/jQuery.d.ts</span>
 
-<span class="token keyword">declare</span> <span class="token keyword">const</span> <span class="token function-variable function">jQuery</span><span class="token operator">:</span> <span class="token punctuation">(</span>selector<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token builtin">any</span><span class="token punctuation">;</span>
+<span class="token keyword">declare</span> <span class="token keyword">const</span> <span class="token function-variable function">jQuery</span><span class="token operator">:</span> <span class="token punctuation">(</span>selector<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">any</span><span class="token punctuation">;</span>
 
 <span class="token function">jQuery</span><span class="token punctuation">(</span><span class="token string">'#foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 使用 declare const 定义的 jQuery 类型，禁止修改这个全局变量</span>
 <span class="token function-variable function">jQuery</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token comment">// ERROR: Cannot assign to 'jQuery' because it is a constant or a read-only property.</span>
 </code></pre>
 <p>一般来说，全局变量都是禁止修改的常量，所以大部分情况都应该使用 <code>const</code> 而不是 <code>var</code> 或 <code>let</code>。</p>
 <p>需要注意的是，声明语句中只能定义类型，切勿在声明语句中定义具体的实现<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/05-declare-jquery-value"><sup>5</sup></a>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token keyword">declare</span> <span class="token keyword">const</span> <span class="token function-variable function">jQuery</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token comment">// ERROR: An implementation cannot be declared in ambient contexts.</span>
 </code></pre>
@@ -158,7 +158,7 @@
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/jQuery.d.ts</span>
 
 <span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">jQuery</span><span class="token punctuation">(</span>selector<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">;</span>
-<span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">jQuery</span><span class="token punctuation">(</span><span class="token function-variable function">domReadyCallback</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">;</span>
+<span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">jQuery</span><span class="token punctuation">(</span><span class="token function-variable function">domReadyCallback</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">;</span>
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
@@ -171,7 +171,7 @@
 <p>当全局变量是一个类的时候，我们用 <code>declare class</code> 来定义它的类型<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/07-declare-class"><sup>7</sup></a>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/Animal.d.ts</span>
 
-<span class="token keyword">declare</span> <span class="token keyword">class</span> <span class="token class-name"><span class="token maybe-class-name">Animal</span></span> <span class="token punctuation">{</span>
+<span class="token keyword">declare</span> <span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
     name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
     <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
@@ -179,16 +179,16 @@
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
-<span class="token keyword">let</span> cat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token maybe-class-name">Animal</span></span><span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> cat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>同样的，<code>declare class</code> 语句也只能用来定义类型，不能用来定义具体的实现，比如定义 <code>sayHi</code> 方法的具体实现则会报错：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/Animal.d.ts</span>
 
-<span class="token keyword">declare</span> <span class="token keyword">class</span> <span class="token class-name"><span class="token maybe-class-name">Animal</span></span> <span class="token punctuation">{</span>
+<span class="token keyword">declare</span> <span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
     name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
     <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">My name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">name</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">My name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">;</span>
     <span class="token comment">// ERROR: An implementation cannot be declared in ambient contexts.</span>
 <span class="token punctuation">}</span>
@@ -197,16 +197,16 @@
 <p>使用 <code>declare enum</code> 定义的枚举类型也称作外部枚举（Ambient Enums），举例如下<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/08-declare-enum"><sup>8</sup></a>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/Directions.d.ts</span>
 
-<span class="token keyword">declare</span> <span class="token keyword">enum</span> <span class="token maybe-class-name">Directions</span> <span class="token punctuation">{</span>
-    <span class="token maybe-class-name">Up</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Down</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Left</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Right</span>
+<span class="token keyword">declare</span> <span class="token keyword">enum</span> Directions <span class="token punctuation">{</span>
+    Up<span class="token punctuation">,</span>
+    Down<span class="token punctuation">,</span>
+    Left<span class="token punctuation">,</span>
+    Right
 <span class="token punctuation">}</span>
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
-<span class="token keyword">let</span> directions <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token maybe-class-name">Directions</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Up</span></span><span class="token punctuation">,</span> <span class="token maybe-class-name">Directions</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Down</span></span><span class="token punctuation">,</span> <span class="token maybe-class-name">Directions</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Left</span></span><span class="token punctuation">,</span> <span class="token maybe-class-name">Directions</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Right</span></span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> directions <span class="token operator">=</span> <span class="token punctuation">[</span>Directions<span class="token punctuation">.</span>Up<span class="token punctuation">,</span> Directions<span class="token punctuation">.</span>Down<span class="token punctuation">,</span> Directions<span class="token punctuation">.</span>Left<span class="token punctuation">,</span> Directions<span class="token punctuation">.</span>Right<span class="token punctuation">]</span><span class="token punctuation">;</span>
 </code></pre>
 <p>与其他全局变量的类型声明一致，<code>declare enum</code> 仅用来定义类型，而不是具体的值。</p>
 <p><code>Directions.d.ts</code> 仅仅会用于编译时的检查，声明文件里的内容在编译结果中会被删除。它编译结果是：</p>
@@ -227,7 +227,7 @@
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
-jQuery<span class="token punctuation">.</span><span class="token method function property-access">ajax</span><span class="token punctuation">(</span><span class="token string">'/api/get_something'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+jQuery<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'/api/get_something'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>注意，在 <code>declare namespace</code> 内部，我们直接使用 <code>function ajax</code> 来声明函数，而不是使用 <code>declare function ajax</code>。类似的，也可以使用 <code>const</code>, <code>class</code>, <code>enum</code> 等语句<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/09-declare-namespace"><sup>9</sup></a>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/jQuery.d.ts</span>
@@ -235,20 +235,20 @@ jQuery<span class="token punctuation">.</span><span class="token method function
 <span class="token keyword">declare</span> <span class="token keyword">namespace</span> jQuery <span class="token punctuation">{</span>
     <span class="token keyword">function</span> <span class="token function">ajax</span><span class="token punctuation">(</span>url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> settings<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
     <span class="token keyword">const</span> version<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
-    <span class="token keyword">class</span> <span class="token class-name"><span class="token maybe-class-name">Event</span></span> <span class="token punctuation">{</span>
-        <span class="token function">blur</span><span class="token punctuation">(</span>eventType<span class="token operator">:</span> <span class="token maybe-class-name">EventType</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+    <span class="token keyword">class</span> <span class="token class-name">Event</span> <span class="token punctuation">{</span>
+        <span class="token function">blur</span><span class="token punctuation">(</span>eventType<span class="token operator">:</span> EventType<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">enum</span> <span class="token maybe-class-name">EventType</span> <span class="token punctuation">{</span>
-        <span class="token maybe-class-name">CustomClick</span>
+    <span class="token keyword">enum</span> EventType <span class="token punctuation">{</span>
+        CustomClick
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
-jQuery<span class="token punctuation">.</span><span class="token method function property-access">ajax</span><span class="token punctuation">(</span><span class="token string">'/api/get_something'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>jQuery<span class="token punctuation">.</span><span class="token property-access">version</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> e <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">jQuery</span><span class="token punctuation">.</span><span class="token method function property-access"><span class="token maybe-class-name">Event</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-e<span class="token punctuation">.</span><span class="token method function property-access">blur</span><span class="token punctuation">(</span>jQuery<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">EventType</span></span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">CustomClick</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+jQuery<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'/api/get_something'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>jQuery<span class="token punctuation">.</span>version<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> e <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">jQuery</span><span class="token punctuation">.</span><span class="token function">Event</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+e<span class="token punctuation">.</span><span class="token function">blur</span><span class="token punctuation">(</span>jQuery<span class="token punctuation">.</span>EventType<span class="token punctuation">.</span>CustomClick<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h5 id="%E5%B5%8C%E5%A5%97%E7%9A%84%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4">嵌套的命名空间<a class="anchor" href="#%E5%B5%8C%E5%A5%97%E7%9A%84%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4">§</a></h5>
 <p>如果对象拥有深层的层级，则需要用嵌套的 <code>namespace</code> 来声明深层的属性的类型<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/10-declare-namespace-nesting"><sup>10</sup></a>：</p>
@@ -263,11 +263,11 @@ e<span class="token punctuation">.</span><span class="token method function prop
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
-jQuery<span class="token punctuation">.</span><span class="token method function property-access">ajax</span><span class="token punctuation">(</span><span class="token string">'/api/get_something'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-jQuery<span class="token punctuation">.</span><span class="token property-access">fn</span><span class="token punctuation">.</span><span class="token method function property-access">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+jQuery<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'/api/get_something'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+jQuery<span class="token punctuation">.</span>fn<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     <span class="token function-variable function">check</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">each</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">checked</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>checked <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -275,16 +275,16 @@ jQuery<span class="token punctuation">.</span><span class="token property-access
 <p>假如 <code>jQuery</code> 下仅有 <code>fn</code> 这一个属性（没有 <code>ajax</code> 等其他属性或方法），则可以不需要嵌套 <code>namespace</code><a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/11-declare-namespace-dot"><sup>11</sup></a>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/jQuery.d.ts</span>
 
-<span class="token keyword">declare</span> <span class="token keyword">namespace</span> jQuery<span class="token punctuation">.</span><span class="token property-access">fn</span> <span class="token punctuation">{</span>
+<span class="token keyword">declare</span> <span class="token keyword">namespace</span> jQuery<span class="token punctuation">.</span>fn <span class="token punctuation">{</span>
     <span class="token keyword">function</span> <span class="token function">extend</span><span class="token punctuation">(</span>object<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
-jQuery<span class="token punctuation">.</span><span class="token property-access">fn</span><span class="token punctuation">.</span><span class="token method function property-access">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+jQuery<span class="token punctuation">.</span>fn<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     <span class="token function-variable function">check</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">each</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">checked</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>checked <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -293,24 +293,24 @@ jQuery<span class="token punctuation">.</span><span class="token property-access
 <p>除了全局变量之外，可能有一些类型我们也希望能暴露出来。在类型声明文件中，我们可以直接使用 <code>interface</code> 或 <code>type</code> 来声明一个全局的接口或类型<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/12-interface"><sup>12</sup></a>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/jQuery.d.ts</span>
 
-<span class="token keyword">interface</span> <span class="token class-name"><span class="token maybe-class-name">AjaxSettings</span></span> <span class="token punctuation">{</span>
+<span class="token keyword">interface</span> <span class="token class-name">AjaxSettings</span> <span class="token punctuation">{</span>
     method<span class="token operator">?</span><span class="token operator">:</span> <span class="token string">'GET'</span> <span class="token operator">|</span> <span class="token string">'POST'</span>
     data<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">declare</span> <span class="token keyword">namespace</span> jQuery <span class="token punctuation">{</span>
-    <span class="token keyword">function</span> <span class="token function">ajax</span><span class="token punctuation">(</span>url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> settings<span class="token operator">?</span><span class="token operator">:</span> <span class="token maybe-class-name">AjaxSettings</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">ajax</span><span class="token punctuation">(</span>url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> settings<span class="token operator">?</span><span class="token operator">:</span> AjaxSettings<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>这样的话，在其他文件中也可以使用这个接口或类型了：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
-<span class="token keyword">let</span> settings<span class="token operator">:</span> <span class="token maybe-class-name">AjaxSettings</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+<span class="token keyword">let</span> settings<span class="token operator">:</span> AjaxSettings <span class="token operator">=</span> <span class="token punctuation">{</span>
     method<span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
     data<span class="token operator">:</span> <span class="token punctuation">{</span>
         name<span class="token operator">:</span> <span class="token string">'foo'</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-jQuery<span class="token punctuation">.</span><span class="token method function property-access">ajax</span><span class="token punctuation">(</span><span class="token string">'/api/post_something'</span><span class="token punctuation">,</span> settings<span class="token punctuation">)</span><span class="token punctuation">;</span>
+jQuery<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'/api/post_something'</span><span class="token punctuation">,</span> settings<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><code>type</code> 与 <code>interface</code> 类似，不再赘述。</p>
 <h5 id="%E9%98%B2%E6%AD%A2%E5%91%BD%E5%90%8D%E5%86%B2%E7%AA%81">防止命名冲突<a class="anchor" href="#%E9%98%B2%E6%AD%A2%E5%91%BD%E5%90%8D%E5%86%B2%E7%AA%81">§</a></h5>
@@ -318,23 +318,23 @@ jQuery<span class="token punctuation">.</span><span class="token method function
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/jQuery.d.ts</span>
 
 <span class="token keyword">declare</span> <span class="token keyword">namespace</span> jQuery <span class="token punctuation">{</span>
-    <span class="token keyword">interface</span> <span class="token class-name"><span class="token maybe-class-name">AjaxSettings</span></span> <span class="token punctuation">{</span>
+    <span class="token keyword">interface</span> <span class="token class-name">AjaxSettings</span> <span class="token punctuation">{</span>
         method<span class="token operator">?</span><span class="token operator">:</span> <span class="token string">'GET'</span> <span class="token operator">|</span> <span class="token string">'POST'</span>
         data<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">function</span> <span class="token function">ajax</span><span class="token punctuation">(</span>url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> settings<span class="token operator">?</span><span class="token operator">:</span> <span class="token maybe-class-name">AjaxSettings</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">ajax</span><span class="token punctuation">(</span>url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> settings<span class="token operator">?</span><span class="token operator">:</span> AjaxSettings<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>注意，在使用这个 <code>interface</code> 的时候，也应该加上 <code>jQuery</code> 前缀：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
-<span class="token keyword">let</span> settings<span class="token operator">:</span> jQuery<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">AjaxSettings</span></span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+<span class="token keyword">let</span> settings<span class="token operator">:</span> jQuery<span class="token punctuation">.</span>AjaxSettings <span class="token operator">=</span> <span class="token punctuation">{</span>
     method<span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
     data<span class="token operator">:</span> <span class="token punctuation">{</span>
         name<span class="token operator">:</span> <span class="token string">'foo'</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-jQuery<span class="token punctuation">.</span><span class="token method function property-access">ajax</span><span class="token punctuation">(</span><span class="token string">'/api/post_something'</span><span class="token punctuation">,</span> settings<span class="token punctuation">)</span><span class="token punctuation">;</span>
+jQuery<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'/api/post_something'</span><span class="token punctuation">,</span> settings<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h4 id="%E5%A3%B0%E6%98%8E%E5%90%88%E5%B9%B6">声明合并<a class="anchor" href="#%E5%A3%B0%E6%98%8E%E5%90%88%E5%B9%B6">§</a></h4>
 <p>假如 jQuery 既是一个函数，可以直接被调用 <code>jQuery('#foo')</code>，又是一个对象，拥有子属性 <code>jQuery.ajax()</code>（事实确实如此），那么我们可以组合多个声明语句，它们会不冲突的合并起来<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/14-declaration-merging"><sup>14</sup></a>：</p>
@@ -348,7 +348,7 @@ jQuery<span class="token punctuation">.</span><span class="token method function
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
 <span class="token function">jQuery</span><span class="token punctuation">(</span><span class="token string">'#foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-jQuery<span class="token punctuation">.</span><span class="token method function property-access">ajax</span><span class="token punctuation">(</span><span class="token string">'/api/get_something'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+jQuery<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'/api/get_something'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>关于声明合并的更多用法，可以查看<a href="../advanced/declaration-merging.html">声明合并</a>章节。</p>
 <h3 id="npm-%E5%8C%85">npm 包<a class="anchor" href="#npm-%E5%8C%85">§</a></h3>
@@ -400,30 +400,30 @@ jQuery<span class="token punctuation">.</span><span class="token method function
 
 <span class="token keyword">export</span> <span class="token keyword">const</span> name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
 <span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name"><span class="token maybe-class-name">Animal</span></span> <span class="token punctuation">{</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
     <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token keyword">export</span> <span class="token keyword">enum</span> <span class="token maybe-class-name">Directions</span> <span class="token punctuation">{</span>
-    <span class="token maybe-class-name">Up</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Down</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Left</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Right</span>
+<span class="token keyword">export</span> <span class="token keyword">enum</span> Directions <span class="token punctuation">{</span>
+    Up<span class="token punctuation">,</span>
+    Down<span class="token punctuation">,</span>
+    Left<span class="token punctuation">,</span>
+    Right
 <span class="token punctuation">}</span>
-<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name"><span class="token maybe-class-name">Options</span></span> <span class="token punctuation">{</span>
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">Options</span> <span class="token punctuation">{</span>
     data<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>对应的导入和使用模块应该是这样：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
-<span class="token keyword">import</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> getName<span class="token punctuation">,</span> <span class="token maybe-class-name">Animal</span><span class="token punctuation">,</span> <span class="token maybe-class-name">Directions</span><span class="token punctuation">,</span> <span class="token maybe-class-name">Options</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'foo'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> getName<span class="token punctuation">,</span> Animal<span class="token punctuation">,</span> Directions<span class="token punctuation">,</span> Options <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'foo'</span><span class="token punctuation">;</span>
 
-<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> myName <span class="token operator">=</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> cat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token maybe-class-name">Animal</span></span><span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> directions <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token maybe-class-name">Directions</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Up</span></span><span class="token punctuation">,</span> <span class="token maybe-class-name">Directions</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Down</span></span><span class="token punctuation">,</span> <span class="token maybe-class-name">Directions</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Left</span></span><span class="token punctuation">,</span> <span class="token maybe-class-name">Directions</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Right</span></span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> options<span class="token operator">:</span> <span class="token maybe-class-name">Options</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+<span class="token keyword">let</span> cat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> directions <span class="token operator">=</span> <span class="token punctuation">[</span>Directions<span class="token punctuation">.</span>Up<span class="token punctuation">,</span> Directions<span class="token punctuation">.</span>Down<span class="token punctuation">,</span> Directions<span class="token punctuation">.</span>Left<span class="token punctuation">,</span> Directions<span class="token punctuation">.</span>Right<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> options<span class="token operator">:</span> Options <span class="token operator">=</span> <span class="token punctuation">{</span>
     data<span class="token operator">:</span> <span class="token punctuation">{</span>
         name<span class="token operator">:</span> <span class="token string">'foo'</span>
     <span class="token punctuation">}</span>
@@ -435,21 +435,21 @@ jQuery<span class="token punctuation">.</span><span class="token method function
 
 <span class="token keyword">declare</span> <span class="token keyword">const</span> name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
 <span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-<span class="token keyword">declare</span> <span class="token keyword">class</span> <span class="token class-name"><span class="token maybe-class-name">Animal</span></span> <span class="token punctuation">{</span>
+<span class="token keyword">declare</span> <span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
     <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token keyword">declare</span> <span class="token keyword">enum</span> <span class="token maybe-class-name">Directions</span> <span class="token punctuation">{</span>
-    <span class="token maybe-class-name">Up</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Down</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Left</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Right</span>
+<span class="token keyword">declare</span> <span class="token keyword">enum</span> Directions <span class="token punctuation">{</span>
+    Up<span class="token punctuation">,</span>
+    Down<span class="token punctuation">,</span>
+    Left<span class="token punctuation">,</span>
+    Right
 <span class="token punctuation">}</span>
-<span class="token keyword">interface</span> <span class="token class-name"><span class="token maybe-class-name">Options</span></span> <span class="token punctuation">{</span>
+<span class="token keyword">interface</span> <span class="token class-name">Options</span> <span class="token punctuation">{</span>
     data<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">export</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> getName<span class="token punctuation">,</span> <span class="token maybe-class-name">Animal</span><span class="token punctuation">,</span> <span class="token maybe-class-name">Directions</span><span class="token punctuation">,</span> <span class="token maybe-class-name">Options</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> getName<span class="token punctuation">,</span> Animal<span class="token punctuation">,</span> Directions<span class="token punctuation">,</span> Options <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>注意，与全局变量的声明文件类似，<code>interface</code> 前是不需要 <code>declare</code> 的。</p>
 <h4 id="export-namespace"><code>export namespace</code><a class="anchor" href="#export-namespace">§</a></h4>
@@ -467,8 +467,8 @@ jQuery<span class="token punctuation">.</span><span class="token method function
 
 <span class="token keyword">import</span> <span class="token punctuation">{</span> foo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'foo'</span><span class="token punctuation">;</span>
 
-<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-foo<span class="token punctuation">.</span><span class="token property-access">bar</span><span class="token punctuation">.</span><span class="token method function property-access">baz</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+foo<span class="token punctuation">.</span>bar<span class="token punctuation">.</span><span class="token function">baz</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h4 id="export-default"><code>export default</code><a class="anchor" href="#export-default">§</a></h4>
 <p>在 ES6 模块系统中，使用 <code>export default</code> 可以导出一个默认值，使用方可以用 <code>import foo from 'foo'</code> 而不是 <code>import { foo } from 'foo'</code> 来导入这个默认值。</p>
@@ -486,39 +486,39 @@ foo<span class="token punctuation">.</span><span class="token property-access">b
 <p>注意，只有 <code>function</code>、<code>class</code> 和 <code>interface</code> 可以直接默认导出，其他的变量需要先定义出来，再默认导出<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/19-export-default-enum-error"><sup>19</sup></a>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// types/foo/index.d.ts</span>
 
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">enum</span> <span class="token maybe-class-name">Directions</span> <span class="token punctuation">{</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">enum</span> Directions <span class="token punctuation">{</span>
 <span class="token comment">// ERROR: Expression expected.</span>
-    <span class="token maybe-class-name">Up</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Down</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Left</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Right</span>
+    Up<span class="token punctuation">,</span>
+    Down<span class="token punctuation">,</span>
+    Left<span class="token punctuation">,</span>
+    Right
 <span class="token punctuation">}</span>
 </code></pre>
 <p>上例中 <code>export default enum</code> 是错误的语法，需要使用 <code>declare enum</code> 定义出来，然后使用 <code>export default</code> 导出：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// types/foo/index.d.ts</span>
 
-<span class="token keyword">declare</span> <span class="token keyword">enum</span> <span class="token maybe-class-name">Directions</span> <span class="token punctuation">{</span>
-    <span class="token maybe-class-name">Up</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Down</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Left</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Right</span>
+<span class="token keyword">declare</span> <span class="token keyword">enum</span> Directions <span class="token punctuation">{</span>
+    Up<span class="token punctuation">,</span>
+    Down<span class="token punctuation">,</span>
+    Left<span class="token punctuation">,</span>
+    Right
 <span class="token punctuation">}</span>
 
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token maybe-class-name">Directions</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> Directions<span class="token punctuation">;</span>
 </code></pre>
 <p>针对这种默认导出，我们一般会将导出语句放在整个声明文件的最前面<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/20-export-default-enum"><sup>20</sup></a>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// types/foo/index.d.ts</span>
 
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token maybe-class-name">Directions</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> Directions<span class="token punctuation">;</span>
 
-<span class="token keyword">declare</span> <span class="token keyword">enum</span> <span class="token maybe-class-name">Directions</span> <span class="token punctuation">{</span>
-    <span class="token maybe-class-name">Up</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Down</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Left</span><span class="token punctuation">,</span>
-    <span class="token maybe-class-name">Right</span>
+<span class="token keyword">declare</span> <span class="token keyword">enum</span> Directions <span class="token punctuation">{</span>
+    Up<span class="token punctuation">,</span>
+    Down<span class="token punctuation">,</span>
+    Left<span class="token punctuation">,</span>
+    Right
 <span class="token punctuation">}</span>
 </code></pre>
-<h4 id="export-%3D"><code>export =</code><a class="anchor" href="#export-%3D">§</a></h4>
+<h4 id="export-"><code>export =</code><a class="anchor" href="#export-">§</a></h4>
 <p>在 commonjs 规范中，我们用以下方式来导出一个模块：</p>
 <pre class="language-js"><code class="language-js"><span class="token comment">// 整体导出</span>
 module<span class="token punctuation">.</span><span class="token property-access">exports</span> <span class="token operator">=</span> foo<span class="token punctuation">;</span>
@@ -541,7 +541,7 @@ exports<span class="token punctuation">.</span><span class="token property-acces
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// 整体导入</span>
 <span class="token keyword">import</span> foo <span class="token operator">=</span> <span class="token keyword">require</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 单个导入</span>
-<span class="token keyword">import</span> bar <span class="token operator">=</span> foo<span class="token punctuation">.</span><span class="token property-access">bar</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> bar <span class="token operator">=</span> foo<span class="token punctuation">.</span>bar<span class="token punctuation">;</span>
 </code></pre>
 <p>对于这种使用 commonjs 规范的库，假如要为它写类型声明文件的话，就需要使用到 <code>export =</code> 这种语法了<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/21-export-equal"><sup>21</sup></a>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// types/foo/index.d.ts</span>
@@ -583,29 +583,29 @@ exports<span class="token punctuation">.</span><span class="token property-acces
 </code></pre>
 <h3 id="%E7%9B%B4%E6%8E%A5%E6%89%A9%E5%B1%95%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">直接扩展全局变量<a class="anchor" href="#%E7%9B%B4%E6%8E%A5%E6%89%A9%E5%B1%95%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">§</a></h3>
 <p>有的第三方库扩展了一个全局变量，可是此全局变量的类型却没有相应的更新过来，就会导致 ts 编译错误，此时就需要扩展全局变量的类型。比如扩展 <code>String</code> 类型<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/23-merge-global-interface"><sup>23</sup></a>：</p>
-<pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name"><span class="token known-class-name class-name">String</span></span> <span class="token punctuation">{</span>
+<pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">String</span> <span class="token punctuation">{</span>
     <span class="token function">prependHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token string">'foo'</span><span class="token punctuation">.</span><span class="token method function property-access">prependHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token string">'foo'</span><span class="token punctuation">.</span><span class="token function">prependHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>通过声明合并，使用 <code>interface String</code> 即可给 <code>String</code> 添加属性或方法。</p>
 <p>也可以使用 <code>declare namespace</code> 给已有的命名空间添加类型声明<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/24-merge-global-namespace"><sup>24</sup></a>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// types/jquery-plugin/index.d.ts</span>
 
-<span class="token keyword">declare</span> <span class="token keyword">namespace</span> <span class="token maybe-class-name">JQuery</span> <span class="token punctuation">{</span>
-    <span class="token keyword">interface</span> <span class="token class-name"><span class="token maybe-class-name">CustomOptions</span></span> <span class="token punctuation">{</span>
+<span class="token keyword">declare</span> <span class="token keyword">namespace</span> JQuery <span class="token punctuation">{</span>
+    <span class="token keyword">interface</span> <span class="token class-name">CustomOptions</span> <span class="token punctuation">{</span>
         bar<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">interface</span> <span class="token class-name"><span class="token maybe-class-name">JQueryStatic</span></span> <span class="token punctuation">{</span>
-    <span class="token function">foo</span><span class="token punctuation">(</span>options<span class="token operator">:</span> <span class="token maybe-class-name">JQuery</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">CustomOptions</span></span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token keyword">interface</span> <span class="token class-name">JQueryStatic</span> <span class="token punctuation">{</span>
+    <span class="token function">foo</span><span class="token punctuation">(</span>options<span class="token operator">:</span> JQuery<span class="token punctuation">.</span>CustomOptions<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
-jQuery<span class="token punctuation">.</span><span class="token method function property-access">foo</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+jQuery<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     bar<span class="token operator">:</span> <span class="token string">''</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
@@ -616,7 +616,7 @@ jQuery<span class="token punctuation">.</span><span class="token method function
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// types/foo/index.d.ts</span>
 
 <span class="token keyword">declare</span> global <span class="token punctuation">{</span>
-    <span class="token keyword">interface</span> <span class="token class-name"><span class="token known-class-name class-name">String</span></span> <span class="token punctuation">{</span>
+    <span class="token keyword">interface</span> <span class="token class-name">String</span> <span class="token punctuation">{</span>
         <span class="token function">prependHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
@@ -625,7 +625,7 @@ jQuery<span class="token punctuation">.</span><span class="token method function
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
-<span class="token string">'bar'</span><span class="token punctuation">.</span><span class="token method function property-access">prependHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token string">'bar'</span><span class="token punctuation">.</span><span class="token function">prependHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>注意即使此声明文件不需要导出任何东西，仍然需要导出一个空对象，用来告诉编译器这是一个模块的声明文件，而不是一个全局变量的声明文件。</p>
 <h3 id="%E6%A8%A1%E5%9D%97%E6%8F%92%E4%BB%B6">模块插件<a class="anchor" href="#%E6%A8%A1%E5%9D%97%E6%8F%92%E4%BB%B6">§</a></h3>
@@ -637,7 +637,7 @@ jQuery<span class="token punctuation">.</span><span class="token method function
 <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> moment <span class="token keyword">from</span> <span class="token string">'moment'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">declare</span> <span class="token keyword">module</span> <span class="token string">'moment'</span> <span class="token punctuation">{</span>
-    <span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> moment<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">CalendarKey</span></span><span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> moment<span class="token punctuation">.</span>CalendarKey<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
@@ -645,13 +645,13 @@ jQuery<span class="token punctuation">.</span><span class="token method function
 <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> moment <span class="token keyword">from</span> <span class="token string">'moment'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token string">'moment-plugin'</span><span class="token punctuation">;</span>
 
-moment<span class="token punctuation">.</span><span class="token method function property-access">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+moment<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><code>declare module</code> 也可用于在一个文件中一次性声明多个模块的类型<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/27-multiple-declare-module"><sup>27</sup></a>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// types/foo-bar.d.ts</span>
 
 <span class="token keyword">declare</span> <span class="token keyword">module</span> <span class="token string">'foo'</span> <span class="token punctuation">{</span>
-    <span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name"><span class="token maybe-class-name">Foo</span></span> <span class="token punctuation">{</span>
+    <span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">Foo</span> <span class="token punctuation">{</span>
         foo<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
@@ -662,11 +662,11 @@ moment<span class="token punctuation">.</span><span class="token method function
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
-<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Foo</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'foo'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Foo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'foo'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> bar <span class="token keyword">from</span> <span class="token string">'bar'</span><span class="token punctuation">;</span>
 
-<span class="token keyword">let</span> f<span class="token operator">:</span> <span class="token maybe-class-name">Foo</span><span class="token punctuation">;</span>
-bar<span class="token punctuation">.</span><span class="token method function property-access">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> f<span class="token operator">:</span> Foo<span class="token punctuation">;</span>
+bar<span class="token punctuation">.</span><span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 id="%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E4%BE%9D%E8%B5%96">声明文件中的依赖<a class="anchor" href="#%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E4%BE%9D%E8%B5%96">§</a></h3>
 <p>一个声明文件有时会依赖另一个声明文件中的类型，比如在前面的 <code>declare module</code> 的例子中，我们就在声明文件中导入了 <code>moment</code>，并且使用了 <code>moment.CalendarKey</code> 这个类型：</p>
@@ -675,7 +675,7 @@ bar<span class="token punctuation">.</span><span class="token method function pr
 <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> moment <span class="token keyword">from</span> <span class="token string">'moment'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">declare</span> <span class="token keyword">module</span> <span class="token string">'moment'</span> <span class="token punctuation">{</span>
-    <span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> moment<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">CalendarKey</span></span><span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> moment<span class="token punctuation">.</span>CalendarKey<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>除了可以在声明文件中通过 <code>import</code> 导入另一个声明文件中的类型之外，还有一个语法也可以用来导入另一个声明文件，那就是三斜线指令。</p>
@@ -693,7 +693,7 @@ bar<span class="token punctuation">.</span><span class="token method function pr
 
 <span class="token comment">/// &lt;reference types="jquery" /></span>
 
-<span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span>options<span class="token operator">:</span> <span class="token maybe-class-name">JQuery</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">AjaxSettings</span></span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span>options<span class="token operator">:</span> JQuery<span class="token punctuation">.</span>AjaxSettings<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
@@ -707,13 +707,13 @@ bar<span class="token punctuation">.</span><span class="token method function pr
 
 <span class="token comment">/// &lt;reference types="node" /></span>
 
-<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span>p<span class="token operator">:</span> <span class="token maybe-class-name">NodeJS</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Process</span></span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span>p<span class="token operator">:</span> NodeJS<span class="token punctuation">.</span>Process<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
 </code></pre>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// src/index.ts</span>
 
 <span class="token keyword">import</span> <span class="token punctuation">{</span> foo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'node-plugin'</span><span class="token punctuation">;</span>
 
-<span class="token function">foo</span><span class="token punctuation">(</span>global<span class="token punctuation">.</span><span class="token property-access">process</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">foo</span><span class="token punctuation">(</span>global<span class="token punctuation">.</span>process<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>在上面的例子中，我们通过三斜线指引入了 <code>node</code> 的类型，然后在声明文件中使用了 <code>NodeJS.Process</code> 这个类型。最后在使用到 <code>foo</code> 的时候，传入了 <code>node</code> 中的全局变量 <code>process</code>。</p>
 <p>由于引入的 <code>node</code> 中的类型都是全局变量的类型，它们是没有办法通过 <code>import</code> 来导入的，所以这种场景下也只能通过三斜线指令来引入了。</p>
@@ -831,7 +831,7 @@ bar<span class="token punctuation">.</span><span class="token method function pr
 </code></pre>
 <p>就会先识别 <code>package.json</code> 中是否存在 <code>types</code> 或 <code>typings</code> 字段。发现不存在，那么就会寻找是否存在 <code>index.d.ts</code> 文件。如果还是不存在，那么就会寻找是否存在 <code>lib/index.d.ts</code> 文件。假如说连 <code>lib/index.d.ts</code> 都不存在的话，就会被认为是一个没有提供类型声明文件的库了。</p>
 <p>有的库为了支持导入子模块，比如 <code>import bar from 'foo/lib/bar'</code>，就需要额外再编写一个类型声明文件 <code>lib/bar.d.ts</code> 或者 <code>lib/bar/index.d.ts</code>，这与自动生成声明文件类似，一个库中同时包含了多个类型声明文件。</p>
-<h3 id="%E5%B0%86%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E5%8F%91%E5%B8%83%E5%88%B0-%40types-%E4%B8%8B">将声明文件发布到 <code>@types</code> 下<a class="anchor" href="#%E5%B0%86%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E5%8F%91%E5%B8%83%E5%88%B0-%40types-%E4%B8%8B">§</a></h3>
+<h3 id="%E5%B0%86%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E5%8F%91%E5%B8%83%E5%88%B0-types-%E4%B8%8B">将声明文件发布到 <code>@types</code> 下<a class="anchor" href="#%E5%B0%86%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E5%8F%91%E5%B8%83%E5%88%B0-types-%E4%B8%8B">§</a></h3>
 <p>如果我们是在给别人的仓库添加类型声明文件，但原作者不愿意合并 pull request，那么就需要将声明文件发布到 <code>@types</code> 下。</p>
 <p>与普通的 npm 模块不同，<code>@types</code> 是统一由 <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/">DefinitelyTyped</a> 管理的。要将声明文件发布到 <code>@types</code> 下，就需要给 <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/">DefinitelyTyped</a> 创建一个 pull-request，其中包含了类型声明文件，测试代码，以及 <code>tsconfig.json</code> 等。</p>
 <p>pull-request 需要符合它们的规范，并且通过测试，才能被合并，稍后就会被自动发布到 <code>@types</code> 下。</p>
@@ -843,13 +843,15 @@ bar<span class="token punctuation">.</span><span class="token method function pr
 <li><a href="http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html">Triple-Slash Directives</a>（<a href="https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Triple-Slash%20Directives.html">中文版</a>）</li>
 <li><a href="https://github.com/Microsoft/TypeScript/issues/22217#issuecomment-369783776">typeRoots or paths</a></li>
 <li><a href="https://github.com/DefinitelyTyped/DefinitelyTyped/">DefinitelyTyped</a></li>
-</ul></article><div class="prev_next"><a class="prev button" href="/basics/type-assertion.html">«  <!-- -->类型断言</a><a class="next button" href="/basics/built-in-objects.html">内置对象<!-- -->  »</a></div><div id="gitalk-container"></div><link id="gitalk-css" rel="preload" href="https://unpkg.com/gitalk@1.6.2/dist/gitalk.css" as="style"/><script defer="" src="https://unpkg.com/gitalk@1.6.2/dist/gitalk.min.js"></script></div><div class="main_toc_container nav_link_container"><div class="main_toc"><div class="toc_ad"><div>
+</ul></article><div class="prev_next"><a class="prev button" href="/basics/type-assertion.html">«  <!-- -->类型断言</a><a class="next button" href="/basics/built-in-objects.html">内置对象<!-- -->  »</a></div><div id="gitalk-container"></div><link id="gitalk-css" rel="preload" href="https://cdn.pagic.org/gitalk@1.6.2/dist/gitalk.css" as="style"/><script defer="" src="https://cdn.pagic.org/gitalk@1.6.2/dist/gitalk.min.js"></script></div><div class="main_toc_container nav_link_container"><div class="main_toc"><div class="toc_ad"><div>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- 192*128 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:192px;height:128px"
-     data-ad-client="ca-pub-8483371329009107"
-     data-ad-slot="6487368873"></ins>
+<ins
+  class="adsbygoogle"
+  style="display:inline-block;width:192px;height:128px"
+  data-ad-client="ca-pub-8483371329009107"
+  data-ad-slot="6487368873"
+></ins>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script></div></div><aside><nav class="toc"><ol><li><a href="#%E6%96%B0%E8%AF%AD%E6%B3%95%E7%B4%A2%E5%BC%95">新语法索引</a></li><li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A3%B0%E6%98%8E%E8%AF%AD%E5%8F%A5">什么是声明语句</a></li><li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6">什么是声明文件</a><ol><li><a href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6">第三方声明文件</a></li></ol></li><li><a href="#%E4%B9%A6%E5%86%99%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6">书写声明文件</a><ol><li><a href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">全局变量</a><ol></ol></li><li><a href="#npm-%E5%8C%85">npm 包</a><ol></ol></li><li><a href="#umd-%E5%BA%93">UMD 库</a><ol></ol></li><li><a href="#%E7%9B%B4%E6%8E%A5%E6%89%A9%E5%B1%95%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">直接扩展全局变量</a></li><li><a href="#%E5%9C%A8-npm-%E5%8C%85%E6%88%96-umd-%E5%BA%93%E4%B8%AD%E6%89%A9%E5%B1%95%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">在 npm 包或 UMD 库中扩展全局变量</a><ol></ol></li><li><a href="#%E6%A8%A1%E5%9D%97%E6%8F%92%E4%BB%B6">模块插件</a><ol></ol></li><li><a href="#%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E4%BE%9D%E8%B5%96">声明文件中的依赖</a><ol></ol></li><li><a href="#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6">自动生成声明文件</a></li></ol></li><li><a href="#%E5%8F%91%E5%B8%83%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6">发布声明文件</a><ol><li><a href="#%E5%B0%86%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E5%92%8C%E6%BA%90%E7%A0%81%E6%94%BE%E5%9C%A8%E4%B8%80%E8%B5%B7">将声明文件和源码放在一起</a></li><li><a href="#%E5%B0%86%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E5%8F%91%E5%B8%83%E5%88%B0-%40types-%E4%B8%8B">将声明文件发布到 @types 下</a></li></ol></li><li><a href="#%E5%8F%82%E8%80%83">参考</a></li></ol></nav></aside></div></div></section><footer>Powered by<!-- --> <a href="https://github.com/xcatliu/pagic" target="_blank">Pagic</a></footer><div class="tools flex_center hide_on_mobile"><a class="czs-pen button" href="https://github.com/xcatliu/typescript-tutorial/edit/master/basics/declaration-files.md" target="_blank" style="background-image:url(&quot;/assets/czs-pen.svg&quot;)"></a><a class="czs-angle-up-l button" href="#" style="background-image:url(&quot;/assets/czs-angle-up-l.svg&quot;)"></a></div><script crossorigin="anonymous" src="https://unpkg.com/react@16.13.1/umd/react.production.min.js"></script><script crossorigin="anonymous" src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.production.min.js"></script><script type="module" src="/index.js"></script></body></html>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><aside><nav class="toc"><ol><li><a href="#%E6%96%B0%E8%AF%AD%E6%B3%95%E7%B4%A2%E5%BC%95">新语法索引</a></li><li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A3%B0%E6%98%8E%E8%AF%AD%E5%8F%A5">什么是声明语句</a></li><li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6">什么是声明文件</a><ol><li><a href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6">第三方声明文件</a></li></ol></li><li><a href="#%E4%B9%A6%E5%86%99%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6">书写声明文件</a><ol><li><a href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">全局变量</a><ol></ol></li><li><a href="#npm-%E5%8C%85">npm 包</a><ol></ol></li><li><a href="#umd-%E5%BA%93">UMD 库</a><ol></ol></li><li><a href="#%E7%9B%B4%E6%8E%A5%E6%89%A9%E5%B1%95%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">直接扩展全局变量</a></li><li><a href="#%E5%9C%A8-npm-%E5%8C%85%E6%88%96-umd-%E5%BA%93%E4%B8%AD%E6%89%A9%E5%B1%95%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">在 npm 包或 UMD 库中扩展全局变量</a><ol></ol></li><li><a href="#%E6%A8%A1%E5%9D%97%E6%8F%92%E4%BB%B6">模块插件</a><ol></ol></li><li><a href="#%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E4%BE%9D%E8%B5%96">声明文件中的依赖</a><ol></ol></li><li><a href="#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6">自动生成声明文件</a></li></ol></li><li><a href="#%E5%8F%91%E5%B8%83%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6">发布声明文件</a><ol><li><a href="#%E5%B0%86%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E5%92%8C%E6%BA%90%E7%A0%81%E6%94%BE%E5%9C%A8%E4%B8%80%E8%B5%B7">将声明文件和源码放在一起</a></li><li><a href="#%E5%B0%86%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E5%8F%91%E5%B8%83%E5%88%B0-types-%E4%B8%8B">将声明文件发布到 @types 下</a></li></ol></li><li><a href="#%E5%8F%82%E8%80%83">参考</a></li></ol></nav></aside></div></div></section><footer>Powered by<!-- --> <a href="https://github.com/xcatliu/pagic" target="_blank">Pagic</a></footer><div class="tools flex_center hide_on_mobile"><a class="czs-pen button" href="https://github.com/xcatliu/typescript-tutorial/edit/master/./basics/declaration-files.md" target="_blank" style="background-image:url(&quot;/assets/czs-pen.svg&quot;)"></a><a class="czs-angle-up-l button" href="#" style="background-image:url(&quot;/assets/czs-angle-up-l.svg&quot;)"></a></div><script src="https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js"></script><script src="https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js"></script><script type="module" src="/index.js"></script></body></html>

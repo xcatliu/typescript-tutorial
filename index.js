@@ -1,7 +1,7 @@
 let loading = false;
 let lastPathname = null;
-let lastLayout = null;
 let lastProps = null;
+let Layout = null;
 
 function clickHandler(e) {
   const { origin, pathname } = e.target;
@@ -34,7 +34,7 @@ async function errorHandler(e) {
 }
 
 async function rerender(
-  { pathname, hash },
+  { pathname, hash, href },
   { preventDefault = () => {}, pushState = () => {}, isHydrate = false } = {}
 ) {
   if (pathname === lastPathname) {
@@ -53,8 +53,8 @@ async function rerender(
     // If render not complete in 0.1s, render a loading icon instead.
     setTimeout(() => {
       if (loading === false) return;
-      ReactDOM.render(
-        React.createElement(lastLayout, {
+      window.ReactDOM.render(
+        window.React.createElement(Layout, {
           ...lastProps,
           loading: true
         }),
@@ -69,18 +69,32 @@ async function rerender(
   }
   propsPath = propsPath.replace(/\.html$/, '_props.js');
   const props = (await import(propsPath)).default;
+  window.pageProps = props;
+
+  // Layout changed, reload page
+  if (lastProps && lastProps.layoutPath !== props.layoutPath) {
+    location.href = href;
+    return;
+  }
+
   let layoutPath = props.layoutPath.replace(/\.tsx$/, '.js');
-  const Layout = (await import(`${props.config.root}${layoutPath}`)).default;
+  Layout = (await import(`${props.config.root}${layoutPath}`)).default;
   if (isHydrate) {
-    ReactDOM.hydrate(React.createElement(Layout, props), document);
+    window.ReactDOM.hydrate(window.React.createElement(Layout, props), document);
   } else {
     pushState();
-    ReactDOM.render(React.createElement(Layout, props), document);
-    window.scrollTo(0, 0);
+    window.ReactDOM.render(window.React.createElement(Layout, props), document);
+    if (!hash) {
+      window.scrollTo(0, 0);
+    } else {
+      const element = document.getElementById(hash.slice(1));
+      if (element) {
+        element.scrollIntoView();
+      }
+    }
     window.dispatchEvent(new Event('rerender'));
   }
   lastPathname = pathname;
-  lastLayout = Layout;
   lastProps = props;
   loading = false;
 }

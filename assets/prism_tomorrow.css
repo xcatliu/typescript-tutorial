@@ -1,5 +1,5 @@
-/* PrismJS 1.20.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+aspnet+autoit+bash+c+csharp+cpp+coffeescript+clojure+css-extras+dart+diff+django+docker+elm+erlang+git+go+graphql+handlebars+haskell+http+ini+java+javadoc+javadoclike+jsdoc+js-extras+js-templates+json+jsonp+json5+kotlin+latex+less+livescript+makefile+markdown+markup-templating+matlab+nginx+objectivec+ocaml+perl+php+phpdoc+php-extras+powershell+python+jsx+tsx+ruby+rust+sass+scss+shell-session+stylus+swift+textile+typescript+vim+visual-basic+wasm+xml-doc+yaml&plugins=line-highlight+autolinker+inline-color+diff-highlight */
+/* PrismJS 1.21.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+aspnet+autoit+bash+c+csharp+cpp+clojure+coffeescript+css-extras+dart+diff+django+docker+elm+erlang+git+go+graphql+handlebars+haskell+http+ini+java+javadoc+javadoclike+jsdoc+js-extras+json+json5+jsonp+js-templates+kotlin+latex+less+livescript+makefile+markdown+markup-templating+matlab+nginx+objectivec+ocaml+perl+php+phpdoc+php-extras+powershell+python+jsx+tsx+ruby+rust+sass+scss+shell-session+stylus+swift+textile+typescript+vim+visual-basic+wasm+xml-doc+yaml&plugins=autolinker+inline-color+diff-highlight */
 /**
  * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
  * Based on https://github.com/chriskempson/tomorrow-theme
@@ -123,66 +123,6 @@ pre[class*="language-"] {
 	color: green;
 }
 
-pre[data-line] {
-	position: relative;
-	padding: 1em 0 1em 3em;
-}
-
-.line-highlight {
-	position: absolute;
-	left: 0;
-	right: 0;
-	padding: inherit 0;
-	margin-top: 1em; /* Same as .prism’s padding-top */
-
-	background: hsla(24, 20%, 50%,.08);
-	background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-
-	pointer-events: none;
-
-	line-height: inherit;
-	white-space: pre;
-}
-
-	.line-highlight:before,
-	.line-highlight[data-end]:after {
-		content: attr(data-start);
-		position: absolute;
-		top: .4em;
-		left: .6em;
-		min-width: 1em;
-		padding: 0 .5em;
-		background-color: hsla(24, 20%, 50%,.4);
-		color: hsl(24, 20%, 95%);
-		font: bold 65%/1.5 sans-serif;
-		text-align: center;
-		vertical-align: .3em;
-		border-radius: 999px;
-		text-shadow: none;
-		box-shadow: 0 1px white;
-	}
-
-	.line-highlight[data-end]:after {
-		content: attr(data-end);
-		top: auto;
-		bottom: .4em;
-	}
-
-.line-numbers .line-highlight:before,
-.line-numbers .line-highlight:after {
-	content: none;
-}
-
-pre[id].linkable-line-numbers span.line-numbers-rows {
-	pointer-events: all;
-}
-pre[id].linkable-line-numbers span.line-numbers-rows > span:before {
-	cursor: pointer;
-}
-pre[id].linkable-line-numbers span.line-numbers-rows > span:hover:before {
-	background-color: rgba(128, 128, 128, .2);
-}
-
 .token a {
 	color: inherit;
 }
@@ -234,3 +174,12 @@ pre > code.diff-highlight .token.inserted:not(.prefix) {
 	display: block;
 }
 
+/* #region markdown-it-highlight-lines */
+.highlighted-line {
+	display: block;
+	background-color: #444;
+	margin: 0 -1rem;
+	padding: 0 1rem;
+	height: 18px;
+}
+/* #endregion */

@@ -14,7 +14,7 @@ const Gitalk = (props) => {
     }, [props.id]);
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { id: "gitalk-container" }),
-        React.createElement("link", { id: "gitalk-css", rel: "preload", href: "https://unpkg.com/gitalk@1.6.2/dist/gitalk.css", as: "style" }),
-        React.createElement("script", { defer: true, src: "https://unpkg.com/gitalk@1.6.2/dist/gitalk.min.js" })));
+        React.createElement("link", { id: "gitalk-css", rel: "preload", href: "https://cdn.pagic.org/gitalk@1.6.2/dist/gitalk.css", as: "style" }),
+        React.createElement("script", { defer: true, src: "https://cdn.pagic.org/gitalk@1.6.2/dist/gitalk.min.js" })));
 };
 export default Gitalk;

@@ -1,7 +1,8 @@
-import throttle from 'https://dev.jspm.io/lodash@4.17.15/throttle';
+import throttle from 'https://cdn.pagic.org/lodash@4.17.20/esnext/throttle.js';
 import Loading from './_loading.js';
+import { dateFormatter } from './_utils.js';
 const Main = (props) => {
-    const { config, content, loading, toc, prev, next, gitalk } = props;
+    const { config, content, contentTitle, contentBody, blog, author, date, loading, toc, prev, next, gitalk } = props;
     React.useEffect(() => {
         if (window.Deno) {
             return;
@@ -48,13 +49,18 @@ const Main = (props) => {
     }, []);
     return (React.createElement("section", { className: "main" },
         React.createElement("div", { className: "main_article" },
-            loading ? React.createElement(Loading, null) : content,
+            loading ? (React.createElement(Loading, null)) : (blog === null || blog === void 0 ? void 0 : blog.isPost) ? (React.createElement(React.Fragment, null,
+                contentTitle,
+                date && (React.createElement("div", { className: "main_post_meta" },
+                    React.createElement("time", { dateTime: date.toString() }, dateFormatter['YYYY-MM-DD'](date)),
+                    " \u00B7 ", author !== null && author !== void 0 ? author : 'unknown')),
+                contentBody)) : (content),
             (prev || next) && (React.createElement("div", { className: "prev_next" },
                 prev && (React.createElement("a", { className: "prev button", href: `${config.root}${prev.link}` },
                     "\u00AB\u00A0\u00A0",
-                    prev.text)),
+                    prev.title)),
                 next && (React.createElement("a", { className: "next button", href: `${config.root}${next.link}` },
-                    next.text,
+                    next.title,
                     "\u00A0\u00A0\u00BB")))),
             gitalk),
         toc && (React.createElement("div", { className: "main_toc_container nav_link_container" },
