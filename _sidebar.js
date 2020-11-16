@@ -68,6 +68,6 @@ const FoldableItem = ({ config, outputPath, sidebarItem: { title, link, children
             children && (React.createElement(React.Fragment, null,
                 React.createElement("span", { className: "czs-angle-up-l", style: { backgroundImage: `url("${config.root}assets/czs-angle-up-l.svg")` }, onClick: toggleFold }),
                 React.createElement("span", { className: "czs-angle-down-l", style: { backgroundImage: `url("${config.root}assets/czs-angle-down-l.svg")` }, onClick: toggleFold })))),
-        children && (React.createElement("ol", { ref: olRef }, children.map((sidebarItem, index) => (React.createElement(FoldableItem, { key: index, config: config, outputPath: outputPath, sidebarItem: sidebarItem })))))));
+        children && (React.createElement("ol", { className: "list_style_none", ref: olRef }, children.map((sidebarItem, index) => (React.createElement(FoldableItem, { key: index, config: config, outputPath: outputPath, sidebarItem: sidebarItem })))))));
 };
 export default Sidebar;
