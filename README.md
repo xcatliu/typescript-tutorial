@@ -8,7 +8,7 @@ next: introduction/README.md
 
 从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript。
 
-## [点击下载本书 提取密码：8f8b](https://pan.baidu.com/s/1zgngjjjceS_JtlU8vHuQcQ)
+## [点击下载本书 提取密码：8f8b](https://www.geekxh.com/ts.html?4d9v)
 
 > **如果链接失效下方扫码回复【TS】即可下载** 
 > 
