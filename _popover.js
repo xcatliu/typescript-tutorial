@@ -1,5 +1,5 @@
 import { classnames } from './_utils.js';
-let hoverMap;
+let hoverMap = {};
 export const Popover = ({ content, placement = 'top', className, style, children, onClick }) => {
     const [hover, setHover] = React.useState(false);
     const popoverRootId = 'popover-root-' + React.useMemo(() => Math.random().toString().slice(2), []);
