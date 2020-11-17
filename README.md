@@ -8,6 +8,12 @@ next: introduction/README.md
 
 从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript。
 
+## [点击下载 PDF](https://www.geekxh.com/ts/07.png?4d9v)
+
+> **下方扫码回复【TS】即可下载**  包括：TypeScript 整本电子书，BAT/TMD 大厂面经，以及百本前端开源电子书。
+
+<a href="https://www.geekxh.com/ts/06.png?4d9v"><img src="https://www.geekxh.com/ts/06.png?4d9v"  width="250" ></a>
+
 ## 关于本书
 
 - [在线阅读](https://ts.xcatliu.com/)
