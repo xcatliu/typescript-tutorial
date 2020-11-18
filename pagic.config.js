@@ -15,6 +15,20 @@ export default {
             popover: (React.createElement(React.Fragment, null,
                 React.createElement("img", { src: "/assets/wechat.jpg", width: "256", style: { marginRight: '1rem', verticalAlign: 'top' } }),
                 React.createElement("img", { src: "/assets/alipay.jpg", width: "256", style: { verticalAlign: 'top' } })))
+        },
+        {
+            text: '加入微信群',
+            popover: (React.createElement(React.Fragment, null,
+                React.createElement("p", { style: { marginTop: 0, marginBottom: '1rem' } }, "\u82E5\u4E8C\u7EF4\u7801\u5931\u6548\u8BF7\u5FAE\u4FE1\u8054\u7CFB xcatliu \u66F4\u65B0"),
+                React.createElement("img", { src: "/assets/join-wechat.jpg", width: "256" })))
+        },
+        {
+            text: '加入 QQ 群',
+            link: 'https://jq.qq.com/?_wv=1027&k=5nkkFCl',
+            target: '_blank',
+            popover: (React.createElement(React.Fragment, null,
+                React.createElement("p", { style: { marginTop: 0, marginBottom: '1rem' } }, "\u7FA4\u53F7: 767142358"),
+                React.createElement("img", { src: "/assets/join-qq.jpg", width: "256" })))
         }
     ],
     sidebar: {
