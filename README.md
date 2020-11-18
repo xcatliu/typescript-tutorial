@@ -10,11 +10,11 @@ next: introduction/README.md
 
 ## [点击下载本书 提取密码：8f8b](https://www.geekxh.com/ts.html?4d9v)
 
-> **如果链接失效下方扫码回复【TS】即可下载** 
+> **该资源包括：** 
 > 
-> 包括：TypeScript 整本电子书，BAT/TMD 大厂面经，以及百本前端开源电子书。
+> 1：TypeScript 入门教程电子书 2：BAT/TMD 大厂面经 3：百本前端开源电子书 4：50 张思维导图
 
-<a href="https://www.geekxh.com/ts/06.png?4d9v"><img src="https://www.geekxh.com/ts/06.png?4d9v"  width="250" ></a>
+<a href="https://www.geekxh.com/ts.html?4d9v"><img src="https://www.geekxh.com/ts/08.png?tstr"></a>
 
 ## 关于本书
 
