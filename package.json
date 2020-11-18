@@ -4,7 +4,7 @@
   "description": "从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript",
   "main": "README.md",
   "scripts": {
-    "start": "deno run --unstable --allow-read --allow-write --allow-net ../pagic/mod.ts build --serve --watch",
+    "start": "deno run --unstable --allow-read --allow-write --allow-net --allow-run ../pagic/mod.ts build --serve --watch",
     "test": "npm run lint",
     "lint": "run-s eclint prettier lint-md eslint",
     "lint:fix": "run-s eclint:fix prettier:fix lint-md:fix",

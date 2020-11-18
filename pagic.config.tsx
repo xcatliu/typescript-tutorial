@@ -20,6 +20,26 @@ export default {
           <img src="/assets/alipay.jpg" width="256" style={{ verticalAlign: 'top' }} />
         </>
       )
+    },
+    {
+      text: '加入微信群',
+      popover: (
+        <>
+          <p style={{ marginTop: 0, marginBottom: '1rem' }}>若二维码失效请微信联系 xcatliu 更新</p>
+          <img src="/assets/join-wechat.jpg" width="256" />
+        </>
+      )
+    },
+    {
+      text: '加入 QQ 群',
+      link: 'https://jq.qq.com/?_wv=1027&k=5nkkFCl',
+      target: '_blank',
+      popover: (
+        <>
+          <p style={{ marginTop: 0, marginBottom: '1rem' }}>群号: 767142358</p>
+          <img src="/assets/join-qq.jpg" width="256" />
+        </>
+      )
     }
   ],
   sidebar: {

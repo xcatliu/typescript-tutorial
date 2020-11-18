@@ -21,7 +21,6 @@ next: introduction/README.md
 - [在线阅读](https://ts.xcatliu.com/)
 - [GitHub 地址][GitHub]
 - 作者：[xcatliu](https://github.com/xcatliu/)
-- [加入官方 QQ 群 767142358](https://jq.qq.com/?_wv=1027&k=5nkkFCl)
 - 本网站使用 [Pagic](https://github.com/xcatliu/pagic) 构建
 
 本书是作者在学习 [TypeScript] 后整理的学习笔记。
