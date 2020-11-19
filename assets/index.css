@@ -330,6 +330,10 @@ article.loading {
 }
 .main_toc {
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 6rem);
+  overflow: auto;
 }
 .toc_ad {
   margin-bottom: 2rem;

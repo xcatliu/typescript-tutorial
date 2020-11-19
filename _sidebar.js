@@ -6,7 +6,7 @@ const Sidebar = ({ config, outputPath, sidebar }) => {
     return (React.createElement("aside", { className: "sidebar" },
         React.createElement("ol", { className: "list_style_none" }, sidebar.map((sidebarItem, index) => (React.createElement(FoldableItem, { key: index, config: config, outputPath: outputPath, sidebarItem: sidebarItem }))))));
 };
-const FoldableItem = ({ config, outputPath, sidebarItem: { title, link, children } }) => {
+const FoldableItem = ({ config, outputPath, sidebarItem: { text, link, children } }) => {
     const olRef = React.useRef(null);
     const [fold, setFold] = React.useState(false);
     const [olHeight, setOlHeight] = React.useState(0);
@@ -64,7 +64,7 @@ const FoldableItem = ({ config, outputPath, sidebarItem: { title, link, children
                     toggleFold(e);
                 }
             } },
-            title,
+            text,
             children && (React.createElement(React.Fragment, null,
                 React.createElement("span", { className: "czs-angle-up-l", style: { backgroundImage: `url("${config.root}assets/czs-angle-up-l.svg")` }, onClick: toggleFold }),
                 React.createElement("span", { className: "czs-angle-down-l", style: { backgroundImage: `url("${config.root}assets/czs-angle-down-l.svg")` }, onClick: toggleFold })))),

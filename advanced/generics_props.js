@@ -3,11 +3,11 @@ import Ga from '/_ga.js';
 import Gitalk from '/_gitalk.js';
 export default {
     'prev': {
-        "title": "类与接口",
+        "text": "类与接口",
         "link": "advanced/class-and-interfaces.html"
     },
     'next': {
-        "title": "声明合并",
+        "text": "声明合并",
         "link": "advanced/declaration-merging.html"
     },
     config: { "root": "/", ...projectConfig },
@@ -46,152 +46,152 @@ export default {
             "link": "introduction/index.html",
             "children": [
                 {
-                    "title": "什么是 TypeScript",
+                    "text": "什么是 TypeScript",
                     "link": "introduction/what-is-typescript.html",
                     "pagePath": "introduction/what-is-typescript.md"
                 },
                 {
-                    "title": "安装 TypeScript",
+                    "text": "安装 TypeScript",
                     "link": "introduction/get-typescript.html",
                     "pagePath": "introduction/get-typescript.md"
                 },
                 {
-                    "title": "Hello TypeScript",
+                    "text": "Hello TypeScript",
                     "link": "introduction/hello-typescript.html",
                     "pagePath": "introduction/hello-typescript.md"
                 }
             ],
-            "title": "简介",
+            "text": "简介",
             "pagePath": "introduction/README.md"
         },
         {
             "link": "basics/index.html",
             "children": [
                 {
-                    "title": "原始数据类型",
+                    "text": "原始数据类型",
                     "link": "basics/primitive-data-types.html",
                     "pagePath": "basics/primitive-data-types.md"
                 },
                 {
-                    "title": "任意值",
+                    "text": "任意值",
                     "link": "basics/any.html",
                     "pagePath": "basics/any.md"
                 },
                 {
-                    "title": "类型推论",
+                    "text": "类型推论",
                     "link": "basics/type-inference.html",
                     "pagePath": "basics/type-inference.md"
                 },
                 {
-                    "title": "联合类型",
+                    "text": "联合类型",
                     "link": "basics/union-types.html",
                     "pagePath": "basics/union-types.md"
                 },
                 {
-                    "title": "对象的类型——接口",
+                    "text": "对象的类型——接口",
                     "link": "basics/type-of-object-interfaces.html",
                     "pagePath": "basics/type-of-object-interfaces.md"
                 },
                 {
-                    "title": "数组的类型",
+                    "text": "数组的类型",
                     "link": "basics/type-of-array.html",
                     "pagePath": "basics/type-of-array.md"
                 },
                 {
-                    "title": "函数的类型",
+                    "text": "函数的类型",
                     "link": "basics/type-of-function.html",
                     "pagePath": "basics/type-of-function.md"
                 },
                 {
-                    "title": "类型断言",
+                    "text": "类型断言",
                     "link": "basics/type-assertion.html",
                     "pagePath": "basics/type-assertion.md"
                 },
                 {
-                    "title": "声明文件",
+                    "text": "声明文件",
                     "link": "basics/declaration-files.html",
                     "pagePath": "basics/declaration-files.md"
                 },
                 {
-                    "title": "内置对象",
+                    "text": "内置对象",
                     "link": "basics/built-in-objects.html",
                     "pagePath": "basics/built-in-objects.md"
                 }
             ],
-            "title": "基础",
+            "text": "基础",
             "pagePath": "basics/README.md"
         },
         {
             "link": "advanced/index.html",
             "children": [
                 {
-                    "title": "类型别名",
+                    "text": "类型别名",
                     "link": "advanced/type-aliases.html",
                     "pagePath": "advanced/type-aliases.md"
                 },
                 {
-                    "title": "字符串字面量类型",
+                    "text": "字符串字面量类型",
                     "link": "advanced/string-literal-types.html",
                     "pagePath": "advanced/string-literal-types.md"
                 },
                 {
-                    "title": "元组",
+                    "text": "元组",
                     "link": "advanced/tuple.html",
                     "pagePath": "advanced/tuple.md"
                 },
                 {
-                    "title": "枚举",
+                    "text": "枚举",
                     "link": "advanced/enum.html",
                     "pagePath": "advanced/enum.md"
                 },
                 {
-                    "title": "类",
+                    "text": "类",
                     "link": "advanced/class.html",
                     "pagePath": "advanced/class.md"
                 },
                 {
-                    "title": "类与接口",
+                    "text": "类与接口",
                     "link": "advanced/class-and-interfaces.html",
                     "pagePath": "advanced/class-and-interfaces.md"
                 },
                 {
-                    "title": "泛型",
+                    "text": "泛型",
                     "link": "advanced/generics.html",
                     "pagePath": "advanced/generics.md"
                 },
                 {
-                    "title": "声明合并",
+                    "text": "声明合并",
                     "link": "advanced/declaration-merging.html",
                     "pagePath": "advanced/declaration-merging.md"
                 },
                 {
-                    "title": "扩展阅读",
+                    "text": "扩展阅读",
                     "link": "advanced/further-reading.html",
                     "pagePath": "advanced/further-reading.md"
                 }
             ],
-            "title": "进阶",
+            "text": "进阶",
             "pagePath": "advanced/README.md"
         },
         {
             "link": "engineering/index.html",
             "children": [
                 {
-                    "title": "代码检查",
+                    "text": "代码检查",
                     "link": "engineering/lint.html",
                     "pagePath": "engineering/lint.md"
                 },
                 {
-                    "title": "编译选项",
+                    "text": "编译选项",
                     "link": "engineering/compiler-options.html",
                     "pagePath": "engineering/compiler-options.md"
                 }
             ],
-            "title": "工程",
+            "text": "工程",
             "pagePath": "engineering/README.md"
         },
         {
-            "title": "感谢",
+            "text": "感谢",
             "link": "thanks/index.html",
             "pagePath": "thanks/README.md"
         }
