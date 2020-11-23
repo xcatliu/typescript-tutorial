@@ -40,6 +40,17 @@ export default {
           <img src="/assets/join-qq.jpg" width="256" />
         </>
       )
+    },
+    {
+      text: '下载本书',
+      link: 'https://www.geekxh.com/ts.html?3prc',
+      target: '_blank',
+      popover: (
+        <>
+          <p style={{ marginTop: 0, marginBottom: '1rem' }}>下载下方全部资料：</p>
+          <img src="https://www.geekxh.com/ts/09.png?pprv" width="256" />
+        </>
+      )
     }
   ],
   sidebar: {
