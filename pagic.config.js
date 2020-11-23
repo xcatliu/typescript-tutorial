@@ -29,6 +29,17 @@ export default {
             popover: (React.createElement(React.Fragment, null,
                 React.createElement("p", { style: { marginTop: 0, marginBottom: '1rem' } }, "\u7FA4\u53F7: 767142358"),
                 React.createElement("img", { src: "/assets/join-qq.jpg", width: "256" })))
+        },
+        {
+            text: '下载本书',
+            link: 'https://www.geekxh.com/ts.html?3prc',
+            target: '_blank',
+            popover: (React.createElement(React.Fragment, null,
+                React.createElement("p", { style: { marginTop: 0, marginBottom: '1rem' } },
+                    React.createElement("a", { href: "https://www.geekxh.com/ts.html?3prc", target: "_blank" }, "\u70B9\u51FB\u4E0B\u8F7D"),
+                    "\u4EE5\u4E0B\u5168\u90E8\u8D44\u6599\uFF1A"),
+                React.createElement("a", { href: "https://www.geekxh.com/ts.html?3prc", target: "_blank" },
+                    React.createElement("img", { src: "https://www.geekxh.com/ts/09.png?pprv", width: "256" }))))
         }
     ],
     sidebar: {
