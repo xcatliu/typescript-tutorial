@@ -47,8 +47,13 @@ export default {
       target: '_blank',
       popover: (
         <>
-          <p style={{ marginTop: 0, marginBottom: '1rem' }}>下载下方全部资料：</p>
-          <img src="https://www.geekxh.com/ts/09.png?pprv" width="256" />
+          <p style={{ marginTop: 0, marginBottom: '1rem' }}>
+            <a href="https://www.geekxh.com/ts.html?3prc" target="_blank">点击下载</a>
+            以下全部资料：
+          </p>
+          <a href="https://www.geekxh.com/ts.html?3prc" target="_blank">
+            <img src="https://www.geekxh.com/ts/09.png?pprv" width="256" />
+          </a>
         </>
       )
     }
