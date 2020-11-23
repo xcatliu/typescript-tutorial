@@ -1,6 +1,8 @@
-node_modules
-
 *.md
+*.png
+*.epub
+
+node_modules
 
 assets
 
@@ -14,4 +16,4 @@ assets
 package-lock.json
 
 examples
-public
+dist
