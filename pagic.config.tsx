@@ -51,7 +51,7 @@ export default {
             <a href="https://www.geekxh.com/ts.html?3prc" target="_blank">
               点击下载
             </a>
-             提取码【8f8b】：
+            提取码【8f8b】：
           </p>
           <a href="https://www.geekxh.com/ts.html?3prc" target="_blank">
             <img src="https://www.geekxh.com/ts/09.png?pprv" width="256" />
