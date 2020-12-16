@@ -15,7 +15,7 @@ module.exports = {
   // use double quotes instead of single quotes in jsx
   jsxSingleQuote: false,
   // no comma at the end
-  trailingComma: 'none',
+  trailingComma: 'all',
   // spaces are required at the beginning and end of the braces
   bracketSpacing: true,
   // end tag of jsx need to wrap
@@ -34,5 +34,5 @@ module.exports = {
   // decide whether to break the html according to the display style
   htmlWhitespaceSensitivity: 'css',
   // lf for newline
-  endOfLine: 'lf'
+  endOfLine: 'lf',
 };

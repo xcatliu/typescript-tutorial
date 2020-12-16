@@ -17,6 +17,6 @@ module.exports = {
     'no-undef': 'off',
     '@typescript-eslint/no-invalid-this': 'off',
     '@typescript-eslint/no-require-imports': 'off',
-    '@typescript-eslint/method-signature-style': 'off'
-  }
+    '@typescript-eslint/method-signature-style': 'off',
+  },
 };

@@ -1,4 +1,4 @@
-import { React } from 'https://deno.land/x/pagic/mod.ts';
+import { React } from 'https://deno.land/x/pagic@v1.0.0/mod.ts';
 
 export default {
   srcDir: '.',
@@ -19,16 +19,13 @@ export default {
           <img src="/assets/wechat.jpg" width="256" style={{ marginRight: '1rem', verticalAlign: 'top' }} />
           <img src="/assets/alipay.jpg" width="256" style={{ verticalAlign: 'top' }} />
         </>
-      )
+      ),
     },
     {
       text: '加入微信群',
       popover: (
-        <>
-          <p style={{ marginTop: 0, marginBottom: '1rem' }}>若二维码失效请微信联系 xcatliu 更新</p>
-          <img src="/assets/join-wechat.jpg" width="256" />
-        </>
-      )
+        <p style={{ marginTop: 0, width: 256 }}>微信群已超过 200 人，如要加群，请加群主微信 xcatliu 并备注 ts</p>
+      ),
     },
     {
       text: '加入 QQ 群',
@@ -36,10 +33,12 @@ export default {
       target: '_blank',
       popover: (
         <>
-          <p style={{ marginTop: 0, marginBottom: '1rem' }}>群号: 767142358</p>
+          <p style={{ marginTop: 0, marginBottom: '1rem', width: 256 }}>
+            一群（767142358）已满，请扫码加二群（706191218）
+          </p>
           <img src="/assets/join-qq.jpg" width="256" />
         </>
-      )
+      ),
     },
     {
       text: '下载本书',
@@ -57,8 +56,13 @@ export default {
             <img src="https://www.geekxh.com/ts/09.png?pprv" width="256" />
           </a>
         </>
-      )
-    }
+      ),
+    },
+    {
+      text: '本网站使用 Pagic 构建',
+      link: 'https://github.com/xcatliu/pagic',
+      target: '_blank',
+    },
   ],
   sidebar: {
     '/': [
@@ -67,8 +71,8 @@ export default {
         children: [
           'introduction/what-is-typescript.md',
           'introduction/get-typescript.md',
-          'introduction/hello-typescript.md'
-        ]
+          'introduction/hello-typescript.md',
+        ],
       },
       {
         link: 'basics/README.md',
@@ -82,8 +86,8 @@ export default {
           'basics/type-of-function.md',
           'basics/type-assertion.md',
           'basics/declaration-files.md',
-          'basics/built-in-objects.md'
-        ]
+          'basics/built-in-objects.md',
+        ],
       },
       {
         link: 'advanced/README.md',
@@ -96,19 +100,19 @@ export default {
           'advanced/class-and-interfaces.md',
           'advanced/generics.md',
           'advanced/declaration-merging.md',
-          'advanced/further-reading.md'
-        ]
+          'advanced/further-reading.md',
+        ],
       },
       {
         link: 'engineering/README.md',
-        children: ['engineering/lint.md', 'engineering/compiler-options.md']
+        children: ['engineering/lint.md', 'engineering/compiler-options.md'],
       },
-      'thanks/README.md'
-    ]
+      'thanks/README.md',
+    ],
   },
   tools: {
     editOnGitHub: true,
-    backToTop: true
+    backToTop: true,
   },
   //   tocAd: (
   //     <div
@@ -134,10 +138,10 @@ export default {
     repo: 'typescript-tutorial',
     owner: 'xcatliu',
     admin: ['xcatliu'],
-    pagerDirection: 'first'
+    pagerDirection: 'first',
   },
   ga: {
-    id: 'UA-45256157-14'
+    id: 'UA-45256157-14',
   },
-  port: 8001
+  port: 8001,
 };
