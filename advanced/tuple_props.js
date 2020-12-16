@@ -10,7 +10,7 @@ export default {
         "text": "枚举",
         "link": "advanced/enum.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "advanced/tuple.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "advanced/tuple.html",

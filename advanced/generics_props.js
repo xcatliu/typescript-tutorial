@@ -10,7 +10,7 @@ export default {
         "text": "声明合并",
         "link": "advanced/declaration-merging.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "advanced/generics.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "advanced/generics.html",

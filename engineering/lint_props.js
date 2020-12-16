@@ -10,7 +10,7 @@ export default {
         "text": "编译选项",
         "link": "engineering/compiler-options.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "engineering/lint.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "engineering/lint.html",

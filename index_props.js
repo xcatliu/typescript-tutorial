@@ -7,7 +7,7 @@ export default {
         "text": "简介",
         "link": "introduction/index.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "README.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "index.html",

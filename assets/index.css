@@ -510,3 +510,23 @@ footer {
   }
 }
 /* #endregion */
+
+/* #region Print */
+@media print {
+  header,
+  .sidebar,
+  .main_toc_container,
+  .prev_next,
+  .tools,
+  .gitalk-container,
+  footer {
+    display: none;
+  }
+  .main {
+    margin: 0 auto !important;
+  }
+  .main_article a[href]::after {
+    content: ' (' attr(href) ') ';
+  }
+}
+/* #endregion */

@@ -10,7 +10,7 @@ export default {
         "text": "扩展阅读",
         "link": "advanced/further-reading.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "advanced/declaration-merging.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "advanced/declaration-merging.html",

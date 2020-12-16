@@ -10,7 +10,7 @@ export default {
         "text": "联合类型",
         "link": "basics/union-types.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "basics/type-inference.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "basics/type-inference.html",

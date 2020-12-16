@@ -10,7 +10,7 @@ export default {
         "text": "类型别名",
         "link": "advanced/type-aliases.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "advanced/README.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "advanced/index.html",

@@ -7,7 +7,7 @@ export default {
         "link": "engineering/compiler-options.html"
     },
     'next': undefined,
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "thanks/README.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "thanks/index.html",

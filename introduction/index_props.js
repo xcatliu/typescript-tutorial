@@ -10,7 +10,7 @@ export default {
         "text": "什么是 TypeScript",
         "link": "introduction/what-is-typescript.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "introduction/README.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "introduction/index.html",

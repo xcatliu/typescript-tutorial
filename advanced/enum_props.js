@@ -10,7 +10,7 @@ export default {
         "text": "类",
         "link": "advanced/class.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "advanced/enum.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "advanced/enum.html",

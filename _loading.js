@@ -123,7 +123,7 @@ const style = `
 const Loading = () => (React.createElement("article", { className: "loading" },
     React.createElement("div", { className: "sk-circle" },
         React.createElement("style", { dangerouslySetInnerHTML: {
-                __html: style
+                __html: style,
             } }),
         React.createElement("div", { className: "sk-circle1 sk-child" }),
         React.createElement("div", { className: "sk-circle2 sk-child" }),

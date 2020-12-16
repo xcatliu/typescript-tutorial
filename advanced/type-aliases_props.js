@@ -10,7 +10,7 @@ export default {
         "text": "字符串字面量类型",
         "link": "advanced/string-literal-types.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "advanced/type-aliases.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "advanced/type-aliases.html",

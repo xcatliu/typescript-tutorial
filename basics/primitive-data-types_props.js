@@ -10,7 +10,7 @@ export default {
         "text": "任意值",
         "link": "basics/any.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "basics/primitive-data-types.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "basics/primitive-data-types.html",

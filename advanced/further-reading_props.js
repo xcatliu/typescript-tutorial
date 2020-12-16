@@ -10,7 +10,7 @@ export default {
         "link": "engineering/index.html",
         "text": "工程"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "advanced/further-reading.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "advanced/further-reading.html",

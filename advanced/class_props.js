@@ -10,7 +10,7 @@ export default {
         "text": "类与接口",
         "link": "advanced/class-and-interfaces.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "advanced/class.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "advanced/class.html",

@@ -10,7 +10,7 @@ export default {
         "text": "代码检查",
         "link": "engineering/lint.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "engineering/README.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "engineering/index.html",

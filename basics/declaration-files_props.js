@@ -10,7 +10,7 @@ export default {
         "text": "内置对象",
         "link": "basics/built-in-objects.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "basics/declaration-files.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "basics/declaration-files.html",

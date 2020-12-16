@@ -10,7 +10,7 @@ export default {
         "text": "原始数据类型",
         "link": "basics/primitive-data-types.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "basics/README.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "basics/index.html",

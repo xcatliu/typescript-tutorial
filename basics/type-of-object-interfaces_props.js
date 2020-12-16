@@ -10,7 +10,7 @@ export default {
         "text": "数组的类型",
         "link": "basics/type-of-array.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "basics/type-of-object-interfaces.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "basics/type-of-object-interfaces.html",

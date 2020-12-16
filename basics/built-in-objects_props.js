@@ -10,7 +10,7 @@ export default {
         "link": "advanced/index.html",
         "text": "进阶"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "basics/built-in-objects.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "basics/built-in-objects.html",

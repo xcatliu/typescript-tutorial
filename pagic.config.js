@@ -14,21 +14,19 @@ export default {
             target: '_blank',
             popover: (React.createElement(React.Fragment, null,
                 React.createElement("img", { src: "/assets/wechat.jpg", width: "256", style: { marginRight: '1rem', verticalAlign: 'top' } }),
-                React.createElement("img", { src: "/assets/alipay.jpg", width: "256", style: { verticalAlign: 'top' } })))
+                React.createElement("img", { src: "/assets/alipay.jpg", width: "256", style: { verticalAlign: 'top' } }))),
         },
         {
             text: '加入微信群',
-            popover: (React.createElement(React.Fragment, null,
-                React.createElement("p", { style: { marginTop: 0, marginBottom: '1rem' } }, "\u82E5\u4E8C\u7EF4\u7801\u5931\u6548\u8BF7\u5FAE\u4FE1\u8054\u7CFB xcatliu \u66F4\u65B0"),
-                React.createElement("img", { src: "/assets/join-wechat.jpg", width: "256" })))
+            popover: (React.createElement("p", { style: { marginTop: 0, width: 256 } }, "\u5FAE\u4FE1\u7FA4\u5DF2\u8D85\u8FC7 200 \u4EBA\uFF0C\u5982\u8981\u52A0\u7FA4\uFF0C\u8BF7\u52A0\u7FA4\u4E3B\u5FAE\u4FE1 xcatliu \u5E76\u5907\u6CE8 ts")),
         },
         {
             text: '加入 QQ 群',
             link: 'https://jq.qq.com/?_wv=1027&k=5nkkFCl',
             target: '_blank',
             popover: (React.createElement(React.Fragment, null,
-                React.createElement("p", { style: { marginTop: 0, marginBottom: '1rem' } }, "\u7FA4\u53F7: 767142358"),
-                React.createElement("img", { src: "/assets/join-qq.jpg", width: "256" })))
+                React.createElement("p", { style: { marginTop: 0, marginBottom: '1rem', width: 256 } }, "\u4E00\u7FA4\uFF08767142358\uFF09\u5DF2\u6EE1\uFF0C\u8BF7\u626B\u7801\u52A0\u4E8C\u7FA4\uFF08706191218\uFF09"),
+                React.createElement("img", { src: "/assets/join-qq.jpg", width: "256" }))),
         },
         {
             text: '下载本书',
@@ -39,8 +37,13 @@ export default {
                     React.createElement("a", { href: "https://www.geekxh.com/ts.html?3prc", target: "_blank" }, "\u70B9\u51FB\u4E0B\u8F7D"),
                     "\u63D0\u53D6\u7801\u30108f8b\u3011\uFF1A"),
                 React.createElement("a", { href: "https://www.geekxh.com/ts.html?3prc", target: "_blank" },
-                    React.createElement("img", { src: "https://www.geekxh.com/ts/09.png?pprv", width: "256" }))))
-        }
+                    React.createElement("img", { src: "https://www.geekxh.com/ts/09.png?pprv", width: "256" })))),
+        },
+        {
+            text: '本网站使用 Pagic 构建',
+            link: 'https://github.com/xcatliu/pagic',
+            target: '_blank',
+        },
     ],
     sidebar: {
         '/': [
@@ -49,8 +52,8 @@ export default {
                 children: [
                     'introduction/what-is-typescript.md',
                     'introduction/get-typescript.md',
-                    'introduction/hello-typescript.md'
-                ]
+                    'introduction/hello-typescript.md',
+                ],
             },
             {
                 link: 'basics/README.md',
@@ -64,8 +67,8 @@ export default {
                     'basics/type-of-function.md',
                     'basics/type-assertion.md',
                     'basics/declaration-files.md',
-                    'basics/built-in-objects.md'
-                ]
+                    'basics/built-in-objects.md',
+                ],
             },
             {
                 link: 'advanced/README.md',
@@ -78,19 +81,19 @@ export default {
                     'advanced/class-and-interfaces.md',
                     'advanced/generics.md',
                     'advanced/declaration-merging.md',
-                    'advanced/further-reading.md'
-                ]
+                    'advanced/further-reading.md',
+                ],
             },
             {
                 link: 'engineering/README.md',
-                children: ['engineering/lint.md', 'engineering/compiler-options.md']
+                children: ['engineering/lint.md', 'engineering/compiler-options.md'],
             },
-            'thanks/README.md'
-        ]
+            'thanks/README.md',
+        ],
     },
     tools: {
         editOnGitHub: true,
-        backToTop: true
+        backToTop: true,
     },
     //   tocAd: (
     //     <div
@@ -116,10 +119,10 @@ export default {
         repo: 'typescript-tutorial',
         owner: 'xcatliu',
         admin: ['xcatliu'],
-        pagerDirection: 'first'
+        pagerDirection: 'first',
     },
     ga: {
-        id: 'UA-45256157-14'
+        id: 'UA-45256157-14',
     },
-    port: 8001
+    port: 8001,
 };

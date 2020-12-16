@@ -10,7 +10,7 @@ export default {
         "text": "函数的类型",
         "link": "basics/type-of-function.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "basics/type-of-array.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "basics/type-of-array.html",

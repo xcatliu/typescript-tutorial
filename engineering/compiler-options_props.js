@@ -10,7 +10,7 @@ export default {
         "text": "感谢",
         "link": "thanks/index.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "engineering/compiler-options.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "engineering/compiler-options.html",

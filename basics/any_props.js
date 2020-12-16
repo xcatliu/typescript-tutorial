@@ -10,7 +10,7 @@ export default {
         "text": "类型推论",
         "link": "basics/type-inference.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "basics/any.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "basics/any.html",

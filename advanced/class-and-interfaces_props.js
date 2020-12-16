@@ -10,7 +10,7 @@ export default {
         "text": "泛型",
         "link": "advanced/generics.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "advanced/class-and-interfaces.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "advanced/class-and-interfaces.html",

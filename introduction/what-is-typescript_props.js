@@ -10,7 +10,7 @@ export default {
         "text": "安装 TypeScript",
         "link": "introduction/get-typescript.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "introduction/what-is-typescript.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "introduction/what-is-typescript.html",

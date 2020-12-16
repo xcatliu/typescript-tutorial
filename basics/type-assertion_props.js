@@ -10,7 +10,7 @@ export default {
         "text": "声明文件",
         "link": "basics/declaration-files.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "basics/type-assertion.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "basics/type-assertion.html",

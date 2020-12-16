@@ -20,5 +20,5 @@ export const dateFormatter = {
         const MM = `0${d.getMonth() + 1}`.slice(-2);
         const DD = `0${d.getDate() + 1}`.slice(-2);
         return `${YYYY}-${MM}-${DD}`;
-    }
+    },
 };

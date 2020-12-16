@@ -10,7 +10,7 @@ export default {
         "text": "Hello TypeScript",
         "link": "introduction/hello-typescript.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "introduction/get-typescript.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "introduction/get-typescript.html",

@@ -10,7 +10,7 @@ function clickHandler(e) {
   if (origin !== location.origin) return;
   rerender(e.target, {
     preventDefault: () => e.preventDefault(),
-    pushState: () => window.history.pushState({}, '', e.target.href)
+    pushState: () => window.history.pushState({}, '', e.target.href),
   }).catch(errorHandler);
 }
 
@@ -35,7 +35,7 @@ async function errorHandler(e) {
 
 async function rerender(
   { pathname, hash, href },
-  { preventDefault = () => {}, pushState = () => {}, isHydrate = false } = {}
+  { preventDefault = () => {}, pushState = () => {}, isHydrate = false } = {},
 ) {
   if (pathname === lastPathname) {
     if (!hash) {
@@ -56,9 +56,9 @@ async function rerender(
       window.ReactDOM.render(
         window.React.createElement(Layout, {
           ...lastProps,
-          loading: true
+          loading: true,
         }),
-        document
+        document,
       );
     }, 100);
   }

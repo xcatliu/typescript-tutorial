@@ -10,7 +10,7 @@ export default {
         "text": "类型断言",
         "link": "basics/type-assertion.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "basics/type-of-function.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "basics/type-of-function.html",

@@ -40,7 +40,7 @@ const FoldableItem = ({ config, outputPath, sidebarItem: { text, link, children 
     return (React.createElement("li", { className: children ? (fold ? 'fold' : 'unfold') : '' },
         React.createElement("a", { href: link ? `${config.root}${link}` : '#', className: classnames('nav_link', {
                 active: isActive,
-                no_link: !link
+                no_link: !link,
             }), onClick: (e) => {
                 if (link) {
                     if (children) {

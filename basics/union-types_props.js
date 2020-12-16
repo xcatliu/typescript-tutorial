@@ -10,7 +10,7 @@ export default {
         "text": "对象的类型——接口",
         "link": "basics/type-of-object-interfaces.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "basics/union-types.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "basics/union-types.html",

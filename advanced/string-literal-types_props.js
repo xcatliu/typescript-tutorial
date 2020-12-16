@@ -10,7 +10,7 @@ export default {
         "text": "元组",
         "link": "advanced/tuple.html"
     },
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "advanced/string-literal-types.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "advanced/string-literal-types.html",
