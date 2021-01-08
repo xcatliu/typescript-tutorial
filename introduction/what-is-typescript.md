@@ -1,5 +1,60 @@
 # 什么是 TypeScript
 
+> Typed JavaScript at Any Scale.  
+> 类型化的 JavaScript，适用于各种规模的项目。
+
+以上描述是[官网][TypeScript]对于 TypeScript 的定义。
+
+它强调了 TypeScript 的两个最重要的特性——类型系统、适用于各种规模。
+
+## TypeScript 的特性
+
+### 类型系统
+
+从 TypeScript 的名字就可以看出来，「类型」是其最核心的特性。
+
+我们知道，JavaScript 是一门非常灵活的编程语言：
+
+- 它没有类型约束，一个变量可能初始化时是字符串，过一会儿又被赋值为数字。
+- 由于隐式类型转换的存在，有时候变量的类型很难在运行之前就确定。
+- 基于原型的面向对象编程，使得原型上的属性或方法可以在运行时被修改。
+- [函数是 JavaScript 中的一等公民](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/ch2.html)，可以赋值给变量，也可以当作参数或返回值。
+
+这种灵活性就像一把双刃剑，一方面使得 JavaScript 蓬勃发展，无所不能，从 2013 年开始就一直蝉联[最普遍使用的编程语言排行榜](https://insights.stackoverflow.com/survey/2020)冠军；另一方面也使得它的代码质量参次不起，维护成本高，运行时错误多。
+
+而 TypeScript 的类型系统，在很大程度上弥补了 JavaScript 的缺点。
+
+#### 静态类型
+
+类型系统按照类型检查的时机分类，可以分为动态类型和静态类型。
+
+动态类型是指在运行时才会进行类型检查，类型错误会导致运行时的错误。JavaScript 是动态类型，因为缺少了编译期，所以这段代码在运行时才会报错：
+
+```js
+let foo = 1;
+foo.split(' ');
+// 运行时会报错，造成线上 bug
+// Uncaught TypeError: foo.split is not a function
+```
+
+静态类型是指编译期间就能确定每个变量的类型，类型错误会导致语法错误。TypeScript 是静态类型，上面那段代码在 TypeScript 的编译过程中就会报错了：
+
+```ts
+let foo = 1;
+foo.split(' ');
+// 编译时会报错，无法通过编译
+// Property 'split' does not exist on type 'number'.
+```
+
+#### 弱类型
+
+
+
+
+## 为什么要用 TypeScript
+
+## TypeScript 的发展历史
+
 首先，我对 TypeScript 的理解如下：
 
 [TypeScript][] 是 JavaScript 的一个超集，主要提供了**类型系统**和**对 ES6 的支持**，它由 Microsoft 开发，代码[开源于 GitHub](https://github.com/Microsoft/TypeScript) 上。
