@@ -184,7 +184,7 @@ push(a, 1, 2, 3);
 利用联合类型，我们可以这么实现：
 
 ```ts
-function reverse(x: number | string): number | string {
+function reverse(x: number | string): number | string | void {
     if (typeof x === 'number') {
         return Number(x.toString().split('').reverse().join(''));
     } else if (typeof x === 'string') {
@@ -200,7 +200,7 @@ function reverse(x: number | string): number | string {
 ```ts
 function reverse(x: number): number;
 function reverse(x: string): string;
-function reverse(x: number | string): number | string {
+function reverse(x: number | string): number | string | void {
     if (typeof x === 'number') {
         return Number(x.toString().split('').reverse().join(''));
     } else if (typeof x === 'string') {
