@@ -179,7 +179,7 @@ class Animal {
 }
 
 let a = new Animal('Jack');
-console.log(a.name); // Jack
+console.log(a.name);
 a.name = 'Tom';
 
 // index.ts(9,13): error TS2341: Property 'name' is private and only accessible within class 'Animal'.
