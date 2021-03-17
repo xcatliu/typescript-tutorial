@@ -104,7 +104,7 @@ function alertName(): void {
 }
 ```
 
-声明一个 `void` 类型的变量没有什么用，因为你只能将它赋值为 `undefined` 和 `null`：
+声明一个 `void` 类型的变量没有什么用，因为你只能将它赋值为 `undefined`，默认情况下 ts-config 的配置是：```strictNullChecks: true```，所以void 也不能赋值为`null`：
 
 ```ts
 let unusable: void = undefined;
