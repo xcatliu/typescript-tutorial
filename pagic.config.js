@@ -29,17 +29,6 @@ export default {
                 React.createElement("img", { src: "/assets/join-qq.jpg", width: "256" }))),
         },
         {
-            text: '下载本书',
-            link: 'https://www.geekxh.com/ts.html?3prc',
-            target: '_blank',
-            popover: (React.createElement(React.Fragment, null,
-                React.createElement("p", { style: { marginTop: 0, marginBottom: '1rem' } },
-                    React.createElement("a", { href: "https://www.geekxh.com/ts.html?3prc", target: "_blank" }, "\u70B9\u51FB\u4E0B\u8F7D"),
-                    "\u63D0\u53D6\u7801\u30108f8b\u3011\uFF1A"),
-                React.createElement("a", { href: "https://www.geekxh.com/ts.html?3prc", target: "_blank" },
-                    React.createElement("img", { src: "https://www.geekxh.com/ts/09.png?pprv", width: "256" })))),
-        },
-        {
             text: '本网站使用 Pagic 构建',
             link: 'https://github.com/xcatliu/pagic',
             target: '_blank',
