@@ -41,24 +41,6 @@ export default {
       ),
     },
     {
-      text: '下载本书',
-      link: 'https://www.geekxh.com/ts.html?3prc',
-      target: '_blank',
-      popover: (
-        <>
-          <p style={{ marginTop: 0, marginBottom: '1rem' }}>
-            <a href="https://www.geekxh.com/ts.html?3prc" target="_blank">
-              点击下载
-            </a>
-            提取码【8f8b】：
-          </p>
-          <a href="https://www.geekxh.com/ts.html?3prc" target="_blank">
-            <img src="https://www.geekxh.com/ts/09.png?pprv" width="256" />
-          </a>
-        </>
-      ),
-    },
-    {
       text: '本网站使用 Pagic 构建',
       link: 'https://github.com/xcatliu/pagic',
       target: '_blank',
