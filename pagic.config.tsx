@@ -24,7 +24,10 @@ export default {
     {
       text: '加入微信群',
       popover: (
-        <p style={{ marginTop: 0, width: 256 }}>微信群已超过 200 人，如要加群，请加群主微信 xcatliu 并备注 ts</p>
+        <>
+          <p style={{ marginTop: 0, marginBottom: '1rem', width: 256 }}>一群已满，请扫码加二群</p>
+          <img src="/assets/join-wechat.jpg" width="256" />
+        </>
       ),
     },
     {
