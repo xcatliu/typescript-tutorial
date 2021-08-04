@@ -1,4 +1,4 @@
-import { React } from 'https://deno.land/x/pagic@v1.0.0/mod.ts';
+import { React } from 'https://deno.land/x/pagic@v1.4.0/mod.ts';
 
 export default {
   srcDir: '.',
