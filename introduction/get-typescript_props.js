@@ -25,13 +25,17 @@ export default {
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
+    'footer': React.createElement("footer", null,
+        "Powered by\u00A0",
+        React.createElement("a", { href: "https://github.com/xcatliu/pagic", target: "_blank" }, "Pagic")),
     'contentTitle': React.createElement("h1", { key: "0" }, "\u5B89\u88C5 TypeScript"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
             __html: '<p>TypeScript 的命令行工具安装方法如下：</p>\n<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g typescript\n</code></pre>\n<p>以上命令会在全局环境下安装 <code>tsc</code> 命令，安装完成之后，我们就可以在任何地方执行 <code>tsc</code> 命令了。</p>\n<p>编译一个 TypeScript 文件很简单：</p>\n<pre class="language-bash"><code class="language-bash">tsc hello.ts\n</code></pre>\n<p>我们约定使用 TypeScript 编写的文件以 <code>.ts</code> 为后缀，用 TypeScript 编写 React 时，以 <code>.tsx</code> 为后缀。</p>\n<h2 id="%E7%BC%96%E8%BE%91%E5%99%A8">编辑器<a class="anchor" href="#%E7%BC%96%E8%BE%91%E5%99%A8">§</a></h2>\n<p>TypeScript 最大的优势之一便是增强了编辑器和 IDE 的功能，包括代码补全、接口提示、跳转到定义、重构等。</p>\n<p>主流的编辑器都支持 TypeScript，这里我推荐使用 <a href="https://code.visualstudio.com/">Visual Studio Code</a>。</p>\n<p>它是一款开源，跨终端的轻量级编辑器，内置了对 TypeScript 的支持。</p>\n<p>另外它本身也是<a href="https://github.com/Microsoft/vscode/">用 TypeScript 编写的</a>。</p>\n<p>下载安装：<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>\n<p>获取其他编辑器或 IDE 对 TypeScript 的支持：</p>\n<ul>\n<li><a href="https://github.com/Microsoft/TypeScript-Sublime-Plugin">Sublime Text</a></li>\n<li><a href="https://www.jetbrains.com/webstorm/">WebStorm</a></li>\n<li><a href="https://github.com/Microsoft/TypeScript/wiki/TypeScript-Editor-Support#vim">Vim</a></li>\n<li><a href="https://github.com/ananthakumaran/tide">Emacs</a></li>\n<li><a href="https://github.com/palantir/eclipse-typescript">Eclipse</a></li>\n<li><a href="https://atom.io/packages/atom-typescript">Atom</a></li>\n<li><a href="https://marketplace.visualstudio.com/search?term=TypeScriptTeam&amp;target=VS&amp;category=All%20categories&amp;vsVersion=vs2019&amp;sortBy=UpdatedDate">Visual Studio 2019</a></li>\n<li><a href="https://marketplace.visualstudio.com/search?term=TypeScriptTeam&amp;target=VS&amp;category=All%20categories&amp;vsVersion=vs15&amp;sortBy=UpdatedDate">Visual Studio 2017</a></li>\n</ul>'
         } }),
-    'toc': React.createElement("aside", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol><li><a href="#%E7%BC%96%E8%BE%91%E5%99%A8">编辑器</a></li></ol></nav>'
-        } }),
+    'toc': React.createElement("nav", { key: "0", className: "toc" },
+        React.createElement("ol", null,
+            React.createElement("li", null,
+                React.createElement("a", { href: "#%E7%BC%96%E8%BE%91%E5%99%A8" }, "\u7F16\u8F91\u5668")))),
     'author': "xcatliu",
     'contributors': [
         "xcatliu"
@@ -60,8 +64,8 @@ export default {
                     "pagePath": "introduction/hello-typescript.md"
                 }
             ],
-            "text": "简介",
-            "pagePath": "introduction/README.md"
+            "pagePath": "introduction/README.md",
+            "text": "简介"
         },
         {
             "link": "basics/index.html",
@@ -117,8 +121,8 @@ export default {
                     "pagePath": "basics/built-in-objects.md"
                 }
             ],
-            "text": "基础",
-            "pagePath": "basics/README.md"
+            "pagePath": "basics/README.md",
+            "text": "基础"
         },
         {
             "link": "advanced/index.html",
@@ -169,8 +173,8 @@ export default {
                     "pagePath": "advanced/further-reading.md"
                 }
             ],
-            "text": "进阶",
-            "pagePath": "advanced/README.md"
+            "pagePath": "advanced/README.md",
+            "text": "进阶"
         },
         {
             "link": "engineering/index.html",
@@ -186,8 +190,8 @@ export default {
                     "pagePath": "engineering/compiler-options.md"
                 }
             ],
-            "text": "工程",
-            "pagePath": "engineering/README.md"
+            "pagePath": "engineering/README.md",
+            "text": "工程"
         },
         {
             "text": "感谢",

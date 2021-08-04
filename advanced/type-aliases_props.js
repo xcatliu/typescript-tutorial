@@ -25,13 +25,19 @@ export default {
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
+    'footer': React.createElement("footer", null,
+        "Powered by\u00A0",
+        React.createElement("a", { href: "https://github.com/xcatliu/pagic", target: "_blank" }, "Pagic")),
     'contentTitle': React.createElement("h1", { key: "0" }, "\u7C7B\u578B\u522B\u540D"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
             __html: '<p>类型别名用来给一个类型起个新名字。</p>\n<h2 id="%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90">简单的例子<a class="anchor" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90">§</a></h2>\n<pre class="language-ts"><code class="language-ts"><span class="token keyword">type</span> <span class="token class-name">Name</span> <span class="token operator">=</span> <span class="token builtin">string</span><span class="token punctuation">;</span>\n<span class="token keyword">type</span> <span class="token class-name">NameResolver</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">string</span><span class="token punctuation">;</span>\n<span class="token keyword">type</span> <span class="token class-name">NameOrResolver</span> <span class="token operator">=</span> Name <span class="token operator">|</span> NameResolver<span class="token punctuation">;</span>\n<span class="token keyword">function</span> <span class="token function">getName</span><span class="token punctuation">(</span>n<span class="token operator">:</span> NameOrResolver<span class="token punctuation">)</span><span class="token operator">:</span> Name <span class="token punctuation">{</span>\n    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> n <span class="token operator">===</span> <span class="token string">\'string\'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>\n        <span class="token keyword">return</span> n<span class="token punctuation">;</span>\n    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>\n        <span class="token keyword">return</span> <span class="token function">n</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>\n    <span class="token punctuation">}</span>\n<span class="token punctuation">}</span>\n</code></pre>\n<p>上例中，我们使用 <code>type</code> 创建类型别名。</p>\n<p>类型别名常用于联合类型。</p>\n<h2 id="%E5%8F%82%E8%80%83">参考<a class="anchor" href="#%E5%8F%82%E8%80%83">§</a></h2>\n<ul>\n<li><a href="http://www.typescriptlang.org/docs/handbook/advanced-types.html#type-aliases">Advanced Types # Type Aliases</a>（<a href="https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Advanced%20Types.html#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D">中文版</a>）</li>\n</ul>'
         } }),
-    'toc': React.createElement("aside", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol><li><a href="#%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90">简单的例子</a></li><li><a href="#%E5%8F%82%E8%80%83">参考</a></li></ol></nav>'
-        } }),
+    'toc': React.createElement("nav", { key: "0", className: "toc" },
+        React.createElement("ol", null,
+            React.createElement("li", null,
+                React.createElement("a", { href: "#%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90" }, "\u7B80\u5355\u7684\u4F8B\u5B50")),
+            React.createElement("li", null,
+                React.createElement("a", { href: "#%E5%8F%82%E8%80%83" }, "\u53C2\u8003")))),
     'author': "xcatliu",
     'contributors': [
         "xcatliu",
@@ -61,8 +67,8 @@ export default {
                     "pagePath": "introduction/hello-typescript.md"
                 }
             ],
-            "text": "简介",
-            "pagePath": "introduction/README.md"
+            "pagePath": "introduction/README.md",
+            "text": "简介"
         },
         {
             "link": "basics/index.html",
@@ -118,8 +124,8 @@ export default {
                     "pagePath": "basics/built-in-objects.md"
                 }
             ],
-            "text": "基础",
-            "pagePath": "basics/README.md"
+            "pagePath": "basics/README.md",
+            "text": "基础"
         },
         {
             "link": "advanced/index.html",
@@ -170,8 +176,8 @@ export default {
                     "pagePath": "advanced/further-reading.md"
                 }
             ],
-            "text": "进阶",
-            "pagePath": "advanced/README.md"
+            "pagePath": "advanced/README.md",
+            "text": "进阶"
         },
         {
             "link": "engineering/index.html",
@@ -187,8 +193,8 @@ export default {
                     "pagePath": "engineering/compiler-options.md"
                 }
             ],
-            "text": "工程",
-            "pagePath": "engineering/README.md"
+            "pagePath": "engineering/README.md",
+            "text": "工程"
         },
         {
             "text": "感谢",

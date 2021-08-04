@@ -25,6 +25,9 @@ export default {
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
+    'footer': React.createElement("footer", null,
+        "Powered by\u00A0",
+        React.createElement("a", { href: "https://github.com/xcatliu/pagic", target: "_blank" }, "Pagic")),
     'contentTitle': React.createElement("h1", { key: "0" }, "\u5DE5\u7A0B"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
             __html: '<p>掌握了 TypeScript 的语法就像学会了砌墙的工艺。</p>\n<p>我们学习 TypeScript 的目的不是为了造一间小茅屋，而是为了造高楼大厦，这也正是 TypeScript 的类型系统带来的优势。</p>\n<p>那么一项大工程应该如何开展呢？本部分的内容就会介绍 TypeScript 工程化的最佳实践，具体内容包括：</p>\n<ul>\n<li><a href="lint.html">代码检查</a></li>\n<li><a href="compiler-options.html">编译选项</a></li>\n</ul>'
@@ -60,8 +63,8 @@ export default {
                     "pagePath": "introduction/hello-typescript.md"
                 }
             ],
-            "text": "简介",
-            "pagePath": "introduction/README.md"
+            "pagePath": "introduction/README.md",
+            "text": "简介"
         },
         {
             "link": "basics/index.html",
@@ -117,8 +120,8 @@ export default {
                     "pagePath": "basics/built-in-objects.md"
                 }
             ],
-            "text": "基础",
-            "pagePath": "basics/README.md"
+            "pagePath": "basics/README.md",
+            "text": "基础"
         },
         {
             "link": "advanced/index.html",
@@ -169,8 +172,8 @@ export default {
                     "pagePath": "advanced/further-reading.md"
                 }
             ],
-            "text": "进阶",
-            "pagePath": "advanced/README.md"
+            "pagePath": "advanced/README.md",
+            "text": "进阶"
         },
         {
             "link": "engineering/index.html",
@@ -186,8 +189,8 @@ export default {
                     "pagePath": "engineering/compiler-options.md"
                 }
             ],
-            "text": "工程",
-            "pagePath": "engineering/README.md"
+            "pagePath": "engineering/README.md",
+            "text": "工程"
         },
         {
             "text": "感谢",

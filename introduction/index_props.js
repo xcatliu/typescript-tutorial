@@ -25,6 +25,9 @@ export default {
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
+    'footer': React.createElement("footer", null,
+        "Powered by\u00A0",
+        React.createElement("a", { href: "https://github.com/xcatliu/pagic", target: "_blank" }, "Pagic")),
     'contentTitle': React.createElement("h1", { key: "0" }, "\u7B80\u4ECB"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
             __html: '<p>本部分介绍了在学习 TypeScript 之前需要了解的知识，具体内容包括：</p>\n<ul>\n<li><a href="what-is-typescript.html">什么是 TypeScript</a></li>\n<li><a href="get-typescript.html">安装 TypeScript</a></li>\n<li><a href="hello-typescript.html">Hello TypeScript</a></li>\n</ul>'
@@ -58,8 +61,8 @@ export default {
                     "pagePath": "introduction/hello-typescript.md"
                 }
             ],
-            "text": "简介",
-            "pagePath": "introduction/README.md"
+            "pagePath": "introduction/README.md",
+            "text": "简介"
         },
         {
             "link": "basics/index.html",
@@ -115,8 +118,8 @@ export default {
                     "pagePath": "basics/built-in-objects.md"
                 }
             ],
-            "text": "基础",
-            "pagePath": "basics/README.md"
+            "pagePath": "basics/README.md",
+            "text": "基础"
         },
         {
             "link": "advanced/index.html",
@@ -167,8 +170,8 @@ export default {
                     "pagePath": "advanced/further-reading.md"
                 }
             ],
-            "text": "进阶",
-            "pagePath": "advanced/README.md"
+            "pagePath": "advanced/README.md",
+            "text": "进阶"
         },
         {
             "link": "engineering/index.html",
@@ -184,8 +187,8 @@ export default {
                     "pagePath": "engineering/compiler-options.md"
                 }
             ],
-            "text": "工程",
-            "pagePath": "engineering/README.md"
+            "pagePath": "engineering/README.md",
+            "text": "工程"
         },
         {
             "text": "感谢",

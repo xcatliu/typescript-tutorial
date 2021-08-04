@@ -25,13 +25,23 @@ export default {
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
+    'footer': React.createElement("footer", null,
+        "Powered by\u00A0",
+        React.createElement("a", { href: "https://github.com/xcatliu/pagic", target: "_blank" }, "Pagic")),
     'contentTitle': React.createElement("h1", { key: "0" }, "\u4EFB\u610F\u503C"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
             __html: '<p>任意值（Any）用来表示允许赋值为任意类型。</p>\n<h2 id="%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%BB%E6%84%8F%E5%80%BC%E7%B1%BB%E5%9E%8B">什么是任意值类型<a class="anchor" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%BB%E6%84%8F%E5%80%BC%E7%B1%BB%E5%9E%8B">§</a></h2>\n<p>如果是一个普通类型，在赋值过程中改变类型是不被允许的：</p>\n<pre class="language-ts"><code class="language-ts"><span class="token keyword">let</span> myFavoriteNumber<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">\'seven\'</span><span class="token punctuation">;</span>\nmyFavoriteNumber <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>\n\n<span class="token comment">// index.ts(2,1): error TS2322: Type \'number\' is not assignable to type \'string\'.</span>\n</code></pre>\n<p>但如果是 <code>any</code> 类型，则允许被赋值为任意类型。</p>\n<pre class="language-ts"><code class="language-ts"><span class="token keyword">let</span> myFavoriteNumber<span class="token operator">:</span> <span class="token builtin">any</span> <span class="token operator">=</span> <span class="token string">\'seven\'</span><span class="token punctuation">;</span>\nmyFavoriteNumber <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>\n</code></pre>\n<h2 id="%E4%BB%BB%E6%84%8F%E5%80%BC%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95">任意值的属性和方法<a class="anchor" href="#%E4%BB%BB%E6%84%8F%E5%80%BC%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95">§</a></h2>\n<p>在任意值上访问任何属性都是允许的：</p>\n<pre class="language-ts"><code class="language-ts"><span class="token keyword">let</span> anyThing<span class="token operator">:</span> <span class="token builtin">any</span> <span class="token operator">=</span> <span class="token string">\'hello\'</span><span class="token punctuation">;</span>\n<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>anyThing<span class="token punctuation">.</span>myName<span class="token punctuation">)</span><span class="token punctuation">;</span>\n<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>anyThing<span class="token punctuation">.</span>myName<span class="token punctuation">.</span>firstName<span class="token punctuation">)</span><span class="token punctuation">;</span>\n</code></pre>\n<p>也允许调用任何方法：</p>\n<pre class="language-ts"><code class="language-ts"><span class="token keyword">let</span> anyThing<span class="token operator">:</span> <span class="token builtin">any</span> <span class="token operator">=</span> <span class="token string">\'Tom\'</span><span class="token punctuation">;</span>\nanyThing<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">\'Jerry\'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>\nanyThing<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">\'Jerry\'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>\nanyThing<span class="token punctuation">.</span>myName<span class="token punctuation">.</span><span class="token function">setFirstName</span><span class="token punctuation">(</span><span class="token string">\'Cat\'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>\n</code></pre>\n<p>可以认为，<strong>声明一个变量为任意值之后，对它的任何操作，返回的内容的类型都是任意值</strong>。</p>\n<h2 id="%E6%9C%AA%E5%A3%B0%E6%98%8E%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8F%98%E9%87%8F">未声明类型的变量<a class="anchor" href="#%E6%9C%AA%E5%A3%B0%E6%98%8E%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8F%98%E9%87%8F">§</a></h2>\n<p><strong>变量如果在声明的时候，未指定其类型，那么它会被识别为任意值类型</strong>：</p>\n<pre class="language-ts"><code class="language-ts"><span class="token keyword">let</span> something<span class="token punctuation">;</span>\nsomething <span class="token operator">=</span> <span class="token string">\'seven\'</span><span class="token punctuation">;</span>\nsomething <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>\n\nsomething<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">\'Tom\'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>\n</code></pre>\n<p>等价于</p>\n<pre class="language-ts"><code class="language-ts"><span class="token keyword">let</span> something<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">;</span>\nsomething <span class="token operator">=</span> <span class="token string">\'seven\'</span><span class="token punctuation">;</span>\nsomething <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>\n\nsomething<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">\'Tom\'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>\n</code></pre>\n<h2 id="%E5%8F%82%E8%80%83">参考<a class="anchor" href="#%E5%8F%82%E8%80%83">§</a></h2>\n<ul>\n<li><a href="http://www.typescriptlang.org/docs/handbook/basic-types.html#any">Basic Types # Any</a>（<a href="https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html#%E4%BB%BB%E6%84%8F%E5%80%BC">中文版</a>）</li>\n</ul>'
         } }),
-    'toc': React.createElement("aside", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol><li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%BB%E6%84%8F%E5%80%BC%E7%B1%BB%E5%9E%8B">什么是任意值类型</a></li><li><a href="#%E4%BB%BB%E6%84%8F%E5%80%BC%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95">任意值的属性和方法</a></li><li><a href="#%E6%9C%AA%E5%A3%B0%E6%98%8E%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8F%98%E9%87%8F">未声明类型的变量</a></li><li><a href="#%E5%8F%82%E8%80%83">参考</a></li></ol></nav>'
-        } }),
+    'toc': React.createElement("nav", { key: "0", className: "toc" },
+        React.createElement("ol", null,
+            React.createElement("li", null,
+                React.createElement("a", { href: "#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%BB%E6%84%8F%E5%80%BC%E7%B1%BB%E5%9E%8B" }, "\u4EC0\u4E48\u662F\u4EFB\u610F\u503C\u7C7B\u578B")),
+            React.createElement("li", null,
+                React.createElement("a", { href: "#%E4%BB%BB%E6%84%8F%E5%80%BC%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95" }, "\u4EFB\u610F\u503C\u7684\u5C5E\u6027\u548C\u65B9\u6CD5")),
+            React.createElement("li", null,
+                React.createElement("a", { href: "#%E6%9C%AA%E5%A3%B0%E6%98%8E%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8F%98%E9%87%8F" }, "\u672A\u58F0\u660E\u7C7B\u578B\u7684\u53D8\u91CF")),
+            React.createElement("li", null,
+                React.createElement("a", { href: "#%E5%8F%82%E8%80%83" }, "\u53C2\u8003")))),
     'author': "xcatliu",
     'contributors': [
         "xcatliu"
@@ -60,8 +70,8 @@ export default {
                     "pagePath": "introduction/hello-typescript.md"
                 }
             ],
-            "text": "简介",
-            "pagePath": "introduction/README.md"
+            "pagePath": "introduction/README.md",
+            "text": "简介"
         },
         {
             "link": "basics/index.html",
@@ -117,8 +127,8 @@ export default {
                     "pagePath": "basics/built-in-objects.md"
                 }
             ],
-            "text": "基础",
-            "pagePath": "basics/README.md"
+            "pagePath": "basics/README.md",
+            "text": "基础"
         },
         {
             "link": "advanced/index.html",
@@ -169,8 +179,8 @@ export default {
                     "pagePath": "advanced/further-reading.md"
                 }
             ],
-            "text": "进阶",
-            "pagePath": "advanced/README.md"
+            "pagePath": "advanced/README.md",
+            "text": "进阶"
         },
         {
             "link": "engineering/index.html",
@@ -186,8 +196,8 @@ export default {
                     "pagePath": "engineering/compiler-options.md"
                 }
             ],
-            "text": "工程",
-            "pagePath": "engineering/README.md"
+            "pagePath": "engineering/README.md",
+            "text": "工程"
         },
         {
             "text": "感谢",

@@ -25,6 +25,9 @@ export default {
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
+    'footer': React.createElement("footer", null,
+        "Powered by\u00A0",
+        React.createElement("a", { href: "https://github.com/xcatliu/pagic", target: "_blank" }, "Pagic")),
     'contentTitle': React.createElement("h1", { key: "0" }, "\u8FDB\u9636"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
             __html: '<p>本部分介绍一些高级的类型与技术，具体内容包括：</p>\n<ul>\n<li><a href="type-aliases.html">类型别名</a></li>\n<li><a href="string-literal-types.html">字符串字面量类型</a></li>\n<li><a href="tuple.html">元组</a></li>\n<li><a href="enum.html">枚举</a></li>\n<li><a href="class.html">类</a></li>\n<li><a href="class-and-interfaces.html">类与接口</a></li>\n<li><a href="generics.html">泛型</a></li>\n<li><a href="declaration-merging.html">声明合并</a></li>\n<li><a href="further-reading.html">扩展阅读</a></li>\n</ul>'
@@ -58,8 +61,8 @@ export default {
                     "pagePath": "introduction/hello-typescript.md"
                 }
             ],
-            "text": "简介",
-            "pagePath": "introduction/README.md"
+            "pagePath": "introduction/README.md",
+            "text": "简介"
         },
         {
             "link": "basics/index.html",
@@ -115,8 +118,8 @@ export default {
                     "pagePath": "basics/built-in-objects.md"
                 }
             ],
-            "text": "基础",
-            "pagePath": "basics/README.md"
+            "pagePath": "basics/README.md",
+            "text": "基础"
         },
         {
             "link": "advanced/index.html",
@@ -167,8 +170,8 @@ export default {
                     "pagePath": "advanced/further-reading.md"
                 }
             ],
-            "text": "进阶",
-            "pagePath": "advanced/README.md"
+            "pagePath": "advanced/README.md",
+            "text": "进阶"
         },
         {
             "link": "engineering/index.html",
@@ -184,8 +187,8 @@ export default {
                     "pagePath": "engineering/compiler-options.md"
                 }
             ],
-            "text": "工程",
-            "pagePath": "engineering/README.md"
+            "pagePath": "engineering/README.md",
+            "text": "工程"
         },
         {
             "text": "感谢",

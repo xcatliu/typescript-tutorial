@@ -52,7 +52,7 @@ const Main = (props) => {
             loading ? (React.createElement(Loading, null)) : (blog === null || blog === void 0 ? void 0 : blog.isPost) ? (React.createElement(React.Fragment, null,
                 contentTitle,
                 date && (React.createElement("div", { className: "main_post_meta" },
-                    React.createElement("time", { dateTime: date.toString() }, dateFormatter['YYYY-MM-DD'](date)),
+                    React.createElement("time", { dateTime: date.toString() }, dateFormatter['yyyy-MM-dd'](date)),
                     " \u00B7 ", author !== null && author !== void 0 ? author : 'unknown')),
                 contentBody)) : (content),
             (prev || next) && (React.createElement("div", { className: "prev_next" },
@@ -63,7 +63,7 @@ const Main = (props) => {
                     next.text,
                     "\u00A0\u00A0\u00BB")))),
             gitalk),
-        toc && (React.createElement("div", { className: "main_toc_container nav_link_container" },
+        toc && (React.createElement("aside", { className: "main_toc_container nav_link_container" },
             React.createElement("div", { className: "main_toc" },
                 config.tocAd && React.createElement("div", { className: "toc_ad" }, config.tocAd),
                 toc)))));

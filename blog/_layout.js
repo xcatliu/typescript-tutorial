@@ -3,7 +3,6 @@ import Header from '../_header.js';
 import Sidebar from '../_sidebar.js';
 import Main from '../_main.js';
 import Archives from './_archives.js';
-import Footer from '../_footer.js';
 import Tools from '../_tools.js';
 import { classnames } from '../_utils.js';
 const Layout = (props) => {
@@ -17,7 +16,7 @@ const Layout = (props) => {
             React.createElement(Header, Object.assign({}, props, { isDark: isDark, setIsDark: setIsDark })),
             React.createElement(Sidebar, Object.assign({}, props)),
             ((_a = props.blog) === null || _a === void 0 ? void 0 : _a.isPost) ? React.createElement(Main, Object.assign({}, props)) : React.createElement(Archives, Object.assign({}, props)),
-            React.createElement(Footer, Object.assign({}, props)),
+            props.footer,
             React.createElement(Tools, Object.assign({}, props)),
             props.script)));
 };

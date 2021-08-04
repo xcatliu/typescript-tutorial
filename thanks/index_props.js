@@ -22,13 +22,17 @@ export default {
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
+    'footer': React.createElement("footer", null,
+        "Powered by\u00A0",
+        React.createElement("a", { href: "https://github.com/xcatliu/pagic", target: "_blank" }, "Pagic")),
     'contentTitle': React.createElement("h1", { key: "0" }, "\u611F\u8C22"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
             __html: '<ul>\n<li>感谢<a href="https://github.com/Microsoft/TypeScript/graphs/contributors">创造和维护 TypeScript 的人们</a>，给我们带来了如此优秀的工具</li>\n<li>感谢 <a href="https://github.com/zhongsp/">@zhongsp</a> 对<a href="https://zhongsp.gitbooks.io/typescript-handbook/content/index.html">官方手册的翻译</a>，本书参考了大量他的翻译，能一直坚持跟进非常不容易</li>\n<li>感谢 <a href="http://www.ruanyifeng.com/home.html">@阮一峰</a> 老师的 <a href="http://es6.ruanyifeng.com/">ECMAScript 6 入门</a>，本书引用了多处 ES6 的知识</li>\n</ul>\n<p>最后，感谢你阅读完本书，希望你会有所收获。</p>\n<h2 id="%E4%B8%8B%E4%B8%80%E6%AD%A5">下一步<a class="anchor" href="#%E4%B8%8B%E4%B8%80%E6%AD%A5">§</a></h2>\n<ul>\n<li>在 <a href="https://github.com/xcatliu/typescript-tutorial">GitHub</a> 上关注本书</li>\n<li>阅读<a href="http://www.typescriptlang.org/docs/handbook/basic-types.html">官方手册</a>（<a href="https://zhongsp.gitbooks.io/typescript-handbook/content/">中文版</a>）巩固知识</li>\n<li>阅读 <a href="http://www.typescriptlang.org/docs/handbook/tsconfig-json.html">Project Configuration</a>（<a href="https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/tsconfig.json.html">中文版</a>） 学习如何配置 TypeScript 工程</li>\n<li>查看<a href="http://www.typescriptlang.org/samples/index.html">官方示例</a>，学习真实项目</li>\n</ul>'
         } }),
-    'toc': React.createElement("aside", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol><li><a href="#%E4%B8%8B%E4%B8%80%E6%AD%A5">下一步</a></li></ol></nav>'
-        } }),
+    'toc': React.createElement("nav", { key: "0", className: "toc" },
+        React.createElement("ol", null,
+            React.createElement("li", null,
+                React.createElement("a", { href: "#%E4%B8%8B%E4%B8%80%E6%AD%A5" }, "\u4E0B\u4E00\u6B65")))),
     'author': "xcatliu",
     'contributors': [
         "xcatliu",
@@ -60,8 +64,8 @@ export default {
                     "pagePath": "introduction/hello-typescript.md"
                 }
             ],
-            "text": "简介",
-            "pagePath": "introduction/README.md"
+            "pagePath": "introduction/README.md",
+            "text": "简介"
         },
         {
             "link": "basics/index.html",
@@ -117,8 +121,8 @@ export default {
                     "pagePath": "basics/built-in-objects.md"
                 }
             ],
-            "text": "基础",
-            "pagePath": "basics/README.md"
+            "pagePath": "basics/README.md",
+            "text": "基础"
         },
         {
             "link": "advanced/index.html",
@@ -169,8 +173,8 @@ export default {
                     "pagePath": "advanced/further-reading.md"
                 }
             ],
-            "text": "进阶",
-            "pagePath": "advanced/README.md"
+            "pagePath": "advanced/README.md",
+            "text": "进阶"
         },
         {
             "link": "engineering/index.html",
@@ -186,8 +190,8 @@ export default {
                     "pagePath": "engineering/compiler-options.md"
                 }
             ],
-            "text": "工程",
-            "pagePath": "engineering/README.md"
+            "pagePath": "engineering/README.md",
+            "text": "工程"
         },
         {
             "text": "感谢",

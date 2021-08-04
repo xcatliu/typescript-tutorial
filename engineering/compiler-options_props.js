@@ -25,13 +25,19 @@ export default {
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
+    'footer': React.createElement("footer", null,
+        "Powered by\u00A0",
+        React.createElement("a", { href: "https://github.com/xcatliu/pagic", target: "_blank" }, "Pagic")),
     'contentTitle': React.createElement("h1", { key: "0" }, "\u7F16\u8BD1\u9009\u9879"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
             __html: '<p>TypeScript 提供了非常多的编译选项，但是官方文档对每一项的解释很抽象，这一章会详细介绍每一个选项的作用，并给出对应的示例。</p>\n<p>索引（点击选项跳转到详细介绍）：</p>\n<div class="table_wrapper"><table>\n<thead>\n<tr>\n<th>选项</th>\n<th>类型</th>\n<th>默认值</th>\n<th>描述</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><a href="#allowjs"><code>allowJs</code></a></td>\n<td><code>boolean</code></td>\n<td><code>false</code></td>\n<td>允许编译 js 文件</td>\n</tr>\n<tr>\n<td><a href="#allowsyntheticdefaultimports"><code>allowSyntheticDefaultImports</code></a></td>\n<td><code>boolean</code></td>\n<td><code>false</code></td>\n<td>允许对不包含默认导出的模块使用默认导入。这个选项不会影响生成的代码，只会影响类型检查。</td>\n</tr>\n</tbody>\n</table></div>\n<h2 id="allowjs">allowJs<a class="anchor" href="#allowjs">§</a></h2>\n<blockquote>\n<p>允许编译 js 文件。</p>\n</blockquote>\n<p>设置为 <code>true</code> 时，js 文件会被 tsc 编译，否则不会。一般在项目中 js, ts 混合开发时需要设置。</p>\n<p><a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/compiler-options/01-allowJs">查看示例</a></p>\n<pre class="language-bash"><code class="language-bash"><span class="token comment"># 设置为 true 时，编译后的文件包含 foo.js</span>\n├── lib\n│   ├── foo.js\n│   └── index.js\n├── src\n│   ├── foo.js\n│   └── index.ts\n├── package.json\n└── tsconfig.json\n</code></pre>\n<pre class="language-bash"><code class="language-bash"><span class="token comment"># 设置为 false 时，编译后的文件不包含 foo.js</span>\n├── lib\n│   └── index.js\n├── src\n│   ├── foo.js\n│   └── index.ts\n├── package.json\n└── tsconfig.json\n</code></pre>\n<h2 id="allowsyntheticdefaultimports">allowSyntheticDefaultImports<a class="anchor" href="#allowsyntheticdefaultimports">§</a></h2>\n<blockquote>\n<p>允许对不包含默认导出的模块使用默认导入。这个选项不会影响生成的代码，只会影响类型检查。</p>\n</blockquote>\n<p><code>export = foo</code> 是 ts 为了兼容 commonjs 创造的语法，它对应于 commonjs 中的 <code>module.exports = foo</code>。</p>\n<p>在 ts 中，如果要引入一个通过 <code>export = foo</code> 导出的模块，标准的语法是 <code>import foo = require(\'foo\')</code>，或者 <code>import * as foo from \'foo\'</code>。</p>\n<p>但由于历史原因，我们已经习惯了使用 <code>import foo from \'foo\'</code>。</p>\n<p>这个选项就是为了解决这个问题。当它设置为 <code>true</code> 时，允许使用 <code>import foo from \'foo\'</code> 来导入一个通过 <code>export = foo</code> 导出的模块。当它设置为 <code>false</code> 时，则不允许，会报错。</p>\n<p>当然，我们一般不会在 ts 文件中使用 <code>export = foo</code> 来导出模块，而是在<a href="../basics/declaration-files#export-1">写（符合 commonjs 规范的）第三方库的声明文件</a>时，才会用到 <code>export = foo</code> 来导出类型。</p>\n<p>比如 React 的声明文件中，就是通过 <code>export = React</code> 来导出类型：</p>\n<pre class="language-ts"><code class="language-ts"><span class="token keyword">export</span> <span class="token operator">=</span> React<span class="token punctuation">;</span>\n<span class="token keyword">export</span> <span class="token keyword">as</span> <span class="token keyword">namespace</span> React<span class="token punctuation">;</span>\n\n<span class="token keyword">declare</span> <span class="token keyword">namespace</span> React <span class="token punctuation">{</span>\n    <span class="token comment">// 声明 React 的类型</span>\n<span class="token punctuation">}</span>\n</code></pre>\n<p>此时若我们通过 <code>import React from \'react\'</code> 来导入 react 则会报错，<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/compiler-options/02-allowSyntheticDefaultImports">查看示例</a>\n：</p>\n<pre class="language-ts"><code class="language-ts"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">\'react\'</span><span class="token punctuation">;</span>\n<span class="token comment">// Module \'"<a class="token email-link" href="mailto:typescript-tutorial/examples/compiler-options/02-allowSyntheticDefaultImports/false/node_modules/@types">typescript-tutorial/examples/compiler-options/02-allowSyntheticDefaultImports/false/node_modules/@types</a>/react/index"\' can only be default-imported using the \'esModuleInterop\' flagts(1259)</span>\n</code></pre>\n<p>解决办法就是将 <code>allowSyntheticDefaultImports</code> 设置为 <code>true</code>。</p>'
         } }),
-    'toc': React.createElement("aside", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol><li><a href="#allowjs">allowJs</a></li><li><a href="#allowsyntheticdefaultimports">allowSyntheticDefaultImports</a></li></ol></nav>'
-        } }),
+    'toc': React.createElement("nav", { key: "0", className: "toc" },
+        React.createElement("ol", null,
+            React.createElement("li", null,
+                React.createElement("a", { href: "#allowjs" }, "allowJs")),
+            React.createElement("li", null,
+                React.createElement("a", { href: "#allowsyntheticdefaultimports" }, "allowSyntheticDefaultImports")))),
     'author': "xcatliu",
     'contributors': [
         "xcatliu"
@@ -60,8 +66,8 @@ export default {
                     "pagePath": "introduction/hello-typescript.md"
                 }
             ],
-            "text": "简介",
-            "pagePath": "introduction/README.md"
+            "pagePath": "introduction/README.md",
+            "text": "简介"
         },
         {
             "link": "basics/index.html",
@@ -117,8 +123,8 @@ export default {
                     "pagePath": "basics/built-in-objects.md"
                 }
             ],
-            "text": "基础",
-            "pagePath": "basics/README.md"
+            "pagePath": "basics/README.md",
+            "text": "基础"
         },
         {
             "link": "advanced/index.html",
@@ -169,8 +175,8 @@ export default {
                     "pagePath": "advanced/further-reading.md"
                 }
             ],
-            "text": "进阶",
-            "pagePath": "advanced/README.md"
+            "pagePath": "advanced/README.md",
+            "text": "进阶"
         },
         {
             "link": "engineering/index.html",
@@ -186,8 +192,8 @@ export default {
                     "pagePath": "engineering/compiler-options.md"
                 }
             ],
-            "text": "工程",
-            "pagePath": "engineering/README.md"
+            "pagePath": "engineering/README.md",
+            "text": "工程"
         },
         {
             "text": "感谢",

@@ -44,6 +44,15 @@ async function rerender(
     return;
   }
 
+  let propsPath = pathname;
+  if (propsPath.endsWith('/')) {
+    propsPath += 'index.html';
+  }
+  if (!propsPath.endsWith('.html')) {
+    return;
+  }
+  propsPath = propsPath.replace(/\.html$/, '_props.js');
+
   preventDefault();
   if (loading === true) {
     return;
@@ -63,11 +72,6 @@ async function rerender(
     }, 100);
   }
 
-  let propsPath = pathname;
-  if (propsPath.endsWith('/')) {
-    propsPath += 'index.html';
-  }
-  propsPath = propsPath.replace(/\.html$/, '_props.js');
   const props = (await import(propsPath)).default;
   window.pageProps = props;
 

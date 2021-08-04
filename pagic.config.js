@@ -18,7 +18,9 @@ export default {
         },
         {
             text: '加入微信群',
-            popover: (React.createElement("p", { style: { marginTop: 0, width: 256 } }, "\u5FAE\u4FE1\u7FA4\u5DF2\u8D85\u8FC7 200 \u4EBA\uFF0C\u5982\u8981\u52A0\u7FA4\uFF0C\u8BF7\u52A0\u7FA4\u4E3B\u5FAE\u4FE1 xcatliu \u5E76\u5907\u6CE8 ts")),
+            popover: (React.createElement(React.Fragment, null,
+                React.createElement("p", { style: { marginTop: 0, marginBottom: '1rem', width: 256 } }, "\u4E00\u7FA4\u5DF2\u6EE1\uFF0C\u8BF7\u626B\u7801\u52A0\u4E8C\u7FA4"),
+                React.createElement("img", { src: "/assets/join-wechat.jpg", width: "256" }))),
         },
         {
             text: '加入 QQ 群',
