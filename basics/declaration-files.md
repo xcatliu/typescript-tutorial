@@ -722,7 +722,7 @@ import { bar } from 'foo';
 // 整体导入
 import foo = require('foo');
 // 单个导入
-import bar = foo.bar;
+import bar = require('foo').bar;
 ```
 
 对于这种使用 commonjs 规范的库，假如要为它写类型声明文件的话，就需要使用到 `export =` 这种语法了[<sup>21</sup>](https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/21-export-equal)：
