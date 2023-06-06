@@ -1,38 +1,44 @@
 // .prettierrc.js
 module.exports = {
-  // max 120 characters per line
+  // 一行最多 120 字符
   printWidth: 120,
-  // use 2 spaces for indentation
+  // 使用 2 个空格缩进
   tabWidth: 2,
-  // use spaces instead of indentations
+  // 不使用缩进符，而使用空格
   useTabs: false,
-  // semicolon at the end of the line
+  // 行尾需要有分号
   semi: true,
-  // use single quotes
+  // 使用单引号
   singleQuote: true,
-  // object's key is quoted only when necessary
+  // 对象的 key 仅在必要时用引号
   quoteProps: 'as-needed',
-  // use double quotes instead of single quotes in jsx
+  // jsx 不使用单引号，而使用双引号
   jsxSingleQuote: false,
-  // no comma at the end
+  // 末尾需要有逗号
   trailingComma: 'all',
-  // spaces are required at the beginning and end of the braces
+  // 大括号内的首尾需要空格
   bracketSpacing: true,
-  // end tag of jsx need to wrap
-  jsxBracketSameLine: false,
-  // brackets are required for arrow function parameter, even when there is only one parameter
+  // jsx 标签的反尖括号需要换行
+  bracketSameLine: false,
+  // 箭头函数，只有一个参数的时候，也需要括号
   arrowParens: 'always',
-  // format the entire contents of the file
+  // 每个文件格式化的范围是文件的全部内容
   rangeStart: 0,
   rangeEnd: Infinity,
-  // no need to write the beginning @prettier of the file
+  // 不需要写文件开头的 @prettier
   requirePragma: false,
-  // No need to automatically insert @prettier at the beginning of the file
+  // 不需要自动在文件开头插入 @prettier
   insertPragma: false,
-  // use default break criteria
+  // 使用默认的折行标准
   proseWrap: 'preserve',
-  // decide whether to break the html according to the display style
+  // 根据显示样式决定 html 要不要折行
   htmlWhitespaceSensitivity: 'css',
-  // lf for newline
+  // vue 文件中的 script 和 style 内不用缩进
+  vueIndentScriptAndStyle: false,
+  // 换行符使用 lf
   endOfLine: 'lf',
+  // 格式化嵌入的内容
+  embeddedLanguageFormatting: 'auto',
+  // html, vue, jsx 中每个属性占一行
+  singleAttributePerLine: false,
 };

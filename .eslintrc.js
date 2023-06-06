@@ -15,6 +15,7 @@ module.exports = {
   rules: {
     // Customize your rules
     'no-undef': 'off',
+    'prefer-arrow-callback': 'off',
     '@typescript-eslint/no-invalid-this': 'off',
     '@typescript-eslint/no-require-imports': 'off',
     '@typescript-eslint/method-signature-style': 'off',
