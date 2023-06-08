@@ -43,7 +43,7 @@ export const Popover = ({ content, placement = 'top', className, style, children
         validChildren = React.cloneElement(children, props);
     }
     else {
-        validChildren = React.createElement("span", Object.assign({}, props), children);
+        validChildren = React.createElement("span", { ...props }, children);
     }
     return (React.createElement(React.Fragment, null,
         content && (React.createElement(PopoverProtal, { popoverRootId: popoverRootId, content: content, placement: placement, style: {

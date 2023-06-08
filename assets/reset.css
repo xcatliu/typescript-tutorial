@@ -150,7 +150,8 @@ blockquote > *:first-child {
 }
 
 ul,
-ol {
+ol,
+dd {
   padding: 0 0 0 1.5em;
   line-height: var(--line-height-small);
 }
