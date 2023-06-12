@@ -541,7 +541,7 @@ exports<span class="token punctuation">.</span><span class="token property-acces
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// 整体导入</span>
 <span class="token keyword">import</span> foo <span class="token operator">=</span> <span class="token keyword">require</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 单个导入</span>
-<span class="token keyword">import</span> bar <span class="token operator">=</span> foo<span class="token punctuation">.</span>bar<span class="token punctuation">;</span>
+<span class="token keyword">import</span> bar <span class="token operator">=</span> <span class="token keyword">require</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>bar<span class="token punctuation">;</span>
 </code></pre>
 <p>对于这种使用 commonjs 规范的库，假如要为它写类型声明文件的话，就需要使用到 <code>export =</code> 这种语法了<a href="https://github.com/xcatliu/typescript-tutorial/tree/master/examples/declaration-files/21-export-equal"><sup>21</sup></a>：</p>
 <pre class="language-ts"><code class="language-ts"><span class="token comment">// types/foo/index.d.ts</span>
