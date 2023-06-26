@@ -1,0 +1,7 @@
+---
+title: TypeScript 入门教程
+author: xcatliu
+description: 从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript
+language: zh-CN
+cover-image: pandoc-cover.jpg
+...

@@ -5,7 +5,9 @@
   "main": "README.md",
   "scripts": {
     "start": "deno run --unstable --allow-read --allow-write --allow-net --allow-run ../pagic/mod.ts build --serve --watch",
+    "build": "deno run --unstable --allow-read --allow-write --allow-net --allow-run ../pagic/mod.ts build",
     "test": "npm run lint",
+    "pandoc": "pandoc -o TypeScript\\ 入门教程.epub --resource-path assets pandoc-metadata.txt $(cat pandoc-list.txt)",
     "lint": "run-s eclint prettier lint-md eslint",
     "lint:fix": "run-s eclint:fix prettier:fix lint-md:fix",
     "eclint": "bash -c 'eclint check $(git ls-files -- . \":!:*.epub\")'",
