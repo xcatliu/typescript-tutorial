@@ -4,7 +4,7 @@ export default {
     theme: 'docs',
     plugins: ['sidebar', 'prev_next', 'gitalk', 'ga'],
     title: 'TypeScript 入门教程',
-    description: '从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript。',
+    description: '从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript',
     github: 'https://github.com/xcatliu/typescript-tutorial',
     head: React.createElement("link", { rel: "icon", type: "image/png", href: "/favicon.png" }),
     nav: [
