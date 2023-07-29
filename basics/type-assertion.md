@@ -228,17 +228,17 @@ foo.length = 1;
 但有的时候，我们非常确定这段代码不会出错，比如下面这个例子：
 
 ```ts
-window.foo = 1;
+globalThis.foo = 1;
 
 // index.ts:1:8 - error TS2339: Property 'foo' does not exist on type 'Window & typeof globalThis'.
 ```
 
-上面的例子中，我们需要将 `window` 上添加一个属性 `foo`，但 TypeScript 编译时会报错，提示我们 `window` 上不存在 `foo` 属性。
+上面的例子中，我们需要将 `globalThis` 上添加一个属性 `foo`，但 TypeScript 编译时会报错，提示我们 `globalThis` 上不存在 `foo` 属性。
 
-此时我们可以使用 `as any` 临时将 `window` 断言为 `any` 类型：
+此时我们可以使用 `as any` 临时将 `globalThis` 断言为 `any` 类型：
 
 ```ts
-(window as any).foo = 1;
+(globalThis as any).foo = 1;
 ```
 
 在 `any` 类型的变量上，访问任何属性都是允许的。
@@ -247,7 +247,7 @@ window.foo = 1;
 
 **它极有可能掩盖了真正的类型错误，所以如果不是非常确定，就不要使用 `as any`。**
 
-上面的例子中，我们也可以通过[扩展 window 的类型（TODO）][]解决这个错误，不过如果只是临时的增加 `foo` 属性，`as any` 会更加方便。
+上面的例子中，我们也可以通过[扩展 globalThis 的类型（TODO）][]解决这个错误，不过如果只是临时的增加 `foo` 属性，`as any` 会更加方便。
 
 总之，**一方面不能滥用 `as any`，另一方面也不要完全否定它的作用，我们需要在类型的严格性和开发的便利性之间掌握平衡**（这也是 [TypeScript 的设计理念][]之一），才能发挥出 TypeScript 最大的价值。
 
@@ -263,7 +263,7 @@ window.foo = 1;
 
 ```ts
 function getCacheData(key: string): any {
-    return (window as any).cache[key];
+    return (globalThis as any).cache[key];
 }
 ```
 
@@ -271,7 +271,7 @@ function getCacheData(key: string): any {
 
 ```ts
 function getCacheData(key: string): any {
-    return (window as any).cache[key];
+    return (globalThis as any).cache[key];
 }
 
 interface Cat {
@@ -454,7 +454,7 @@ toBoolean(1);
 
 ```ts
 function getCacheData(key: string): any {
-    return (window as any).cache[key];
+    return (globalThis as any).cache[key];
 }
 
 interface Cat {
@@ -472,7 +472,7 @@ tom.run();
 
 ```ts
 function getCacheData(key: string): any {
-    return (window as any).cache[key];
+    return (globalThis as any).cache[key];
 }
 
 interface Cat {
@@ -561,7 +561,7 @@ const tom: Cat = getCacheData('tom');
 
 ```ts
 function getCacheData(key: string): any {
-    return (window as any).cache[key];
+    return (globalThis as any).cache[key];
 }
 
 interface Cat {
@@ -577,7 +577,7 @@ tom.run();
 
 ```ts
 function getCacheData<T>(key: string): T {
-    return (window as any).cache[key];
+    return (globalThis as any).cache[key];
 }
 
 interface Cat {
