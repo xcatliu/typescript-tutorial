@@ -12,8 +12,9 @@ assets
 .gitignore
 .lintmdrc
 .prettierignore
+.npmrc
 
-package-lock.json
+pnpm-lock.yaml
 
 examples
 dist

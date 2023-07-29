@@ -5,7 +5,9 @@
   "main": "README.md",
   "scripts": {
     "start": "deno run --unstable --allow-read --allow-write --allow-net --allow-run ../pagic/mod.ts build --serve --watch",
+    "build": "deno run --unstable --allow-read --allow-write --allow-net --allow-run ../pagic/mod.ts build",
     "test": "npm run lint",
+    "pandoc": "pandoc -o TypeScript\\ 入门教程.epub --resource-path assets pandoc-metadata.txt $(cat pandoc-list.txt)",
     "lint": "run-s eclint prettier lint-md eslint",
     "lint:fix": "run-s eclint:fix prettier:fix lint-md:fix",
     "eclint": "bash -c 'eclint check $(git ls-files -- . \":!:*.epub\")'",
@@ -39,16 +41,16 @@
   },
   "homepage": "https://github.com/xcatliu/typescript-tutorial#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.8.1",
-    "@typescript-eslint/parser": "^4.8.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.9",
+    "@typescript-eslint/parser": "^5.59.9",
     "eclint": "^2.8.1",
-    "eslint": "^7.14.0",
-    "eslint-config-alloy": "^3.8.2",
-    "eslint-plugin-react": "^7.21.5",
-    "husky": "^4.3.0",
+    "eslint": "^8.42.0",
+    "eslint-config-alloy": "^5.0.0",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
     "lint-md-cli": "^0.1.2",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.2.0",
-    "typescript": "^4.1.2"
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.3"
   }
 }

@@ -48,7 +48,7 @@ sum(1);
 
 ## 函数表达式
 
-如果要我们现在写一个对函数表达式（Function Expression）的定义，可能会写成这样：
+如果要我们现在写一个函数表达式（Function Expression）的定义，可能会写成这样：
 
 ```ts
 let mySum = function (x: number, y: number): number {
