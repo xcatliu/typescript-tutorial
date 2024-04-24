@@ -162,19 +162,7 @@
 <h3 id="%E5%9C%A8-vscode-%E4%B8%AD%E9%9B%86%E6%88%90-eslint-%E6%A3%80%E6%9F%A5">在 VSCode 中集成 ESLint 检查<a class="anchor" href="#%E5%9C%A8-vscode-%E4%B8%AD%E9%9B%86%E6%88%90-eslint-%E6%A3%80%E6%9F%A5">§</a></h3>
 <p>在编辑器中集成 ESLint 检查，可以在开发过程中就发现错误，甚至可以在保存时自动修复错误，极大的增加了开发效率。</p>
 <p>要在 VSCode 中集成 ESLint 检查，我们需要先安装 ESLint 插件，点击「扩展」按钮，搜索 ESLint，然后安装即可。</p>
-<p>VSCode 中的 ESLint 插件默认是不会检查 <code>.ts</code> 后缀的，需要在「文件 =&gt; 首选项 =&gt; 设置 =&gt; 工作区」中（也可以在项目根目录下创建一个配置文件 <code>.vscode/settings.json</code>），添加以下配置：</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-    <span class="token property">"eslint.validate"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-        <span class="token string">"javascript"</span><span class="token punctuation">,</span>
-        <span class="token string">"javascriptreact"</span><span class="token punctuation">,</span>
-        <span class="token string">"typescript"</span>
-    <span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">"typescript.tsdk"</span><span class="token operator">:</span> <span class="token string">"node_modules/typescript/lib"</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>这时再打开一个 <code>.ts</code> 文件，将鼠标移到红色提示处，即可看到这样的报错信息了：</p>
-<p><img src="../assets/vscode-eslint-error.png" alt="VSCode ESLint 错误信息"></p>
-<p>我们还可以开启保存时自动修复的功能，通过配置：</p>
+<p>通过配置 VSCode，可以开启保存时自动修复的功能：</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
     <span class="token property">"eslint.autoFixOnSave"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
     <span class="token property">"eslint.validate"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
