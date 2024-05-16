@@ -15,11 +15,11 @@
 - [`export`](#export) 导出变量
 - [`export namespace`](#export-namespace) 导出（含有子属性的）对象
 - [`export default`](#export-default) ES6 默认导出
-- [`export =`](#export-1) commonjs 导出模块
+- [`export =`](#export-) commonjs 导出模块
 - [`export as namespace`](#export-as-namespace) UMD 库声明全局变量
 - [`declare global`](#declare-global) 扩展全局变量
 - [`declare module`](#declare-module) 扩展模块
-- [`/// <reference />`](#san-xie-xian-zhi-ling) 三斜线指令
+- [`/// <reference />`](#三斜线指令) 三斜线指令
 
 ## 什么是声明语句
 
@@ -525,7 +525,7 @@ npm 包的声明文件主要有以下几种语法：
 - [`export`](#export) 导出变量
 - [`export namespace`](#export-namespace) 导出（含有子属性的）对象
 - [`export default`](#export-default) ES6 默认导出
-- [`export =`](#export-1) commonjs 导出模块
+- [`export =`](#export-) commonjs 导出模块
 
 #### `export`
 
