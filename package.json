@@ -1,8 +1,9 @@
 {
   "name": "typescript-tutorial",
   "version": "0.1.0",
-  "description": "从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript",
+  "description": "从 JavaScript 程序员的角度总结思考，循序渐进地理解 TypeScript",
   "main": "README.md",
+  "packageManager": "pnpm@9.5.0",
   "scripts": {
     "start": "deno run --unstable --allow-read --allow-write --allow-net --allow-run ../pagic/mod.ts build --serve --watch",
     "build": "deno run --unstable --allow-read --allow-write --allow-net --allow-run ../pagic/mod.ts build",
