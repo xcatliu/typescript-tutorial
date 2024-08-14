@@ -169,3 +169,140 @@
     }
     ```
     
+
+## 装饰器的类别
+
+通过以上例子，相信读者已经对装饰器有一定了解，且认识到了装饰器在一些场景的强大之处。在此引用[阮一峰 es6 教程](https://es6.ruanyifeng.com/#docs/decorator#%E7%AE%80%E4%BB%8B%EF%BC%88%E6%96%B0%E8%AF%AD%E6%B3%95%EF%BC%89)稍做总结：
+
+> 装饰器是一种函数，写成`@ + 函数名`，可以用来装饰四种类型的值。
+> 
+> - 类
+> - 类的属性
+> - 类的方法
+> - 属性存取器（accessor, getter, setter）
+
+> 装饰器的执行步骤如下。
+> 
+> 1. 计算各个装饰器的值，按照从左到右，从上到下的顺序。
+> 2. 调用方法装饰器。
+> 3. 调用类装饰器。
+
+不管是哪种类型的装饰器，它们的函数签名都可以认为是一致的，即均接收 `value`, `context` 两个参数，前者指被装饰的对象，后者指一个存储了上下文信息的对象。
+
+## context 与 metadata 二三讲
+
+四种装饰器的 context，均包含以下信息：
+
+- kind
+    
+    描述被装饰的 value 的类型，可取 `class`, `method`, `field`, `getter`, `setter`, `accessor` 这些值。
+    
+- name
+    
+    描述被装饰的 value 的名字。
+    
+- addInitializer
+    
+    一个方法，接收一个回调函数，使得开发者可以侵入 value 的初始化过程作修改。
+    
+    对 `class` 来说，这个回调函数会在类定义最终确认后调用，即相当于在初始化过程的最后一步。
+    
+    对其他的 value 来说，如果是被 `static` 所修饰的，则会在类定义期间被调用，且早于其他静态属性的赋值过程；否则，会在类初始化期间被调用，且早于 value 自身的初始化。
+    
+    以下是 `@bound` 类方法装饰器的例子，该装饰器自动为方法绑定 `this`：
+    
+    ```ts
+    const bound = (value, context: ClassMemberDecoratorContext) {
+      if (context.private) throw new TypeError("Not supported on private methods.");
+      context.addInitializer(function () {
+          this[context.name] = this[context.name].bind(this);
+      });
+    }
+    ```
+    
+- metadata
+    
+    和装饰器类似，[metadata](https://github.com/tc39/proposal-decorator-metadata) 也是处于 stage 3 阶段的一个提案。装饰器只能访问到类原型链、类实例的相关数据，而 metadata 给了开发者更大的自由，让程序于运行时访问到编译时决定的元数据。
+    
+    举个例子：
+    
+    ```ts
+    function meta(key, value) {
+      return (_, context) => {
+        context.metadata[key] = value;
+      };
+    }
+    
+    @meta('a', 'x')
+    class C {
+      @meta('b', 'y')
+      m() {}
+    }
+    
+    C[Symbol.metadata].a; // 'x'
+    C[Symbol.metadata].b; // 'y'
+    ```
+    
+    在上述程序中，我们通过访问类的 `Symbol.metadata` ，读取到了 meta 装饰器所写入的元数据。对元数据的访问，有且仅有这一种形式。
+    
+    注意一点，metadata 是作用在类上的，即使它的位置在类方法上。想实现细粒度的元数据存储，可以考虑手动维护若干 `WeakMap`。
+    
+
+除了类装饰器以外，其他3种装饰器的 context 还拥有以下 3 个字段：
+
+- static
+    
+    布尔值，描述 value 是否为 static 所修饰。
+    
+- private
+    
+    布尔值，描述 value 是否为 private 所修饰。
+    
+- access
+    
+    一个对象，可在运行时访问 value 相关数据。
+    
+    以类方法装饰器为例，用 `access.get` 可在运行时读取方法值，`access.has` 可在运行时查询对象上是否有某方法，举个例子：
+    
+    ```ts
+    const typeToYellingMap = {
+      cat: 'meow~ meow~',
+    }
+    
+    let yellingMethodContext: ClassMethodDecoratorContext
+    
+    class Animal {
+      type: string
+      constructor(type: string) {
+        this.type = type
+      }
+    
+      @yelling
+      greet() {
+        console.log(`Hello, I'm a(n) ${this.type}!`)
+      }
+    
+      accessor y = 1
+    }
+    
+    function yelling(originalMethod: any, context: ClassMethodDecoratorContext) {
+      yellingMethodContext = context
+      return function (this: any, ...args: any[]) {
+        console.log(typeToYellingMap[this.type as keyof typeof typeToYellingMap])
+        originalMethod.call(this, ...args)
+      }
+    }
+    
+    const xcat = new Animal('cat')
+    xcat.greet() // meow~ meow~
+    // Hello, I'm a(n) cat!
+    yellingMethodContext.access.get(xcat).call(xcat) // meow~ meow~
+    // Hello, I'm a(n) cat!
+    console.log(yellingMethodContext.access.has(xcat)) // true
+    ```
+    
+    `getter` 类别的装饰器，其 `context.access` 同样拥有 `has`, `get` 两个方法。
+    
+    对于 `setter` 类别的装饰器，则是 `has` 与 `set` 方法。
+    
+    `filed` 与 `accessor` 类别的装饰器，拥有 `has`, `get`, `set` 全部三个方法。
