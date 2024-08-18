@@ -72,6 +72,7 @@ export default {
                     'advanced/class-and-interfaces.md',
                     'advanced/generics.md',
                     'advanced/declaration-merging.md',
+                    'advanced/decorator.md',
                     'advanced/further-reading.md',
                 ],
             },

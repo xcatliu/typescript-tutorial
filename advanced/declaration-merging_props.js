@@ -7,8 +7,8 @@ export default {
         "link": "advanced/generics.html"
     },
     'next': {
-        "text": "扩展阅读",
-        "link": "advanced/further-reading.html"
+        "text": "装饰器",
+        "link": "advanced/decorator.html"
     },
     config: { "root": "/", ...projectConfig, branch: 'master' },
     'pagePath': "advanced/declaration-merging.md",
@@ -172,6 +172,11 @@ export default {
                     "text": "声明合并",
                     "link": "advanced/declaration-merging.html",
                     "pagePath": "advanced/declaration-merging.md"
+                },
+                {
+                    "text": "装饰器",
+                    "link": "advanced/decorator.html",
+                    "pagePath": "advanced/decorator.md"
                 },
                 {
                     "text": "扩展阅读",

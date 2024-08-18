@@ -172,6 +172,11 @@ export default {
                     "pagePath": "advanced/declaration-merging.md"
                 },
                 {
+                    "text": "装饰器",
+                    "link": "advanced/decorator.html",
+                    "pagePath": "advanced/decorator.md"
+                },
+                {
                     "text": "扩展阅读",
                     "link": "advanced/further-reading.html",
                     "pagePath": "advanced/further-reading.md"
