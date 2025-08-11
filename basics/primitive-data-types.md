@@ -46,6 +46,7 @@ let createdByBoolean: boolean = Boolean(1);
 
 ```ts
 let decLiteral: number = 6;
+// ES6 中的十六进制表示法
 let hexLiteral: number = 0xf00d;
 // ES6 中的二进制表示法
 let binaryLiteral: number = 0b1010;
@@ -59,6 +60,7 @@ let infinityNumber: number = Infinity;
 
 ```js
 var decLiteral = 6;
+// ES6 中的十六进制表示法（编译后保持原样）
 var hexLiteral = 0xf00d;
 // ES6 中的二进制表示法
 var binaryLiteral = 10;
